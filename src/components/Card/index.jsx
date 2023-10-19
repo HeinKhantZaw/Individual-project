@@ -12,14 +12,6 @@ const Card = () => {
     const theme = createAppTheme();
     const bleeps = useBleeps();
 
-    function hoverFunc() {
-        document.getElementById("enter-btn").style.backgroundColor = theme.colors.primary.main(4);
-        bleeps.hover?.play()
-    }
-    function hoverOutFunc() {
-        document.getElementById("enter-btn").style.backgroundColor = "";
-    }
-
     return (
         <Animator merge combine manager='stagger'>
             <BleepsOnAnimator
@@ -79,10 +71,9 @@ const Card = () => {
                 </Animator>
             </Animated>
             <div className={"mt-6 flex items-center justify-center"}>
-                <Button animate className={"font-semibold text-lg"} id={"enter-btn"}
+                <Button animate className={"font-semibold text-lg custom-button"} id={"enter-btn"}
                         buttonProps={{
-                            onMouseEnter: () => hoverFunc(),
-                            onMouseOut: () => hoverOutFunc(),
+                            onMouseEnter: () => bleeps.hover?.play(),
                             onClick: () => window.location.href = "/home",
                         }}
                 >

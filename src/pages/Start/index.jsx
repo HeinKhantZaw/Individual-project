@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import HomeBackground from "../../components/Background/HomeBackground.jsx";
 import {Animator} from "@arwes/react-animator";
 import {Text} from "@arwes/react-text";
-import {BleepsProvider, useBleeps} from '@arwes/react-bleeps';
-import {BleepsOnAnimator} from '@arwes/react-core';
+import {useBleeps} from "@arwes/react-bleeps";
+import {BleepsOnAnimator} from "@arwes/react-core";
 
 import Button from "arwes/lib/Button/index.js";
-import {Animated} from '@arwes/react-animated';
+import {Animated} from "@arwes/react-animated";
 
 export default function Home() {
     const bleeps = useBleeps();
@@ -19,7 +19,6 @@ export default function Home() {
         document.getElementById("get-started").style.backgroundColor = "";
     }
     const clickFunc = () => {
-        bleeps.click?.play();
         window.location.href = "/one";
     }
     useEffect(() => {
@@ -30,11 +29,11 @@ export default function Home() {
         <>
             <HomeBackground/>
             <div className={"inset-center"}>
-                <Animator active={true} combine manager='sequence'>
+                <Animator active={true} combine manager="sequence">
                     <Animator duration={3}>
                         <BleepsOnAnimator
                             transitions={{
-                                entered: 'intro'
+                                entered: "intro"
                             }}/>
                         <h1 className={"font-semibold text-5xl"}>
                             <Text manager="decipher" easing="outSine" fixed>
@@ -45,7 +44,7 @@ export default function Home() {
                     <Animator duration={2}>
                         <BleepsOnAnimator
                             transitions={{
-                                entered: 'enter'
+                                entered: "enter"
                             }}/>
                         <div className={"font-medium text-lg"}>
                             <Text manager="decipher" easing="outSine" fixed>
@@ -59,13 +58,13 @@ export default function Home() {
                                 transitions: {
                                     entering: {
                                         y: [150, 0],
-                                        options: {duration: 0.4, easing: 'ease-in-out'}
+                                        options: {duration: 0.4, easing: "ease-in-out"}
                                     },
                                 }
                             }}>
                                 <BleepsOnAnimator
                                     transitions={{
-                                        entering: 'intro',
+                                        entering: "intro",
                                     }}/>
                                 <Button buttonProps={{
                                     onMouseEnter: () => hoverFunc(),

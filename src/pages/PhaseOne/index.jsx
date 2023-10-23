@@ -11,6 +11,7 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import MainLayout from "../../components/Layout/MainLayout.jsx";
 import CircleNode from "../../components/Shapes/CircleNode.jsx";
+import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
 
 const initialNodes = [
     {
@@ -156,7 +157,150 @@ const initialNodes = [
         position: {x: 1400, y: 500},
         data: {label: "Required Skills"},
         draggable: false
-    }
+    },
+    {
+        id: "social-structure-xor",
+        type: "operator",
+        position: {x: 1600, y: 400},
+        data: {label: "XOR"},
+        draggable: false
+    },
+    {
+        id: "hierarchy-neutral",
+        type: "circle",
+        position: {x: 1600, y: 500},
+        data: {label: "Hierarchy-Neutral"},
+        draggable: false
+    },
+    {
+        id: "hierarchical",
+        type: "circle",
+        position: {x: 1800, y: 500},
+        data: {label: "Hierarchical"},
+        draggable: false
+    },
+    {
+        id: "nature-of-good-xor",
+        type: "operator",
+        position: {x: 2000, y: 400},
+        data: {label: "XOR"},
+        draggable: false
+    },
+    {
+        id: "public-good-non-rival-non-exclusive",
+        type: "circle",
+        position: {x: 2000, y: 500},
+        data: {label: "Public Good(Non Rival, Non Exclusive)", size: 140},
+        draggable: false
+    },
+    {
+        id: "private-good-rival-exclusive",
+        type: "circle",
+        position: {x: 2200, y: 500},
+        data: {label: "Private Good(Rival, Exclusive)"},
+        draggable: false
+    },
+
+    // 3rd layer
+    {
+        id: "gender",
+        type: "circle",
+        position: {x: -1500, y: 700},
+        data: {label: "Gender", background: "black"},
+        draggable: false
+    },
+    {
+        id: "age",
+        type: "circle",
+        position: {x: -1300, y: 700},
+        data: {label: "Age", background: "black"},
+        draggable: false
+    },
+    {
+        id: "player-type",
+        type: "circle",
+        position: {x: -1100, y: 700},
+        data: {label: "Player Type", background: "black"},
+        draggable: false
+    },
+    {
+        id: "employed",
+        type: "circle",
+        position: {x: -900, y: 700},
+        data: {label: "Employed", background: "black"},
+        draggable: false
+    },
+    {
+        id: "expertise-level",
+        type: "circle",
+        position: {x: -700, y: 700},
+        data: {label: "Expertise Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "mandatory",
+        type: "circle",
+        position: {x: -500, y: 700},
+        data: {label: "Mandatory", background: "black"},
+        draggable: false
+    },
+    {
+        id: "existing",
+        type: "circle",
+        position: {x: -300, y: 700},
+        data: {label: "Existing", background: "black"},
+        draggable: false
+    },
+    {
+        id: "communication-level",
+        type: "circle",
+        position: {x: -100, y: 700},
+        data: {label: "Communication Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "participation-level",
+        type: "circle",
+        position: {x: 100, y: 700},
+        data: {label: "Participation Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "clarity-level",
+        type: "circle",
+        position: {x: 300, y: 700},
+        data: {label: "Clarity Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "variety-level",
+        type: "circle",
+        position: {x: 500, y: 700},
+        data: {label: "Variety Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "specificity-level",
+        type: "circle",
+        position: {x: 700, y: 700},
+        data: {label: "Specificity Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "identification-level",
+        type: "circle",
+        position: {x: 900, y: 700},
+        data: {label: "Identification Level", background: "black"},
+        draggable: false
+    },
+    {
+        id: "skill-kind",
+        type: "circle",
+        position: {x: 1100, y: 700},
+        data: {label: "Skill Kind", background: "black"},
+        draggable: false
+    },
+
 ];
 const initialEdges = [
     // 1st edge
@@ -177,12 +321,62 @@ const initialEdges = [
     {id: "e2-14", source: "acceptance-goal", target: "goal-communication", type: "straight"},
     {id: "e2-15", source: "acceptance-goal", target: "goal-participation", type: "straight"},
     {id: "e2-16", source: "acceptance-goal", target: "goal-clarity", type: "straight"},
+    {id: "e2-17", source: "acceptance-task", target: "task-variety", type: "straight"},
+    {id: "e2-18", source: "acceptance-task", target: "task-specificity", type: "straight"},
+    {id: "e2-19", source: "acceptance-task", target: "task-identification", type: "straight"},
+    {id: "e2-20", source: "acceptance-task", target: "required-skills", type: "straight"},
+    {id: "e2-21", source: "social-structure", target: "social-structure-xor", type: "straight"},
+    {
+        id: "e2b-22",
+        source: "social-structure-xor",
+        sourceHandle: "operator_left",
+        target: "hierarchy-neutral",
+        type: "straight"
+    },
+    {
+        id: "e2-23",
+        source: "social-structure-xor",
+        sourceHandle: "operator_right",
+        target: "hierarchical",
+        type: "straight"
+    },
+    {id: "e2-24", source: "nature-of-good", target: "nature-of-good-xor", type: "straight"},
+    {
+        id: "e2b-25",
+        source: "nature-of-good-xor",
+        sourceHandle: "operator_left",
+        target: "public-good-non-rival-non-exclusive",
+        type: "straight"
+    },
+    {
+        id: "e2-26",
+        source: "nature-of-good-xor",
+        sourceHandle: "operator_right",
+        target: "private-good-rival-exclusive",
+        type: "straight"
+    },
+
+    // 3rd edge
+    {id: "e3-27", source: "human", target: "gender", type: "straight"},
+    {id: "e3-28", source: "human", target: "age", type: "straight"},
+    {id: "e3-29", source: "player", target: "player-type", type: "straight"},
+    {id: "e3-30", source: "worker", target: "employed", type: "straight"},
+    {id: "e3-31", source: "subject-awareness", target: "expertise-level", type: "straight"},
+    {id: "e3-32", source: "acceptance-voluntariness", target: "mandatory", type: "straight"},
+    {id: "e3-33", source: "precursor-subject", target: "existing", type: "straight"},
+    {id: "e3-34", source: "goal-communication", target: "communication-level", type: "straight"},
+    {id: "e3-35", source: "goal-participation", target: "participation-level", type: "straight"},
+    {id: "e3-36", source: "goal-clarity", target: "clarity-level", type: "straight"},
+    {id: "e3-37", source: "task-variety", target: "variety-level", type: "straight"},
+    {id: "e3-38", source: "task-specificity", target: "specificity-level", type: "straight"},
+    {id: "e3-39", source: "task-identification", target: "identification-level", type: "straight"},
+    {id: "e3-40", source: "required-skills", target: "skill-kind", type: "straight"},
+
 
 ];
+const nodeTypes = {circle: CircleNode, operator: OperatorNode};
 
 export default function PhaseOne() {
-    const nodeTypes = {circle: CircleNode};
-
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 

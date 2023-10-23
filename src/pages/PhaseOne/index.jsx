@@ -1,12 +1,5 @@
 import React, {useCallback} from "react";
-import ReactFlow, {
-    MiniMap,
-    Controls,
-    Background,
-    useNodesState,
-    useEdgesState,
-    addEdge, ConnectionLineType,
-} from "reactflow";
+import ReactFlow, {addEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import MainLayout from "../../components/Layout/MainLayout.jsx";
@@ -17,7 +10,7 @@ let initialNodes = [
     {
         id: "acceptance-context",
         type: "circle",
-        position: {x: 0, y: 0},
+        position: {x: 2200, y: -200},
         data: {label: "Acceptance Context", top: "no"},
         draggable: false
     },
@@ -26,42 +19,42 @@ let initialNodes = [
     {
         id: "user",
         type: "circle",
-        position: {x: -1000, y: 200},
+        position: {x: -700, y: 200},
         data: {label: "User", background: "black"},
         draggable: false
     },
     {
         id: "acceptance-subject",
         type: "circle",
-        position: {x: -400, y: 200},
+        position: {x: 700, y: 200},
         data: {label: "Acceptance Subject", background: "black"},
         draggable: false
     },
     {
         id: "acceptance-goal",
         type: "circle",
-        position: {x: 0, y: 200},
+        position: {x: 2200, y: 200},
         data: {label: "Acceptance Goal", background: "black"},
         draggable: false
     },
     {
         id: "acceptance-task",
         type: "circle",
-        position: {x: 400, y: 200},
+        position: {x: 4250, y: 200},
         data: {label: "Acceptance Task", background: "black"},
         draggable: false
     },
     {
         id: "social-structure",
         type: "circle",
-        position: {x: 700, y: 200},
+        position: {x: 5200, y: 200},
         data: {label: "Social Structure", background: "black"},
         draggable: false
     },
     {
         id: "nature-of-good",
         type: "circle",
-        position: {x: 1000, y: 200},
+        position: {x: 5595, y: 200},
         data: {label: "Nature of good being produced", background: "black"},
         draggable: false
     },
@@ -70,133 +63,133 @@ let initialNodes = [
     {
         id: "human",
         type: "circle",
-        position: {x: -1300, y: 500},
+        position: {x: -1500, y: 500},
         data: {label: "Human"},
         draggable: false
     },
     {
         id: "player",
         type: "circle",
-        position: {x: -1000, y: 500},
+        position: {x: -700, y: 500},
         data: {label: "Player"},
         draggable: false
     },
     {
         id: "worker",
         type: "circle",
-        position: {x: -700, y: 500},
+        position: {x: -100, y: 500},
         data: {label: "Worker"},
         draggable: false
     },
     {
         id: "subject-awareness",
         type: "circle",
-        position: {x: -400, y: 500},
+        position: {x: 300, y: 500},
         data: {label: "Subject Awareness"},
         draggable: false
     },
     {
         id: "acceptance-voluntariness",
         type: "circle",
-        position: {x: -200, y: 500},
+        position: {x: 700, y: 500},
         data: {label: "Subject Voluntariness"},
         draggable: false
     },
     {
         id: "precursor-subject",
         type: "circle",
-        position: {x: 0, y: 500},
+        position: {x: 1100, y: 500},
         data: {label: "Precursor Subject"},
         draggable: false
     },
     {
         id: "goal-communication",
         type: "circle",
-        position: {x: 200, y: 500},
+        position: {x: 1600, y: 500},
         data: {label: "Goal Communication"},
         draggable: false
     },
     {
         id: "goal-participation",
         type: "circle",
-        position: {x: 400, y: 500},
+        position: {x: 2185, y: 500},
         data: {label: "Goal participation(in defining the goal)", size: 130},
         draggable: false
     },
     {
         id: "goal-clarity",
         type: "circle",
-        position: {x: 600, y: 500},
+        position: {x: 2800, y: 500},
         data: {label: "Goal Clarity"},
         draggable: false
     },
     {
         id: "task-variety",
         type: "circle",
-        position: {x: 800, y: 500},
+        position: {x: 3400, y: 500},
         data: {label: "Task Variety"},
         draggable: false
     },
     {
         id: "task-specificity",
         type: "circle",
-        position: {x: 1000, y: 500},
+        position: {x: 4000, y: 500},
         data: {label: "Task Specificity"},
         draggable: false
     },
     {
         id: "task-identification",
         type: "circle",
-        position: {x: 1200, y: 500},
+        position: {x: 4500, y: 500},
         data: {label: "Task Identification"},
         draggable: false
     },
     {
         id: "required-skills",
         type: "circle",
-        position: {x: 1400, y: 500},
+        position: {x: 4900, y: 500},
         data: {label: "Required Skills"},
         draggable: false
     },
     {
         id: "social-structure-xor",
         type: "operator",
-        position: {x: 1600, y: 400},
+        position: {x: 5225, y: 400},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "hierarchy-neutral",
         type: "circle",
-        position: {x: 1600, y: 500},
+        position: {x: 5100, y: 500},
         data: {label: "Hierarchy-Neutral"},
         draggable: false
     },
     {
         id: "hierarchical",
         type: "circle",
-        position: {x: 1800, y: 500},
+        position: {x: 5300, y: 500},
         data: {label: "Hierarchical"},
         draggable: false
     },
     {
         id: "nature-of-good-xor",
         type: "operator",
-        position: {x: 2000, y: 400},
+        position: {x: 5620, y: 400},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "public-good-non-rival-non-exclusive",
         type: "circle",
-        position: {x: 2000, y: 500},
+        position: {x: 5500, y: 500},
         data: {label: "Public Good(Non Rival, Non Exclusive)", size: 140},
         draggable: false
     },
     {
         id: "private-good-rival-exclusive",
         type: "circle",
-        position: {x: 2200, y: 500},
+        position: {x: 5700, y: 500},
         data: {label: "Private Good(Rival, Exclusive)"},
         draggable: false
     },
@@ -205,7 +198,7 @@ let initialNodes = [
     {
         id: "gender",
         type: "circle",
-        position: {x: -1500, y: 700},
+        position: {x: -1700, y: 700},
         data: {label: "Gender", background: "black"},
         draggable: false
     },
@@ -219,84 +212,84 @@ let initialNodes = [
     {
         id: "player-type",
         type: "circle",
-        position: {x: -1100, y: 700},
+        position: {x: -700, y: 700},
         data: {label: "Player Type", background: "black"},
         draggable: false
     },
     {
         id: "employed",
         type: "circle",
-        position: {x: -900, y: 700},
+        position: {x: -100, y: 700},
         data: {label: "Employed", background: "black"},
         draggable: false
     },
     {
         id: "expertise-level",
         type: "circle",
-        position: {x: -700, y: 700},
+        position: {x: 300, y: 700},
         data: {label: "Expertise Level", background: "black"},
         draggable: false
     },
     {
         id: "mandatory",
         type: "circle",
-        position: {x: -500, y: 700},
+        position: {x: 700, y: 700},
         data: {label: "Mandatory", background: "black"},
         draggable: false
     },
     {
         id: "existing",
         type: "circle",
-        position: {x: -300, y: 700},
+        position: {x: 1100, y: 700},
         data: {label: "Existing", background: "black"},
         draggable: false
     },
     {
         id: "communication-level",
         type: "circle",
-        position: {x: -100, y: 700},
+        position: {x: 1600, y: 700},
         data: {label: "Communication Level", background: "black"},
         draggable: false
     },
     {
         id: "participation-level",
         type: "circle",
-        position: {x: 100, y: 700},
+        position: {x: 2200, y: 700},
         data: {label: "Participation Level", background: "black"},
         draggable: false
     },
     {
         id: "clarity-level",
         type: "circle",
-        position: {x: 300, y: 700},
+        position: {x: 2800, y: 700},
         data: {label: "Clarity Level", background: "black"},
         draggable: false
     },
     {
         id: "variety-level",
         type: "circle",
-        position: {x: 500, y: 700},
+        position: {x: 3400, y: 700},
         data: {label: "Variety Level", background: "black"},
         draggable: false
     },
     {
         id: "specificity-level",
         type: "circle",
-        position: {x: 700, y: 700},
+        position: {x: 4000, y: 700},
         data: {label: "Specificity Level", background: "black"},
         draggable: false
     },
     {
         id: "identification-level",
         type: "circle",
-        position: {x: 900, y: 700},
+        position: {x: 4500, y: 700},
         data: {label: "Identification Level", background: "black"},
         draggable: false
     },
     {
         id: "skill-kind",
         type: "circle",
-        position: {x: 1100, y: 700},
+        position: {x: 4900, y: 700},
         data: {label: "Skill Kind", background: "black"},
         draggable: false
     },
@@ -305,7 +298,7 @@ let initialNodes = [
     {
         id: "gender-xor",
         type: "operator",
-        position: {x: -1700, y: 900},
+        position: {x: -1675, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -326,7 +319,7 @@ let initialNodes = [
     {
         id: "age-xor",
         type: "operator",
-        position: {x: -1300, y: 900},
+        position: {x: -1275, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -375,7 +368,7 @@ let initialNodes = [
     {
         id: "employed-xor",
         type: "operator",
-        position: {x: -100, y: 900},
+        position: {x: -75, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -396,7 +389,7 @@ let initialNodes = [
     {
         id: "expertise-level-xor",
         type: "operator",
-        position: {x: 300, y: 900},
+        position: {x: 325, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -417,7 +410,7 @@ let initialNodes = [
     {
         id: "mandatory-xor",
         type: "operator",
-        position: {x: 700, y: 900},
+        position: {x: 725, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -438,7 +431,7 @@ let initialNodes = [
     {
         id: "existing-xor",
         type: "operator",
-        position: {x: 1100, y: 900},
+        position: {x: 1125, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -459,7 +452,7 @@ let initialNodes = [
     {
         id: "communication-xor",
         type: "operator",
-        position: {x: 1600, y: 900},
+        position: {x: 1625, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -487,7 +480,7 @@ let initialNodes = [
     {
         id: "participation-xor",
         type: "operator",
-        position: {x: 2200, y: 900},
+        position: {x: 2225, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -515,7 +508,7 @@ let initialNodes = [
     {
         id: "clarity-xor",
         type: "operator",
-        position: {x: 2700, y: 900},
+        position: {x: 2825, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
@@ -529,112 +522,112 @@ let initialNodes = [
     {
         id: "clarity-medium",
         type: "circle",
-        position: {x: 2700, y: 1000},
+        position: {x: 2800, y: 1000},
         data: {label: "Medium"},
         draggable: false
     },
     {
         id: "clarity-high",
         type: "circle",
-        position: {x: 2800, y: 1000},
+        position: {x: 3000, y: 1000},
         data: {label: "High"},
         draggable: false
     },
     {
         id: "variety-xor",
         type: "operator",
-        position: {x: 3200, y: 900},
+        position: {x: 3425, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "variety-low",
         type: "circle",
-        position: {x: 3000, y: 1000},
+        position: {x: 3200, y: 1000},
         data: {label: "Low"},
         draggable: false
     },
     {
         id: "variety-medium",
         type: "circle",
-        position: {x: 3200, y: 1000},
+        position: {x: 3400, y: 1000},
         data: {label: "Medium"},
         draggable: false
     },
     {
         id: "variety-high",
         type: "circle",
-        position: {x: 3400, y: 1000},
+        position: {x: 3600, y: 1000},
         data: {label: "High"},
         draggable: false
     },
     {
         id: "specificity-xor",
         type: "operator",
-        position: {x: 3800, y: 900},
+        position: {x: 4025, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "specificity-low",
         type: "circle",
-        position: {x: 3600, y: 1000},
+        position: {x: 3800, y: 1000},
         data: {label: "Low"},
         draggable: false
     },
     {
         id: "specificity-medium",
         type: "circle",
-        position: {x: 3800, y: 1000},
+        position: {x: 4000, y: 1000},
         data: {label: "Medium"},
         draggable: false
     },
     {
         id: "specificity-high",
         type: "circle",
-        position: {x: 4000, y: 1000},
+        position: {x: 4200, y: 1000},
         data: {label: "High"},
         draggable: false
     },
     {
         id: "identification-xor",
         type: "operator",
-        position: {x: 4400, y: 900},
+        position: {x: 4525, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "identification-low",
         type: "circle",
-        position: {x: 4200, y: 1000},
+        position: {x: 4400, y: 1000},
         data: {label: "Low"},
         draggable: false
     },
     {
         id: "identification-high",
         type: "circle",
-        position: {x: 4400, y: 1000},
+        position: {x: 4600, y: 1000},
         data: {label: "High"},
         draggable: false
     },
     {
         id: "skill-kind-xor",
         type: "operator",
-        position: {x: 4700, y: 900},
+        position: {x: 4925, y: 900},
         data: {label: "XOR"},
         draggable: false
     },
     {
         id: "trivial-common",
         type: "circle",
-        position: {x: 4600, y: 1000},
+        position: {x: 4800, y: 1000},
         data: {label: "Common"},
         draggable: false
     },
     {
         id: "highly-specific",
         type: "circle",
-        position: {x: 4800, y: 1000},
+        position: {x: 5000, y: 1000},
         data: {label: "Specific"},
         draggable: false
     }
@@ -848,7 +841,6 @@ const nodeTypes = {circle: CircleNode, operator: OperatorNode};
 export default function PhaseOne() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
     const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
     return (
@@ -864,7 +856,7 @@ export default function PhaseOne() {
                     fitView
                 >
                     <Controls/>
-                    <MiniMap/>
+                    <MiniMap pannable zoomable/>
                     <Background variant="dots" gap={12} size={1}/>
                 </ReactFlow>
             </div>

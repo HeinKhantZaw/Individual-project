@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // check if it's for deployment or local development
+  base: process.env.NODE_ENV === "production" ? "/individual-project/" : "/",
   plugins: [react()],
   server: {
     host: "localhost",

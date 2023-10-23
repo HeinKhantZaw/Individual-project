@@ -16,6 +16,11 @@ const animatorsSettings= {
     }
 };
 
+const introSound = new URL('/assets/intro.webm', import.meta.url);
+const enterSound = new URL('/assets/intro2.webm', import.meta.url);
+const clickSound = new URL('/assets/click.mp3', import.meta.url);
+const hoverSound = new URL('/assets/hover.webm', import.meta.url);
+
 const bleepsSettings = {
     // Shared global audio settings.
     master: {
@@ -23,16 +28,16 @@ const bleepsSettings = {
     },
     bleeps: {
         intro: {
-            sources: [{src: '/assets/intro.webm', type: 'audio/mpeg'}],
+            sources: [{src: introSound.href, type: 'audio/mpeg'}],
         },
         enter: {
-            sources: [{src: '/assets/intro2.webm', type: 'audio/mpeg'}],
+            sources: [{src: enterSound.href, type: 'audio/mpeg'}],
         },
         click: {
-            sources: [{src: '/assets/click.mp3', type: 'audio/mpeg'}],
+            sources: [{src: clickSound.href, type: 'audio/mpeg'}],
         },
         hover: {
-            sources: [{src: '/assets/hover.webm', type: 'audio/mpeg'}],
+            sources: [{src: hoverSound.href, type: 'audio/mpeg'}],
         }
     }
 };

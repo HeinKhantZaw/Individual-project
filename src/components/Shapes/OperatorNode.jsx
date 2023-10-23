@@ -19,7 +19,7 @@ const OperatorNode = ({data}) => {
             <Handle type="source" position={Position.Left} id="operator_left"/>
             <p className={"text-xs text-center"}>{data.label}</p>
             <Handle type="source" position={Position.Right} id={"operator_right"}/>
-            <Handle type="source" position={Position.Bottom} id={"operator_bottom"}/>
+            <Handle type="source" position={Position.Bottom} id={"operator_middle"}/>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HexagonNode = () => {
+const HexagonNode = ({data}) => {
     const nodeStyle = {
         width: 100,
         height: 100,
@@ -14,7 +14,7 @@ const HexagonNode = () => {
 
     return (
         <div style={nodeStyle}>
-            <p>Hexagon</p>
+            <p className={"text-xs text-center"}>{data.label}</p>
         </div>
     );
 };

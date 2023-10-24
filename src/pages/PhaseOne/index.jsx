@@ -5,6 +5,9 @@ import "reactflow/dist/style.css";
 import MainLayout from "../../components/Layout/MainLayout.jsx";
 import CircleNode from "../../components/Shapes/CircleNode.jsx";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
+import HexagonNode from "../../components/Shapes/HexagonNode.jsx";
+import FloatingEdge from "../../components/FloatingEdge/index.jsx";
+import ConnectionLine from "../../components/ConnectionLine/index.jsx";
 
 let initialNodes = [
     {
@@ -159,14 +162,14 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "hierarchy-neutral",
+        id: "hierarchy-neutral-xor14",
         type: "circle",
         position: {x: 5100, y: 500},
         data: {label: "Hierarchy-Neutral"},
         draggable: false
     },
     {
-        id: "hierarchical",
+        id: "hierarchy-xor14",
         type: "circle",
         position: {x: 5300, y: 500},
         data: {label: "Hierarchical"},
@@ -180,14 +183,14 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "public-good-non-rival-non-exclusive",
+        id: "public-good-non-rival-non-exclusive-xor15",
         type: "circle",
         position: {x: 5500, y: 500},
         data: {label: "Public Good(Non Rival, Non Exclusive)", size: 140},
         draggable: false
     },
     {
-        id: "private-good-rival-exclusive",
+        id: "private-good-rival-exclusive-xor15",
         type: "circle",
         position: {x: 5700, y: 500},
         data: {label: "Private Good(Rival, Exclusive)"},
@@ -303,17 +306,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "male",
+        id: "male-xor1",
         type: "circle",
         position: {x: -1800, y: 1000},
-        data: {label: "Male"},
+        data: {label: "Male", isConnectable: true},
         draggable: false
     },
     {
-        id: "female",
+        id: "female-xor1",
         type: "circle",
         position: {x: -1600, y: 1000},
-        data: {label: "Female"},
+        data: {label: "Female", isConnectable: true},
         draggable: false
     },
     {
@@ -324,45 +327,45 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "young",
+        id: "young-xor2",
         type: "circle",
         position: {x: -1400, y: 1000},
-        data: {label: "Young"},
+        data: {label: "Young", isConnectable: true},
         draggable: false
     },
     {
-        id: "senior-0",
+        id: "senior0-xor2",
         type: "circle",
         position: {x: -1200, y: 1000},
-        data: {label: "Senior"},
+        data: {label: "Senior", isConnectable: true},
         draggable: false
     },
     {
         id: "socializer",
         type: "circle",
         position: {x: -1000, y: 1000},
-        data: {label: "Socializer"},
+        data: {label: "Socializer", isConnectable: true},
         draggable: false
     },
     {
         id: "achiever",
         type: "circle",
         position: {x: -800, y: 1000},
-        data: {label: "Achiever"},
+        data: {label: "Achiever", isConnectable: true},
         draggable: false
     },
     {
         id: "explorer",
         type: "circle",
         position: {x: -600, y: 1000},
-        data: {label: "Explorer"},
+        data: {label: "Explorer", isConnectable: true},
         draggable: false
     },
     {
         id: "killer",
         type: "circle",
         position: {x: -400, y: 1000},
-        data: {label: "Killer"},
+        data: {label: "Killer", isConnectable: true},
         draggable: false
     },
     {
@@ -373,17 +376,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "employed-yes",
+        id: "employed-yes-xor3",
         type: "circle",
         position: {x: -200, y: 1000},
-        data: {label: "Yes"},
+        data: {label: "Yes", isConnectable: true},
         draggable: false
     },
     {
-        id: "employed-no",
+        id: "employed-no-xor3",
         type: "circle",
         position: {x: 0, y: 1000},
-        data: {label: "No"},
+        data: {label: "No", isConnectable: true},
         draggable: false
     },
     {
@@ -394,17 +397,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "junior",
+        id: "junior-xor4",
         type: "circle",
         position: {x: 200, y: 1000},
-        data: {label: "Junior"},
+        data: {label: "Junior", isConnectable: true},
         draggable: false
     },
     {
-        id: "senior",
+        id: "senior-xor4",
         type: "circle",
         position: {x: 400, y: 1000},
-        data: {label: "Senior"},
+        data: {label: "Senior", isConnectable: true},
         draggable: false
     },
     {
@@ -415,17 +418,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "mandatory-yes",
+        id: "mandatory-yes-xor5",
         type: "circle",
         position: {x: 600, y: 1000},
-        data: {label: "Yes"},
+        data: {label: "Yes", isConnectable: true},
         draggable: false
     },
     {
-        id: "mandatory-no",
+        id: "mandatory-no-xor5",
         type: "circle",
         position: {x: 800, y: 1000},
-        data: {label: "No"},
+        data: {label: "No", isConnectable: true},
         draggable: false
     },
     {
@@ -436,17 +439,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "existing-yes",
+        id: "existing-yes-xor6",
         type: "circle",
         position: {x: 1000, y: 1000},
-        data: {label: "Yes"},
+        data: {label: "Yes", isConnectable: true},
         draggable: false
     },
     {
-        id: "existing-no",
+        id: "existing-no-xor6",
         type: "circle",
         position: {x: 1200, y: 1000},
-        data: {label: "No"},
+        data: {label: "No", isConnectable: true},
         draggable: false
     },
     {
@@ -457,24 +460,24 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "communication-low",
+        id: "communication-low-xor7",
         type: "circle",
         position: {x: 1400, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "communication-medium",
+        id: "communication-medium-xor7",
         type: "circle",
         position: {x: 1600, y: 1000},
-        data: {label: "Medium"},
+        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
-        id: "communication-high",
+        id: "communication-high-xor7",
         type: "circle",
         position: {x: 1800, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -485,24 +488,24 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "participation-low",
+        id: "participation-low-xor8",
         type: "circle",
         position: {x: 2000, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "participation-medium",
+        id: "participation-medium-xor8",
         type: "circle",
         position: {x: 2200, y: 1000},
-        data: {label: "Medium"},
+        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
-        id: "participation-high",
+        id: "participation-high-xor8",
         type: "circle",
         position: {x: 2400, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -513,24 +516,24 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "clarity-low",
+        id: "clarity-low-xor9",
         type: "circle",
         position: {x: 2600, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "clarity-medium",
+        id: "clarity-medium-xor9",
         type: "circle",
         position: {x: 2800, y: 1000},
-        data: {label: "Medium"},
+        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
-        id: "clarity-high",
+        id: "clarity-high-xor9",
         type: "circle",
         position: {x: 3000, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -541,24 +544,24 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "variety-low",
+        id: "variety-low-xor10",
         type: "circle",
         position: {x: 3200, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "variety-medium",
+        id: "variety-medium-xor10",
         type: "circle",
         position: {x: 3400, y: 1000},
-        data: {label: "Medium"},
+        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
-        id: "variety-high",
+        id: "variety-high-xor10",
         type: "circle",
         position: {x: 3600, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -569,24 +572,24 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "specificity-low",
+        id: "specificity-low-xor11",
         type: "circle",
         position: {x: 3800, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "specificity-medium",
+        id: "specificity-medium-xor11",
         type: "circle",
         position: {x: 4000, y: 1000},
-        data: {label: "Medium"},
+        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
-        id: "specificity-high",
+        id: "specificity-high-xor11",
         type: "circle",
         position: {x: 4200, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -597,17 +600,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "identification-low",
+        id: "identification-low-xor12",
         type: "circle",
         position: {x: 4400, y: 1000},
-        data: {label: "Low"},
+        data: {label: "Low", isConnectable: true},
         draggable: false
     },
     {
-        id: "identification-high",
+        id: "identification-high-xor12",
         type: "circle",
         position: {x: 4600, y: 1000},
-        data: {label: "High"},
+        data: {label: "High", isConnectable: true},
         draggable: false
     },
     {
@@ -618,19 +621,27 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "trivial-common",
+        id: "trivial-common-xor13",
         type: "circle",
         position: {x: 4800, y: 1000},
-        data: {label: "Common"},
+        data: {label: "Common", isConnectable: true},
         draggable: false
     },
     {
-        id: "highly-specific",
+        id: "highly-specific-xor13",
         type: "circle",
         position: {x: 5000, y: 1000},
-        data: {label: "Specific"},
+        data: {label: "Specific", isConnectable: true},
         draggable: false
-    }
+    },
+
+    // final layer
+    {
+        id: "phase-one-result",
+        type: "hexagon",
+        position: {x: 2125, y: 1500},
+        draggable: true,
+    },
 ];
 const initialEdges = [
     // 1st edge
@@ -660,14 +671,14 @@ const initialEdges = [
         id: "e2l-22",
         source: "social-structure-xor",
         sourceHandle: "operator_left",
-        target: "hierarchy-neutral",
+        target: "hierarchy-neutral-xor14",
         type: "straight"
     },
     {
         id: "e2r-23",
         source: "social-structure-xor",
         sourceHandle: "operator_right",
-        target: "hierarchical",
+        target: "hierarchy-xor14",
         type: "straight"
     },
     {id: "e2-24", source: "nature-of-good", target: "nature-of-good-xor", type: "straight"},
@@ -675,14 +686,14 @@ const initialEdges = [
         id: "e2l-25",
         source: "nature-of-good-xor",
         sourceHandle: "operator_left",
-        target: "public-good-non-rival-non-exclusive",
+        target: "public-good-non-rival-non-exclusive-xor15",
         type: "straight"
     },
     {
         id: "e2r-26",
         source: "nature-of-good-xor",
         sourceHandle: "operator_right",
-        target: "private-good-rival-exclusive",
+        target: "private-good-rival-exclusive-xor15",
         type: "straight"
     },
 
@@ -720,128 +731,141 @@ const initialEdges = [
     {id: "e4-55", source: "specificity-level", target: "specificity-xor", type: "straight"},
     {id: "e4-56", source: "identification-level", target: "identification-xor", type: "straight"},
     {id: "e4-57", source: "skill-kind", target: "skill-kind-xor", type: "straight"},
-    {id: "e4l-58", source: "gender-xor", sourceHandle: "operator_left", target: "male", type: "straight"},
-    {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "female", type: "straight"},
-    {id: "e4l-60", source: "age-xor", sourceHandle: "operator_left", target: "young", type: "straight"},
-    {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior-0", type: "straight"},
-    {id: "e4l-62", source: "employed-xor", sourceHandle: "operator_left", target: "employed-yes", type: "straight"},
-    {id: "e4r-63", source: "employed-xor", sourceHandle: "operator_right", target: "employed-no", type: "straight"},
-    {id: "e4l-64", source: "expertise-level-xor", sourceHandle: "operator_left", target: "junior", type: "straight"},
-    {id: "e4r-65", source: "expertise-level-xor", sourceHandle: "operator_right", target: "senior", type: "straight"},
-    {id: "e4l-66", source: "mandatory-xor", sourceHandle: "operator_left", target: "mandatory-yes", type: "straight"},
-    {id: "e4r-67", source: "mandatory-xor", sourceHandle: "operator_right", target: "mandatory-no", type: "straight"},
-    {id: "e4l-68", source: "existing-xor", sourceHandle: "operator_left", target: "existing-yes", type: "straight"},
-    {id: "e4r-69", source: "existing-xor", sourceHandle: "operator_right", target: "existing-no", type: "straight"},
+    {id: "e4l-58", source: "gender-xor", sourceHandle: "operator_left", target: "male-xor1", type: "straight"},
+    {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "female-xor1", type: "straight"},
+    {id: "e4l-60", source: "age-xor", sourceHandle: "operator_left", target: "young-xor2", type: "straight"},
+    {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior0-xor2", type: "straight"},
+    {id: "e4l-62", source: "employed-xor", sourceHandle: "operator_left", target: "employed-yes-xor3", type: "straight"},
+    {id: "e4r-63", source: "employed-xor", sourceHandle: "operator_right", target: "employed-no-xor3", type: "straight"},
+    {id: "e4l-64", source: "expertise-level-xor", sourceHandle: "operator_left", target: "junior-xor4", type: "straight"},
+    {id: "e4r-65", source: "expertise-level-xor", sourceHandle: "operator_right", target: "senior-xor4", type: "straight"},
+    {id: "e4l-66", source: "mandatory-xor", sourceHandle: "operator_left", target: "mandatory-yes-xor5", type: "straight"},
+    {id: "e4r-67", source: "mandatory-xor", sourceHandle: "operator_right", target: "mandatory-no-xor5", type: "straight"},
+    {id: "e4l-68", source: "existing-xor", sourceHandle: "operator_left", target: "existing-yes-xor6", type: "straight"},
+    {id: "e4r-69", source: "existing-xor", sourceHandle: "operator_right", target: "existing-no-xor6", type: "straight"},
     {
         id: "e4l-70",
         source: "communication-xor",
         sourceHandle: "operator_left",
-        target: "communication-low",
+        target: "communication-low-xor7",
         type: "straight"
     },
     {
         id: "e4m-71",
         source: "communication-xor",
         sourceHandle: "operator_middle",
-        target: "communication-medium",
+        target: "communication-medium-xor7",
         type: "straight"
     },
     {
         id: "e4r-72",
         source: "communication-xor",
         sourceHandle: "operator_right",
-        target: "communication-high",
+        target: "communication-high-xor7",
         type: "straight"
     },
     {
         id: "e4l-73",
         source: "participation-xor",
         sourceHandle: "operator_left",
-        target: "participation-low",
+        target: "participation-low-xor8",
         type: "straight"
     },
     {
         id: "e4m-74",
         source: "participation-xor",
         sourceHandle: "operator_middle",
-        target: "participation-medium",
+        target: "participation-medium-xor8",
         type: "straight"
     },
     {
         id: "e4r-75",
         source: "participation-xor",
         sourceHandle: "operator_right",
-        target: "participation-high",
+        target: "participation-high-xor8",
         type: "straight"
     },
-    {id: "e4l-76", source: "clarity-xor", sourceHandle: "operator_left", target: "clarity-low", type: "straight"},
+    {id: "e4l-76", source: "clarity-xor", sourceHandle: "operator_left", target: "clarity-low-xor9", type: "straight"},
     {
         id: "e4m-77",
         source: "clarity-xor",
         sourceHandle: "operator_middle",
-        target: "clarity-medium",
+        target: "clarity-medium-xor9",
         type: "straight"
     },
-    {id: "e4r-78", source: "clarity-xor", sourceHandle: "operator_right", target: "clarity-high", type: "straight"},
-    {id: "e4l-79", source: "variety-xor", sourceHandle: "operator_left", target: "variety-low", type: "straight"},
+    {id: "e4r-78", source: "clarity-xor", sourceHandle: "operator_right", target: "clarity-high-xor9", type: "straight"},
+    {id: "e4l-79", source: "variety-xor", sourceHandle: "operator_left", target: "variety-low-xor10", type: "straight"},
     {
         id: "e4m-80",
         source: "variety-xor",
         sourceHandle: "operator_middle",
-        target: "variety-medium",
+        target: "variety-medium-xor10",
         type: "straight"
     },
-    {id: "e4r-81", source: "variety-xor", sourceHandle: "operator_right", target: "variety-high", type: "straight"},
+    {id: "e4r-81", source: "variety-xor", sourceHandle: "operator_right", target: "variety-high-xor10", type: "straight"},
     {
         id: "e4l-82",
         source: "specificity-xor",
         sourceHandle: "operator_left",
-        target: "specificity-low",
+        target: "specificity-low-xor11",
         type: "straight"
     },
     {
         id: "e4m-83",
         source: "specificity-xor",
         sourceHandle: "operator_middle",
-        target: "specificity-medium",
+        target: "specificity-medium-xor11",
         type: "straight"
     },
     {
         id: "e4r-84",
         source: "specificity-xor",
         sourceHandle: "operator_right",
-        target: "specificity-high",
+        target: "specificity-high-xor11",
         type: "straight"
     },
     {
         id: "e4l-85",
         source: "identification-xor",
         sourceHandle: "operator_left",
-        target: "identification-low",
+        target: "identification-low-xor12",
         type: "straight"
     },
     {
         id: "e4r-86",
         source: "identification-xor",
         sourceHandle: "operator_right",
-        target: "identification-high",
+        target: "identification-high-xor12",
         type: "straight"
     },
-    {id: "e4l-87", source: "skill-kind-xor", sourceHandle: "operator_left", target: "trivial-common", type: "straight"},
+    {id: "e4l-87", source: "skill-kind-xor", sourceHandle: "operator_left", target: "trivial-common-xor13", type: "straight"},
     {
         id: "e4r-88",
         source: "skill-kind-xor",
         sourceHandle: "operator_right",
-        target: "highly-specific",
+        target: "highly-specific-xor13",
         type: "straight"
     }
 ];
-const nodeTypes = {circle: CircleNode, operator: OperatorNode};
+const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonNode};
 
 export default function PhaseOne() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-    const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+    const edgeTypes = {floating: FloatingEdge};
+    const defaultEdgeOptions = {
+        style: { strokeWidth: 2, stroke: 'white' },
+        type: 'floating',
+    };
+    const connectionLineStyle = {
+        strokeWidth: 2,
+        stroke: 'grey',
+        strokeDasharray: '5,5',
+    };
+    const onConnect = useCallback((params) => setEdges((eds) => {
+        const updatedEdge = {...params, animated: true};
+        return addEdge(updatedEdge, eds);
+    }), [setEdges]);
 
     return (
         <MainLayout>
@@ -852,7 +876,11 @@ export default function PhaseOne() {
                     onNodesChange={onNodesChange}
                     onEdgesChange={onEdgesChange}
                     nodeTypes={nodeTypes}
+                    edgeTypes={edgeTypes}
                     onConnect={onConnect}
+                    defaultEdgeOptions={defaultEdgeOptions}
+                    connectionLineComponent={ConnectionLine}
+                    connectionLineStyle={connectionLineStyle}
                     fitView
                 >
                     <Controls/>

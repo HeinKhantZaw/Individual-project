@@ -1,21 +1,29 @@
-import React from "react";
+import React, {useCallback} from "react";
+import {Handle} from "reactflow";
 
-const HexagonNode = ({data}) => {
+const HexagonNode = () => {
     const nodeStyle = {
-        width: 100,
-        height: 100,
+        width: 250,
+        height: 200,
         backgroundColor: "#FEBE01",
         color: "white",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+        clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
     };
 
+    const onChange = useCallback((evt) => {
+        console.log(evt.target.value);
+    }, []);
+
     return (
-        <div style={nodeStyle}>
-            <p className={"text-xs text-center"}>{data.label}</p>
-        </div>
+        <>
+            <Handle type={"target"} position={"top"} className={"custom-handle"}/>
+            <div style={nodeStyle}>
+                <input id="text" name="text" onChange={onChange} className="nodrag"/>
+            </div>
+        </>
     );
 };
 

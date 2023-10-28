@@ -1,5 +1,5 @@
 import React, {useCallback} from "react";
-import ReactFlow, {addEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import ReactFlow, {addEdge, updateEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import MainLayout from "../../components/Layout/MainLayout.jsx";
@@ -165,14 +165,14 @@ let initialNodes = [
         id: "hierarchy-neutral-xor14",
         type: "circle",
         position: {x: 5100, y: 500},
-        data: {label: "Hierarchy-Neutral"},
+        data: {label: "Hierarchy-Neutral", isConnectable: true},
         draggable: false
     },
     {
         id: "hierarchy-xor14",
         type: "circle",
         position: {x: 5300, y: 500},
-        data: {label: "Hierarchical"},
+        data: {label: "Hierarchical", isConnectable: true},
         draggable: false
     },
     {
@@ -186,14 +186,14 @@ let initialNodes = [
         id: "public-good-non-rival-non-exclusive-xor15",
         type: "circle",
         position: {x: 5500, y: 500},
-        data: {label: "Public Good(Non Rival, Non Exclusive)", size: 140},
+        data: {label: "Public Good(Non Rival, Non Exclusive)", size: 140, isConnectable: true},
         draggable: false
     },
     {
         id: "private-good-rival-exclusive-xor15",
         type: "circle",
         position: {x: 5700, y: 500},
-        data: {label: "Private Good(Rival, Exclusive)"},
+        data: {label: "Private Good(Rival, Exclusive)", isConnectable: true},
         draggable: false
     },
 
@@ -735,14 +735,62 @@ const initialEdges = [
     {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "female-xor1", type: "straight"},
     {id: "e4l-60", source: "age-xor", sourceHandle: "operator_left", target: "young-xor2", type: "straight"},
     {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior0-xor2", type: "straight"},
-    {id: "e4l-62", source: "employed-xor", sourceHandle: "operator_left", target: "employed-yes-xor3", type: "straight"},
-    {id: "e4r-63", source: "employed-xor", sourceHandle: "operator_right", target: "employed-no-xor3", type: "straight"},
-    {id: "e4l-64", source: "expertise-level-xor", sourceHandle: "operator_left", target: "junior-xor4", type: "straight"},
-    {id: "e4r-65", source: "expertise-level-xor", sourceHandle: "operator_right", target: "senior-xor4", type: "straight"},
-    {id: "e4l-66", source: "mandatory-xor", sourceHandle: "operator_left", target: "mandatory-yes-xor5", type: "straight"},
-    {id: "e4r-67", source: "mandatory-xor", sourceHandle: "operator_right", target: "mandatory-no-xor5", type: "straight"},
-    {id: "e4l-68", source: "existing-xor", sourceHandle: "operator_left", target: "existing-yes-xor6", type: "straight"},
-    {id: "e4r-69", source: "existing-xor", sourceHandle: "operator_right", target: "existing-no-xor6", type: "straight"},
+    {
+        id: "e4l-62",
+        source: "employed-xor",
+        sourceHandle: "operator_left",
+        target: "employed-yes-xor3",
+        type: "straight"
+    },
+    {
+        id: "e4r-63",
+        source: "employed-xor",
+        sourceHandle: "operator_right",
+        target: "employed-no-xor3",
+        type: "straight"
+    },
+    {
+        id: "e4l-64",
+        source: "expertise-level-xor",
+        sourceHandle: "operator_left",
+        target: "junior-xor4",
+        type: "straight"
+    },
+    {
+        id: "e4r-65",
+        source: "expertise-level-xor",
+        sourceHandle: "operator_right",
+        target: "senior-xor4",
+        type: "straight"
+    },
+    {
+        id: "e4l-66",
+        source: "mandatory-xor",
+        sourceHandle: "operator_left",
+        target: "mandatory-yes-xor5",
+        type: "straight"
+    },
+    {
+        id: "e4r-67",
+        source: "mandatory-xor",
+        sourceHandle: "operator_right",
+        target: "mandatory-no-xor5",
+        type: "straight"
+    },
+    {
+        id: "e4l-68",
+        source: "existing-xor",
+        sourceHandle: "operator_left",
+        target: "existing-yes-xor6",
+        type: "straight"
+    },
+    {
+        id: "e4r-69",
+        source: "existing-xor",
+        sourceHandle: "operator_right",
+        target: "existing-no-xor6",
+        type: "straight"
+    },
     {
         id: "e4l-70",
         source: "communication-xor",
@@ -793,7 +841,13 @@ const initialEdges = [
         target: "clarity-medium-xor9",
         type: "straight"
     },
-    {id: "e4r-78", source: "clarity-xor", sourceHandle: "operator_right", target: "clarity-high-xor9", type: "straight"},
+    {
+        id: "e4r-78",
+        source: "clarity-xor",
+        sourceHandle: "operator_right",
+        target: "clarity-high-xor9",
+        type: "straight"
+    },
     {id: "e4l-79", source: "variety-xor", sourceHandle: "operator_left", target: "variety-low-xor10", type: "straight"},
     {
         id: "e4m-80",
@@ -802,7 +856,13 @@ const initialEdges = [
         target: "variety-medium-xor10",
         type: "straight"
     },
-    {id: "e4r-81", source: "variety-xor", sourceHandle: "operator_right", target: "variety-high-xor10", type: "straight"},
+    {
+        id: "e4r-81",
+        source: "variety-xor",
+        sourceHandle: "operator_right",
+        target: "variety-high-xor10",
+        type: "straight"
+    },
     {
         id: "e4l-82",
         source: "specificity-xor",
@@ -838,7 +898,13 @@ const initialEdges = [
         target: "identification-high-xor12",
         type: "straight"
     },
-    {id: "e4l-87", source: "skill-kind-xor", sourceHandle: "operator_left", target: "trivial-common-xor13", type: "straight"},
+    {
+        id: "e4l-87",
+        source: "skill-kind-xor",
+        sourceHandle: "operator_left",
+        target: "trivial-common-xor13",
+        type: "straight"
+    },
     {
         id: "e4r-88",
         source: "skill-kind-xor",
@@ -853,19 +919,31 @@ export default function PhaseOne() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const edgeTypes = {floating: FloatingEdge};
+    const regexForXor = /xor(\d+)$/;
+
     const defaultEdgeOptions = {
-        style: { strokeWidth: 2, stroke: 'white' },
+        style: {strokeWidth: 2, stroke: 'white'},
         type: 'floating',
     };
     const connectionLineStyle = {
-        strokeWidth: 2,
+        strokeWidth: 3,
         stroke: 'grey',
         strokeDasharray: '5,5',
     };
-    const onConnect = useCallback((params) => setEdges((eds) => {
-        const updatedEdge = {...params, animated: true};
-        return addEdge(updatedEdge, eds);
-    }), [setEdges]);
+
+    const onConnect = useCallback((params) => {
+        const {source} = params;
+        const xorNode = source.match(regexForXor);
+
+        setEdges((edges) => {
+            if (xorNode) {
+                edges = edges.filter((edge) => !edge.source.includes(xorNode[0]));
+            }
+            const updatedEdge = {...params, animated: true};
+            return addEdge(updatedEdge, edges);
+        });
+    }, [setEdges]);
+
 
     return (
         <MainLayout>
@@ -881,6 +959,7 @@ export default function PhaseOne() {
                     defaultEdgeOptions={defaultEdgeOptions}
                     connectionLineComponent={ConnectionLine}
                     connectionLineStyle={connectionLineStyle}
+                    deleteKeyCode={''}
                     fitView
                 >
                     <Controls/>

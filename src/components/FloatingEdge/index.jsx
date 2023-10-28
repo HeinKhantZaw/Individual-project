@@ -27,6 +27,7 @@ function FloatingEdge({ id, source, target, markerEnd, style }) {
             d={edgePath}
             markerEnd={markerEnd}
             style={{
+                strokeWidth: 4,
                 backgroundColor: "white"
             }}
         />

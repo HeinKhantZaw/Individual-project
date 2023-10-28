@@ -11,8 +11,8 @@ function ConnectionLine({ fromX, fromY, toX, toY, connectionLineStyle }) {
 
     return (
         <g>
-            <path style={connectionLineStyle} d={edgePath} />
-            <circle cx={toX} cy={toY} fill="white" r={3} stroke="white" strokeWidth={1.5} />
+            <path style={connectionLineStyle} d={edgePath}/>
+            <circle cx={toX} cy={toY} fill="white" r={3} stroke="white" strokeWidth={4} />
         </g>
     );
 }

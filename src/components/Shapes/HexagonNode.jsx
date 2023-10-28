@@ -21,7 +21,7 @@ const HexagonNode = () => {
         <>
             <Handle type={"target"} position={"top"} className={"custom-handle"}/>
             <div style={nodeStyle}>
-                <input id="text" name="text" onChange={onChange} className="nodrag"/>
+                <input id="text" name="text" onChange={onChange} className="w-5/6 nodrag text-center text-2xl"/>
             </div>
         </>
     );

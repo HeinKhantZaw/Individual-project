@@ -12,11 +12,12 @@ export default function MainLayout({children}) {
                         <a href="/" className="flex items-center">
                             <img src="/assets/logo.png" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
                             <span
-                                className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">AGON-I</span>
+                                className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Web-Agon</span>
                         </a>
                         <div className="flex items-center lg:order-2">
                             <Button animate className={"font-semibold text-lg custom-button"}
                                     buttonProps={{onMouseEnter: () => bleeps.hover?.play()}}
+
                             >
                                 Next Phase
                             </Button>

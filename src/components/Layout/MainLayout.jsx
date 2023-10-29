@@ -7,7 +7,7 @@ import {Outlet, useNavigate} from "react-router-dom";
 export default function MainLayout() {
     const bleeps = useBleeps();
     const navigate = useNavigate();
-    const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.nextPhase);
+    const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.phaseStatus);
     const goToNextPhase = () => {
         switch (currentPhase) {
             case 1:
@@ -33,6 +33,10 @@ export default function MainLayout() {
                 break;
         }
     }
+    const goToPhase1 = () => {
+        navigate("/app");
+    }
+    console.log(currentPhase);
     return (
         <div className="holy-grail">
             <header>
@@ -52,38 +56,38 @@ export default function MainLayout() {
                                 Next Phase
                             </Button>
                         </div>
-                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0" key={currentPhase}>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} layer={"secondary"}>
+                                <Button animate className={"font-semibold text-lg phase-button"} layer={"secondary"} onClick={goToPhase1}>
                                     Phase 1
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled
+                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {currentPhase < 2}
                                         layer={"secondary"}>
                                     Phase 2
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled
+                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {2 < currentPhase < 3}
                                         layer={"secondary"}>
                                     Phase 3
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled
+                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {currentPhase < 4}
                                         layer={"secondary"}>
                                     Phase 4
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled
+                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {currentPhase < 5}
                                         layer={"secondary"}>
                                     Phase 5
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled
+                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {currentPhase < 6}
                                         layer={"secondary"}>
                                     Phase 6
                                 </Button>

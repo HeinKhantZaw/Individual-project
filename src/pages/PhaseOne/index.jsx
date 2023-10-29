@@ -9,7 +9,7 @@ import FloatingEdge from "../../components/FloatingEdge/index.jsx";
 import ConnectionLine from "../../components/ConnectionLine/index.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {connectEdge} from "../../redux/slices/phaseOneSlice.jsx";
-import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/nextPhaseSlice.jsx";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 
 let initialNodes = [
     {
@@ -649,11 +649,11 @@ const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonN
 
 export default function PhaseOne() {
     const {edgeState} = useSelector((state) => state.phaseOne);
-    const [nodes, onNodesChange] = useNodesState(initialNodes);
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const edgeTypes = {floating: FloatingEdge};
     const dispatch = useDispatch()
-    const {nextPhaseEnabled} = useSelector((state) => state.nextPhase);
+    const {nextPhaseEnabled} = useSelector((state) => state.phaseStatus);
 
     useEffect(() => {
         dispatch(setCurrentPhase(1))

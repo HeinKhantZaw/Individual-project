@@ -97,3 +97,6 @@ button:focus-visible {
     border: none;
     opacity: 0;
 }
+.react-flow__node-oval {
+    z-index: -1 !important;
+}

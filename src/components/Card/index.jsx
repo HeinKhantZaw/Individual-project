@@ -7,10 +7,12 @@ import {FrameSVGCorners} from "@arwes/react";
 import {createAppTheme} from '@arwes/theme';
 import {Text} from "@arwes/react-text";
 import Button from "arwes/lib/Button/index.js";
+import {useNavigate} from "react-router-dom";
 
 const Card = () => {
     const theme = createAppTheme();
     const bleeps = useBleeps();
+    const navigate = useNavigate();
 
     return (
         <Animator merge combine manager='stagger'>
@@ -47,14 +49,14 @@ const Card = () => {
 
                 <Animator>
                     <Text as='h1' className={"font-medium text-3xl"}
-                    style={{
-                        color: theme.colors.primary.main(4),
-                        borderBottomWidth: '1px',
-                        fontFamily: theme.fontFamilies.code,
-                        borderBottomStyle: 'solid',
-                        borderBottomColor: theme.colors.primary.main(4),
-                        paddingBottom: theme.space(3),
-                    }}
+                          style={{
+                              color: theme.colors.primary.main(4),
+                              borderBottomWidth: '1px',
+                              fontFamily: theme.fontFamilies.code,
+                              borderBottomStyle: 'solid',
+                              borderBottomColor: theme.colors.primary.main(4),
+                              paddingBottom: theme.space(3),
+                          }}
                     >
                         Welcome!
                     </Text>
@@ -74,7 +76,7 @@ const Card = () => {
                 <Button animate className={"font-semibold text-lg custom-button"} id={"enter-btn"}
                         buttonProps={{
                             onMouseEnter: () => bleeps.hover?.play(),
-                            onClick: () => window.location.href = "/home",
+                            onClick: () => navigate("home"),
                         }}
                 >
                     Enter

@@ -1,6 +1,5 @@
 import Frame from "arwes/lib/Frame/Frame.js";
 import {createTheme} from "arwes";
-import Button from "arwes/lib/Button/index.js";
 import Card from "../../components/Card/index.jsx";
 
 export default function Intro() {

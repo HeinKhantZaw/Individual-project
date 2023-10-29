@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import HomeBackground from "../../components/Background/HomeBackground.jsx";
 import {Animator} from "@arwes/react-animator";
 import {Text} from "@arwes/react-text";
@@ -19,7 +19,7 @@ export default function Home() {
         document.getElementById("get-started").style.backgroundColor = "";
     }
     const clickFunc = () => {
-        window.location.href = "/one";
+        window.location.href = "/app";
     }
     useEffect(() => {
         document.getElementById("get-started").classList.add("animate-pulse");
@@ -37,7 +37,7 @@ export default function Home() {
                             }}/>
                         <h1 className={"font-semibold text-5xl"}>
                             <Text manager="decipher" easing="outSine" fixed>
-                                AGON - I
+                                WEB-AGON
                             </Text>
                         </h1>
                     </Animator>

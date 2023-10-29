@@ -1,6 +1,8 @@
 import Home from "../pages/Start/index.jsx";
 import PhaseOne from "../pages/PhaseOne/index.jsx";
 import Intro from "../pages/Intro/index.jsx";
+import PhaseTwo from "../pages/PhaseTwo/index.jsx";
+import MainLayout from "../components/Layout/MainLayout.jsx";
 
 const routes = [
     {
@@ -12,8 +14,18 @@ const routes = [
         element: <Home/>,
     },
     {
-        path: "/one",
-        element: <PhaseOne/>
-    }
+        path: "/app",
+        element: <MainLayout/>,
+        children: [
+            {
+                index: true,
+                element: <PhaseOne />
+            },
+            {
+                path: "phase2",
+                element: <PhaseTwo/>
+            }
+        ]
+    },
 ]
 export default routes;

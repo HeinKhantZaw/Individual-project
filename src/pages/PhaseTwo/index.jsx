@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect} from "react";
-import ReactFlow, {addEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import ReactFlow, {addEdge, Controls, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import CircleNode from "../../components/Shapes/CircleNode.jsx";
@@ -647,9 +647,9 @@ let initialNodes = [
 ];
 const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonNode};
 
-export default function PhaseOne() {
+export default function PhaseTwo() {
     const {edgeState} = useSelector((state) => state.phaseOne);
-    const [nodes, onNodesChange] = useNodesState(initialNodes);
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const edgeTypes = {floating: FloatingEdge};
     const dispatch = useDispatch()
@@ -709,8 +709,6 @@ export default function PhaseOne() {
                 fitView
             >
                 <Controls/>
-                <MiniMap pannable zoomable/>
-                <Background variant="dots" gap={12} size={1}/>
             </ReactFlow>
         </div>
     );

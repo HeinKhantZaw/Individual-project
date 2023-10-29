@@ -4,8 +4,8 @@ const initialState = {
     nextPhaseEnabled: false,
     currentPhase: 1,
 }
-export const nextPhaseSlice = createSlice({
-    name: 'nextPhaseState',
+export const phaseStatusSlice = createSlice({
+    name: 'phaseStatus',
     initialState,
     reducers: {
         setNextPhaseEnabled: (state, action) => {
@@ -17,6 +17,6 @@ export const nextPhaseSlice = createSlice({
     },
 });
 
-export const {setNextPhaseEnabled, setCurrentPhase} = nextPhaseSlice.actions;
+export const {setNextPhaseEnabled, setCurrentPhase} = phaseStatusSlice.actions;
 
-export default nextPhaseSlice.reducer;
+export default phaseStatusSlice.reducer;

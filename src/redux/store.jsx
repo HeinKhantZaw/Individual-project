@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import phaseOneReducer from "./slices/phaseOneSlice.jsx";
-import nextPhaseReducer from "./slices/nextPhaseSlice.jsx";
+import phaseStatusReducer from "./slices/phaseStatusSlice.jsx";
 
 export const store = configureStore({
     reducer: {
-        nextPhase: nextPhaseReducer,
+        phaseStatus: phaseStatusReducer,
         phaseOne: phaseOneReducer
     }
 })

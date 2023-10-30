@@ -948,7 +948,7 @@ let initialEdges = [
     },
 
     {
-        "id": "e6-63",
+        "id": "e6-64",
         "source": "create-assistance-systems",
         "target": "improve-minor-assistance-3",
         "type": "straight",
@@ -956,7 +956,7 @@ let initialEdges = [
         "markerStart": markerConfig
     },
     {
-        "id": "e6-64",
+        "id": "e6-65",
         "source": "create-assistance-systems",
         "target": "improve-system-awareness-5",
         "type": "straight",
@@ -964,7 +964,7 @@ let initialEdges = [
         "markerStart": markerConfig
     },
     {
-        "id": "e6-65",
+        "id": "e6-66",
         "source": "create-assistance-systems",
         "target": "support-skill-improvement-6",
         "type": "straight",
@@ -972,7 +972,7 @@ let initialEdges = [
         "markerStart": markerConfig
     },
     {
-        "id": "e6-66",
+        "id": "e6-67",
         "source": "increase-chances-for-improving-social-status",
         "target": "improve-perceived-status",
         "targetHandle": "oval_left",
@@ -981,7 +981,7 @@ let initialEdges = [
         "markerStart": markerConfig
     },
     {
-        "id": "e6-67",
+        "id": "e6-68",
         "source": "increase-chances-for-a-promotion",
         "target": "improve-perceived-status",
         "targetHandle": "oval_right",

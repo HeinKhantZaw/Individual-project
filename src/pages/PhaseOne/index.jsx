@@ -336,7 +336,7 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "senior0-xor2",
+        id: "senior-xor2",
         type: "circle",
         position: {x: -1200, y: 1000},
         data: {label: "Senior", isConnectable: true},
@@ -680,6 +680,7 @@ export default function PhaseOne() {
 
     const onConnect = useCallback((params) => {
         const {source} = params;
+        const value = source.split("-")[0];
         const xorNode = source.match(regexForXor);
 
         setEdges((edges) => {

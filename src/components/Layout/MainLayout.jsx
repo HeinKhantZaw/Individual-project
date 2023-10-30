@@ -36,7 +36,6 @@ export default function MainLayout() {
     const goToPhase1 = () => {
         navigate("/app");
     }
-    console.log(currentPhase);
     return (
         <div className="holy-grail">
             <header>

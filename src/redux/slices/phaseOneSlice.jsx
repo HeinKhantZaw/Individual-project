@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {PhaseOneKeyValue, PhaseOneSecondaryLogic} from "../../data/PhaseOneKeyValue.jsx";
 
 const initialEdges = [
     // 1st edge
@@ -91,7 +92,7 @@ const initialEdges = [
     {id: "e4l-58", source: "gender-xor", sourceHandle: "operator_left", target: "male-xor1", type: "straight"},
     {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "female-xor1", type: "straight"},
     {id: "e4l-60", source: "age-xor", sourceHandle: "operator_left", target: "young-xor2", type: "straight"},
-    {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior0-xor2", type: "straight"},
+    {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior-xor2", type: "straight"},
     {
         id: "e4l-62",
         source: "employed-xor",
@@ -272,7 +273,8 @@ const initialEdges = [
 ];
 const initialState = {
     edgeState: initialEdges,
-    resultName: ""
+    resultName: "",
+    selectedNodes: []
 }
 
 export const phaseOneSlice = createSlice({
@@ -281,6 +283,17 @@ export const phaseOneSlice = createSlice({
     reducers: {
         connectEdge: (state, action) => {
             state.edgeState = action.payload
+            state.selectedNodes = [] // reset selected nodes
+            const result = state.edgeState.slice(87)
+            for (const edge of result) {
+                PhaseOneKeyValue[edge.source] && state.selectedNodes.push(PhaseOneKeyValue[edge.source]);
+            }
+            for (const logic of PhaseOneSecondaryLogic) {
+                const {requiredNodes, resultNode} = logic;
+                if (resultNode && requiredNodes.every(node => state.selectedNodes.includes(node))) {
+                    state.selectedNodes.push(resultNode);
+                }
+            }
         },
         updateResultName: (state, action) => {
             state.resultName = action.payload

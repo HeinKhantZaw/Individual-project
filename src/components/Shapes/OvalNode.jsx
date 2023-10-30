@@ -16,7 +16,10 @@ const OvalNode = ({data}) => {
     const noTopHandle = data.top === "no";
     return (
         <div style={nodeStyle}>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"circle_top"}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"}/>}
+            {data.left && <Handle type="target" position={Position.Left} id={"oval_left"}/>}
+            {data.right && <Handle type="target" position={Position.Right} id={"oval_right"}/>}
+            {data.bottom && <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"}/>}
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
                     &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
@@ -26,7 +29,7 @@ const OvalNode = ({data}) => {
                     {data.num}
                 </p>
             </div>
-            <Handle type="source" position={Position.Bottom} id={"circle_bottom"} className={"custom-handle"} isConnectable={false}
+            <Handle type="source" position={Position.Bottom} id={"oval_bottom"} className={"custom-handle"} isConnectable={false}
             />
         </div>
     );

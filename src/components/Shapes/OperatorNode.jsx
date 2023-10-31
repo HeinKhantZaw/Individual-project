@@ -15,11 +15,11 @@ const OperatorNode = ({data}) => {
 
     return (
         <div style={nodeStyle}>
-            <Handle type="target" position={Position.Top} id={"operator_top"}/>
-            <Handle type="source" position={Position.Left} id="operator_left"/>
+            <Handle type="target" position={Position.Top} id={"operator_top"} isConnectable={false}/>
+            <Handle type="source" position={Position.Left} id="operator_left" isConnectable={false}/>
             <p className={"text-xs text-center"}>{data.label}</p>
-            <Handle type="source" position={Position.Right} id={"operator_right"}/>
-            <Handle type="source" position={Position.Bottom} id={"operator_middle"}/>
+            <Handle type="source" position={Position.Right} id={"operator_right"} isConnectable={false}/>
+            <Handle type="source" position={Position.Bottom} id={"operator_middle"} isConnectable={false}/>
         </div>
     );
 };

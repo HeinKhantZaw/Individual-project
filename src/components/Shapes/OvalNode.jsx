@@ -23,10 +23,11 @@ const OvalNode = ({data}) => {
             <NodeToolbar isVisible={isVisible} position={Position.Left}>
                 <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
             </NodeToolbar>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"}/>}
-            {data.left && <Handle type="target" position={Position.Left} id={"oval_left"}/>}
-            {data.right && <Handle type="target" position={Position.Right} id={"oval_right"}/>}
-            {data.bottom && <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"} isConnectable={false}/>}
+            {data.left && <Handle type="target" position={Position.Left} id={"oval_left"} isConnectable={false}/>}
+            {data.right && <Handle type="target" position={Position.Right} id={"oval_right"} isConnectable={false}/>}
+            {data.bottom &&
+                <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"} isConnectable={false}/>}
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
                     &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
@@ -36,7 +37,8 @@ const OvalNode = ({data}) => {
                     {data.num}
                 </p>
             </div>
-            <Handle type="source" position={Position.Bottom} id={"oval_bottom"} className={"custom-handle"} isConnectable={false}
+            <Handle type="source" position={Position.Bottom} id={"oval_bottom"} className={"custom-handle"}
+                    isConnectable={false}
             />
         </div>
     );

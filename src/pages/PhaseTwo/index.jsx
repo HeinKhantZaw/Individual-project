@@ -1009,6 +1009,24 @@ let initialEdges = [
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
+    },
+    {
+        id: "e7-69",
+        source: "increase-chances-for-improving-social-status",
+        target: "improve-perceived-status",
+        targetHandle: "oval_left",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e7-70",
+        source: "increase-chances-for-a-promotion",
+        target: "improve-perceived-status",
+        targetHandle: "oval_right",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     }
 ];
 

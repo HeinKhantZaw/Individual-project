@@ -17,9 +17,10 @@ const CircleNode = ({data}) => {
     const noTopHandle = data.top === "no";
     return (
         <div style={nodeStyle}>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"circle_top"}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"circle_top"} isConnectable={false}/>}
             <p className={"text-xs text-center"}>{data.label}</p>
-            <Handle type="source" position={Position.Bottom} id={"circle_bottom"} className={"custom-handle"} isConnectable={isConnectable}/>
+            <Handle type="source" position={Position.Bottom} id={"circle_bottom"} className={"custom-handle"}
+                    isConnectable={isConnectable}/>
         </div>
     );
 };

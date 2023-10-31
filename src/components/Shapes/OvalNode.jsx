@@ -1,5 +1,7 @@
-import React from "react";
-import {Handle, Position} from "reactflow";
+import React, {useState} from "react";
+import {Handle, NodeToolbar, Position} from "reactflow";
+import Card from "../Card/index.jsx";
+import {getGlossary} from "../../utils/getGlossary.jsx";
 
 const OvalNode = ({data}) => {
     const nodeStyle = {
@@ -14,8 +16,13 @@ const OvalNode = ({data}) => {
         alignItems: "center",
     };
     const noTopHandle = data.top === "no";
+    const [isVisible, setVisible] = useState(false);
+
     return (
-        <div style={nodeStyle}>
+        <div style={nodeStyle} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
+            <NodeToolbar isVisible={isVisible} position={Position.Left}>
+                <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
+            </NodeToolbar>
             {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"}/>}
             {data.left && <Handle type="target" position={Position.Left} id={"oval_left"}/>}
             {data.right && <Handle type="target" position={Position.Right} id={"oval_right"}/>}

@@ -14,7 +14,7 @@ export default function Intro() {
             classes={{}}
         >
             <div className={"inset-center"}>
-                <Card />
+                <Card isIntro={true} title={"Welcome!"} message={"Click Enter To Continue"}/>
             </div>
         </Frame>
     );

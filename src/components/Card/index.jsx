@@ -9,7 +9,7 @@ import {Text} from "@arwes/react-text";
 import Button from "arwes/lib/Button/index.js";
 import {useNavigate} from "react-router-dom";
 
-const Card = () => {
+const Card = ({isIntro, message, title, width}) => {
     const theme = createAppTheme();
     const bleeps = useBleeps();
     const navigate = useNavigate();
@@ -17,26 +17,27 @@ const Card = () => {
     return (
         <Animator merge combine manager='stagger'>
             <BleepsOnAnimator
-                transitions={{entering: 'intro'}}
+                transitions={{entering: isIntro ? 'intro' : 'expand'}}
                 continuous
             />
             <Animated
                 className='card'
                 style={{
-                    position: 'relative',
+                    zIndex: 100,
+                    position: isIntro ? 'relative' : 'absolute',
                     display: 'block',
-                    maxWidth: '300px',
+                    width: width || '300px',
                     margin: theme.space([4, 'auto']),
                     padding: theme.space(8),
                     textAlign: 'center'
                 }}
-                animated={[aaVisibility(), aa('y', '2rem', 0)]}
+                // animated={[aaVisibility(), aa('y', '10rem', 0)]}
                 onClick={() => bleeps.click?.play()}
             >
                 {/* Frame decoration and shape colors defined by CSS. */}
                 <style>{`
           .card .arwes-react-frames-framesvg [data-name=bg] {
-            color: ${theme.colors.primary.deco(1)};
+            color: ${isIntro ? theme.colors.primary.deco(1) : "rgba(38,38,38,0.77)"};
           }
           .card .arwes-react-frames-framesvg [data-name=line] {
             color: ${theme.colors.primary.main(4)};
@@ -48,8 +49,9 @@ const Card = () => {
                 </Animator>
 
                 <Animator>
-                    <Text as='h1' className={"font-medium text-3xl"}
+                    <Text className={isIntro ? "font-medium text-3xl" : "font-semibold text-xl"}
                           style={{
+                              textShadow: '0 0 3px #000',
                               color: theme.colors.primary.main(4),
                               borderBottomWidth: '1px',
                               fontFamily: theme.fontFamilies.code,
@@ -58,30 +60,33 @@ const Card = () => {
                               paddingBottom: theme.space(3),
                           }}
                     >
-                        Welcome!
+                        {title}
                     </Text>
                 </Animator>
 
                 <Animator>
                     <Text style={{
-                        color: theme.colors.primary.main(1),
+                        textShadow: '0 0 1px #000',
+                        color: theme.colors.info.main(1),
                         fontFamily: theme.fontFamilies.code,
                         paddingTop: theme.space(3),
                     }}>
-                        Click Enter To Continue
+                        {message}
                     </Text>
                 </Animator>
             </Animated>
-            <div className={"mt-6 flex items-center justify-center"}>
-                <Button animate className={"font-semibold text-lg custom-button"} id={"enter-btn"}
-                        buttonProps={{
-                            onMouseEnter: () => bleeps.hover?.play(),
-                            onClick: () => navigate("home"),
-                        }}
-                >
-                    Enter
-                </Button>
-            </div>
+            {isIntro &&
+                <div className={"mt-6 flex items-center justify-center"}>
+                    <Button animate className={"font-semibold text-lg custom-button"} id={"enter-btn"}
+                            buttonProps={{
+                                onMouseEnter: () => bleeps.hover?.play(),
+                                onClick: () => navigate("home"),
+                            }}
+                    >
+                        Enter
+                    </Button>
+                </div>
+            }
         </Animator>
     );
 };

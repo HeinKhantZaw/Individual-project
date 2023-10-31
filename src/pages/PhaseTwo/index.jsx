@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import ReactFlow, {addEdge, Background, Controls, MarkerType, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
@@ -8,6 +8,10 @@ import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStat
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
 import FloatingEdge from "../../components/FloatingEdge/index.jsx";
+import Project from "arwes/lib/Project/index.js";
+import Words from "arwes/lib/Words/Words.js";
+import {createTheme} from "arwes";
+import Card from "../../components/Card/index.jsx";
 
 const markerConfig = {
     type: MarkerType.ArrowClosed,
@@ -33,7 +37,7 @@ let initialNodes = [
     {
         id: "improve-behavioral-intention",
         type: "oval",
-        position: {x: 1190, y: 200},
+        position: {x: 250, y: 200},
         data: {label: "Improve_behavioral_intention"},
         draggable: false
     },
@@ -49,7 +53,7 @@ let initialNodes = [
     {
         id: "improve-performance-expectancy",
         type: "oval",
-        position: {x: -700, y: 500},
+        position: {x: -1650, y: 500},
         data: {label: "Improve_Performance_Expectancy"},
         draggable: false
     },
@@ -62,10 +66,10 @@ let initialNodes = [
     },
     // Right 3rd layer
     {
-        id: "improve-perceive-behavioral-control",
+        id: "improve-perceived-behavioral-control",
         type: "oval",
         position: {x: 5700, y: 500},
-        data: {label: "Improve_Perceive_Behavioral_Control"},
+        data: {label: "Improve_Perceived_Behavioral_Control"},
         draggable: false
     },
     {
@@ -77,6 +81,13 @@ let initialNodes = [
     },
 
     // Left 4th layer
+    {
+        id: "improve-perceived-usefulness",
+        type: "oval",
+        position: {x: -3000, y: 750},
+        data: {label: "Improve_Perceived_Usefulness"},
+        draggable: false
+    },
     {
         id: "improve-perceived-relative-advantage",
         type: "oval",
@@ -92,10 +103,10 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "improve-perceive-ease-of-use",
+        id: "improve-perceived-ease-of-use",
         type: "oval",
         position: {x: 2250, y: 750},
-        data: {label: "Improve_Perceive_Ease_of_Use", width: 250},
+        data: {label: "Improve_Perceived_Ease_of_Use", width: 250},
         draggable: false
     },
     {
@@ -128,7 +139,6 @@ let initialNodes = [
         data: {label: "Improve_Perceived_Compatibility"},
         draggable: false
     },
-    /////////////
     {
         id: "charge-a-person-for-assistance",
         type: "oval",
@@ -155,32 +165,59 @@ let initialNodes = [
     {
         id: "improve-perceived-speed",
         type: "oval",
+        position: {x: -3500, y: 1000},
+        data: {label: "Improve_Perceived_Speed", width: 280},
+        draggable: false
+    },
+    {
+        id: "improve-perceived-performance-quality",
+        type: "oval",
+        position: {x: -3200, y: 1000},
+        data: {label: "Improve_Perceived_Performance_Quality", width: 290},
+        draggable: false
+    },
+    {
+        id: "improve-perceived-productivity",
+        type: "oval",
+        position: {x: -2900, y: 1000},
+        data: {label: "Improve_Perceived_Productivity", width: 290},
+        draggable: false
+    },
+    {
+        id: "improve-perceived-effectiveness",
+        type: "oval",
+        position: {x: -2600, y: 1000},
+        data: {label: "Improve_Perceived_Effectiveness", width: 340},
+        draggable: false
+    },
+    {
+        id: "improve-perceived-speed-vs",
+        type: "oval",
         position: {x: -2200, y: 1000},
         data: {label: "Improve_Perceived_Speed_VS_Prev_Subj", width: 280},
         draggable: false
     },
     {
-        id: "improve-perceived-performance-quality",
+        id: "improve-perceived-performance-quality-vs",
         type: "oval",
         position: {x: -1900, y: 1000},
         data: {label: "Improve_Perceived_Performance_Quality_VS_Prev_Subj", width: 350},
         draggable: false
     },
     {
-        id: "improve-perceived-productivity",
+        id: "improve-perceived-productivity-vs",
         type: "oval",
         position: {x: -1500, y: 1000},
         data: {label: "Improve_Perceived_Productivity_VS_Prev_Subj", width: 290},
         draggable: false
     },
     {
-        id: "improve-perceived-effectiveness",
+        id: "improve-perceived-effectiveness-vs",
         type: "oval",
         position: {x: -1200, y: 1000},
         data: {label: "Improve_Perceived_Effectiveness_VS_Prev_Subj", width: 340},
         draggable: false
     },
-    /////////////////
     {
         id: "save-time-for-interesting-activities",
         type: "oval",
@@ -199,7 +236,7 @@ let initialNodes = [
         id: "improve-skills",
         type: "oval",
         position: {x: 500, y: 1000},
-        data: {label: "Improve_Skills"},
+        data: {label: "Improve_Skills", width: 300},
         draggable: false
     },
     {
@@ -209,7 +246,6 @@ let initialNodes = [
         data: {label: "Obtain_Additional_Income"},
         draggable: false
     },
-    ////////////////
     {
         id: "improve-perceived-clearness",
         type: "oval",
@@ -238,7 +274,6 @@ let initialNodes = [
         data: {label: "Improve_Perceived_Easy_Learning", width: 280},
         draggable: false
     },
-    ///////////////
     {
         id: "improve-clearness",
         type: "oval",
@@ -261,10 +296,10 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "improved-learning",
+        id: "improve-learning",
         type: "oval",
         position: {x: 4400, y: 1000},
-        data: {label: "Improved_Learning"},
+        data: {label: "Improve_Learning"},
         draggable: false
     },
 
@@ -463,7 +498,6 @@ let initialEdges = [
         type: "dotted",
         markerStart: markerConfig,
     },
-
     {
         id: "e2-2",
         source: "improve-behavioral-intention",
@@ -481,7 +515,7 @@ let initialEdges = [
     {
         id: "e2-4",
         source: "create-facilitating-conditions",
-        target: "improve-perceive-behavioral-control",
+        target: "improve-perceived-behavioral-control",
         type: "dotted",
         markerStart: markerConfig,
     },
@@ -492,503 +526,490 @@ let initialEdges = [
         type: "dotted",
         markerStart: markerConfig,
     },
-
     {
         id: "e3-6",
         source: "improve-performance-expectancy",
-        target: "improve-perceived-relative-advantage",
+        target: "improve-perceived-usefulness",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-7",
         source: "improve-performance-expectancy",
-        target: "increase-outcome-expectations",
+        target: "improve-perceived-relative-advantage",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-8",
-        source: "reduce-effort-expectancy",
-        target: "improve-perceive-ease-of-use",
+        source: "improve-performance-expectancy",
+        target: "increase-outcome-expectations",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-9",
         source: "reduce-effort-expectancy",
-        target: "improve-ease-of-use",
+        target: "improve-perceived-ease-of-use",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-10",
-        source: "improve-perceive-behavioral-control",
-        target: "improve-perceived-adequacy-on-personal-resources-needed",
+        source: "reduce-effort-expectancy",
+        target: "improve-ease-of-use",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-11",
-        source: "improve-perceive-behavioral-control",
-        target: "improve-perceived-adequacy-on-personal-knowledge-needed",
+        source: "improve-perceived-behavioral-control",
+        target: "improve-perceived-adequacy-on-personal-resources-needed",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-12",
-        source: "improve-perceive-behavioral-control",
-        target: "improve-perceived-compatibility",
+        source: "improve-perceived-behavioral-control",
+        target: "improve-perceived-adequacy-on-personal-knowledge-needed",
         type: "dotted",
         markerStart: markerConfig,
     },
-
     {
         id: "e3-13",
-        source: "increase-assistance",
-        target: "charge-a-person-for-assistance",
+        source: "improve-perceived-behavioral-control",
+        target: "improve-perceived-compatibility",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-14",
         source: "increase-assistance",
-        target: "create-assistance-group",
+        target: "charge-a-person-for-assistance",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e3-15",
         source: "increase-assistance",
-        target: "create-assistance-systems",
+        target: "create-assistance-group",
         type: "dotted",
         markerStart: markerConfig,
     },
-
     {
-        id: "e4-16",
-        source: "improve-perceived-relative-advantage",
-        target: "improve-perceived-speed",
+        id: "e3-16",
+        source: "increase-assistance",
+        target: "create-assistance-systems",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e4-17",
-        source: "improve-perceived-relative-advantage",
-        target: "improve-perceived-performance-quality",
+        source: "improve-perceived-usefulness",
+        target: "improve-perceived-speed",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e4-18",
-        source: "improve-perceived-relative-advantage",
-        target: "improve-perceived-productivity",
+        source: "improve-perceived-usefulness",
+        target: "improve-perceived-performance-quality",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
         id: "e4-19",
-        source: "improve-perceived-relative-advantage",
+        source: "improve-perceived-usefulness",
+        target: "improve-perceived-productivity",
+        type: "dotted",
+        markerStart: markerConfig,
+    },
+    {
+        id: "e4-20",
+        source: "improve-perceived-usefulness",
         target: "improve-perceived-effectiveness",
         type: "dotted",
         markerStart: markerConfig,
     },
     {
-        "id": "e4-20",
-        "source": "increase-outcome-expectations",
-        "target": "save-time-for-interesting-activities",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-21",
+        source: "improve-perceived-relative-advantage",
+        target: "improve-perceived-speed-vs",
+        type: "dotted",
+        markerStart: markerConfig,
     },
     {
-        "id": "e4-21",
-        "source": "increase-outcome-expectations",
-        "target": "increase-chances-for-improvements",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-22",
+        source: "improve-perceived-relative-advantage",
+        target: "improve-perceived-performance-quality-vs",
+        type: "dotted",
+        markerStart: markerConfig,
     },
     {
-        "id": "e4-22",
-        "source": "increase-outcome-expectations",
-        "target": "improve-skills",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-23",
+        source: "improve-perceived-relative-advantage",
+        target: "improve-perceived-productivity-vs",
+        type: "dotted",
+        markerStart: markerConfig,
     },
     {
-        "id": "e4-23",
-        "source": "increase-outcome-expectations",
-        "target": "obtain-additional-income",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-24",
+        source: "improve-perceived-relative-advantage",
+        target: "improve-perceived-effectiveness-vs",
+        type: "dotted",
+        markerStart: markerConfig,
     },
     {
-        "id": "e4-24",
-        "source": "improve-perceive-ease-of-use",
-        "target": "improve-perceived-clearness",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-25",
+        source: "increase-outcome-expectations",
+        target: "save-time-for-interesting-activities",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-25",
-        "source": "improve-perceive-ease-of-use",
-        "target": "improve-perceived-understandability",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-26",
+        source: "increase-outcome-expectations",
+        target: "increase-chances-for-improvements",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-26",
-        "source": "improve-perceive-ease-of-use",
-        "target": "improve-perceived-usability",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-27",
+        source: "increase-outcome-expectations",
+        target: "improve-skills",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-27",
-        "source": "improve-perceive-ease-of-use",
-        "target": "improve-perceived-easy-learning",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-28",
+        source: "increase-outcome-expectations",
+        target: "obtain-additional-income",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-28",
-        "source": "improve-ease-of-use",
-        "target": "improve-clearness",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-29",
+        source: "improve-perceived-ease-of-use",
+        target: "improve-perceived-clearness",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-29",
-        "source": "improve-ease-of-use",
-        "target": "improve-understandability",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-30",
+        source: "improve-perceived-ease-of-use",
+        target: "improve-perceived-understandability",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-30",
-        "source": "improve-ease-of-use",
-        "target": "improve-usability",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-31",
+        source: "improve-perceived-ease-of-use",
+        target: "improve-perceived-usability",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-31",
-        "source": "improve-ease-of-use",
-        "target": "improved-learning",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-32",
+        source: "improve-perceived-ease-of-use",
+        target: "improve-perceived-easy-learning",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-32",
-        "source": "improve-perceived-compatibility",
-        "target": "with-systems-involved",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-33",
+        source: "improve-ease-of-use",
+        target: "improve-clearness",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-33",
-        "source": "improve-perceived-compatibility",
-        "target": "with-behaviors-involved",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-34",
+        source: "improve-ease-of-use",
+        target: "improve-understandability",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-34",
-        "source": "improve-perceived-compatibility",
-        "target": "with-personal-commitments",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-35",
+        source: "improve-ease-of-use",
+        target: "improve-usability",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e4-35",
-        "source": "improve-perceived-compatibility",
-        "target": "with-personal-style",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-36",
+        source: "improve-ease-of-use",
+        target: "improve-learning",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e5-36",
-        "source": "increase-chances-for-improvements",
-        "target": "increase-chances-for-improving-social-status",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-37",
+        source: "improve-perceived-compatibility",
+        target: "with-systems-involved",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e5-37",
-        "source": "increase-chances-for-improvements",
-        "target": "increase-chances-for-a-promotion",
-        "type": "dotted",
-        "markerStart": markerConfig
+        id: "e4-38",
+        source: "improve-perceived-compatibility",
+        target: "with-behaviors-involved",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e6-38",
-        "source": "improve-perceived-relative-advantage",
-        "target": "improve-system-advantage-perception-vs-competitor-systems-via-it",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e4-39",
+        source: "improve-perceived-compatibility",
+        target: "with-personal-commitments",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e6-39",
-        "source": "increase-chances-for-improving-social-status",
-        "target": "support-achievement",
-        "targetHandle": "oval_left",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e4-40",
+        source: "improve-perceived-compatibility",
+        target: "with-personal-style",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e6-40",
-        "source": "increase-chances-for-a-promotion",
-        "target": "support-achievement",
-        "targetHandle": "oval_right",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e5-41",
+        source: "increase-chances-for-improvements",
+        target: "increase-chances-for-improving-social-status",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e6-41",
-        "source": "obtain-additional-income",
-        "target": "support-achievement",
-        "targetHandle": "oval_target_bottom",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e5-42",
+        source: "increase-chances-for-improvements",
+        target: "increase-chances-for-a-promotion",
+        type: "dotted",
+        markerStart: markerConfig
     },
     {
-        "id": "e6-42",
-        "source": "improve-skills",
-        "target": "support-skill-improvement-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-43",
+        source: "improve-perceived-relative-advantage",
+        target: "improve-system-advantage-perception-vs-competitor-systems-via-it",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-43",
-        "source": "obtain-additional-income",
-        "target": "support-skill-improvement-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-44",
+        source: "increase-chances-for-improving-social-status",
+        target: "support-achievement",
+        targetHandle: "oval_left",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-44",
-        "source": "improve-skills",
-        "target": "improve-system-awareness-2",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-45",
+        source: "increase-chances-for-a-promotion",
+        target: "support-achievement",
+        targetHandle: "oval_right",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-45",
-        "source": "obtain-additional-income",
-        "target": "improve-system-awareness-2",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-46",
+        source: "obtain-additional-income",
+        target: "support-achievement",
+        targetHandle: "oval_target_bottom",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-46",
-        "source": "improve-perceived-clearness",
-        "target": "improve-system-perception-via-it-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-47",
+        source: "improve-skills",
+        target: "support-skill-improvement-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-47",
-        "source": "improve-perceived-understandability",
-        "target": "improve-system-perception-via-it-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-48",
+        source: "obtain-additional-income",
+        target: "support-skill-improvement-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-48",
-        "source": "improve-perceived-usability",
-        "target": "improve-system-perception-via-it-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-49",
+        source: "improve-skills",
+        target: "improve-system-awareness-2",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-49",
-        "source": "improve-perceived-easy-learning",
-        "target": "improve-system-perception-via-it-3",
-        "targetHandle": "oval_target_bottom",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
-    },
-
-    {
-        "id": "e6-50",
-        "source": "improve-perceived-clearness",
-        "target": "improve-minor-assistance-2",
-        "targetHandle": "oval_left",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-50",
+        source: "obtain-additional-income",
+        target: "improve-system-awareness-2",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-51",
-        "source": "improve-perceived-understandability",
-        "target": "improve-minor-assistance-2",
-        "targetHandle": "oval_left",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-51",
+        source: "improve-perceived-clearness",
+        target: "improve-system-perception-via-it-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-52",
-        "source": "improve-perceived-usability",
-        "target": "improve-minor-assistance-2",
-        "targetHandle": "oval_left",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-52",
+        source: "improve-perceived-understandability",
+        target: "improve-system-perception-via-it-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-53",
-        "source": "improve-perceived-easy-learning",
-        "target": "improve-minor-assistance-2",
-        "targetHandle": "oval_left",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-53",
+        source: "improve-perceived-usability",
+        target: "improve-system-perception-via-it-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-54",
-        "source": "improve-clearness",
-        "target": "improve-minor-assistance-2",
-        "targetHandle": "oval_top",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-54",
+        source: "improve-perceived-easy-learning",
+        target: "improve-system-perception-via-it-3",
+        targetHandle: "oval_target_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-55",
-        "source": "improved-learning",
-        "target": "improve-system-awareness-3",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-55",
+        source: "improve-perceived-clearness",
+        target: "improve-minor-assistance-2",
+        targetHandle: "oval_left",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-56",
-        "source": "improved-learning",
-        "target": "support-skill-improvement-4",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-56",
+        source: "improve-perceived-understandability",
+        target: "improve-minor-assistance-2",
+        targetHandle: "oval_left",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-57",
-        "source": "improve-perceived-adequacy-on-personal-knowledge-needed",
-        "target": "improve-system-awareness-4",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-57",
+        source: "improve-perceived-usability",
+        target: "improve-minor-assistance-2",
+        targetHandle: "oval_left",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-58",
-        "source": "improve-perceived-adequacy-on-personal-knowledge-needed",
-        "target": "support-skill-improvement-5",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-58",
+        source: "improve-perceived-easy-learning",
+        target: "improve-minor-assistance-2",
+        targetHandle: "oval_left",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-59",
-        "source": "improve-perceived-adequacy-on-personal-resources-needed",
-        "target": "improve-system-perception-via-it-4",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-59",
+        source: "improve-clearness",
+        target: "improve-minor-assistance-2",
+        targetHandle: "oval_top",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-60",
-        "source": "improve-perceived-adequacy-on-personal-knowledge-needed",
-        "target": "improve-system-perception-via-it-4",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-60",
+        source: "improve-learning",
+        target: "improve-system-awareness-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-61",
-        "source": "improve-perceived-compatibility",
-        "target": "improve-system-perception-via-it-4",
-        "type": "step",
-        "targetHandle": "oval_right",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-61",
+        source: "improve-learning",
+        target: "support-skill-improvement-4",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-62",
-        "source": "create-assistance-systems",
-        "target": "improve-system-perception-via-it-4",
-        "type": "step",
-        "targetHandle": "oval_target_bottom",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-62",
+        source: "improve-perceived-adequacy-on-personal-knowledge-needed",
+        target: "improve-system-awareness-4",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-63",
-        "source": "create-assistance-group",
-        "target": "promote-collaboration",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
-    },
-
-    {
-        "id": "e6-64",
-        "source": "create-assistance-systems",
-        "target": "improve-minor-assistance-3",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-63",
+        source: "improve-perceived-adequacy-on-personal-knowledge-needed",
+        target: "support-skill-improvement-5",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-65",
-        "source": "create-assistance-systems",
-        "target": "improve-system-awareness-5",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-64",
+        source: "improve-perceived-adequacy-on-personal-resources-needed",
+        target: "improve-system-perception-via-it-4",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-66",
-        "source": "create-assistance-systems",
-        "target": "support-skill-improvement-6",
-        "type": "straight",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-65",
+        source: "create-assistance-systems",
+        target: "improve-system-perception-via-it-4",
+        type: "step",
+        targetHandle: "oval_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-67",
-        "source": "increase-chances-for-improving-social-status",
-        "target": "improve-perceived-status",
-        "targetHandle": "oval_left",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-66",
+        source: "create-assistance-group",
+        target: "promote-collaboration",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
     {
-        "id": "e6-68",
-        "source": "increase-chances-for-a-promotion",
-        "target": "improve-perceived-status",
-        "targetHandle": "oval_right",
-        "type": "step",
-        "style": arrowEdgeStyle,
-        "markerStart": markerConfig
+        id: "e6-67",
+        source: "create-assistance-systems",
+        target: "improve-minor-assistance-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
     },
+    {
+        id: "e6-68",
+        source: "create-assistance-systems",
+        target: "improve-system-awareness-5",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    }
 ];
 
 const nodeTypes = {oval: OvalNode, operator: OperatorNode};
@@ -997,7 +1018,7 @@ const edgeTypes = {dotted: DottedEdge};
 export default function PhaseTwo() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(setCurrentPhase(2))

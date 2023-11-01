@@ -3,7 +3,7 @@ import ReactFlow, {addEdge, Background, Controls, MarkerType, MiniMap, useEdgesS
 
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
@@ -12,11 +12,50 @@ import Project from "arwes/lib/Project/index.js";
 import Words from "arwes/lib/Words/Words.js";
 import {createTheme} from "arwes";
 import Card from "../../components/Card/index.jsx";
+function generateJSONTree(initialNodes, initialEdges) {
+    const tree = {};
+
+    // Create a map to store nodes by their ID for easy access
+    const nodeMap = new Map();
+    initialNodes.forEach((node) => {
+        nodeMap.set(node.id, node);
+    });
+
+    // Initialize the tree with nodes that don't have any parent (no incoming edges)
+    initialNodes.forEach((node) => {
+        if (!initialEdges.some((edge) => edge.target === node.id)) {
+            tree[node.id] = { ...node };
+        }
+    });
+
+    // Recursively build the tree starting from the root nodes
+    const buildTree = (parentId, parent) => {
+        const children = initialEdges
+            .filter((edge) => edge.source === parentId)
+            .map((edge) => {
+                const targetNode = nodeMap.get(edge.target);
+                return {
+                    ...targetNode,
+                    children: buildTree(targetNode.id, targetNode),
+                };
+            });
+
+        return children.length > 0 ? children : null;
+    };
+
+    for (const rootId in tree) {
+        tree[rootId].children = buildTree(rootId, tree[rootId]);
+    }
+
+    // Return the root nodes (usually there's just one root)
+    return Object.values(tree);
+}
+
 
 const markerConfig = {
     type: MarkerType.ArrowClosed,
     width: 30,
-    height: 30,
+    height: 20,
     color: '#fff',
 };
 const arrowEdgeStyle = {
@@ -38,7 +77,7 @@ let initialNodes = [
         id: "improve-behavioral-intention",
         type: "oval",
         position: {x: 250, y: 200},
-        data: {label: "Improve_behavioral_intention"},
+        data: {label: "Improve_Behavioral_Intention"},
         draggable: false
     },
     {
@@ -179,8 +218,8 @@ let initialNodes = [
     {
         id: "improve-perceived-productivity",
         type: "oval",
-        position: {x: -2900, y: 1000},
-        data: {label: "Improve_Perceived_Productivity", width: 290},
+        position: {x: -2870, y: 1000},
+        data: {label: "Improve_Perceived_Productivity", width: 260},
         draggable: false
     },
     {
@@ -338,22 +377,35 @@ let initialNodes = [
         id: "increase-chances-for-improving-social-status",
         type: "oval",
         position: {x: -300, y: 1250},
-        data: {label: "Increase_Chances_for_Improving_Social_Status", width: 340, left: true},
+        data: {label: "Increase_Chances_for_Improving_Social_Status", width: 340, sourceLeft: true},
         draggable: false
     },
     {
         id: "increase-chances-for-a-promotion",
         type: "oval",
         position: {x: 300, y: 1250},
-        data: {label: "Increase_Chances_for_a_Promotion", width: 250, right: true},
+        data: {label: "Increase_Chances_for_a_Promotion", width: 250, sourceRight: true},
         draggable: false
     },
 
     // Left 6th layer
     {
+        id: "improve-system-perception-via-IT-2",
+        type: "oval",
+        position: {x: -3200, y: 1500},
+        data: {
+            label: "Improve_System_Perception_via_IT",
+            width: 450,
+            height: 100,
+            type: "tactic",
+            num: "[2]"
+        },
+        draggable: false
+    },
+    {
         id: "improve-system-advantage-perception-vs-competitor-systems-via-it",
         type: "oval",
-        position: {x: -2500, y: 1500},
+        position: {x: -1500, y: 1500},
         data: {
             label: "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
             width: 450,
@@ -381,14 +433,14 @@ let initialNodes = [
     {
         id: "support-skill-improvement-3",
         type: "oval",
-        position: {x: 500, y: 1500},
+        position: {x: 700, y: 1500},
         data: {label: "Support_Skill_Improvement", type: "tactic", num: "[3]"},
         draggable: false
     },
     {
         id: "improve-system-awareness-2",
         type: "oval",
-        position: {x: 800, y: 1500},
+        position: {x: 1200, y: 1500},
         data: {label: "Improve_System_Awareness", type: "tactic", num: "[2]"},
         draggable: false
     },
@@ -396,7 +448,7 @@ let initialNodes = [
         id: "improve-system-perception-via-it-3",
         type: "oval",
         position: {x: 2200, y: 1500},
-        data: {label: "Improve_System_Perception_via-IT", type: "tactic", num: "[3]"},
+        data: {label: "Improve_System_Perception_via_IT", type: "tactic", num: "[3]"},
         draggable: false
     },
     {
@@ -786,6 +838,14 @@ let initialEdges = [
         markerStart: markerConfig
     },
     {
+        id: "e6-42",
+        source: "improve-perceived-usefulness",
+        target: "improve-system-perception-via-IT-2",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
         id: "e6-43",
         source: "improve-perceived-relative-advantage",
         target: "improve-system-advantage-perception-vs-competitor-systems-via-it",
@@ -798,6 +858,7 @@ let initialEdges = [
         source: "increase-chances-for-improving-social-status",
         target: "support-achievement",
         targetHandle: "oval_left",
+        sourceHandle: "oval_bottom",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -807,6 +868,7 @@ let initialEdges = [
         source: "increase-chances-for-a-promotion",
         target: "support-achievement",
         targetHandle: "oval_right",
+        sourceHandle: "oval_bottom",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -1011,19 +1073,29 @@ let initialEdges = [
         markerStart: markerConfig
     },
     {
-        id: "e7-69",
-        source: "increase-chances-for-improving-social-status",
-        target: "improve-perceived-status",
-        targetHandle: "oval_left",
-        type: "step",
+        id: "e6-69",
+        source: "create-assistance-systems",
+        target: "support-skill-improvement-6",
+        type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
     {
         id: "e7-70",
+        source: "increase-chances-for-improving-social-status",
+        target: "improve-perceived-status",
+        targetHandle: "oval_left",
+        sourceHandle: "oval_source_left",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e7-71",
         source: "increase-chances-for-a-promotion",
         target: "improve-perceived-status",
         targetHandle: "oval_right",
+        sourceHandle: "oval_source_right",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -1037,6 +1109,7 @@ export default function PhaseTwo() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const dispatch = useDispatch();
+    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
 
     useEffect(() => {
         dispatch(setCurrentPhase(2))

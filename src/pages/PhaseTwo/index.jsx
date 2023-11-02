@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useState} from "react";
-import ReactFlow, {addEdge, Background, Controls, MarkerType, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import React, {useEffect} from "react";
+import ReactFlow, { Background, Controls, MarkerType, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
@@ -7,49 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
-import FloatingEdge from "../../components/FloatingEdge/index.jsx";
-import Project from "arwes/lib/Project/index.js";
-import Words from "arwes/lib/Words/Words.js";
-import {createTheme} from "arwes";
-import Card from "../../components/Card/index.jsx";
-function generateJSONTree(initialNodes, initialEdges) {
-    const tree = {};
-
-    // Create a map to store nodes by their ID for easy access
-    const nodeMap = new Map();
-    initialNodes.forEach((node) => {
-        nodeMap.set(node.id, node);
-    });
-
-    // Initialize the tree with nodes that don't have any parent (no incoming edges)
-    initialNodes.forEach((node) => {
-        if (!initialEdges.some((edge) => edge.target === node.id)) {
-            tree[node.id] = { ...node };
-        }
-    });
-
-    // Recursively build the tree starting from the root nodes
-    const buildTree = (parentId, parent) => {
-        const children = initialEdges
-            .filter((edge) => edge.source === parentId)
-            .map((edge) => {
-                const targetNode = nodeMap.get(edge.target);
-                return {
-                    ...targetNode,
-                    children: buildTree(targetNode.id, targetNode),
-                };
-            });
-
-        return children.length > 0 ? children : null;
-    };
-
-    for (const rootId in tree) {
-        tree[rootId].children = buildTree(rootId, tree[rootId]);
-    }
-
-    // Return the root nodes (usually there's just one root)
-    return Object.values(tree);
-}
 
 
 const markerConfig = {
@@ -83,9 +40,35 @@ let initialNodes = [
     {
         id: "create-facilitating-conditions",
         type: "oval",
-        position: {x: 6500, y: 200},
+        position: {x: 8500, y: 200},
         data: {label: "Create_Facilitating_Conditions"},
-        draggable: false
+        draggable: false,
+        conditions: [
+            {
+                node: "C11",
+                operator: "OR"
+            },
+            {
+                node: "C24",
+                operator: "OR",
+            },
+            {
+                node: "C25",
+                operator: "OR",
+            },
+            {
+                node: "C26",
+                operator: "OR",
+            },
+            {
+                node: "C29",
+                operator: "OR",
+            },
+            {
+                node: "C28",
+                operator: "AND NOT",
+            },
+        ],
     },
 
     // Left 3rd layer
@@ -94,27 +77,121 @@ let initialNodes = [
         type: "oval",
         position: {x: -1650, y: 500},
         data: {label: "Improve_Performance_Expectancy"},
-        draggable: false
+        draggable: false,
+        conditions: [
+            {
+                node: "C7",
+                operator: "OR"
+            },
+            {
+                node: "C6",
+                operator: "OR",
+            },
+            {
+                node: "C22",
+                operator: "OR",
+            },
+            {
+                node: "C30",
+                operator: "OR",
+            },
+            {
+                node: "C32",
+                operator: "OR",
+            },
+            {
+                node: "C34",
+                operator: "OR",
+            },
+        ],
     },
     {
         id: "reduce-effort-expectancy",
         type: "oval",
         position: {x: 3075, y: 500},
         data: {label: "Reduce_Effort_Expectancy"},
-        draggable: false
+        draggable: false,
+        conditions: [
+            {
+                node: "C3",
+                operator: "OR"
+            },
+            {
+                node: "C8",
+                operator: "OR",
+            },
+            {
+                node: "C9",
+                operator: "OR",
+            },
+            {
+                node: "C20",
+                operator: "OR",
+            },
+            {
+                node: "C24",
+                operator: "OR",
+            },
+            {
+                node: "C25",
+                operator: "OR",
+            },
+            {
+                node: "C26",
+                operator: "OR",
+            },
+            {
+                node: "C29",
+                operator: "OR",
+            },
+            {
+                node: "C28",
+                operator: "AND NOT",
+            },
+        ]
     },
+    {
+        id: "increase-social-influence",
+        type: "oval",
+        position: {x: 5700, y: 500},
+        data: {label: "Increase_Social_Influence", sourceLeft: true, sourceRight: true},
+        draggable: false,
+        conditions: [
+            {
+                node: "C3",
+                operator: "OR"
+            },
+            {
+                node: "C10",
+                operator: "OR",
+            },
+            {
+                node: "C23",
+                operator: "OR",
+            },
+            {
+                node: "C30",
+                operator: "OR",
+            },
+            {
+                node: "C32",
+                operator: "OR",
+            },
+        ]
+    },
+
     // Right 3rd layer
     {
         id: "improve-perceived-behavioral-control",
         type: "oval",
-        position: {x: 5700, y: 500},
+        position: {x: 7700, y: 500},
         data: {label: "Improve_Perceived_Behavioral_Control"},
         draggable: false
     },
     {
         id: "increase-assistance",
         type: "oval",
-        position: {x: 7300, y: 500},
+        position: {x: 9300, y: 500},
         data: {label: "Increase_Assistance"},
         draggable: false
     },
@@ -155,47 +232,61 @@ let initialNodes = [
         data: {label: "Improve_Ease_of_Use"},
         draggable: false
     },
+    {
+        id: "improve-subjective-norm",
+        type: "oval",
+        position: {x: 5200, y: 750},
+        data: {label: "Improve_Subjective_Norm"},
+        draggable: false
+    },
+    {
+        id: "improve-social-factors",
+        type: "oval",
+        position: {x: 6150, y: 750},
+        data: {label: "Improve_Social_Factors"},
+        draggable: false
+    },
 
     // Right 4th
     {
         id: "improve-perceived-adequacy-on-personal-resources-needed",
         type: "oval",
-        position: {x: 5200, y: 750},
+        position: {x: 7200, y: 750},
         data: {label: "Improve_Perceived_Adequacy_on_Personal_Resources_Needed", width: 400, height: 100},
         draggable: false
     },
     {
         id: "improve-perceived-adequacy-on-personal-knowledge-needed",
         type: "oval",
-        position: {x: 5700, y: 750},
+        position: {x: 7700, y: 750},
         data: {label: "Improve_Perceived_Adequacy_on_Personal_Knowledge_Needed", width: 400, height: 100},
         draggable: false
     },
     {
         id: "improve-perceived-compatibility",
         type: "oval",
-        position: {x: 6200, y: 770},
+        position: {x: 8200, y: 770},
         data: {label: "Improve_Perceived_Compatibility"},
         draggable: false
     },
     {
         id: "charge-a-person-for-assistance",
         type: "oval",
-        position: {x: 7000, y: 770},
+        position: {x: 9000, y: 770},
         data: {label: "Charge_a_Person_for_Assistance"},
         draggable: false
     },
     {
         id: "create-assistance-group",
         type: "oval",
-        position: {x: 7300, y: 770},
+        position: {x: 9300, y: 770},
         data: {label: "Create_Assistance_Group"},
         draggable: false
     },
     {
         id: "create-assistance-systems",
         type: "oval",
-        position: {x: 7600, y: 770},
+        position: {x: 9600, y: 770},
         data: {label: "Create_Assistance_Systems"},
         draggable: false
     },
@@ -341,33 +432,68 @@ let initialNodes = [
         data: {label: "Improve_Learning"},
         draggable: false
     },
+    {
+        id: "increase-influence-of-important-people",
+        type: "oval",
+        position: {x: 5050, y: 1000},
+        data: {label: "Increase_Influence_of_Important_People", width: 300},
+        draggable: false
+    },
+    {
+        id: "maximize-impact-of-influencer",
+        type: "oval",
+        position: {x: 5400, y: 1000},
+        data: {label: "Maximize_Impact_of_Influencer"},
+        draggable: false
+    },
+    {
+        id: "show-many-people-embrace-the-subject",
+        type: "oval",
+        position: {x: 5750, y: 1000},
+        data: {label: "Show_Many_People_Embrace_the_Subject", width: 300},
+        draggable: false
+    },
+    {
+        id: "show-embracing-the-subject-is-socially-pushed",
+        type: "oval",
+        position: {x: 6100, y: 1000},
+        data: {label: "Show_Embracing_the_Subject_is_Socially_Pushed", width: 350},
+        draggable: false
+    },
+    {
+        id: "show-embracing-the-subject-is-socially-supported",
+        type: "oval",
+        position: {x: 6500, y: 1000},
+        data: {label: "Show_Embracing_the_Subject_is_Socially_Supported", width: 350, sourceLeft: true},
+        draggable: false
+    },
 
     // Right 5th Layer
     {
         id: "with-systems-involved",
         type: "oval",
-        position: {x: 6000, y: 1000},
+        position: {x: 8000, y: 1000},
         data: {label: "With_Systems_Involved"},
         draggable: false
     },
     {
         id: "with-behaviors-involved",
         type: "oval",
-        position: {x: 6250, y: 1000},
+        position: {x: 8250, y: 1000},
         data: {label: "With_Behaviors_Involved"},
         draggable: false
     },
     {
         id: "with-personal-commitments",
         type: "oval",
-        position: {x: 6500, y: 1000},
+        position: {x: 8500, y: 1000},
         data: {label: "With_Personal_Commitments"},
         draggable: false
     },
     {
         id: "with-personal-style",
         type: "oval",
-        position: {x: 6800, y: 1000},
+        position: {x: 8800, y: 1000},
         data: {label: "With_Personal_Style"},
         draggable: false
     },
@@ -416,7 +542,7 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "support-achievement",
+        id: "support-achievement-4",
         type: "oval",
         position: {x: 0, y: 1500},
         data: {
@@ -448,13 +574,13 @@ let initialNodes = [
         id: "improve-system-perception-via-it-3",
         type: "oval",
         position: {x: 2200, y: 1500},
-        data: {label: "Improve_System_Perception_via_IT", type: "tactic", num: "[3]"},
+        data: {label: "Improve_System_Perception_via_IT", type: "tactic", num: "[3]", bottom: true},
         draggable: false
     },
     {
         id: "improve-minor-assistance-2",
         type: "oval",
-        position: {x: 3000, y: 1500},
+        position: {x: 3500, y: 1500},
         data: {label: "Improve_Minor_Assistance", type: "tactic", num: "[2]", left: true},
         draggable: false
     },
@@ -472,54 +598,79 @@ let initialNodes = [
         data: {label: "Support_Skill_Improvement", type: "tactic", num: "[4]"},
         draggable: false
     },
+    {
+        id: "support-social-behavior",
+        type: "oval",
+        position: {x: 4900, y: 1500},
+        data: {label: "Support_Social_Behavior", type: "tactic", num: "[5]"},
+        draggable: false
+    },
+    {
+        id: "promote-collaboration-1",
+        type: "oval",
+        position: {x: 6350, y: 1500},
+        data: {label: "Promote_Collaboration", type: "tactic", num: "[1]"},
+        draggable: false
+    },
+    {
+        id: "support-achievement-5",
+        type: "oval",
+        position: {x: 6700, y: 1500},
+        data: {
+            label: "Support_Achievement",
+            type: "tactic",
+            num: "[5]",
+        },
+        draggable: false
+    },
 
     // Right 6th Layer
     {
         id: "improve-system-awareness-4",
         type: "oval",
-        position: {x: 5500, y: 1500},
+        position: {x: 7500, y: 1500},
         data: {label: "Improve_System_Awareness", type: "tactic", num: "[4]"},
         draggable: false
     },
     {
         id: "support-skill-improvement-5",
         type: "oval",
-        position: {x: 6000, y: 1500},
+        position: {x: 8000, y: 1500},
         data: {label: "Support_Skill_Improvement", type: "tactic", num: "[5]"},
         draggable: false
     },
     {
         id: "improve-system-perception-via-it-4",
         type: "oval",
-        position: {x: 6500, y: 1500},
+        position: {x: 8500, y: 1500},
         data: {label: "Improve_System_Perception_via_IT", type: "tactic", num: "[4]", right: true, bottom: true},
         draggable: false
     },
     {
-        id: "promote-collaboration",
+        id: "promote-collaboration-2",
         type: "oval",
-        position: {x: 7300, y: 1500},
+        position: {x: 9300, y: 1500},
         data: {label: "Promote_Collaboration", type: "tactic", num: "[2]"},
         draggable: false
     },
     {
         id: "improve-minor-assistance-3",
         type: "oval",
-        position: {x: 7800, y: 1500},
+        position: {x: 9800, y: 1500},
         data: {label: "Improve_Minor_Assistance", type: "tactic", num: "[3]"},
         draggable: false
     },
     {
         id: "improve-system-awareness-5",
         type: "oval",
-        position: {x: 8100, y: 1500},
+        position: {x: 10100, y: 1500},
         data: {label: "Improve_System_Awareness", type: "tactic", num: "[5]"},
         draggable: false
     },
     {
         id: "support-skill-improvement-6",
         type: "oval",
-        position: {x: 8400, y: 1500},
+        position: {x: 10400, y: 1500},
         data: {label: "Support_Skill_Improvement", type: "tactic", num: "[6]"},
         draggable: false
     },
@@ -561,6 +712,13 @@ let initialEdges = [
         id: "e2-3",
         source: "improve-behavioral-intention",
         target: "reduce-effort-expectancy",
+        type: "dotted",
+        markerStart: markerConfig,
+    },
+    {
+        id: "e2-3_1",
+        source: "improve-behavioral-intention",
+        target: "increase-social-influence",
         type: "dotted",
         markerStart: markerConfig,
     },
@@ -610,6 +768,22 @@ let initialEdges = [
         id: "e3-10",
         source: "reduce-effort-expectancy",
         target: "improve-ease-of-use",
+        type: "dotted",
+        markerStart: markerConfig,
+    },
+    {
+        id: "e3-10_1",
+        source: "increase-social-influence",
+        target: "improve-subjective-norm",
+        type: "dotted",
+        sourceHandle: "oval_bottom",
+        markerStart: markerConfig,
+    },
+    {
+        id: "e3-10_2",
+        source: "increase-social-influence",
+        target: "improve-social-factors",
+        sourceHandle: "oval_bottom",
         type: "dotted",
         markerStart: markerConfig,
     },
@@ -796,6 +970,59 @@ let initialEdges = [
         markerStart: markerConfig
     },
     {
+        id: "e4-36_1",
+        source: "improve-subjective-norm",
+        target: "increase-influence-of-important-people",
+        type: "dotted",
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_2",
+        source: "improve-subjective-norm",
+        target: "maximize-impact-of-influencer",
+        type: "dotted",
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_6",
+        source: "improve-social-factors",
+        target: "show-many-people-embrace-the-subject",
+        type: "dotted",
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_8",
+        source: "improve-social-factors",
+        target: "show-embracing-the-subject-is-socially-pushed",
+        type: "dotted",
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_10",
+        source: "improve-social-factors",
+        target: "show-embracing-the-subject-is-socially-supported",
+        type: "dotted",
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_11",
+        source: "show-embracing-the-subject-is-socially-supported",
+        target: "support-achievement-5",
+        sourceHandle: "oval_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e4-36_12",
+        source: "show-embracing-the-subject-is-socially-supported",
+        target: "support-skill-improvement-5",
+        sourceHandle: "oval_bottom",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
         id: "e4-37",
         source: "improve-perceived-compatibility",
         target: "with-systems-involved",
@@ -856,7 +1083,7 @@ let initialEdges = [
     {
         id: "e6-44",
         source: "increase-chances-for-improving-social-status",
-        target: "support-achievement",
+        target: "support-achievement-4",
         targetHandle: "oval_left",
         sourceHandle: "oval_bottom",
         type: "step",
@@ -866,7 +1093,7 @@ let initialEdges = [
     {
         id: "e6-45",
         source: "increase-chances-for-a-promotion",
-        target: "support-achievement",
+        target: "support-achievement-4",
         targetHandle: "oval_right",
         sourceHandle: "oval_bottom",
         type: "step",
@@ -876,7 +1103,7 @@ let initialEdges = [
     {
         id: "e6-46",
         source: "obtain-additional-income",
-        target: "support-achievement",
+        target: "support-achievement-4",
         targetHandle: "oval_target_bottom",
         type: "step",
         style: arrowEdgeStyle,
@@ -922,7 +1149,6 @@ let initialEdges = [
         id: "e6-51",
         source: "improve-perceived-clearness",
         target: "improve-system-perception-via-it-3",
-        targetHandle: "oval_target_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -931,7 +1157,6 @@ let initialEdges = [
         id: "e6-52",
         source: "improve-perceived-understandability",
         target: "improve-system-perception-via-it-3",
-        targetHandle: "oval_target_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -940,7 +1165,6 @@ let initialEdges = [
         id: "e6-53",
         source: "improve-perceived-usability",
         target: "improve-system-perception-via-it-3",
-        targetHandle: "oval_target_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -949,7 +1173,6 @@ let initialEdges = [
         id: "e6-54",
         source: "improve-perceived-easy-learning",
         target: "improve-system-perception-via-it-3",
-        targetHandle: "oval_target_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -1008,10 +1231,57 @@ let initialEdges = [
         markerStart: markerConfig
     },
     {
+        id: "e6-59_1",
+        source: "show-embracing-the-subject-is-socially-supported",
+        target: "improve-minor-assistance-2",
+        sourceHandle: "oval_source_left",
+        targetHandle: "oval_top",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e6-60_1",
+        source: "show-embracing-the-subject-is-socially-supported",
+        target: "improve-system-awareness-3",
+        sourceHandle: "oval_source_left",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e6-60_2",
+        source: "show-embracing-the-subject-is-socially-supported",
+        target: "improve-system-perception-via-it-3",
+        targetHandle: "oval_target_bottom",
+        sourceHandle: "oval_bottom",
+        type: "step",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
         id: "e6-61",
         source: "improve-learning",
         target: "support-skill-improvement-4",
         type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e6-61_1",
+        source: "increase-social-influence",
+        target: "support-social-behavior",
+        type: "step",
+        sourceHandle: "oval_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e6-61_2",
+        source: "increase-social-influence",
+        target: "promote-collaboration-1",
+        sourceHandle: "oval_source_right",
+        type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -1049,9 +1319,26 @@ let initialEdges = [
         markerStart: markerConfig
     },
     {
+        id: "e6-65_1",
+        source: "improve-perceived-adequacy-on-personal-knowledge-needed",
+        target: "improve-system-perception-via-it-4",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e6-65_2",
+        source: "improve-perceived-compatibility",
+        target: "improve-system-perception-via-it-4",
+        type: "step",
+        targetHandle: "oval_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
         id: "e6-66",
         source: "create-assistance-group",
-        target: "promote-collaboration",
+        target: "promote-collaboration-2",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -1127,6 +1414,8 @@ export default function PhaseTwo() {
                 edgeTypes={edgeTypes}
                 deleteKeyCode={''}
                 fitView
+                maxZoom={2}
+                minZoom={0.01}
             >
                 <Controls/>
                 <MiniMap pannable zoomable/>

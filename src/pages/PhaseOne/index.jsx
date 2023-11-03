@@ -660,7 +660,7 @@ export default function PhaseOne() {
     }, []);
 
     useEffect(() => {
-        if (edges.length > 87 && !nextPhaseEnabled) {
+        if (edges.length > 102 && !nextPhaseEnabled) {
             dispatch(setNextPhaseEnabled(true))
         }
         dispatch(connectEdge(edges));
@@ -708,6 +708,8 @@ export default function PhaseOne() {
                 connectionLineStyle={connectionLineStyle}
                 deleteKeyCode={''}
                 fitView
+                maxZoom={1.5}
+                minZoom={0.18}
             >
                 <Controls/>
                 <MiniMap pannable zoomable/>

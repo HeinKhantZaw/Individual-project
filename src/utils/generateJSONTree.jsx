@@ -1,3 +1,4 @@
+// Used during development, not included in the production
 export function generateJSONTree(initialNodes, initialEdges) {
     const tree = {};
 
@@ -33,6 +34,5 @@ export function generateJSONTree(initialNodes, initialEdges) {
         tree[rootId].children = buildTree(rootId, tree[rootId]);
     }
 
-    // Return the root nodes (usually there's just one root)
     return Object.values(tree);
 }

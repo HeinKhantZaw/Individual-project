@@ -20,7 +20,7 @@ export const PhaseTwoTreeDS = [
                     "y": 200
                 },
                 "data": {
-                    "label": "Improve_behavioral_intention"
+                    "label": "Improve_Behavioral_Intention"
                 },
                 "draggable": false,
                 "children": [
@@ -35,6 +35,7 @@ export const PhaseTwoTreeDS = [
                             "label": "Improve_Performance_Expectancy"
                         },
                         "draggable": false,
+                        "conditions": "C7 OR C6 OR C22 OR C30 OR C32 OR C34",
                         "children": [
                             {
                                 "id": "improve-perceived-usefulness",
@@ -47,6 +48,7 @@ export const PhaseTwoTreeDS = [
                                     "label": "Improve_Perceived_Usefulness"
                                 },
                                 "draggable": false,
+                                "conditions": "C13",
                                 "children": [
                                     {
                                         "id": "improve-perceived-speed",
@@ -136,6 +138,7 @@ export const PhaseTwoTreeDS = [
                                     "height": 90
                                 },
                                 "draggable": false,
+                                "conditions": "C12",
                                 "children": [
                                     {
                                         "id": "improve-perceived-speed-vs",
@@ -264,9 +267,10 @@ export const PhaseTwoTreeDS = [
                                                     "sourceLeft": true
                                                 },
                                                 "draggable": false,
+                                                "conditions": "C33 OR C35",
                                                 "children": [
                                                     {
-                                                        "id": "support-achievement",
+                                                        "id": "support-achievement-4",
                                                         "type": "oval",
                                                         "position": {
                                                             "x": 0,
@@ -317,9 +321,10 @@ export const PhaseTwoTreeDS = [
                                                     "sourceRight": true
                                                 },
                                                 "draggable": false,
+                                                "conditions": "C14",
                                                 "children": [
                                                     {
-                                                        "id": "support-achievement",
+                                                        "id": "support-achievement-4",
                                                         "type": "oval",
                                                         "position": {
                                                             "x": 0,
@@ -371,6 +376,7 @@ export const PhaseTwoTreeDS = [
                                             "width": 300
                                         },
                                         "draggable": false,
+                                        "conditions": "NOT C20",
                                         "children": [
                                             {
                                                 "id": "support-skill-improvement-3",
@@ -415,9 +421,10 @@ export const PhaseTwoTreeDS = [
                                             "label": "Obtain_Additional_Income"
                                         },
                                         "draggable": false,
+                                        "conditions": "NOT C20",
                                         "children": [
                                             {
-                                                "id": "support-achievement",
+                                                "id": "support-achievement-4",
                                                 "type": "oval",
                                                 "position": {
                                                     "x": 0,
@@ -482,6 +489,7 @@ export const PhaseTwoTreeDS = [
                             "label": "Reduce_Effort_Expectancy"
                         },
                         "draggable": false,
+                        "conditions": "(C3 OR C8 OR C9 OR C20 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)",
                         "children": [
                             {
                                 "id": "improve-perceived-ease-of-use",
@@ -508,6 +516,7 @@ export const PhaseTwoTreeDS = [
                                             "width": 250
                                         },
                                         "draggable": false,
+                                        "conditions": "C24",
                                         "children": [
                                             {
                                                 "id": "improve-system-perception-via-it-3",
@@ -519,7 +528,8 @@ export const PhaseTwoTreeDS = [
                                                 "data": {
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
-                                                    "num": "[3]"
+                                                    "num": "[3]",
+                                                    "bottom": true
                                                 },
                                                 "draggable": false,
                                                 "children": null
@@ -528,7 +538,7 @@ export const PhaseTwoTreeDS = [
                                                 "id": "improve-minor-assistance-2",
                                                 "type": "oval",
                                                 "position": {
-                                                    "x": 3000,
+                                                    "x": 3500,
                                                     "y": 1500
                                                 },
                                                 "data": {
@@ -554,6 +564,7 @@ export const PhaseTwoTreeDS = [
                                             "width": 320
                                         },
                                         "draggable": false,
+                                        "conditions": "C24",
                                         "children": [
                                             {
                                                 "id": "improve-system-perception-via-it-3",
@@ -565,7 +576,8 @@ export const PhaseTwoTreeDS = [
                                                 "data": {
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
-                                                    "num": "[3]"
+                                                    "num": "[3]",
+                                                    "bottom": true
                                                 },
                                                 "draggable": false,
                                                 "children": null
@@ -574,7 +586,7 @@ export const PhaseTwoTreeDS = [
                                                 "id": "improve-minor-assistance-2",
                                                 "type": "oval",
                                                 "position": {
-                                                    "x": 3000,
+                                                    "x": 3500,
                                                     "y": 1500
                                                 },
                                                 "data": {
@@ -611,7 +623,8 @@ export const PhaseTwoTreeDS = [
                                                 "data": {
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
-                                                    "num": "[3]"
+                                                    "num": "[3]",
+                                                    "bottom": true
                                                 },
                                                 "draggable": false,
                                                 "children": null
@@ -620,7 +633,7 @@ export const PhaseTwoTreeDS = [
                                                 "id": "improve-minor-assistance-2",
                                                 "type": "oval",
                                                 "position": {
-                                                    "x": 3000,
+                                                    "x": 3500,
                                                     "y": 1500
                                                 },
                                                 "data": {
@@ -657,7 +670,8 @@ export const PhaseTwoTreeDS = [
                                                 "data": {
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
-                                                    "num": "[3]"
+                                                    "num": "[3]",
+                                                    "bottom": true
                                                 },
                                                 "draggable": false,
                                                 "children": null
@@ -666,7 +680,7 @@ export const PhaseTwoTreeDS = [
                                                 "id": "improve-minor-assistance-2",
                                                 "type": "oval",
                                                 "position": {
-                                                    "x": 3000,
+                                                    "x": 3500,
                                                     "y": 1500
                                                 },
                                                 "data": {
@@ -705,12 +719,13 @@ export const PhaseTwoTreeDS = [
                                             "label": "Improve_Clearness"
                                         },
                                         "draggable": false,
+                                        "conditions": "C24",
                                         "children": [
                                             {
                                                 "id": "improve-minor-assistance-2",
                                                 "type": "oval",
                                                 "position": {
-                                                    "x": 3000,
+                                                    "x": 3500,
                                                     "y": 1500
                                                 },
                                                 "data": {
@@ -735,6 +750,7 @@ export const PhaseTwoTreeDS = [
                                             "label": "Improve_Understandability"
                                         },
                                         "draggable": false,
+                                        "conditions": "C24",
                                         "children": null
                                     },
                                     {
@@ -761,6 +777,7 @@ export const PhaseTwoTreeDS = [
                                             "label": "Improve_Learning"
                                         },
                                         "draggable": false,
+                                        "conditions": "NOT C20",
                                         "children": [
                                             {
                                                 "id": "improve-system-awareness-3",
@@ -797,6 +814,229 @@ export const PhaseTwoTreeDS = [
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "id": "increase-social-influence",
+                        "type": "oval",
+                        "position": {
+                            "x": 5700,
+                            "y": 500
+                        },
+                        "data": {
+                            "label": "Increase_Social_Influence",
+                            "sourceLeft": true,
+                            "sourceRight": true
+                        },
+                        "draggable": false,
+                        "conditions": "C3 OR C10 OR C23 OR C30 OR C32",
+                        "children": [
+                            {
+                                "id": "improve-subjective-norm",
+                                "type": "oval",
+                                "position": {
+                                    "x": 5200,
+                                    "y": 750
+                                },
+                                "data": {
+                                    "label": "Improve_Subjective_Norm"
+                                },
+                                "draggable": false,
+                                "children": [
+                                    {
+                                        "id": "increase-influence-of-important-people",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 5050,
+                                            "y": 1000
+                                        },
+                                        "data": {
+                                            "label": "Increase_Influence_of_Important_People",
+                                            "width": 300
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    },
+                                    {
+                                        "id": "maximize-impact-of-influencer",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 5400,
+                                            "y": 1000
+                                        },
+                                        "data": {
+                                            "label": "Maximize_Impact_of_Influencer"
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "improve-social-factors",
+                                "type": "oval",
+                                "position": {
+                                    "x": 6150,
+                                    "y": 750
+                                },
+                                "data": {
+                                    "label": "Improve_Social_Factors"
+                                },
+                                "draggable": false,
+                                "children": [
+                                    {
+                                        "id": "show-many-people-embrace-the-subject",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 5750,
+                                            "y": 1000
+                                        },
+                                        "data": {
+                                            "label": "Show_Many_People_Embrace_the_Subject",
+                                            "width": 300
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    },
+                                    {
+                                        "id": "show-embracing-the-subject-is-socially-pushed",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 6100,
+                                            "y": 1000
+                                        },
+                                        "data": {
+                                            "label": "Show_Embracing_the_Subject_is_Socially_Pushed",
+                                            "width": 350
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    },
+                                    {
+                                        "id": "show-embracing-the-subject-is-socially-supported",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 6500,
+                                            "y": 1000
+                                        },
+                                        "data": {
+                                            "label": "Show_Embracing_the_Subject_is_Socially_Supported",
+                                            "width": 350,
+                                            "sourceLeft": true
+                                        },
+                                        "draggable": false,
+                                        "children": [
+                                            {
+                                                "id": "support-achievement-5",
+                                                "type": "oval",
+                                                "position": {
+                                                    "x": 6700,
+                                                    "y": 1500
+                                                },
+                                                "data": {
+                                                    "label": "Support_Achievement",
+                                                    "type": "tactic",
+                                                    "num": "[5]"
+                                                },
+                                                "draggable": false,
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "support-skill-improvement-5",
+                                                "type": "oval",
+                                                "position": {
+                                                    "x": 8000,
+                                                    "y": 1500
+                                                },
+                                                "data": {
+                                                    "label": "Support_Skill_Improvement",
+                                                    "type": "tactic",
+                                                    "num": "[5]"
+                                                },
+                                                "draggable": false,
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "improve-minor-assistance-2",
+                                                "type": "oval",
+                                                "position": {
+                                                    "x": 3500,
+                                                    "y": 1500
+                                                },
+                                                "data": {
+                                                    "label": "Improve_Minor_Assistance",
+                                                    "type": "tactic",
+                                                    "num": "[2]",
+                                                    "left": true
+                                                },
+                                                "draggable": false,
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "improve-system-awareness-3",
+                                                "type": "oval",
+                                                "position": {
+                                                    "x": 4300,
+                                                    "y": 1500
+                                                },
+                                                "data": {
+                                                    "label": "Improve_System_Awareness",
+                                                    "type": "tactic",
+                                                    "num": "[3]"
+                                                },
+                                                "draggable": false,
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "improve-system-perception-via-it-3",
+                                                "type": "oval",
+                                                "position": {
+                                                    "x": 2200,
+                                                    "y": 1500
+                                                },
+                                                "data": {
+                                                    "label": "Improve_System_Perception_via_IT",
+                                                    "type": "tactic",
+                                                    "num": "[3]",
+                                                    "bottom": true
+                                                },
+                                                "draggable": false,
+                                                "children": null
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "support-social-behavior",
+                                "type": "oval",
+                                "position": {
+                                    "x": 4900,
+                                    "y": 1500
+                                },
+                                "data": {
+                                    "label": "Support_Social_Behavior",
+                                    "type": "tactic",
+                                    "num": "[5]"
+                                },
+                                "draggable": false,
+                                "children": null
+                            },
+                            {
+                                "id": "promote-collaboration-1",
+                                "type": "oval",
+                                "position": {
+                                    "x": 6350,
+                                    "y": 1500
+                                },
+                                "data": {
+                                    "label": "Promote_Collaboration",
+                                    "type": "tactic",
+                                    "num": "[1]"
+                                },
+                                "draggable": false,
+                                "children": null
+                            }
+                        ]
                     }
                 ]
             },
@@ -804,19 +1044,20 @@ export const PhaseTwoTreeDS = [
                 "id": "create-facilitating-conditions",
                 "type": "oval",
                 "position": {
-                    "x": 6500,
+                    "x": 8500,
                     "y": 200
                 },
                 "data": {
                     "label": "Create_Facilitating_Conditions"
                 },
                 "draggable": false,
+                "conditions": "(C11 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)",
                 "children": [
                     {
                         "id": "improve-perceived-behavioral-control",
                         "type": "oval",
                         "position": {
-                            "x": 5700,
+                            "x": 7700,
                             "y": 500
                         },
                         "data": {
@@ -828,7 +1069,7 @@ export const PhaseTwoTreeDS = [
                                 "id": "improve-perceived-adequacy-on-personal-resources-needed",
                                 "type": "oval",
                                 "position": {
-                                    "x": 5200,
+                                    "x": 7200,
                                     "y": 750
                                 },
                                 "data": {
@@ -837,12 +1078,13 @@ export const PhaseTwoTreeDS = [
                                     "height": 100
                                 },
                                 "draggable": false,
+                                "conditions": "C24",
                                 "children": [
                                     {
                                         "id": "improve-system-perception-via-it-4",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6500,
+                                            "x": 8500,
                                             "y": 1500
                                         },
                                         "data": {
@@ -861,7 +1103,7 @@ export const PhaseTwoTreeDS = [
                                 "id": "improve-perceived-adequacy-on-personal-knowledge-needed",
                                 "type": "oval",
                                 "position": {
-                                    "x": 5700,
+                                    "x": 7700,
                                     "y": 750
                                 },
                                 "data": {
@@ -870,12 +1112,13 @@ export const PhaseTwoTreeDS = [
                                     "height": 100
                                 },
                                 "draggable": false,
+                                "conditions": "C24",
                                 "children": [
                                     {
                                         "id": "improve-system-awareness-4",
                                         "type": "oval",
                                         "position": {
-                                            "x": 5500,
+                                            "x": 7500,
                                             "y": 1500
                                         },
                                         "data": {
@@ -890,13 +1133,30 @@ export const PhaseTwoTreeDS = [
                                         "id": "support-skill-improvement-5",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6000,
+                                            "x": 8000,
                                             "y": 1500
                                         },
                                         "data": {
                                             "label": "Support_Skill_Improvement",
                                             "type": "tactic",
                                             "num": "[5]"
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    },
+                                    {
+                                        "id": "improve-system-perception-via-it-4",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 8500,
+                                            "y": 1500
+                                        },
+                                        "data": {
+                                            "label": "Improve_System_Perception_via_IT",
+                                            "type": "tactic",
+                                            "num": "[4]",
+                                            "right": true,
+                                            "bottom": true
                                         },
                                         "draggable": false,
                                         "children": null
@@ -907,7 +1167,7 @@ export const PhaseTwoTreeDS = [
                                 "id": "improve-perceived-compatibility",
                                 "type": "oval",
                                 "position": {
-                                    "x": 6200,
+                                    "x": 8200,
                                     "y": 770
                                 },
                                 "data": {
@@ -919,7 +1179,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "with-systems-involved",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6000,
+                                            "x": 8000,
                                             "y": 1000
                                         },
                                         "data": {
@@ -932,7 +1192,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "with-behaviors-involved",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6250,
+                                            "x": 8250,
                                             "y": 1000
                                         },
                                         "data": {
@@ -945,7 +1205,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "with-personal-commitments",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6500,
+                                            "x": 8500,
                                             "y": 1000
                                         },
                                         "data": {
@@ -958,11 +1218,28 @@ export const PhaseTwoTreeDS = [
                                         "id": "with-personal-style",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6800,
+                                            "x": 8800,
                                             "y": 1000
                                         },
                                         "data": {
                                             "label": "With_Personal_Style"
+                                        },
+                                        "draggable": false,
+                                        "children": null
+                                    },
+                                    {
+                                        "id": "improve-system-perception-via-it-4",
+                                        "type": "oval",
+                                        "position": {
+                                            "x": 8500,
+                                            "y": 1500
+                                        },
+                                        "data": {
+                                            "label": "Improve_System_Perception_via_IT",
+                                            "type": "tactic",
+                                            "num": "[4]",
+                                            "right": true,
+                                            "bottom": true
                                         },
                                         "draggable": false,
                                         "children": null
@@ -975,19 +1252,20 @@ export const PhaseTwoTreeDS = [
                         "id": "increase-assistance",
                         "type": "oval",
                         "position": {
-                            "x": 7300,
+                            "x": 9300,
                             "y": 500
                         },
                         "data": {
                             "label": "Increase_Assistance"
                         },
                         "draggable": false,
+                        "conditions": "C24",
                         "children": [
                             {
                                 "id": "charge-a-person-for-assistance",
                                 "type": "oval",
                                 "position": {
-                                    "x": 7000,
+                                    "x": 9000,
                                     "y": 770
                                 },
                                 "data": {
@@ -1000,7 +1278,7 @@ export const PhaseTwoTreeDS = [
                                 "id": "create-assistance-group",
                                 "type": "oval",
                                 "position": {
-                                    "x": 7300,
+                                    "x": 9300,
                                     "y": 770
                                 },
                                 "data": {
@@ -1009,10 +1287,10 @@ export const PhaseTwoTreeDS = [
                                 "draggable": false,
                                 "children": [
                                     {
-                                        "id": "promote-collaboration",
+                                        "id": "promote-collaboration-2",
                                         "type": "oval",
                                         "position": {
-                                            "x": 7300,
+                                            "x": 9300,
                                             "y": 1500
                                         },
                                         "data": {
@@ -1029,7 +1307,7 @@ export const PhaseTwoTreeDS = [
                                 "id": "create-assistance-systems",
                                 "type": "oval",
                                 "position": {
-                                    "x": 7600,
+                                    "x": 9600,
                                     "y": 770
                                 },
                                 "data": {
@@ -1041,7 +1319,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "improve-system-perception-via-it-4",
                                         "type": "oval",
                                         "position": {
-                                            "x": 6500,
+                                            "x": 8500,
                                             "y": 1500
                                         },
                                         "data": {
@@ -1058,7 +1336,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "improve-minor-assistance-3",
                                         "type": "oval",
                                         "position": {
-                                            "x": 7800,
+                                            "x": 9800,
                                             "y": 1500
                                         },
                                         "data": {
@@ -1073,7 +1351,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "improve-system-awareness-5",
                                         "type": "oval",
                                         "position": {
-                                            "x": 8100,
+                                            "x": 10100,
                                             "y": 1500
                                         },
                                         "data": {
@@ -1088,7 +1366,7 @@ export const PhaseTwoTreeDS = [
                                         "id": "support-skill-improvement-6",
                                         "type": "oval",
                                         "position": {
-                                            "x": 8400,
+                                            "x": 10400,
                                             "y": 1500
                                         },
                                         "data": {

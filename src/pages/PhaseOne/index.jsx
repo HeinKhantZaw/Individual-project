@@ -308,17 +308,17 @@ let initialNodes = [
         draggable: false
     },
     {
-        id: "male-xor1",
+        id: "female-xor1",
         type: "circle",
         position: {x: -1800, y: 1000},
-        data: {label: "Male", isConnectable: true},
+        data: {label: "Female", isConnectable: true},
         draggable: false
     },
     {
-        id: "female-xor1",
+        id: "male-xor1",
         type: "circle",
         position: {x: -1600, y: 1000},
-        data: {label: "Female", isConnectable: true},
+        data: {label: "Male", isConnectable: true},
         draggable: false
     },
     {
@@ -520,21 +520,14 @@ let initialNodes = [
     {
         id: "clarity-low-xor9",
         type: "circle",
-        position: {x: 2600, y: 1000},
+        position: {x: 2700, y: 1000},
         data: {label: "Low", isConnectable: true},
-        draggable: false
-    },
-    {
-        id: "clarity-medium-xor9",
-        type: "circle",
-        position: {x: 2800, y: 1000},
-        data: {label: "Medium", isConnectable: true},
         draggable: false
     },
     {
         id: "clarity-high-xor9",
         type: "circle",
-        position: {x: 3000, y: 1000},
+        position: {x: 2900, y: 1000},
         data: {label: "High", isConnectable: true},
         draggable: false
     },
@@ -626,14 +619,14 @@ let initialNodes = [
         id: "trivial-common-xor13",
         type: "circle",
         position: {x: 4800, y: 1000},
-        data: {label: "Common", isConnectable: true},
+        data: {label: "Trivial Common", isConnectable: true},
         draggable: false
     },
     {
         id: "highly-specific-xor13",
         type: "circle",
         position: {x: 5000, y: 1000},
-        data: {label: "Specific", isConnectable: true},
+        data: {label: "Highly Specific", isConnectable: true},
         draggable: false
     },
 

@@ -85,12 +85,6 @@ export default function MainLayout() {
                                     Phase 5
                                 </Button>
                             </li>
-                            <li>
-                                <Button animate className={"font-semibold text-lg phase-button"} disabled = {currentPhase < 6}
-                                        layer={"secondary"}>
-                                    Phase 6
-                                </Button>
-                            </li>
                         </ul>
                     </div>
                 </nav>

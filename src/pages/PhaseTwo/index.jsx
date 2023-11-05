@@ -7,6 +7,9 @@ import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStat
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
 import {PhaseTwoTreeDS} from "../../data/PhaseTwoTreeDS.jsx";
+import {updateNodes} from "../../redux/slices/phaseTwoSlice.jsx";
+import {flattenNodes} from "../../utils/flattenNodes.jsx";
+import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 
 
 const markerConfig = {
@@ -732,60 +735,11 @@ export default function PhaseTwo() {
 
     const dispatch = useDispatch();
     const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const {nodeState} = useSelector((state) => state.phaseTwo);
 
     // for testing purpose
     // const userSelectedNodes = ['C7','C15','C2', 'C13', 'C14','C12','C16','C18','C28','C12','C31','C30','C26','C32','C34','C6','C9'];
     // const userSelectedNodes = ['C13','C3','C4','C14','C16','C21','C27','C33','C34','C5','C1','C2','C8','C9','C10','C28']
-
-    function flattenNodes(initialNodes) {
-        const resultNodes = [];
-        function processNodes(nodes) {
-            for (const node of nodes) {
-                // Add the node to the result
-                resultNodes.push({
-                    id: node.id,
-                    type: node.type,
-                    position: node.position,
-                    data: node.data,
-                    draggable: node.draggable,
-                    conditions: node.conditions,
-                });
-                // Recursively process the children
-                if (node.children) {
-                    processNodes(node.children);
-                }
-            }
-        }
-
-        processNodes(initialNodes);
-
-        return resultNodes;
-    }
-    function removeAndFlattenNodes(initialNodes, nodesToRemove) {
-        const resultNodes = [];
-        function processNodes(nodes) {
-            for (const node of nodes) {
-                if (!nodesToRemove.includes(node.id)) {
-                    // If the node should not be removed, add it to the result
-                    resultNodes.push({
-                        id: node.id,
-                        type: node.type,
-                        position: node.position,
-                        data: node.data,
-                        draggable: node.draggable,
-                    });
-                    // Recursively process the children
-                    if (node.children) {
-                        processNodes(node.children);
-                    }
-                }
-            }
-        }
-
-        processNodes(initialNodes);
-
-        return resultNodes;
-    }
 
     const updateGraph = () => {
         const initialNodes = flattenNodes(PhaseTwoTreeDS);
@@ -818,10 +772,14 @@ export default function PhaseTwo() {
     };
 
     useEffect(() => {
-        setNodes(updateGraph());
+        dispatch(updateNodes(updateGraph()));
         dispatch(setCurrentPhase(2))
         dispatch(setNextPhaseEnabled(true))
     }, []);
+
+    useEffect(() => {
+        setNodes(nodeState);
+    }, [nodeState]);
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>

@@ -3,6 +3,7 @@ import {createSlice} from '@reduxjs/toolkit'
 const initialState = {
     nextPhaseEnabled: false,
     currentPhase: 1,
+    uploaded: 0,
 }
 export const phaseStatusSlice = createSlice({
     name: 'phaseStatus',
@@ -14,9 +15,14 @@ export const phaseStatusSlice = createSlice({
         setCurrentPhase: (state, action) => {
             state.currentPhase = action.payload;
         },
+        setPhaseStatusState: (state, action) => {
+            state.nextPhaseEnabled = action.payload.nextPhaseEnabled;
+            state.currentPhase = action.payload.currentPhase;
+            state.uploaded++;
+        },
     },
 });
 
-export const {setNextPhaseEnabled, setCurrentPhase} = phaseStatusSlice.actions;
+export const {setNextPhaseEnabled, setCurrentPhase, setPhaseStatusState} = phaseStatusSlice.actions;
 
 export default phaseStatusSlice.reducer;

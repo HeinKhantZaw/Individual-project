@@ -641,7 +641,8 @@ let initialNodes = [
 const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonNode};
 
 export default function PhaseOne() {
-    const {edgeState} = useSelector((state) => state.phaseOne);
+    const phaseOneState = useSelector((state) => state.phaseOne);
+    const {edgeState} = phaseOneState;
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const edgeTypes = {floating: FloatingEdge};
@@ -659,6 +660,11 @@ export default function PhaseOne() {
         dispatch(connectEdge(edges));
     }, [edges]);
 
+    useEffect(() => {
+        setEdges(edgeState);
+    }, [phaseOneState.uploaded])
+
+
     const regexForXor = /xor(\d+)$/;
 
     const defaultEdgeOptions = {
@@ -673,7 +679,6 @@ export default function PhaseOne() {
 
     const onConnect = useCallback((params) => {
         const {source} = params;
-        const value = source.split("-")[0];
         const xorNode = source.match(regexForXor);
 
         setEdges((edges) => {

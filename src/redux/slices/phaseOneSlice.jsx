@@ -89,8 +89,8 @@ const initialEdges = [
     {id: "e4-55", source: "specificity-level", target: "specificity-xor", type: "straight"},
     {id: "e4-56", source: "identification-level", target: "identification-xor", type: "straight"},
     {id: "e4-57", source: "skill-kind", target: "skill-kind-xor", type: "straight"},
-    {id: "e4l-58", source: "gender-xor", sourceHandle: "operator_left", target: "male-xor1", type: "straight"},
-    {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "female-xor1", type: "straight"},
+    {id: "e4l-58", source: "gender-xor", sourceHandle: "operator_left", target: "female-xor1", type: "straight"},
+    {id: "e4r-59", source: "gender-xor", sourceHandle: "operator_right", target: "male-xor1", type: "straight"},
     {id: "e4l-60", source: "age-xor", sourceHandle: "operator_left", target: "young-xor2", type: "straight"},
     {id: "e4r-61", source: "age-xor", sourceHandle: "operator_right", target: "senior-xor2", type: "straight"},
     {
@@ -274,7 +274,8 @@ const initialEdges = [
 const initialState = {
     edgeState: initialEdges,
     resultName: "",
-    selectedNodes: []
+    selectedNodes: [],
+    uploaded: 0,
 }
 
 export const phaseOneSlice = createSlice({
@@ -297,10 +298,16 @@ export const phaseOneSlice = createSlice({
         },
         updateResultName: (state, action) => {
             state.resultName = action.payload
+        },
+        setPhaseOneState: (state, action) => {
+            state.edgeState = action.payload.edgeState
+            state.resultName = action.payload.resultName
+            state.selectedNodes = action.payload.selectedNodes
+            state.uploaded++;
         }
     },
 })
 
-export const {connectEdge, updateResultName} = phaseOneSlice.actions
+export const {connectEdge, updateResultName, setPhaseOneState} = phaseOneSlice.actions
 
 export default phaseOneSlice.reducer

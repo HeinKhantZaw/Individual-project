@@ -33,9 +33,8 @@ export const PhaseOneSecondaryLogic = [
     {requiredNodes: ["C15", "C14"], resultNode: "C6"},
     {requiredNodes: ["C4", "C14"], resultNode: "C8"},
     {requiredNodes: ["C16", "C14"], resultNode: "C9"},
-    {requiredNodes: ["C16", "C8"], resultNode: "C10"},
+    {requiredNodes: ["C16", "C8", "C18"], resultNode: "C10"},
     {requiredNodes: ["C17", "C8"], resultNode: "C11"},
-    {requiredNodes: ["C18", "C8"], resultNode: "C10"},
     {requiredNodes: ["C20", "C21"], resultNode: "C22"},
     {requiredNodes: ["C21", "C27"], resultNode: "C28"},
 ]

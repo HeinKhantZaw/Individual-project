@@ -10,6 +10,7 @@ export function flattenNodes(initialNodes) {
                 data: node.data,
                 draggable: node.draggable,
                 conditions: node.conditions,
+                parentId: node.parentId || "null",
             });
             // Recursively process the children
             if (node.children) {

@@ -10,6 +10,8 @@ export function removeAndFlattenNodes(initialNodes, nodesToRemove) {
                     position: node.position,
                     data: node.data,
                     draggable: node.draggable,
+                    hidden: node.hidden || false,
+                    parentId: node.parentId,
                 });
                 // Recursively process the children
                 if (node.children) {

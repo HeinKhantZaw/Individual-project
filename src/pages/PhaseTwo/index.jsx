@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ReactFlow, {Background, Controls, MarkerType, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
@@ -6,11 +6,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
-import {PhaseTwoTreeDS} from "../../data/PhaseTwoTreeDS.jsx";
 import {updateNodes} from "../../redux/slices/phaseTwoSlice.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
-
+import {findNodeById} from "../../utils/findNodeById.jsx";
+import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
+import {buildTree} from "../../utils/buildTree.jsx";
+import {searchNode} from "../../utils/searchNode.jsx";
 
 const markerConfig = {
     type: MarkerType.ArrowClosed,
@@ -731,18 +733,21 @@ const edgeTypes = {dotted: DottedEdge};
 export default function PhaseTwo() {
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const [hiddenNodes, setHiddenNodes] = useState([]);
     let idToBeRemoved = [];
+
 
     const dispatch = useDispatch();
     const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const {nodeState} = useSelector((state) => state.phaseTwo);
+    const {nodeState, uploaded, nodeTree} = useSelector((state) => state.phaseTwo);
+    const initialNodes = flattenNodes(nodeTree);
+    const treeMap = buildTree(initialNodes);
 
     // for testing purpose
     // const userSelectedNodes = ['C7','C15','C2', 'C13', 'C14','C12','C16','C18','C28','C12','C31','C30','C26','C32','C34','C6','C9'];
-    // const userSelectedNodes = ['C13','C3','C4','C14','C16','C21','C27','C33','C34','C5','C1','C2','C8','C9','C10','C28']
+    // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10', 'C28']
 
     const updateGraph = () => {
-        const initialNodes = flattenNodes(PhaseTwoTreeDS);
         const visibleNodes = initialNodes.filter(node => {
             if (!node.conditions) return true;
             else {
@@ -767,19 +772,37 @@ export default function PhaseTwo() {
         });
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
         idToBeRemoved = invisibleNodes.map(item => item.id);
-
-        return removeAndFlattenNodes(PhaseTwoTreeDS, idToBeRemoved);
+        return removeAndFlattenNodes(nodeTree, idToBeRemoved);
     };
 
     useEffect(() => {
         dispatch(updateNodes(updateGraph()));
-        dispatch(setCurrentPhase(2))
-        dispatch(setNextPhaseEnabled(true))
+        dispatch(setCurrentPhase(2));
+        dispatch(setNextPhaseEnabled(true));
     }, []);
 
     useEffect(() => {
         setNodes(nodeState);
-    }, [nodeState]);
+    }, [nodeState, uploaded]);
+
+    const handleElementClick = (event, element) => {
+        if (!element.data.type) {
+            const checkNodes = findNodeById(hiddenNodes, element.id);
+            if (checkNodes) {
+                const newNodes = [...nodeState, ...checkNodes.children];
+                dispatch(updateNodes(newNodes));
+                setHiddenNodes(hiddenNodes.filter(node => node.id !== element.id));
+            } else {
+                const ids = getAllChildrenIds(searchNode(treeMap, element.id));
+                setHiddenNodes([...hiddenNodes, {
+                    id: element.id,
+                    children: nodeState.filter(node => ids.includes(node.id))
+                }]);
+                const newNodes = nodeState.filter(node => !ids.includes(node.id));
+                dispatch(updateNodes(newNodes));
+            }
+        }
+    };
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
@@ -794,6 +817,7 @@ export default function PhaseTwo() {
                 fitView
                 maxZoom={2}
                 minZoom={0.1}
+                onNodeClick={handleElementClick}
             >
                 <Controls/>
                 <MiniMap pannable zoomable/>

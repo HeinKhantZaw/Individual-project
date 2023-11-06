@@ -647,11 +647,11 @@ export default function PhaseOne() {
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const edgeTypes = {floating: FloatingEdge};
     const dispatch = useDispatch()
-    const {nextPhaseEnabled} = useSelector((state) => state.phaseStatus);
+    const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.phaseStatus);
 
     useEffect(() => {
         dispatch(setCurrentPhase(1))
-    }, []);
+    }, [currentPhase]);
 
     useEffect(() => {
         if (edges.length > 102 && !nextPhaseEnabled) {

@@ -7,6 +7,7 @@ import {FaDownload, FaFileUpload} from "react-icons/fa";
 import {Tooltip} from 'react-tooltip'
 import {setPhaseStatusState} from "../../redux/slices/phaseStatusSlice.jsx";
 import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.jsx";
+import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.jsx";
 
 export default function MainLayout() {
     const bleeps = useBleeps();
@@ -38,11 +39,13 @@ export default function MainLayout() {
                 const data = JSON.parse(json);
                 dispatch(setPhaseStatusState(data.phaseStatus));
                 dispatch(setPhaseOneState(data.phaseOne));
+                dispatch(setPhaseTwoState(data.phaseTwo));
             };
             reader.readAsText(file);
         };
         input.click();
     }
+
     const goToNextPhase = () => {
         switch (currentPhase) {
             case 1:
@@ -58,12 +61,24 @@ export default function MainLayout() {
                 navigate("phase5");
                 break;
             default:
-                navigate("phase1");
+                navigate("/app");
                 break;
         }
     }
     const goToPhase1 = () => {
         navigate("/app");
+    }
+    const goToPhase2 = () => {
+        navigate("phase2");
+    }
+    const goToPhase3 = () => {
+        navigate("phase3");
+    }
+    const goToPhase4 = () => {
+        navigate("phase4");
+    }
+    const goToPhase5 = () => {
+        navigate("phase5");
     }
     return (
         <div className="holy-grail">
@@ -86,14 +101,14 @@ export default function MainLayout() {
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-2"}
                                         disabled={currentPhase < 2}
-                                        layer={"secondary"}>
+                                        layer={"secondary"} onClick={goToPhase2}>
                                     Phase 2
                                 </Button>
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-3"}
                                         disabled={2 < currentPhase < 3}
-                                        layer={"secondary"}>
+                                        layer={"secondary"} onClick={goToPhase3}>
                                     Phase 3
                                 </Button>
                             </li>

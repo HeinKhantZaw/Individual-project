@@ -7,6 +7,7 @@ export const PhaseTwoTreeDS = [
             "y": -200
         },
         "data": {
+            "isHidden": false,
             "label": "Sufficient_Acceptance",
             "top": "no"
         },
@@ -20,6 +21,7 @@ export const PhaseTwoTreeDS = [
                     "y": 200
                 },
                 "data": {
+                    "isHidden": false,
                     "label": "Improve_Behavioral_Intention"
                 },
                 "draggable": false,
@@ -34,6 +36,7 @@ export const PhaseTwoTreeDS = [
                         },
                         "parentId": "improve-behavioral-intention",
                         "data": {
+                            "isHidden": false,
                             "label": "Improve_Performance_Expectancy"
                         },
                         "draggable": false,
@@ -48,6 +51,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-performance-expectancy",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Usefulness"
                                 },
                                 "draggable": false,
@@ -62,6 +66,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-usefulness",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Speed",
                                             "width": 280
                                         },
@@ -77,6 +82,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-usefulness",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Performance_Quality",
                                             "width": 290
                                         },
@@ -92,6 +98,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-usefulness",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Productivity",
                                             "width": 260
                                         },
@@ -107,6 +114,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-usefulness",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Effectiveness",
                                             "width": 340
                                         },
@@ -122,6 +130,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-usefulness",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Perception_via_IT",
                                             "width": 450,
                                             "height": 100,
@@ -142,6 +151,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-performance-expectancy",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Relative_Advantage_VS_Prev_Subj",
                                     "width": 350,
                                     "height": 90
@@ -158,6 +168,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-relative-advantage",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Speed_VS_Prev_Subj",
                                             "width": 280
                                         },
@@ -173,6 +184,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-relative-advantage",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Performance_Quality_VS_Prev_Subj",
                                             "width": 350
                                         },
@@ -188,6 +200,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-relative-advantage",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Productivity_VS_Prev_Subj",
                                             "width": 290
                                         },
@@ -203,6 +216,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-relative-advantage",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Effectiveness_VS_Prev_Subj",
                                             "width": 340
                                         },
@@ -218,6 +232,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-relative-advantage",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
                                             "width": 450,
                                             "height": 100,
@@ -238,6 +253,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-performance-expectancy",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Increase_Outcome_Expectations"
                                 },
                                 "draggable": false,
@@ -251,6 +267,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "increase-outcome-expectations",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Save_Time_for_Interesting_Activities",
                                             "width": 270
                                         },
@@ -266,6 +283,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "increase-outcome-expectations",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Increase_Chances_for_Improvements",
                                             "width": 290
                                         },
@@ -280,6 +298,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "increase-chances-for-improvements",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Increase_Chances_for_Improving_Social_Status",
                                                     "width": 340,
                                                     "sourceLeft": true
@@ -296,6 +315,7 @@ export const PhaseTwoTreeDS = [
                                                         },
                                                         "parentId": "increase-chances-for-improving-social-status",
                                                         "data": {
+                                                            "isHidden": false,
                                                             "label": "Support_Achievement",
                                                             "type": "tactic",
                                                             "num": "[4]",
@@ -316,6 +336,7 @@ export const PhaseTwoTreeDS = [
                                                         },
                                                         "parentId": "increase-chances-for-improving-social-status",
                                                         "data": {
+                                                            "isHidden": false,
                                                             "label": "Improve_Perceived_Status",
                                                             "type": "tactic",
                                                             "num": "[4]",
@@ -337,6 +358,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "increase-chances-for-improvements",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Increase_Chances_for_a_Promotion",
                                                     "width": 250,
                                                     "sourceRight": true
@@ -353,6 +375,7 @@ export const PhaseTwoTreeDS = [
                                                         },
                                                         "parentId": "increase-chances-for-a-promotion",
                                                         "data": {
+                                                            "isHidden": false,
                                                             "label": "Support_Achievement",
                                                             "type": "tactic",
                                                             "num": "[4]",
@@ -373,6 +396,7 @@ export const PhaseTwoTreeDS = [
                                                         },
                                                         "parentId": "increase-chances-for-a-promotion",
                                                         "data": {
+                                                            "isHidden": false,
                                                             "label": "Improve_Perceived_Status",
                                                             "type": "tactic",
                                                             "num": "[4]",
@@ -396,6 +420,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "increase-outcome-expectations",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Skills",
                                             "width": 300
                                         },
@@ -411,6 +436,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-skills",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Skill_Improvement",
                                                     "type": "tactic",
                                                     "num": "[3]"
@@ -427,6 +453,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-skills",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Awareness",
                                                     "type": "tactic",
                                                     "num": "[2]"
@@ -445,6 +472,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "increase-outcome-expectations",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Obtain_Additional_Income"
                                         },
                                         "draggable": false,
@@ -459,6 +487,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "obtain-additional-income",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Achievement",
                                                     "type": "tactic",
                                                     "num": "[4]",
@@ -479,6 +508,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "obtain-additional-income",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Skill_Improvement",
                                                     "type": "tactic",
                                                     "num": "[3]"
@@ -495,6 +525,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "obtain-additional-income",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Awareness",
                                                     "type": "tactic",
                                                     "num": "[2]"
@@ -517,6 +548,7 @@ export const PhaseTwoTreeDS = [
                         },
                         "parentId": "improve-behavioral-intention",
                         "data": {
+                            "isHidden": false,
                             "label": "Reduce_Effort_Expectancy"
                         },
                         "draggable": false,
@@ -531,6 +563,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "reduce-effort-expectancy",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Ease_of_Use",
                                     "width": 250
                                 },
@@ -545,6 +578,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Clearness",
                                             "width": 250
                                         },
@@ -560,6 +594,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-clearness",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
                                                     "num": "[3]",
@@ -577,6 +612,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-clearness",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -596,6 +632,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Understandability",
                                             "width": 320
                                         },
@@ -611,6 +648,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-understandability",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
                                                     "num": "[3]",
@@ -628,6 +666,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-understandability",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -647,6 +686,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Usability",
                                             "width": 260
                                         },
@@ -661,6 +701,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-usability",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
                                                     "num": "[3]",
@@ -678,6 +719,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-usability",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -697,6 +739,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Perceived_Easy_Learning",
                                             "width": 280
                                         },
@@ -711,6 +754,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-easy-learning",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
                                                     "num": "[3]",
@@ -728,6 +772,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-perceived-easy-learning",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -749,6 +794,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "reduce-effort-expectancy",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Ease_of_Use"
                                 },
                                 "draggable": false,
@@ -762,6 +808,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Clearness"
                                         },
                                         "draggable": false,
@@ -776,6 +823,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-clearness",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -795,6 +843,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Understandability"
                                         },
                                         "draggable": false,
@@ -810,6 +859,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Usability"
                                         },
                                         "draggable": false,
@@ -824,6 +874,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-ease-of-use",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Learning"
                                         },
                                         "draggable": false,
@@ -838,6 +889,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-learning",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Awareness",
                                                     "type": "tactic",
                                                     "num": "[3]"
@@ -854,6 +906,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "improve-learning",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Skill_Improvement",
                                                     "type": "tactic",
                                                     "num": "[4]"
@@ -876,6 +929,7 @@ export const PhaseTwoTreeDS = [
                         },
                         "parentId": "improve-behavioral-intention",
                         "data": {
+                            "isHidden": false,
                             "label": "Increase_Social_Influence",
                             "sourceLeft": true,
                             "sourceRight": true
@@ -892,6 +946,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-social-influence",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Subjective_Norm"
                                 },
                                 "draggable": false,
@@ -905,6 +960,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-subjective-norm",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Increase_Influence_of_Important_People",
                                             "width": 300
                                         },
@@ -920,6 +976,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-subjective-norm",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Maximize_Impact_of_Influencer"
                                         },
                                         "draggable": false,
@@ -936,6 +993,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-social-influence",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Social_Factors"
                                 },
                                 "draggable": false,
@@ -949,6 +1007,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-social-factors",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Show_Many_People_Embrace_the_Subject",
                                             "width": 300
                                         },
@@ -964,6 +1023,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-social-factors",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Show_Embracing_the_Subject_is_Socially_Pushed",
                                             "width": 350
                                         },
@@ -979,6 +1039,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-social-factors",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Show_Embracing_the_Subject_is_Socially_Supported",
                                             "width": 350,
                                             "sourceLeft": true
@@ -994,6 +1055,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "show-embracing-the-subject-is-socially-supported",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Achievement",
                                                     "type": "tactic",
                                                     "num": "[5]"
@@ -1010,6 +1072,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "show-embracing-the-subject-is-socially-supported",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Support_Skill_Improvement",
                                                     "type": "tactic",
                                                     "num": "[5]"
@@ -1026,6 +1089,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "show-embracing-the-subject-is-socially-supported",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_Minor_Assistance",
                                                     "type": "tactic",
                                                     "num": "[2]",
@@ -1043,6 +1107,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "show-embracing-the-subject-is-socially-supported",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Awareness",
                                                     "type": "tactic",
                                                     "num": "[3]"
@@ -1059,6 +1124,7 @@ export const PhaseTwoTreeDS = [
                                                 },
                                                 "parentId": "show-embracing-the-subject-is-socially-supported",
                                                 "data": {
+                                                    "isHidden": false,
                                                     "label": "Improve_System_Perception_via_IT",
                                                     "type": "tactic",
                                                     "num": "[3]",
@@ -1080,6 +1146,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-social-influence",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Support_Social_Behavior",
                                     "type": "tactic",
                                     "num": "[5]"
@@ -1096,6 +1163,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-social-influence",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Promote_Collaboration",
                                     "type": "tactic",
                                     "num": "[1]"
@@ -1116,6 +1184,7 @@ export const PhaseTwoTreeDS = [
                 },
                 "parentId": "sufficient-acceptance",
                 "data": {
+                    "isHidden": false,
                     "label": "Create_Facilitating_Conditions"
                 },
                 "draggable": false,
@@ -1130,6 +1199,7 @@ export const PhaseTwoTreeDS = [
                         },
                         "parentId": "create-facilitating-conditions",
                         "data": {
+                            "isHidden": false,
                             "label": "Improve_Perceived_Behavioral_Control"
                         },
                         "draggable": false,
@@ -1143,6 +1213,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-perceived-behavioral-control",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Adequacy_on_Personal_Resources_Needed",
                                     "width": 400,
                                     "height": 100
@@ -1159,6 +1230,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-adequacy-on-personal-resources-needed",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Perception_via_IT",
                                             "type": "tactic",
                                             "num": "[4]",
@@ -1179,6 +1251,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-perceived-behavioral-control",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Adequacy_on_Personal_Knowledge_Needed",
                                     "width": 400,
                                     "height": 100
@@ -1195,6 +1268,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-adequacy-on-personal-knowledge-needed",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Awareness",
                                             "type": "tactic",
                                             "num": "[4]"
@@ -1211,6 +1285,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-adequacy-on-personal-knowledge-needed",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Support_Skill_Improvement",
                                             "type": "tactic",
                                             "num": "[5]"
@@ -1227,6 +1302,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-adequacy-on-personal-knowledge-needed",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Perception_via_IT",
                                             "type": "tactic",
                                             "num": "[4]",
@@ -1247,6 +1323,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "improve-perceived-behavioral-control",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Improve_Perceived_Compatibility"
                                 },
                                 "draggable": false,
@@ -1260,6 +1337,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-compatibility",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "With_Systems_Involved"
                                         },
                                         "draggable": false,
@@ -1274,6 +1352,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-compatibility",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "With_Behaviors_Involved"
                                         },
                                         "draggable": false,
@@ -1288,6 +1367,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-compatibility",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "With_Personal_Commitments"
                                         },
                                         "draggable": false,
@@ -1302,6 +1382,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-compatibility",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "With_Personal_Style"
                                         },
                                         "draggable": false,
@@ -1316,6 +1397,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "improve-perceived-compatibility",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Perception_via_IT",
                                             "type": "tactic",
                                             "num": "[4]",
@@ -1338,6 +1420,7 @@ export const PhaseTwoTreeDS = [
                         },
                         "parentId": "create-facilitating-conditions",
                         "data": {
+                            "isHidden": false,
                             "label": "Increase_Assistance"
                         },
                         "draggable": false,
@@ -1352,6 +1435,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-assistance",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Charge_a_Person_for_Assistance"
                                 },
                                 "draggable": false,
@@ -1366,6 +1450,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-assistance",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Create_Assistance_Group"
                                 },
                                 "draggable": false,
@@ -1379,6 +1464,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "create-assistance-group",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Promote_Collaboration",
                                             "type": "tactic",
                                             "num": "[2]"
@@ -1397,6 +1483,7 @@ export const PhaseTwoTreeDS = [
                                 },
                                 "parentId": "increase-assistance",
                                 "data": {
+                                    "isHidden": false,
                                     "label": "Create_Assistance_Systems"
                                 },
                                 "draggable": false,
@@ -1410,6 +1497,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "create-assistance-systems",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Perception_via_IT",
                                             "type": "tactic",
                                             "num": "[4]",
@@ -1428,6 +1516,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "create-assistance-systems",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_Minor_Assistance",
                                             "type": "tactic",
                                             "num": "[3]"
@@ -1444,6 +1533,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "create-assistance-systems",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Improve_System_Awareness",
                                             "type": "tactic",
                                             "num": "[5]"
@@ -1460,6 +1550,7 @@ export const PhaseTwoTreeDS = [
                                         },
                                         "parentId": "create-assistance-systems",
                                         "data": {
+                                            "isHidden": false,
                                             "label": "Support_Skill_Improvement",
                                             "type": "tactic",
                                             "num": "[6]"

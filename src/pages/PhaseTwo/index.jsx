@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
-import {updateNodes} from "../../redux/slices/phaseTwoSlice.jsx";
+import {toggleHidden, updateNodes} from "../../redux/slices/phaseTwoSlice.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 import {findNodeById} from "../../utils/findNodeById.jsx";
@@ -801,6 +801,7 @@ export default function PhaseTwo() {
                 const newNodes = nodeState.filter(node => !ids.includes(node.id));
                 dispatch(updateNodes(newNodes));
             }
+            dispatch(toggleHidden(element.id))
         }
     };
 

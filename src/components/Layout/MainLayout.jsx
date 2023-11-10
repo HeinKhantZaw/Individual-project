@@ -5,14 +5,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {Outlet, useNavigate} from "react-router-dom";
 import {FaDownload, FaFileUpload} from "react-icons/fa";
 import {Tooltip} from 'react-tooltip'
-import {setPhaseStatusState} from "../../redux/slices/phaseStatusSlice.jsx";
+import {Text} from "@arwes/react-text";
+import {setPhaseStatusState, toggleInfo} from "../../redux/slices/phaseStatusSlice.jsx";
 import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.jsx";
 import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.jsx";
 
 export default function MainLayout() {
     const bleeps = useBleeps();
     const navigate = useNavigate();
-    const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.phaseStatus);
+    const {nextPhaseEnabled, currentPhase, infoToggle} = useSelector((state) => state.phaseStatus);
     const dispatch = useDispatch();
     const store = useSelector((state) => state);
 
@@ -135,14 +136,28 @@ export default function MainLayout() {
                             >
                                 Next Phase
                             </Button>
+                        </div>
+                        <div className="flex items-center lg:order-2">
                             <div className={"w-10"}/>
-                            <Button animate className={"font-semibold text-lg custom-button upload"} onClick={uploadJson}>
+                            <Button animate className={"font-semibold text-lg custom-button upload"}
+                                    layer={"control"}
+                                    onClick={uploadJson}>
                                 <FaFileUpload size={"1.2em"}/>
                             </Button>
                             <div className={"w-4"}/>
-                            <Button animate className={"font-semibold text-lg custom-button download"} onClick={saveAsJson}>
+                            <Button animate className={"font-semibold text-lg custom-button download"}
+                                    layer={"control"}
+                                    onClick={saveAsJson}>
                                 <FaDownload size={"1.2em"}/>
                             </Button>
+                        </div>
+                        <div className="flex flex-col items-center lg:order-2">
+                            <Text manager="decipher" easing="outSine" fixed style={{color: "#A9F6F8"}}>Info</Text>
+                            <label className="switch">
+                                <input type="checkbox" checked={infoToggle} onChange={() => dispatch(toggleInfo())}/>
+                                <span className={`slider`}>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </nav>

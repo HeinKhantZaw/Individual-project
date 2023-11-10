@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Handle, NodeToolbar, Position} from "reactflow";
 import Card from "../Card/index.jsx";
 import {getGlossary} from "../../utils/getGlossary.jsx";
+import {useSelector} from "react-redux";
 
 const OvalNode = ({data}) => {
     const nodeStyle = {
@@ -17,9 +18,10 @@ const OvalNode = ({data}) => {
     };
     const noTopHandle = data.top === "no";
     const [isVisible, setVisible] = useState(false);
+    const {infoToggle} = useSelector((state) => state.phaseStatus);
 
     return (
-        <div style={nodeStyle} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
+        <div style={nodeStyle} onMouseEnter={() => infoToggle && setVisible(true)} onMouseLeave={() => infoToggle && setVisible(false)}>
             {data.isHidden &&
                 <img src={"/assets/cross.png"} style={{position: "absolute"}} alt={"hidden"}/>
             }

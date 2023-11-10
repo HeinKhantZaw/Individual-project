@@ -100,3 +100,69 @@ button:focus-visible {
 .react-flow__node-oval {
     z-index: -1 !important;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #404040;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: 0 0 4px rgba(75, 242, 246, 0.5);
+}
+
+.slider:before {
+    position: absolute;
+    content: "OFF";
+    font-size: 11px;
+    line-height: 22px;
+    color: #2b7d80;
+    height: 22px;
+    width: 22px;
+    left: 1px;
+    bottom: 2px;
+    background-color: #4BF2F6;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(44, 44, 44);
+}
+input:checked + .slider:before {
+    content: "ON";
+    font-size: 12px;
+    color: #2b7d80;
+    text-align: center;
+    line-height: 22px;
+}
+
+input:checked + .slider {
+    background-color: #2b7d80; /* Cyberpunk green color when toggled */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #00f6ff; /* Glowing effect on focus */
+}
+
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

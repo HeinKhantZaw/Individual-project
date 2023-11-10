@@ -4,6 +4,7 @@ const initialState = {
     nextPhaseEnabled: false,
     currentPhase: 1,
     uploaded: 0,
+    infoToggle: true,
 }
 export const phaseStatusSlice = createSlice({
     name: 'phaseStatus',
@@ -20,9 +21,12 @@ export const phaseStatusSlice = createSlice({
             state.currentPhase = action.payload.currentPhase;
             state.uploaded++;
         },
+        toggleInfo: (state) => {
+            state.infoToggle = !state.infoToggle;
+        }
     },
 });
 
-export const {setNextPhaseEnabled, setCurrentPhase, setPhaseStatusState} = phaseStatusSlice.actions;
+export const {setNextPhaseEnabled, setCurrentPhase, setPhaseStatusState, toggleInfo} = phaseStatusSlice.actions;
 
 export default phaseStatusSlice.reducer;

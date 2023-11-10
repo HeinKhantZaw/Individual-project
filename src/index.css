@@ -133,16 +133,16 @@ button:focus-visible {
     content: "OFF";
     font-size: 11px;
     line-height: 22px;
-    color: #2b7d80;
+    color: #4BF2F6;
     height: 22px;
     width: 22px;
     left: 1px;
     bottom: 2px;
-    background-color: #4BF2F6;
+    background-color: rgb(44, 44, 44);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgb(44, 44, 44);
+    box-shadow: 0 0 3px rgba(75, 242, 246, 0.3);
 }
 input:checked + .slider:before {
     content: "ON";
@@ -150,6 +150,8 @@ input:checked + .slider:before {
     color: #2b7d80;
     text-align: center;
     line-height: 22px;
+    background-color: #4BF2F6;
+    box-shadow: 0 0 10px rgb(44, 44, 44);
 }
 
 input:checked + .slider {

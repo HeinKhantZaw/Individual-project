@@ -17,7 +17,7 @@ export const PhaseTwoTreeDS = [
                 "id": "improve-behavioral-intention",
                 "type": "oval",
                 "position": {
-                    "x": 250,
+                    "x": 3075,
                     "y": 200
                 },
                 "data": {

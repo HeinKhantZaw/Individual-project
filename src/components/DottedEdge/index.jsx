@@ -32,10 +32,12 @@ const DottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, tar
                         background: "#242424",
                         fontSize: 30,
                         fontWeight: 700,
+                        marginTop: data?.hasLineBreak || 0,
+                        marginLeft: data?.hasMarginLeft || 0,
                     }}
                     className="nodrag nopan"
                 >
-                    + {data?.label}
+                    <pre className={"text-center text-lg"}>+ {data?.label}</pre>
                 </div>
             </EdgeLabelRenderer>
         </>

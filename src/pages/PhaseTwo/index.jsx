@@ -19,7 +19,7 @@ import getTacticNodes from "../../utils/getTacticNodes.jsx";
 const nodeTypes = {oval: OvalNode, operator: OperatorNode};
 const edgeTypes = {dotted: DottedEdge};
 export default function PhaseTwo() {
-    const {nodeState, edgeState, hiddenNodes, hiddenEdges, hiddenTactics, uploaded, nodeTree} = useSelector((state) => state.phaseTwo);
+    const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseTwo);
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     let idToBeRemoved = [];
@@ -47,7 +47,7 @@ export default function PhaseTwo() {
                     } else if (match === "AND") {
                         return "&&";
                     } else {
-                        return "true";
+                        return "false";
                     }
                 });
 
@@ -58,6 +58,7 @@ export default function PhaseTwo() {
         });
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
         idToBeRemoved = invisibleNodes.map(item => item.id);
+        console.log(idToBeRemoved)
         return removeAndFlattenNodes(nodeTree, idToBeRemoved);
     };
 
@@ -80,7 +81,6 @@ export default function PhaseTwo() {
                     dispatch(updateNodes(newNodes));
                     dispatch(addEdges(checkNodes.children.length > 0 ? checkNodes.children.filter(c=>!c.data.isHidden).map(child=>child.id) : checkNodes.id));
                     dispatch(setHiddenNodes(hiddenNodes.filter(node => node.id !== element.id)));
-                    // const checkTacticNodesToAdd = edgeState.filter()
                 } else {
                     const ids = getAllChildrenIds(searchNode(treeMap, element.id));
                     let tacticNodes = getTacticNodes(ids);

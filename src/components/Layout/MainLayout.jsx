@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "arwes/lib/Button/index.js";
-import {useBleeps} from "@arwes/react-bleeps";
+// import {useBleeps} from "@arwes/react-bleeps";
 import {useDispatch, useSelector} from "react-redux";
 import {Outlet, useNavigate} from "react-router-dom";
 import {FaDownload, FaFileUpload} from "react-icons/fa";
@@ -11,7 +11,7 @@ import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.jsx";
 import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.jsx";
 
 export default function MainLayout() {
-    const bleeps = useBleeps();
+    // const bleeps = useBleeps();
     const navigate = useNavigate();
     const {nextPhaseEnabled, currentPhase, infoToggle} = useSelector((state) => state.phaseStatus);
     const dispatch = useDispatch();
@@ -130,7 +130,7 @@ export default function MainLayout() {
                         </ul>
                         <div className="flex items-center lg:order-2">
                             <Button animate className={"font-semibold text-lg custom-button"}
-                                    buttonProps={{onMouseEnter: () => bleeps.hover?.play()}}
+                                    // buttonProps={{onMouseEnter: () => bleeps.hover?.play()}}
                                     disabled={!nextPhaseEnabled}
                                     onClick={goToNextPhase}
                             >

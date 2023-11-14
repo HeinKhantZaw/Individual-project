@@ -2,19 +2,19 @@ import React, {useEffect} from "react";
 import HomeBackground from "../../components/Background/HomeBackground.jsx";
 import {Animator} from "@arwes/react-animator";
 import {Text} from "@arwes/react-text";
-import {useBleeps} from "@arwes/react-bleeps";
-import {BleepsOnAnimator} from "@arwes/react-core";
+// import {useBleeps} from "@arwes/react-bleeps";
+// import {BleepsOnAnimator} from "@arwes/react-core";
 
 import Button from "arwes/lib/Button/index.js";
 import {Animated} from "@arwes/react-animated";
 
 export default function Home() {
-    const bleeps = useBleeps();
+    // const bleeps = useBleeps();
 
-    const hoverFunc = () => {
-        document.getElementById("get-started").style.backgroundColor = "#00ff00";
-        bleeps.hover?.play()
-    }
+    // const hoverFunc = () => {
+    //     document.getElementById("get-started").style.backgroundColor = "#00ff00";
+    //     bleeps.hover?.play()
+    // }
     const hoverOutFunc = () => {
         document.getElementById("get-started").style.backgroundColor = "";
     }
@@ -31,10 +31,10 @@ export default function Home() {
             <div className={"inset-center"}>
                 <Animator active={true} combine manager="sequence">
                     <Animator duration={3}>
-                        <BleepsOnAnimator
-                            transitions={{
-                                entered: "intro"
-                            }}/>
+                        {/*<BleepsOnAnimator*/}
+                        {/*    transitions={{*/}
+                        {/*        entered: "intro"*/}
+                        {/*    }}/>*/}
                         <h1 className={"font-semibold text-5xl"}>
                             <Text manager="decipher" easing="outSine" fixed>
                                 WEB-AGON
@@ -42,10 +42,10 @@ export default function Home() {
                         </h1>
                     </Animator>
                     <Animator duration={2}>
-                        <BleepsOnAnimator
-                            transitions={{
-                                entered: "enter"
-                            }}/>
+                        {/*<BleepsOnAnimator*/}
+                        {/*    transitions={{*/}
+                        {/*        entered: "enter"*/}
+                        {/*    }}/>*/}
                         <div className={"font-medium text-lg"}>
                             <Text manager="decipher" easing="outSine" fixed>
                                 A Tool for the Gamification of Software Systems
@@ -62,12 +62,12 @@ export default function Home() {
                                     },
                                 }
                             }}>
-                                <BleepsOnAnimator
-                                    transitions={{
-                                        entering: "intro",
-                                    }}/>
+                                {/*<BleepsOnAnimator*/}
+                                {/*    transitions={{*/}
+                                {/*        entering: "intro",*/}
+                                {/*    }}/>*/}
                                 <Button buttonProps={{
-                                    onMouseEnter: () => hoverFunc(),
+                                    // onMouseEnter: () => hoverFunc(),
                                     onClick: () => clickFunc(),
                                     onMouseLeave: () => hoverOutFunc()
                                 }}

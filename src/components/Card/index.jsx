@@ -1,8 +1,8 @@
 import React from "react";
-import {useBleeps} from "@arwes/react-bleeps";
+// import {useBleeps} from "@arwes/react-bleeps";
 import {Animator} from "@arwes/react-animator";
-import {BleepsOnAnimator} from "@arwes/react-core";
-import {aa, aaVisibility, Animated} from "@arwes/react-animated";
+// import {BleepsOnAnimator} from "@arwes/react-core";
+import {Animated} from "@arwes/react-animated";
 import {FrameSVGCorners} from "@arwes/react";
 import {createAppTheme} from '@arwes/theme';
 import {Text} from "@arwes/react-text";
@@ -11,15 +11,15 @@ import {useNavigate} from "react-router-dom";
 
 const Card = ({isIntro, message, title, width}) => {
     const theme = createAppTheme();
-    const bleeps = useBleeps();
+    // const bleeps = useBleeps();
     const navigate = useNavigate();
 
     return (
         <Animator merge combine manager='stagger'>
-            <BleepsOnAnimator
-                transitions={{entering: isIntro ? 'intro' : 'expand'}}
-                continuous
-            />
+            {/*<BleepsOnAnimator*/}
+            {/*    transitions={{entering: isIntro ? 'intro' : 'expand'}}*/}
+            {/*    continuous*/}
+            {/*/>*/}
             <Animated
                 className='card'
                 style={{
@@ -32,7 +32,7 @@ const Card = ({isIntro, message, title, width}) => {
                     textAlign: 'center'
                 }}
                 // animated={[aaVisibility(), aa('y', '10rem', 0)]}
-                onClick={() => bleeps.click?.play()}
+                // onClick={() => bleeps.click?.play()}
             >
                 {/* Frame decoration and shape colors defined by CSS. */}
                 <style>{`
@@ -79,7 +79,7 @@ const Card = ({isIntro, message, title, width}) => {
                 <div className={"mt-6 flex items-center justify-center"}>
                     <Button animate className={"font-semibold text-lg custom-button"} id={"enter-btn"}
                             buttonProps={{
-                                onMouseEnter: () => bleeps.hover?.play(),
+                                // onMouseEnter: () => bleeps.hover?.play(),
                                 onClick: () => navigate("home"),
                             }}
                     >

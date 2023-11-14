@@ -100,7 +100,7 @@ const initialEdges = [
         id: "e2-5",
         source: "create-facilitating-conditions",
         target: "increase-assistance",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))"
         },
         type: "dotted",
@@ -167,7 +167,7 @@ const initialEdges = [
         id: "e3-11",
         source: "improve-perceived-behavioral-control",
         target: "improve-perceived-adequacy-on-personal-resources-needed",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))"
         },
         type: "dotted",
@@ -177,7 +177,7 @@ const initialEdges = [
         id: "e3-12",
         source: "improve-perceived-behavioral-control",
         target: "improve-perceived-adequacy-on-personal-knowledge-needed",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))", hasLineBreak: 40
         },
         type: "dotted",
@@ -305,7 +305,7 @@ const initialEdges = [
         id: "e4-29",
         source: "improve-perceived-ease-of-use",
         target: "improve-perceived-clearness",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))", hasMarginLeft: -140
         },
         type: "dotted",
@@ -315,7 +315,7 @@ const initialEdges = [
         id: "e4-30",
         source: "improve-perceived-ease-of-use",
         target: "improve-perceived-understandability",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))", hasLineBreak: 40
         },
         type: "dotted",
@@ -339,7 +339,7 @@ const initialEdges = [
         id: "e4-33",
         source: "improve-ease-of-use",
         target: "improve-clearness",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))"
         },
         type: "dotted",
@@ -349,7 +349,7 @@ const initialEdges = [
         id: "e4-34",
         source: "improve-ease-of-use",
         target: "improve-understandability",
-        data:{
+        data: {
             label: "(MandFor(C24[Goal.Clarity.Low]))", hasLineBreak: 40
         },
         type: "dotted",
@@ -366,7 +366,7 @@ const initialEdges = [
         id: "e4-36",
         source: "improve-ease-of-use",
         target: "improve-learning",
-        data:{
+        data: {
             label: "(NOT(C20[Goal.Communication.Low]))", hasLineBreak: -20, hasMarginLeft: 130
         },
         type: "dotted",
@@ -477,7 +477,7 @@ const initialEdges = [
     {
         id: "e6-42",
         source: "improve-perceived-usefulness",
-        target: "improve-system-perception-via-IT-2",
+        target: "improve-system-perception-via-IT",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -780,7 +780,7 @@ const initialEdges = [
     {
         id: "e7-70",
         source: "increase-chances-for-improving-social-status",
-        target: "improve-perceived-status",
+        target: "improve-perceived-status-4",
         targetHandle: "oval_left",
         sourceHandle: "oval_source_left",
         type: "step",
@@ -790,7 +790,7 @@ const initialEdges = [
     {
         id: "e7-71",
         source: "increase-chances-for-a-promotion",
-        target: "improve-perceived-status",
+        target: "improve-perceived-status-4",
         targetHandle: "oval_right",
         sourceHandle: "oval_source_right",
         type: "step",
@@ -802,6 +802,9 @@ const initialEdges = [
 const initialState = {
     nodeState: [],
     edgeState: initialEdges,
+    hiddenEdges: [],
+    hiddenNodes: [],
+    hiddenTactics: [],
     nodeTree: PhaseTwoTreeDS,
     uploaded: 0,
 }
@@ -813,9 +816,48 @@ export const phaseTwoSlice = createSlice({
         updateNodes: (state, action) => {
             state.nodeState = action.payload
         },
-        updateTree: (state, action) => {
-            state.nodeTree = action.payload
+        // updateEdges: (state, action) => {
+        //     state.edgeState = action.payload
+        // },
+        setHiddenNodes: (state, action) => {
+            state.hiddenNodes = action.payload;
         },
+        filterEdges: (state, action) => {
+            const {needNodes} = action.payload;
+            const sourceNodes = [action.payload.clickedNode, ...needNodes]
+            const tacticNodes = [...new Set(action.payload.tacticNodes)]
+            state.hiddenEdges = [...state.hiddenEdges, state.edgeState.filter((edge) => {
+                return sourceNodes.includes(edge.source) && tacticNodes.includes(edge.target)
+            })].flat();
+            state.edgeState = state.edgeState.filter((edge) => {
+                return !(sourceNodes.includes(edge.source) && tacticNodes.includes(edge.target))
+            })
+            const tacticNodesToBeHidden = tacticNodes.filter(target => !state.edgeState.some(edge => edge.target === target));
+            state.hiddenTactics = [...state.hiddenTactics, state.nodeState.filter((node) => {
+                return tacticNodesToBeHidden.includes(node.id)
+            })].flat();
+            state.nodeState = state.nodeState.filter((node) => {
+                return !tacticNodesToBeHidden.includes(node.id)
+            })
+        },
+        addEdges: (state, action) => {
+            const nodes = action.payload;
+            const edgesToBeAdded = state.hiddenEdges.filter((edge) => {
+                return nodes.includes(edge.source)
+            })
+            state.hiddenEdges = state.hiddenEdges.filter((edge) => {
+                return !nodes.includes(edge.source)
+            })
+            state.edgeState = [...state.edgeState, ...edgesToBeAdded]
+            const tacticNodesToBeAdded = state.hiddenTactics.filter(target => !state.edgeState.some(edge => edge.target === target));
+            state.hiddenTactics = state.hiddenTactics.filter((node) => {
+                return !nodes.includes(node.id)
+            })
+            state.nodeState = [...state.nodeState, ...tacticNodesToBeAdded]
+        },
+        // updateTree: (state, action) => {
+        //     state.nodeTree = action.payload
+        // },
         toggleHidden: (state, action) => {
             state.nodeState.map((node) => {
                 if (node.id === action.payload) {
@@ -830,6 +872,15 @@ export const phaseTwoSlice = createSlice({
     },
 })
 
-export const {updateNodes, updateTree, toggleHidden, setPhaseTwoState} = phaseTwoSlice.actions
+export const {
+    updateNodes,
+    // updateEdges,
+    setHiddenNodes,
+    filterEdges,
+    // updateTree,
+    addEdges,
+    toggleHidden,
+    setPhaseTwoState
+} = phaseTwoSlice.actions
 
 export default phaseTwoSlice.reducer

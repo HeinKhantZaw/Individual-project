@@ -4,7 +4,7 @@ const initialState = {
     nextPhaseEnabled: false,
     currentPhase: 1,
     uploaded: 0,
-    infoToggle: true,
+    infoToggle: false,
 }
 export const phaseStatusSlice = createSlice({
     name: 'phaseStatus',

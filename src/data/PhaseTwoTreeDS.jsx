@@ -3,7 +3,7 @@ export const PhaseTwoTreeDS = [
         "id": "sufficient-acceptance",
         "type": "oval",
         "position": {
-            "x": 3800,
+            "x": 5780,
             "y": -200
         },
         "data": {
@@ -122,7 +122,7 @@ export const PhaseTwoTreeDS = [
                                         "children": null
                                     },
                                     {
-                                        "id": "improve-system-perception-via-IT-2",
+                                        "id": "improve-system-perception-via-IT",
                                         "type": "oval",
                                         "position": {
                                             "x": -3200,
@@ -328,7 +328,7 @@ export const PhaseTwoTreeDS = [
                                                         "children": null
                                                     },
                                                     {
-                                                        "id": "improve-perceived-status",
+                                                        "id": "improve-perceived-status-4",
                                                         "type": "oval",
                                                         "position": {
                                                             "x": 0,
@@ -388,7 +388,7 @@ export const PhaseTwoTreeDS = [
                                                         "children": null
                                                     },
                                                     {
-                                                        "id": "improve-perceived-status",
+                                                        "id": "improve-perceived-status-4",
                                                         "type": "oval",
                                                         "position": {
                                                             "x": 0,

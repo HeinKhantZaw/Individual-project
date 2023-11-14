@@ -816,9 +816,6 @@ export const phaseTwoSlice = createSlice({
         updateNodes: (state, action) => {
             state.nodeState = action.payload
         },
-        // updateEdges: (state, action) => {
-        //     state.edgeState = action.payload
-        // },
         setHiddenNodes: (state, action) => {
             state.hiddenNodes = action.payload;
         },
@@ -855,9 +852,14 @@ export const phaseTwoSlice = createSlice({
             })
             state.nodeState = [...state.nodeState, ...tacticNodesToBeAdded]
         },
-        // updateTree: (state, action) => {
-        //     state.nodeTree = action.payload
-        // },
+        hideEdges: (state, action) => {
+            const edgesToFilter = action.payload;
+            const edgeIds = edgesToFilter.map(edge => edge.id);
+            state.edgeState = state.edgeState.filter((edge) => {
+                return !edgeIds.includes(edge.id)
+            })
+            state.hiddenEdges = [...state.hiddenEdges, edgesToFilter];
+        },
         toggleHidden: (state, action) => {
             state.nodeState.map((node) => {
                 if (node.id === action.payload) {
@@ -874,10 +876,9 @@ export const phaseTwoSlice = createSlice({
 
 export const {
     updateNodes,
-    // updateEdges,
     setHiddenNodes,
     filterEdges,
-    // updateTree,
+    hideEdges,
     addEdges,
     toggleHidden,
     setPhaseTwoState

@@ -6,7 +6,14 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
-import {addEdges, filterEdges, setHiddenNodes, toggleHidden, updateNodes} from "../../redux/slices/phaseTwoSlice.jsx";
+import {
+    addEdges,
+    filterEdges,
+    hideEdges,
+    setHiddenNodes,
+    toggleHidden,
+    updateNodes
+} from "../../redux/slices/phaseTwoSlice.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 import {findNodeById} from "../../utils/findNodeById.jsx";
@@ -58,7 +65,9 @@ export default function PhaseTwo() {
         });
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
         idToBeRemoved = invisibleNodes.map(item => item.id);
-        console.log(idToBeRemoved)
+        const allHiddenIds = idToBeRemoved.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
+        const hiddenEdges = edgeState.filter(edge => allHiddenIds.includes(edge.source));
+        dispatch(hideEdges(hiddenEdges));
         return removeAndFlattenNodes(nodeTree, idToBeRemoved);
     };
 

@@ -3,7 +3,7 @@ import getTacticNodes from "../../utils/getTacticNodes.jsx";
 
 const initialNodes = [
     {
-        "id": "improve-system-perception-via-IT",
+        "id": "improve-system-perception-via-it",
         "type": "oval",
         "position": {
             "x": 700,
@@ -169,7 +169,7 @@ const initialNodes = [
 ]
 
 const initialState = {
-    initialTacticNodes: initialNodes,
+    initialTacticNodes: [],
     removedTacticNodes: [],
     disabledTacticNodes: [],
     uploaded: 0,
@@ -180,7 +180,6 @@ export const phaseThreeSlice = createSlice({
     reducers: {
         setInitialTacticNodes: (state, action) => {
             const totalNodes = action.payload.map((node)=>node.id);
-            console.log(totalNodes);
             const uniqueValues = new Set();
             const regex = /-\d*$/;
             getTacticNodes(totalNodes).forEach(item => {
@@ -189,8 +188,7 @@ export const phaseThreeSlice = createSlice({
             });
 
             const uniqueValuesArray = Array.from(uniqueValues);
-            console.log(uniqueValuesArray);
-            const tacticNodes = [...new Set(getTacticNodes(totalNodes))];
+            state.initialTacticNodes = initialNodes.filter((node) => uniqueValuesArray.includes(node.id));
         },
         hideTactic: (state, action) => {
             state.disabledTacticNodes = [...state.disabledTacticNodes, action.payload]

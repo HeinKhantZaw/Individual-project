@@ -10,7 +10,7 @@ const nodeTypes = {oval: OvalNode};
 
 export default function PhaseThree() {
     const {initialTacticNodes} = useSelector((state) => state.phaseThree);
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialTacticNodes);
+    const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const dispatch = useDispatch();
     const urlParam = new URLSearchParams(window.location.search);
     const phase = urlParam.get('p') || "a";
@@ -23,15 +23,16 @@ export default function PhaseThree() {
             fontFamily: "Roboto, sans-serif",
         },
     }
-    // useEffect(() => {
-    //     setNodes(initialTacticNodes);
-    // }, [initialTacticNodes]);
 
     useEffect(() => {
         dispatch(setCurrentPhase(3))
-        dispatch(setInitialTacticNodes(phaseTwoNodes))
         dispatch(setNextPhaseEnabled(true))
+        dispatch(setInitialTacticNodes(phaseTwoNodes))
     }, []);
+
+    useEffect(() => {
+        setNodes(initialTacticNodes);
+    }, [initialTacticNodes]);
 
     const handleElementClick = (event, element) => {
         dispatch(hideTactic(element.id))

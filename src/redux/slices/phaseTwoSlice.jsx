@@ -810,7 +810,7 @@ const initialState = {
 }
 
 export const phaseTwoSlice = createSlice({
-    name: 'phaseOne',
+    name: 'phaseTwo',
     initialState,
     reducers: {
         updateNodes: (state, action) => {
@@ -869,6 +869,10 @@ export const phaseTwoSlice = createSlice({
         },
         setPhaseTwoState: (state, action) => {
             state.nodeState = action.payload.nodeState
+            state.edgeState = action.payload.edgeState
+            state.hiddenEdges = action.payload.hiddenEdges
+            state.hiddenNodes = action.payload.hiddenNodes
+            state.hiddenTactics = action.payload.hiddenTactics
             state.uploaded++;
         }
     },

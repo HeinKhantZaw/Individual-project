@@ -6,14 +6,15 @@ import {Outlet, useNavigate} from "react-router-dom";
 import {FaDownload, FaFileUpload} from "react-icons/fa";
 import {Tooltip} from 'react-tooltip'
 import {Text} from "@arwes/react-text";
-import {setPhaseStatusState, toggleInfo} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setPhase3Value, setPhaseStatusState, toggleInfo} from "../../redux/slices/phaseStatusSlice.jsx";
 import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.jsx";
 import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.jsx";
+import SelectOption from "../Select/index.jsx";
 
 export default function MainLayout() {
     // const bleeps = useBleeps();
     const navigate = useNavigate();
-    const {nextPhaseEnabled, currentPhase, infoToggle} = useSelector((state) => state.phaseStatus);
+    const {nextPhaseEnabled, currentPhase, infoToggle, phase3Value} = useSelector((state) => state.phaseStatus);
     const dispatch = useDispatch();
     const store = useSelector((state) => state);
 
@@ -107,11 +108,25 @@ export default function MainLayout() {
                                 </Button>
                             </li>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button phase-3"}
-                                        disabled={2 < currentPhase < 3}
-                                        layer={"secondary"} onClick={goToPhase3}>
-                                    Phase 3
-                                </Button>
+                                {/*<Button animate className={"font-semibold text-lg phase-button phase-3"}*/}
+                                {/*        disabled={currentPhase < 3}*/}
+                                {/*        layer={"secondary"} onClick={goToPhase3}>*/}
+                                {/*    Phase 3*/}
+                                {/*</Button>*/}
+                                <SelectOption
+                                    name="phase3"
+                                    options={[
+                                        { id: "Phase_3(a)", value: "Phase 3(a)" },
+                                        { id: "Phase_3(b)", value: "Phase 3(b)" },
+                                        { id: "Phase_3(c)", value: "Phase 3(c)" },
+                                    ]}
+                                    onChange={(e) => dispatch(setPhase3Value(e.target.value))}
+                                    optionValueId={"id"}
+                                    optionInnerContent={"value"}
+                                    required
+                                    selected={phase3Value}
+                                    disabled={currentPhase < 3}
+                                />
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-4"}

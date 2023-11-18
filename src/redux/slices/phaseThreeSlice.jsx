@@ -41,7 +41,7 @@ const initialNodes = [
         "height": 100
     },
     {
-        "id": "support-achievement-4",
+        "id": "support-achievement",
         "type": "oval",
         "position": {
             "x": 1800,
@@ -59,7 +59,7 @@ const initialNodes = [
         "height": 80
     },
     {
-        "id": "improve-perceived-status-4",
+        "id": "improve-perceived-status",
         "type": "oval",
         "position": {
             "x": 2300,
@@ -77,7 +77,7 @@ const initialNodes = [
         "height": 80
     },
     {
-        "id": "support-skill-improvement-3",
+        "id": "support-skill-improvement",
         "type": "oval",
         "position": {
             "x": 1000,
@@ -95,7 +95,7 @@ const initialNodes = [
         "height": 80
     },
     {
-        "id": "improve-system-awareness-2",
+        "id": "improve-system-awareness",
         "type": "oval",
         "position": {
             "x": 1500,
@@ -113,7 +113,7 @@ const initialNodes = [
         "height": 80
     },
     {
-        "id": "improve-minor-assistance-2",
+        "id": "improve-minor-assistance",
         "type": "oval",
         "position": {
             "x": 500,
@@ -149,7 +149,7 @@ const initialNodes = [
         "height": 80
     },
     {
-        "id": "promote-collaboration-1",
+        "id": "promote-collaboration",
         "type": "oval",
         "position": {
             "x": 2500,
@@ -180,11 +180,20 @@ export const phaseThreeSlice = createSlice({
     reducers: {
         setInitialTacticNodes: (state, action) => {
             const totalNodes = action.payload.map((node)=>node.id);
+            console.log(totalNodes);
+            const uniqueValues = new Set();
+            const regex = /-\d*$/;
+            getTacticNodes(totalNodes).forEach(item => {
+                const value = item.replace(regex, ''); // Remove the hyphen and numbers at the end
+                uniqueValues.add(value);
+            });
+
+            const uniqueValuesArray = Array.from(uniqueValues);
+            console.log(uniqueValuesArray);
             const tacticNodes = [...new Set(getTacticNodes(totalNodes))];
         },
         hideTactic: (state, action) => {
             state.disabledTacticNodes = [...state.disabledTacticNodes, action.payload]
-            console.log(action.payload)
             state.initialTacticNodes.map((node) => {
                 if (node.id === action.payload) {
                     node.data.isHidden = !node.data.isHidden

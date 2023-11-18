@@ -846,11 +846,15 @@ export const phaseTwoSlice = createSlice({
                 return !nodes.includes(edge.source)
             })
             state.edgeState = [...state.edgeState, ...edgesToBeAdded]
-            const tacticNodesToBeAdded = state.hiddenTactics.filter(target => !state.edgeState.some(edge => edge.target === target));
-            state.hiddenTactics = state.hiddenTactics.filter((node) => {
-                return !nodes.includes(node.id)
-            })
-            state.nodeState = [...state.nodeState, ...tacticNodesToBeAdded]
+            const targetList = edgesToBeAdded.map(edge => edge.target)
+            const check = targetList.every(target => state.nodeState.some(node => node.id === target));
+            if(!check) {
+                const tacticNodesToBeAdded = state.hiddenTactics.filter(target => !state.edgeState.some(edge => edge.target === target));
+                state.hiddenTactics = state.hiddenTactics.filter((node) => {
+                    return !nodes.includes(node.id)
+                })
+                state.nodeState = [...state.nodeState, ...tacticNodesToBeAdded]
+            }
         },
         hideEdges: (state, action) => {
             const edgesToFilter = action.payload;

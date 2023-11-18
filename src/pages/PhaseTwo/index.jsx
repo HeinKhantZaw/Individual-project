@@ -60,7 +60,7 @@ export default function PhaseTwo() {
 
                 // (C3 OR C8 OR C9 OR C20 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)
                 // (true || false || true || false || false || false || false || false) && (!true)
-                return true;
+                return eval(replacedExpression);
             }
         });
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));

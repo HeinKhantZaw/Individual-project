@@ -23,9 +23,9 @@ export default function PhaseThree() {
             fontFamily: "Roboto, sans-serif",
         },
     }
-    useEffect(() => {
-        setNodes(initialTacticNodes);
-    }, [initialTacticNodes]);
+    // useEffect(() => {
+    //     setNodes(initialTacticNodes);
+    // }, [initialTacticNodes]);
 
     useEffect(() => {
         dispatch(setCurrentPhase(3))

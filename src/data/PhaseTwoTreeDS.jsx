@@ -122,7 +122,7 @@ export const PhaseTwoTreeDS = [
                                         "children": null
                                     },
                                     {
-                                        "id": "improve-system-perception-via-IT",
+                                        "id": "improve-system-perception-via-IT-2",
                                         "type": "oval",
                                         "position": {
                                             "x": -3200,
@@ -224,7 +224,7 @@ export const PhaseTwoTreeDS = [
                                         "children": null
                                     },
                                     {
-                                        "id": "improve-system-advantage-perception-vs-competitor-systems-via-it",
+                                        "id": "improve-system-advantage-perception-vs-competitor-systems-via-it-1",
                                         "type": "oval",
                                         "position": {
                                             "x": -1500,
@@ -1138,7 +1138,7 @@ export const PhaseTwoTreeDS = [
                                 ]
                             },
                             {
-                                "id": "support-social-behavior",
+                                "id": "support-social-behavior-5",
                                 "type": "oval",
                                 "position": {
                                     "x": 4900,

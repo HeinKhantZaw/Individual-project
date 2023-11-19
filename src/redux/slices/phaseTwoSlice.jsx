@@ -477,7 +477,7 @@ const initialEdges = [
     {
         id: "e6-42",
         source: "improve-perceived-usefulness",
-        target: "improve-system-perception-via-IT",
+        target: "improve-system-perception-via-IT-2",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -485,7 +485,7 @@ const initialEdges = [
     {
         id: "e6-43",
         source: "improve-perceived-relative-advantage",
-        target: "improve-system-advantage-perception-vs-competitor-systems-via-it",
+        target: "improve-system-advantage-perception-vs-competitor-systems-via-it-1",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -680,7 +680,7 @@ const initialEdges = [
     {
         id: "e6-61_1",
         source: "increase-social-influence",
-        target: "support-social-behavior",
+        target: "support-social-behavior-5",
         type: "step",
         sourceHandle: "oval_source_left",
         style: arrowEdgeStyle,
@@ -845,11 +845,12 @@ export const phaseTwoSlice = createSlice({
             state.hiddenEdges = state.hiddenEdges.filter((edge) => {
                 return !nodes.includes(edge.source)
             })
+            // console.log(JSON.parse(JSON.stringify(edgesToBeAdded)));
             state.edgeState = [...state.edgeState, ...edgesToBeAdded]
             const targetList = edgesToBeAdded.map(edge => edge.target)
             const check = targetList.every(target => state.nodeState.some(node => node.id === target));
             if(!check) {
-                const tacticNodesToBeAdded = state.hiddenTactics.filter(target => !state.edgeState.some(edge => edge.target === target));
+                const tacticNodesToBeAdded = state.hiddenTactics.filter(target => targetList.includes(target.id));
                 state.hiddenTactics = state.hiddenTactics.filter((node) => {
                     return !nodes.includes(node.id)
                 })

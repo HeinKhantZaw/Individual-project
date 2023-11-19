@@ -18,7 +18,7 @@ export const PhaseThreeNodes  = [
         "height": 100
     },
     {
-        "id": "improve-system-advantage-perception-vs-competitor-systems-via-it",
+        "id": "improve-system-advantage-perception-vs-competitor-systems-via-it-1",
         "type": "oval",
         "position": {
             "x": 1200,
@@ -128,7 +128,7 @@ export const PhaseThreeNodes  = [
         "height": 80
     },
     {
-        "id": "support-social-behavior",
+        "id": "support-social-behavior-5",
         "type": "oval",
         "position": {
             "x": 2000,

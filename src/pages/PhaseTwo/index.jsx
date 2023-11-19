@@ -60,7 +60,7 @@ export default function PhaseTwo() {
 
                 // (C3 OR C8 OR C9 OR C20 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)
                 // (true || false || true || false || false || false || false || false) && (!true)
-                return eval(replacedExpression);
+                return true;
             }
         });
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
@@ -88,7 +88,17 @@ export default function PhaseTwo() {
                 if (checkNodes) {
                     const newNodes = [...nodeState, ...checkNodes.children];
                     dispatch(updateNodes(newNodes));
-                    dispatch(addEdges(checkNodes.children.length > 0 ? checkNodes.children.filter(c=>!c.data.isHidden).map(child=>child.id) : checkNodes.id));
+                    // There are some special cases that need to be handled separately
+                    if (checkNodes.id === "improve-perceived-relative-advantage" ||
+                        checkNodes.id === "improve-perceived-compatibility" ||
+                        checkNodes.id === "improve-perceived-usefulness"){
+                        dispatch(addEdges(checkNodes.id));
+                    } else if (checkNodes.id === "increase-social-influence") {
+                        dispatch(addEdges(checkNodes.children.filter(c => !c.data.isHidden).map(child => child.id)));
+                        dispatch(addEdges(checkNodes.id));
+                    } else {
+                        dispatch(addEdges(checkNodes.children.length > 0 ? checkNodes.children.filter(c => !c.data.isHidden).map(child => child.id) : checkNodes.id));
+                    }
                     dispatch(setHiddenNodes(hiddenNodes.filter(node => node.id !== element.id)));
                 } else {
                     const ids = getAllChildrenIds(searchNode(treeMap, element.id));

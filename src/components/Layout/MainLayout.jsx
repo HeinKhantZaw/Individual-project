@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Button from "arwes/lib/Button/index.js";
 // import {useBleeps} from "@arwes/react-bleeps";
 import {useDispatch, useSelector} from "react-redux";
@@ -48,16 +48,36 @@ export default function MainLayout() {
         input.click();
     }
 
+    function phase3Navigation() {
+        if (phase3Value === "Phase 3(a)")
+            navigate("phase3/b");
+        else if (phase3Value === "Phase 3(b)")
+            navigate("phase3/c");
+        else if (phase3Value === "Phase 3(c)")
+            navigate("phase4");
+    }
+
+    const phaseThreeOnChange = (event) => {
+        const selectedValue = event.target.value
+        dispatch(setPhase3Value(selectedValue));
+        if (selectedValue === "Phase 3(a)")
+            navigate("phase3/a");
+        else if (selectedValue === "Phase 3(b)")
+            navigate("phase3/b");
+        else if (selectedValue === "Phase 3(c)")
+            navigate("phase3/c");
+    }
+
     const goToNextPhase = () => {
         switch (currentPhase) {
             case 1:
                 navigate("phase2");
                 break;
             case 2:
-                navigate("phase3");
+                navigate("phase3/a");
                 break;
             case 3:
-                navigate("phase4");
+                phase3Navigation();
                 break;
             case 4:
                 navigate("phase5");
@@ -116,11 +136,11 @@ export default function MainLayout() {
                                 <SelectOption
                                     name="phase3"
                                     options={[
-                                        { id: "Phase_3(a)", value: "Phase 3(a)" },
-                                        { id: "Phase_3(b)", value: "Phase 3(b)" },
-                                        { id: "Phase_3(c)", value: "Phase 3(c)" },
+                                        { id: "Phase 3(a)", value: "Phase 3(a)" },
+                                        { id: "Phase 3(b)", value: "Phase 3(b)" },
+                                        { id: "Phase 3(c)", value: "Phase 3(c)" },
                                     ]}
-                                    onChange={(e) => dispatch(setPhase3Value(e.target.value))}
+                                    onChange={phaseThreeOnChange}
                                     optionValueId={"id"}
                                     optionInnerContent={"value"}
                                     required

@@ -40,30 +40,30 @@ const SelectOption = withStyles(styles)(({
                                              disabled
                                          }) => {
     return (<div>
-            <label className={classes.container}>
-                <Frame
-                    show={true}
-                    animate={true}
-                    corners={4}
-                    className={classes.frame}
-                    layer={disabled ? "disabled" : "secondary"}
-                >
-                    <select name={name} onChange={onChange} className={selectClass ? selectClass : classes.select}
-                            required={required} disabled={disabled}>
-                        {options.map((option) => {
-                            return (<option
-                                    name={name}
-                                    value={option[optionValueId]}
-                                    defaultValue={selected === option[optionValueId]}
-                                    key={option[optionValueId]}
-                                >
-                                    {option[optionInnerContent]}
-                                </option>);
-                        })}
-                    </select>
-                </Frame>
-            </label>
-        </div>);
+        <Frame
+            show={true}
+            animate={true}
+            corners={4}
+            className={classes.frame}
+            layer={disabled ? "disabled" : "secondary"}
+        >
+            <select name={name} onChange={onChange} className={selectClass ? selectClass : classes.select}
+                    required={required} disabled={disabled}
+                    value={selected}
+            >
+                {options.map((option) => {
+                    return (<option
+                        name={name}
+                        value={option[optionValueId]}
+                        defaultValue={selected === option[optionValueId]}
+                        key={option[optionValueId]}
+                    >
+                        {option[optionInnerContent]}
+                    </option>);
+                })}
+            </select>
+        </Frame>
+    </div>);
 })
 
 export default SelectOption;

@@ -39,8 +39,11 @@ const OvalNode = ({data}) => {
                 <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"} isConnectable={false}/>}
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
+                    {!data.titleDisable && <>
                     &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
                     <br/>
+                    </>
+                    }
                     {data.label}
                     <br/>
                     {data.num}

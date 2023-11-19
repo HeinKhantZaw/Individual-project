@@ -16,7 +16,7 @@ const styles = (theme) => ({
         boxShadow: "none",
         cursor: "pointer",
         backgroundColor: theme.background.secondary,
-        color: theme.color.secondary.base, // fontSize: myTheme.font.baseSize,
+        color: theme.color.secondary.base,
         lineHeight: "30px",
         [`@media (max-width: ${theme.responsive.small + 1}px)`]: {
             width: '100%',

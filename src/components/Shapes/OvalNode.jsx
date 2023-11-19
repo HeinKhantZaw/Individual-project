@@ -28,10 +28,6 @@ const OvalNode = ({data}) => {
             <NodeToolbar isVisible={isVisible} position={Position.Left}>
                 <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
             </NodeToolbar>
-            {data.sourceLeft &&
-                <Handle type="source" position={Position.Left} id={"oval_source_left"} isConnectable={false}/>}
-            {data.sourceRight &&
-                <Handle type="source" position={Position.Right} id={"oval_source_right"} isConnectable={false}/>}
             {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"} isConnectable={false}/>}
             {data.left && <Handle type="target" position={Position.Left} id={"oval_left"} isConnectable={false}/>}
             {data.right && <Handle type="target" position={Position.Right} id={"oval_right"} isConnectable={false}/>}
@@ -52,6 +48,13 @@ const OvalNode = ({data}) => {
             <Handle type="source" position={Position.Bottom} id={"oval_bottom"} className={"custom-handle"}
                     isConnectable={false}
             />
+            {data.sourceLeft &&
+                <Handle type="source" position={Position.Left} id={"oval_source_left"} isConnectable={false}/>}
+            {data.sourceRight &&
+                <Handle type="source" position={Position.Right} id={"oval_source_right"} isConnectable={false}/>}
+            {data.sourceTop &&
+                <Handle type="source" position={Position.Top} id={"oval_source_top"} isConnectable={false}/>
+            }
         </div>
     );
 };

@@ -1,18 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {PhaseTwoTreeDS} from "../../data/PhaseTwoTreeDS.jsx";
 import {MarkerType} from "reactflow";
+import {markerConfig} from "../../components/Arrows/Marker.jsx";
+import {arrowEdgeStyle} from "../../components/Arrows/ArrowEdge.jsx";
 
-const markerConfig = {
-    type: MarkerType.ArrowClosed,
-    width: 30,
-    height: 20,
-    color: '#fff',
-};
-const arrowEdgeStyle = {
-    stroke: '#fff',
-    strokeWidth: 2,
-    pointerEvents: 'none'
-};
 const initialEdges = [
     {
         id: "e1-0",

@@ -132,6 +132,7 @@ export default function PhaseTwo() {
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
                 nodeTypes={nodeTypes}
+                zoomOnDoubleClick={false}
                 edgeTypes={edgeTypes}
                 deleteKeyCode={''}
                 fitView

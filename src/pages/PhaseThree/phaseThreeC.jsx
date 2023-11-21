@@ -77,6 +77,7 @@ export default function PhaseThreeC() {
                 nodes={nodes}
                 edges={edges}
                 deleteKeyCode={''}
+                zoomOnDoubleClick={false}
                 fitView
                 maxZoom={1.2}
                 minZoom={0.4}

@@ -43,6 +43,7 @@ export default function PhaseThreeA() {
             <ReactFlow
                 nodes={nodes}
                 deleteKeyCode={''}
+                zoomOnDoubleClick={false}
                 fitView
                 maxZoom={1.2}
                 minZoom={0.6}

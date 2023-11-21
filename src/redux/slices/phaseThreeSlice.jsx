@@ -37,7 +37,18 @@ export const phaseThreeSlice = createSlice({
             });
         },
         setPhase3cNodes: (state, action) => {
-            state.initialPhase3cTacticNodes = action.payload;
+            state.initialPhase3cTacticNodes = action.payload.filter((node) => {
+                if(node.data.gamifiedTactic){
+                    return true;
+                } else {
+                    if(state.selectedTacticNodes.length === 0){
+                        return false;
+                    }
+                    return state.selectedTacticNodes.every((selectedNode) => {
+                        return node.id === selectedNode.id
+                    })
+                }
+            })
         },
         setChosenTactic: (state, action) => {
             state.initialPhase3cTacticNodes.map((node) => {

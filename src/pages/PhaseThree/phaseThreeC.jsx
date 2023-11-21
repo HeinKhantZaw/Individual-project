@@ -56,7 +56,6 @@ export default function PhaseThreeC() {
         dispatch(setPhase3Value("Phase 3(c)"))
         if(initialPhase3cTacticNodes.length === 0) {
             dispatch(setPhase3cNodes(Phase3cNodes));
-            setNodes(initialPhase3cTacticNodes)
         }
     }, []);
     useEffect(() => {

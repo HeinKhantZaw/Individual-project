@@ -3,31 +3,31 @@ import React, {useEffect} from "react";
 import {setCurrentPhase, setNextPhaseEnabled, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import Heading from "arwes/lib/Heading/index.js";
-import {hideTactic, setInitialTacticNodes} from "../../redux/slices/phaseThreeSlice.jsx";
+import {hideTactic, setPhase3aTacticNodes} from "../../redux/slices/phaseThreeSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import {phase3Style} from "./style.jsx";
 
 const nodeTypes = {oval: OvalNode};
 
 export default function PhaseThreeA() {
-    const {initialTacticNodes} = useSelector((state) => state.phaseThree);
+    const {initialPhase3aTacticNodes} = useSelector((state) => state.phaseThree);
     const phaseTwoNodes = useSelector((state) => state.phaseTwo.nodeState);
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialTacticNodes);
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialPhase3aTacticNodes);
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         dispatch(setCurrentPhase(3))
         dispatch(setPhase3Value("Phase 3(a)"))
-        if(initialTacticNodes.length === 0) {
-            dispatch(setInitialTacticNodes(phaseTwoNodes));
+        if(initialPhase3aTacticNodes.length === 0) {
+            dispatch(setPhase3aTacticNodes(phaseTwoNodes));
         }
         dispatch(setNextPhaseEnabled(true))
     }, []);
 
     useEffect(() => {
-        setNodes(initialTacticNodes);
-    }, [initialTacticNodes]);
+        setNodes(initialPhase3aTacticNodes);
+    }, [initialPhase3aTacticNodes]);
 
     const handleElementClick = (event, element) => {
         dispatch(hideTactic(element.id))

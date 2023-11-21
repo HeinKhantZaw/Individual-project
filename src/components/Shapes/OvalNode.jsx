@@ -11,6 +11,8 @@ const OvalNode = ({data}) => {
         borderRadius: "50%",
         padding: 2,
         backgroundColor: data.type === "tactic" ? "#f1ae80" : "#8bc1f6",
+        outline: data.isChosen && data.gamifiedTactic ? "4px solid #5D803F" : data.isChosen && data.acceptanceTactic && "4px solid #ED7D30",
+        outlineOffset: "10px",
         color: "black",
         display: "flex",
         justifyContent: "center",
@@ -21,7 +23,8 @@ const OvalNode = ({data}) => {
     const {infoToggle} = useSelector((state) => state.phaseStatus);
 
     return (
-        <div style={nodeStyle} onMouseEnter={() => infoToggle && setVisible(true)} onMouseLeave={() => infoToggle && setVisible(false)}>
+        <div style={nodeStyle} onMouseEnter={() => infoToggle && setVisible(true)}
+             onMouseLeave={() => infoToggle && setVisible(false)}>
             {data.isHidden &&
                 <img src={"/assets/cross.png"} style={{position: "absolute"}} alt={"hidden"}/>
             }
@@ -36,8 +39,8 @@ const OvalNode = ({data}) => {
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
                     {!data.titleDisable && <>
-                    &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
-                    <br/>
+                        &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
+                        <br/>
                     </>
                     }
                     {data.label}

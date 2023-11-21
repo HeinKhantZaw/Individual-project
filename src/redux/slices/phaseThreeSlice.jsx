@@ -1,18 +1,19 @@
 import {createSlice} from "@reduxjs/toolkit";
 import getTacticNodes from "../../utils/getTacticNodes.jsx";
-import {PhaseThreeANodes} from "../../data/PhaseThreeANodes.jsx";
+import {Phase3aNodes} from "../../data/PhaseThreeNodes.jsx";
 
 const initialState = {
-    initialTacticNodes: [],
+    initialPhase3aTacticNodes: [],
     selectedTacticNodes: [],
     disabledTacticNodes: [],
+    initialPhase3cTacticNodes: [],
     uploaded: 0,
 }
 export const phaseThreeSlice = createSlice({
     name: 'phaseThree',
     initialState,
     reducers: {
-        setInitialTacticNodes: (state, action) => {
+        setPhase3aTacticNodes: (state, action) => {
             const totalNodes = action.payload.map((node)=>node.id);
             const uniqueValues = new Set();
             const regex = /-\d*$/;
@@ -21,24 +22,36 @@ export const phaseThreeSlice = createSlice({
                 uniqueValues.add(value);
             });
             const uniqueValuesArray = Array.from(uniqueValues);
-            state.initialTacticNodes = PhaseThreeANodes.filter((node) => uniqueValuesArray.includes(node.id));
-            state.selectedTacticNodes = state.initialTacticNodes;
+            state.initialPhase3aTacticNodes = Phase3aNodes.filter((node) => uniqueValuesArray.includes(node.id));
+            state.selectedTacticNodes = state.initialPhase3aTacticNodes;
         },
         hideTactic: (state, action) => {
             state.disabledTacticNodes = [...state.disabledTacticNodes, action.payload]
-            state.initialTacticNodes.map((node) => {
+            state.initialPhase3aTacticNodes.map((node) => {
                 if (node.id === action.payload) {
                     node.data.isHidden = !node.data.isHidden
                 }
             });
-            state.selectedTacticNodes = state.initialTacticNodes.filter((node) => {
+            state.selectedTacticNodes = state.initialPhase3aTacticNodes.filter((node) => {
                 return !node.data.isHidden
             });
         },
+        setPhase3cNodes: (state, action) => {
+            state.initialPhase3cTacticNodes = action.payload;
+        },
+        setChosenTactic: (state, action) => {
+            state.initialPhase3cTacticNodes.map((node) => {
+                if (node.id === action.payload) {
+                    node.data.isChosen = !node.data.isChosen
+                }
+            })
+        }
     }});
 export const {
-    setInitialTacticNodes,
+    setPhase3aTacticNodes,
     hideTactic,
+    setChosenTactic,
+    setPhase3cNodes
 } = phaseThreeSlice.actions
 
 export default phaseThreeSlice.reducer

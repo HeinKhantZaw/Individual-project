@@ -27,6 +27,7 @@ const nodeTypes = {oval: OvalNode, operator: OperatorNode};
 const edgeTypes = {dotted: DottedEdge};
 export default function PhaseTwo() {
     const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseTwo);
+    const {currentPhase} = useSelector((state) => state.phaseStatus);
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     let idToBeRemoved = [];
@@ -72,7 +73,9 @@ export default function PhaseTwo() {
     };
 
     useEffect(() => {
-        dispatch(updateNodes(updateGraph()));
+        if(currentPhase < 2) {
+            dispatch(updateNodes(updateGraph()));
+        }
         dispatch(setCurrentPhase(2));
         dispatch(setNextPhaseEnabled(true));
     }, []);

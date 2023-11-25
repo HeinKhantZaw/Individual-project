@@ -14,7 +14,7 @@ export const phaseThreeSlice = createSlice({
     initialState,
     reducers: {
         setPhase3aTacticNodes: (state, action) => {
-            const totalNodes = action.payload.map((node)=>node.id);
+            const totalNodes = action.payload.map((node) => node.id);
             const uniqueValues = new Set();
             const regex = /-\d*$/;
             getTacticNodes(totalNodes).forEach(item => {
@@ -36,12 +36,22 @@ export const phaseThreeSlice = createSlice({
                 return !node.data.isHidden
             });
         },
+        setHiddenTactic: (state, action) => {
+            state.initialPhase3aTacticNodes.map((node2) => {
+                action.payload.map((node) => {
+                    if (node2.id === node) {
+                        node2.data.isHidden = true
+                    }
+                })
+                return node2;
+            });
+        },
         setPhase3cNodes: (state, action) => {
             state.initialPhase3cTacticNodes = action.payload.filter((node) => {
-                if(node.data.gamifiedTactic){
+                if (node.data.gamifiedTactic) {
                     return true;
                 } else {
-                    if(state.selectedTacticNodes.length === 0){
+                    if (state.selectedTacticNodes.length === 0) {
                         return false;
                     }
                     return state.selectedTacticNodes.every((selectedNode) => {
@@ -57,12 +67,14 @@ export const phaseThreeSlice = createSlice({
                 }
             })
         }
-    }});
+    }
+});
 export const {
     setPhase3aTacticNodes,
     hideTactic,
     setChosenTactic,
-    setPhase3cNodes
+    setPhase3cNodes,
+    setHiddenTactic
 } = phaseThreeSlice.actions
 
 export default phaseThreeSlice.reducer

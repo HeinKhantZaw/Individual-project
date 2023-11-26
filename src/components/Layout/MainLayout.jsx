@@ -40,8 +40,12 @@ export default function MainLayout() {
                 const json = event.target.result;
                 const data = JSON.parse(json);
                 dispatch(setPhaseStatusState(data.phaseStatus));
-                dispatch(setPhaseOneState(data.phaseOne));
-                dispatch(setPhaseTwoState(data.phaseTwo));
+                if(data.phaseOne) {
+                    dispatch(setPhaseOneState(data.phaseOne));
+                }
+                if(data.phaseTwo) {
+                    dispatch(setPhaseTwoState(data.phaseTwo));
+                }
             };
             reader.readAsText(file);
         };

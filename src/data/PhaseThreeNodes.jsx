@@ -235,7 +235,7 @@ export const Phase3cNodes  = [
         },
         "data": {
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "acceptanceTactic": true,
             "label": "Support_Skill_Improvement",
             "type": "tactic",
@@ -277,7 +277,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Support_Achievement",
             "type": "tactic",
             "num": "[1]",
@@ -299,7 +299,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_Perceived_Status",
             "type": "tactic",
             "num": "[1]",
@@ -344,7 +344,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
             "width": 450,
             "height": 100,
@@ -367,7 +367,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Promote_Collaboration",
             "type": "tactic",
             "num": "[2]",
@@ -388,7 +388,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_System_Perception",
             "type": "tactic",
             "top": "no",
@@ -409,7 +409,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Support_Social_Behavior",
             "type": "tactic",
             "num": "[1]",
@@ -469,7 +469,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_Minor_Assistance",
             "type": "tactic",
             "num": "[1]",
@@ -509,7 +509,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_System_Perception_Via_IT",
             "type": "tactic",
             "num": "[1]",
@@ -530,7 +530,7 @@ export const Phase3cNodes  = [
         "data": {
             "acceptanceTactic": true,
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_System_Awareness",
             "type": "tactic",
             "num": "[1]",

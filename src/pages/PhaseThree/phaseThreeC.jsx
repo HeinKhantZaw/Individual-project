@@ -62,7 +62,9 @@ export default function PhaseThreeC() {
         setNodes(initialPhase3cTacticNodes);
     }, [initialPhase3cTacticNodes]);
     const handleElementClick = (event, element) => {
-        dispatch(setChosenTactic(element.id));
+        if(element.data.gamifiedTactic) {
+            dispatch(setChosenTactic(element.id));
+        }
     }
 
     return (

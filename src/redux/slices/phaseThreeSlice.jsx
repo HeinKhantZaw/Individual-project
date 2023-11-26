@@ -47,16 +47,12 @@ export const phaseThreeSlice = createSlice({
             });
         },
         setPhase3cNodes: (state, action) => {
+            const ids = state.selectedTacticNodes.map((node) => node.id);
             state.initialPhase3cTacticNodes = action.payload.filter((node) => {
                 if (node.data.gamifiedTactic) {
                     return true;
                 } else {
-                    if (state.selectedTacticNodes.length === 0) {
-                        return false;
-                    }
-                    return state.selectedTacticNodes.every((selectedNode) => {
-                        return node.id === selectedNode.id
-                    })
+                    return ids.includes(node.id)
                 }
             })
         },
@@ -66,6 +62,7 @@ export const phaseThreeSlice = createSlice({
                     node.data.isChosen = !node.data.isChosen
                 }
             })
+            state.selectedTacticNodes = state.initialPhase3cTacticNodes.filter((node) => node.data.isChosen);
         }
     }
 });

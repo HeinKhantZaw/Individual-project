@@ -124,8 +124,7 @@ export default function PhaseTwo() {
                 }
                 dispatch(toggleHidden(element.id))
             }
-        }
-    ;
+        };
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>

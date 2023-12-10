@@ -49,7 +49,7 @@ export const phaseThreeSlice = createSlice({
         setPhase3cNodes: (state, action) => {
             const ids = state.selectedTacticNodes.map((node) => node.id);
             state.initialPhase3cTacticNodes = action.payload.filter((node) => {
-                if (node.data.gamifiedTactic) {
+                if (node.data.tacticType === "gamified") {
                     return true;
                 } else {
                     return ids.includes(node.id)

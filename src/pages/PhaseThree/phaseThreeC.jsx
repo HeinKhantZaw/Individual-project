@@ -4,7 +4,7 @@ import ReactFlow, {Background, useEdgesState, useNodesState} from "reactflow";
 import Heading from "arwes/lib/Heading/index.js";
 import {phase3Style} from "./style.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
 import {markerConfig} from "../../components/Arrows/Marker.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
 import {Phase3cNodes} from "../../data/PhaseThreeNodes.jsx";
@@ -53,6 +53,7 @@ export default function PhaseThreeC() {
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const dispatch = useDispatch();
     useEffect(() => {
+        dispatch(setCurrentPhase(3));
         dispatch(setPhase3Value("Phase 3(c)"))
         if(initialPhase3cTacticNodes.length === 0) {
             dispatch(setPhase3cNodes(Phase3cNodes));
@@ -62,7 +63,7 @@ export default function PhaseThreeC() {
         setNodes(initialPhase3cTacticNodes);
     }, [initialPhase3cTacticNodes]);
     const handleElementClick = (event, element) => {
-        if(element.data.gamifiedTactic) {
+        if(element.data.tacticType === "gamified") {
             dispatch(setChosenTactic(element.id));
         }
     }

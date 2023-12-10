@@ -11,7 +11,7 @@ const OvalNode = ({data}) => {
         borderRadius: "50%",
         padding: 2,
         backgroundColor: data.type === "tactic" ? "#f1ae80" : "#8bc1f6",
-        outline: data.isChosen && data.gamifiedTactic ? "4px solid #5D803F" : data.isChosen && data.acceptanceTactic && "4px solid #ED7D30",
+        outline: data.isChosen && data.tacticType === "gamified" ? "4px solid #5D803F" : data.isChosen && data.tacticType === "acceptance" && "4px solid #ED7D30",
         outlineOffset: "10px",
         color: "black",
         display: "flex",

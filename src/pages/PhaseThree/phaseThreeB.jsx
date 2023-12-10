@@ -4,7 +4,7 @@ import ReactFlow, {Background, useNodesState} from "reactflow";
 import Heading from "arwes/lib/Heading/index.js";
 import {phase3Style} from "./style.jsx";
 import {useDispatch} from "react-redux";
-import {setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
 
 let initialNodes = [
     {
@@ -68,6 +68,7 @@ export default function PhaseThreeB() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const dispatch = useDispatch();
     useEffect(() => {
+        dispatch(setCurrentPhase(3));
         dispatch(setPhase3Value("Phase 3(b)"))
     }, []);
     const handleElementClick = (event, element) => {

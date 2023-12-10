@@ -1,0 +1,57 @@
+import React, {useEffect} from "react";
+import ReactFlow, {Background, useEdgesState, useNodesState,} from "reactflow";
+import "reactflow/dist/style.css";
+import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
+import {useDispatch, useSelector} from "react-redux";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import OvalNode from "../../components/Shapes/OvalNode.jsx";
+import DottedEdge from "../../components/DottedEdge/index.jsx";
+import {phase3Style} from "../PhaseThree/style.jsx";
+import Heading from "arwes/lib/Heading/index.js";
+import {setPhaseFourNodes, showSelectedNodes} from "../../redux/slices/phaseFourSlice.jsx";
+
+
+const nodeTypes = {oval: OvalNode, operator: OperatorNode};
+const edgeTypes = {dotted: DottedEdge};
+export default function PhaseFour() {
+    const {nodeState, edgeState} = useSelector((state) => state.phaseTwo);
+    const {phaseFourNodes} = useSelector((state) => state.phaseFour);
+    const {selectedTacticNodes} = useSelector((state) => state.phaseThree);
+    const [nodes, setNodes, onNodesChange] = useNodesState([]);
+    const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
+    const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        let shownNodes = nodeState.filter((node) => !node.data.isHidden);
+        dispatch(setPhaseFourNodes(shownNodes));
+        dispatch(showSelectedNodes(selectedTacticNodes));
+        dispatch(setCurrentPhase(4));
+        dispatch(setNextPhaseEnabled(true));
+    }, []);
+
+    useEffect(() => {
+        setNodes(phaseFourNodes);
+    }, [phaseFourNodes]);
+
+    return (
+        <div style={{width: "100vw", height: "93vh"}}>
+            <Heading node="h2" style={phase3Style.title}>
+                (Acceptance, Tactical and Gamification) specification summary:
+            </Heading>
+            <ReactFlow
+                nodes={nodes}
+                edges={edges}
+                nodeTypes={nodeTypes}
+                zoomOnDoubleClick={false}
+                edgeTypes={edgeTypes}
+                deleteKeyCode={''}
+                fitView
+                maxZoom={2}
+                minZoom={0.1}
+            >
+                <Background variant="dots" gap={12} size={1}/>
+            </ReactFlow>
+        </div>
+    );
+}

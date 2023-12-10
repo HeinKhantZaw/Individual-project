@@ -174,7 +174,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Fast_Design",
@@ -194,7 +194,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Low_Cost_Design",
@@ -214,7 +214,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "High_Design_Quality",
@@ -236,7 +236,7 @@ export const Phase3cNodes  = [
         "data": {
             "isHidden": false,
             "isChosen": true,
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "label": "Support_Skill_Improvement",
             "type": "tactic",
             "num": "[1]",
@@ -255,7 +255,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Increase_User_Surprise",
@@ -275,7 +275,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Support_Achievement",
@@ -297,7 +297,7 @@ export const Phase3cNodes  = [
             "y": 0
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Improve_Perceived_Status",
@@ -321,7 +321,8 @@ export const Phase3cNodes  = [
         },
         "sourcePosition": "top",
         "data": {
-            "gamifiedTactic": true,
+            "default": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Improve_System_Loyalty",
@@ -342,7 +343,7 @@ export const Phase3cNodes  = [
             "y": 500
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
@@ -365,7 +366,7 @@ export const Phase3cNodes  = [
             "y": 500
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Promote_Collaboration",
@@ -386,9 +387,9 @@ export const Phase3cNodes  = [
             "y": 500
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
-            "isChosen": true,
+            "isChosen": false,
             "label": "Improve_System_Perception",
             "type": "tactic",
             "top": "no",
@@ -402,12 +403,12 @@ export const Phase3cNodes  = [
         "id": "support-social-behavior",
         "type": "oval",
         "position": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "x": 500,
             "y": 800
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Support_Social_Behavior",
@@ -428,7 +429,7 @@ export const Phase3cNodes  = [
             "y": 800
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Promote_Ethical_Behavior",
@@ -447,7 +448,7 @@ export const Phase3cNodes  = [
             "y": 800
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Promote_Altruistic_Behavior",
@@ -467,7 +468,7 @@ export const Phase3cNodes  = [
             "y": 800
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Improve_Minor_Assistance",
@@ -487,7 +488,7 @@ export const Phase3cNodes  = [
             "y": 800
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Improve_System_Perception_by_Humans",
@@ -507,7 +508,7 @@ export const Phase3cNodes  = [
             "y": 800
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Improve_System_Perception_Via_IT",
@@ -528,7 +529,7 @@ export const Phase3cNodes  = [
             "y": 1200
         },
         "data": {
-            "acceptanceTactic": true,
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
             "label": "Improve_System_Awareness",
@@ -549,7 +550,7 @@ export const Phase3cNodes  = [
             "y": 1200
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Increase_Profit",
@@ -568,7 +569,7 @@ export const Phase3cNodes  = [
             "y": 1200
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Increase_Worth_Vagueness",
@@ -588,7 +589,7 @@ export const Phase3cNodes  = [
             "y": 1200
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Improve_Trust",
@@ -607,7 +608,7 @@ export const Phase3cNodes  = [
             "y": 1200
         },
         "data": {
-            "gamifiedTactic": true,
+            "tacticType": "gamified",
             "isHidden": false,
             "isChosen": false,
             "label": "Support_User_Penalization",

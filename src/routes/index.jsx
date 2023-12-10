@@ -7,6 +7,7 @@ import MainLayout from "../components/Layout/MainLayout.jsx";
 import PhaseThreeB from "../pages/PhaseThree/phaseThreeB.jsx";
 import {useParams} from "react-router-dom";
 import PhaseThreeC from "../pages/PhaseThree/phaseThreeC.jsx";
+import PhaseFour from "../pages/PhaseFour/index.jsx";
 
 const RenderPhaseThree = () => {
     const {p} = useParams();
@@ -44,6 +45,10 @@ const routes = [
             {
                 path: "phase3/:p",
                 element: <RenderPhaseThree/>
+            },
+            {
+                path: "phase4",
+                element: <PhaseFour/>
             }
         ]
     },

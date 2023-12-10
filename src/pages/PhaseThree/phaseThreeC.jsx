@@ -55,15 +55,13 @@ export default function PhaseThreeC() {
     useEffect(() => {
         dispatch(setCurrentPhase(3));
         dispatch(setPhase3Value("Phase 3(c)"))
-        if(initialPhase3cTacticNodes.length === 0) {
-            dispatch(setPhase3cNodes(Phase3cNodes));
-        }
+        dispatch(setPhase3cNodes(Phase3cNodes));
     }, []);
     useEffect(() => {
         setNodes(initialPhase3cTacticNodes);
     }, [initialPhase3cTacticNodes]);
     const handleElementClick = (event, element) => {
-        if(element.data.tacticType === "gamified") {
+        if (element.data.tacticType === "gamified") {
             dispatch(setChosenTactic(element.id));
         }
     }

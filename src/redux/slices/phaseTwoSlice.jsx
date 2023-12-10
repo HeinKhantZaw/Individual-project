@@ -804,6 +804,14 @@ export const phaseTwoSlice = createSlice({
     name: 'phaseTwo',
     initialState,
     reducers: {
+        resetPhaseTwo: (state) => {
+            state.nodeState = [];
+            state.edgeState = initialEdges;
+            state.hiddenEdges = [];
+            state.hiddenNodes = [];
+            state.hiddenTactics = [];
+            state.uploaded = 0;
+        },
         updateNodes: (state, action) => {
             state.nodeState = action.payload
         },
@@ -881,7 +889,8 @@ export const {
     hideEdges,
     addEdges,
     toggleHidden,
-    setPhaseTwoState
+    setPhaseTwoState,
+    resetPhaseTwo
 } = phaseTwoSlice.actions
 
 export default phaseTwoSlice.reducer

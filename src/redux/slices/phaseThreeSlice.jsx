@@ -13,6 +13,13 @@ export const phaseThreeSlice = createSlice({
     name: 'phaseThree',
     initialState,
     reducers: {
+        resetPhaseThree: (state) => {
+            state.initialPhase3aTacticNodes = [];
+            state.selectedTacticNodes = [];
+            state.disabledTacticNodes = [];
+            state.initialPhase3cTacticNodes = [];
+            state.uploaded = 0;
+        },
         setPhase3aTacticNodes: (state, action) => {
             const totalNodes = action.payload.map((node) => node.id);
             const uniqueValues = new Set();
@@ -71,7 +78,8 @@ export const {
     hideTactic,
     setChosenTactic,
     setPhase3cNodes,
-    setHiddenTactic
+    setHiddenTactic,
+    resetPhaseThree
 } = phaseThreeSlice.actions
 
 export default phaseThreeSlice.reducer

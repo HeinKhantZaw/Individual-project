@@ -10,6 +10,8 @@ import ConnectionLine from "../../components/ConnectionLine/index.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {connectEdge} from "../../redux/slices/phaseOneSlice.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import {resetPhaseTwo} from "../../redux/slices/phaseTwoSlice.jsx";
+import {resetPhaseThree} from "../../redux/slices/phaseThreeSlice.jsx";
 
 let initialNodes = [
     {
@@ -642,6 +644,8 @@ const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonN
 
 export default function PhaseOne() {
     const phaseOneState = useSelector((state) => state.phaseOne);
+    const phaseTwoState = useSelector((state) => state.phaseTwo.nodeState);
+    const {initialPhase3aTacticNodes, initialPhase3cTacticNodes} = useSelector((state) => state.phaseThree);
     const {edgeState} = phaseOneState;
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
@@ -651,6 +655,12 @@ export default function PhaseOne() {
 
     useEffect(() => {
         dispatch(setCurrentPhase(1))
+        if(phaseTwoState.length > 0) {
+            dispatch(resetPhaseTwo())
+        }
+        if(initialPhase3aTacticNodes.length > 0 || initialPhase3cTacticNodes.length > 0) {
+            dispatch(resetPhaseThree())
+        }
     }, [currentPhase]);
 
     useEffect(() => {

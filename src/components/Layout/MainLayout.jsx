@@ -147,6 +147,9 @@ export default function MainLayout() {
                                     onChange={phaseThreeOnChange}
                                     optionValueId={"id"}
                                     optionInnerContent={"value"}
+                                    style={{
+                                        color: currentPhase < 3 ? "#999" : "#df9527",
+                                    }}
                                     required
                                     selected={phase3Value}
                                     disabled={currentPhase < 3}

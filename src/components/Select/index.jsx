@@ -37,7 +37,8 @@ const SelectOption = withStyles(styles)(({
                                              required,
                                              selected,
                                              selectClass,
-                                             disabled
+                                             disabled,
+                                             style
                                          }) => {
     return (<div>
         <Frame
@@ -49,7 +50,7 @@ const SelectOption = withStyles(styles)(({
         >
             <select name={name} onChange={onChange} className={selectClass ? selectClass : classes.select}
                     required={required} disabled={disabled}
-                    value={selected}
+                    value={selected} style={style}
             >
                 {options.map((option) => {
                     return (<option

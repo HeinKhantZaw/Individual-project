@@ -511,7 +511,7 @@ export const Phase3cNodes  = [
             "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": true,
-            "label": "Improve_System_Perception_Via_IT",
+            "label": "Improve_System_Perception_via_IT",
             "type": "tactic",
             "num": "[1]",
         },

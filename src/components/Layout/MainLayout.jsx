@@ -1,6 +1,5 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Button from "arwes/lib/Button/index.js";
-// import {useBleeps} from "@arwes/react-bleeps";
 import {useDispatch, useSelector} from "react-redux";
 import {Outlet, useNavigate} from "react-router-dom";
 import {FaDownload, FaFileUpload} from "react-icons/fa";
@@ -53,22 +52,22 @@ export default function MainLayout() {
     }
 
     function phase3Navigation() {
-        if (phase3Value === "Phase 3(a)")
+        if (phase3Value === "Phase C1")
             navigate("phase3/b");
-        else if (phase3Value === "Phase 3(b)")
+        else if (phase3Value === "Phase C2")
             navigate("phase3/c");
-        else if (phase3Value === "Phase 3(c)")
+        else if (phase3Value === "Phase C3")
             navigate("phase4");
     }
 
     const phaseThreeOnChange = (event) => {
         const selectedValue = event.target.value
         dispatch(setPhase3Value(selectedValue));
-        if (selectedValue === "Phase 3(a)")
+        if (selectedValue === "Phase C1")
             navigate("phase3/a");
-        else if (selectedValue === "Phase 3(b)")
+        else if (selectedValue === "Phase C2")
             navigate("phase3/b");
-        else if (selectedValue === "Phase 3(c)")
+        else if (selectedValue === "Phase C3")
             navigate("phase3/c");
     }
 
@@ -121,14 +120,14 @@ export default function MainLayout() {
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-1"}
                                         layer={"secondary"} onClick={goToPhase1}>
-                                    Phase 1
+                                    Phase A
                                 </Button>
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-2"}
                                         disabled={currentPhase < 2}
                                         layer={"secondary"} onClick={goToPhase2}>
-                                    Phase 2
+                                    Phase B
                                 </Button>
                             </li>
                             <li>
@@ -140,9 +139,9 @@ export default function MainLayout() {
                                 <SelectOption
                                     name="phase3"
                                     options={[
-                                        { id: "Phase 3(a)", value: "Phase 3(a)" },
-                                        { id: "Phase 3(b)", value: "Phase 3(b)" },
-                                        { id: "Phase 3(c)", value: "Phase 3(c)" },
+                                        { id: "Phase C1", value: "Phase C1" },
+                                        { id: "Phase C2", value: "Phase C2" },
+                                        { id: "Phase C3", value: "Phase C3" },
                                     ]}
                                     onChange={phaseThreeOnChange}
                                     optionValueId={"id"}
@@ -159,14 +158,14 @@ export default function MainLayout() {
                                 <Button animate className={"font-semibold text-lg phase-button phase-4"}
                                         disabled={currentPhase < 4}
                                         layer={"secondary"}>
-                                    Phase 4
+                                    Phase D
                                 </Button>
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-5"}
                                         disabled={currentPhase < 5}
                                         layer={"secondary"}>
-                                    Phase 5
+                                    Phase E
                                 </Button>
                             </li>
                         </ul>

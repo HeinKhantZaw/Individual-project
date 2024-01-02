@@ -26,6 +26,14 @@ body {
     min-height: 100vh;
 }
 
+.react-flow__controls-button {
+    background: #fefefe !important;
+    margin: 4px;
+}
+
+.react-flow__minimap {
+    background: #000000;
+}
 
 button {
     border-radius: 8px;

@@ -54,7 +54,7 @@ export default function PhaseThreeC() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setCurrentPhase(3));
-        dispatch(setPhase3Value("Phase 3(c)"))
+        dispatch(setPhase3Value("Phase C3"))
         dispatch(setPhase3cNodes(Phase3cNodes));
     }, []);
     useEffect(() => {

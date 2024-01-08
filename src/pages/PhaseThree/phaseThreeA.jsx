@@ -23,7 +23,7 @@ export default function PhaseThreeA() {
             dispatch(setHiddenTactic(disabledTacticNodes));
         }
         dispatch(setCurrentPhase(3))
-        dispatch(setPhase3Value("Phase 3(a)"))
+        dispatch(setPhase3Value("Phase C1"))
         dispatch(setNextPhaseEnabled(true))
     }, []);
 

@@ -69,7 +69,7 @@ export default function PhaseThreeB() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setCurrentPhase(3));
-        dispatch(setPhase3Value("Phase 3(b)"))
+        dispatch(setPhase3Value("Phase C2"))
     }, []);
     const handleElementClick = (event, element) => {
         initialNodes.map((node) => {

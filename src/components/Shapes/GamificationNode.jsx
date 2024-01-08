@@ -4,14 +4,13 @@ import Card from "../Card/index.jsx";
 import {getGlossary} from "../../utils/getGlossary.jsx";
 import {useSelector} from "react-redux";
 
-const OvalNode = ({data}) => {
+const GamificationNode = ({data}) => {
     const nodeStyle = {
         width: data.width || 240,
         height: data.height || 80,
         borderRadius: "50%",
         padding: 2,
-        backgroundColor: data.type === "tactic" ? "#f1ae80" : "#8bc1f6",
-        outline: data.isChosen && data.tacticType === "gamified" ? "4px solid #5D803F" : data.isChosen && data.tacticType === "acceptance" && "4px solid #ED7D30",
+        backgroundColor: "#FEE499",
         outlineOffset: "10px",
         color: "black",
         display: "flex",
@@ -31,15 +30,15 @@ const OvalNode = ({data}) => {
             <NodeToolbar isVisible={isVisible} position={Position.Left}>
                 <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
             </NodeToolbar>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"} isConnectable={false}/>}
-            {data.left && <Handle type="target" position={Position.Left} id={"oval_left"} isConnectable={false}/>}
-            {data.right && <Handle type="target" position={Position.Right} id={"oval_right"} isConnectable={false}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"gamification_top"} isConnectable={false}/>}
+            {data.left && <Handle type="target" position={Position.Left} id={"gamification_left"} isConnectable={false}/>}
+            {data.right && <Handle type="target" position={Position.Right} id={"gamification_right"} isConnectable={false}/>}
             {data.bottom &&
-                <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"} isConnectable={false}/>}
+                <Handle type="target" position={Position.Bottom} id={"gamification_bottom"} isConnectable={false}/>}
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
                     {!data.titleDisable && <>
-                        &lt;&lt;{data.type === "tactic" ? "Tactic" : "Need"}&gt;&gt;
+                        &lt;&lt;Gamification&gt;&gt;
                         <br/>
                     </>
                     }
@@ -48,18 +47,18 @@ const OvalNode = ({data}) => {
                     {data.num}
                 </p>
             </div>
-            <Handle type="source" position={Position.Bottom} id={"oval_source_bottom"} className={"custom-handle"}
+            <Handle type="source" position={Position.Bottom} id={"gamification_source_bottom"} className={"custom-handle"}
                     isConnectable={false}
             />
             {data.sourceLeft &&
-                <Handle type="source" position={Position.Left} id={"oval_source_left"} isConnectable={false}/>}
+                <Handle type="source" position={Position.Left} id={"gamification_source_left"} isConnectable={false}/>}
             {data.sourceRight &&
-                <Handle type="source" position={Position.Right} id={"oval_source_right"} isConnectable={false}/>}
+                <Handle type="source" position={Position.Right} id={"gamification_source_right"} isConnectable={false}/>}
             {data.sourceTop &&
-                <Handle type="source" position={Position.Top} id={"oval_source_top"} isConnectable={false}/>
+                <Handle type="source" position={Position.Top} id={"gamification_source_top"} isConnectable={false}/>
             }
         </div>
     );
 };
 
-export default OvalNode;
+export default GamificationNode;

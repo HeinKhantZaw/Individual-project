@@ -6,6 +6,7 @@ export const PhaseOneKeyValue = {
     "socializer": "C2",
     "achiever": "C1",
     "explorer": "C5",
+    "killer": "C36",
     "employed-yes-xor3": "C14",
     "employed-no-xor3": "C19",
     "junior-xor4": "C16",

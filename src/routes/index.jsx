@@ -8,6 +8,7 @@ import PhaseThreeB from "../pages/PhaseThree/phaseThreeB.jsx";
 import {useParams} from "react-router-dom";
 import PhaseThreeC from "../pages/PhaseThree/phaseThreeC.jsx";
 import PhaseFour from "../pages/PhaseFour/index.jsx";
+import PhaseFive from "../pages/PhaseFive/index.jsx";
 
 const RenderPhaseThree = () => {
     const {p} = useParams();
@@ -49,6 +50,10 @@ const routes = [
             {
                 path: "phase4",
                 element: <PhaseFour/>
+            },
+            {
+                path: "phase5",
+                element: <PhaseFive/>
             }
         ]
     },

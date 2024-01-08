@@ -143,14 +143,14 @@ const initialEdges = [
         source: "increase-social-influence",
         target: "improve-subjective-norm",
         type: "dotted",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         markerStart: markerConfig,
     },
     {
         id: "e3-10_2",
         source: "increase-social-influence",
         target: "improve-social-factors",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "dotted",
         markerStart: markerConfig,
     },
@@ -402,7 +402,7 @@ const initialEdges = [
         id: "e4-36_11",
         source: "show-embracing-the-subject-is-socially-supported",
         target: "support-achievement-5",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -411,7 +411,7 @@ const initialEdges = [
         id: "e4-36_12",
         source: "show-embracing-the-subject-is-socially-supported",
         target: "support-skill-improvement-5",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -486,7 +486,7 @@ const initialEdges = [
         source: "increase-chances-for-improving-social-status",
         target: "support-achievement-4",
         targetHandle: "oval_left",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -496,7 +496,7 @@ const initialEdges = [
         source: "increase-chances-for-a-promotion",
         target: "support-achievement-4",
         targetHandle: "oval_right",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -655,7 +655,7 @@ const initialEdges = [
         source: "show-embracing-the-subject-is-socially-supported",
         target: "improve-system-perception-via-it-3",
         targetHandle: "oval_target_bottom",
-        sourceHandle: "oval_bottom",
+        sourceHandle: "oval_source_bottom",
         type: "step",
         style: arrowEdgeStyle,
         markerStart: markerConfig

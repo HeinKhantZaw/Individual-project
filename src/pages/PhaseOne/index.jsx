@@ -21,7 +21,6 @@ let initialNodes = [
         data: {label: "Acceptance Context", top: "no"},
         draggable: false
     },
-
     // 2nd layer
     {
         id: "user",

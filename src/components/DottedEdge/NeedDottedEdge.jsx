@@ -38,7 +38,7 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
                     }}
                     className="nodrag nopan"
                 >
-                    <pre className={"text-center text-lg"}>{ data?.label || "Need"}</pre>
+                    <pre className={"text-center text-3xl bold"}>{ data?.label }</pre>
                 </div>
             </EdgeLabelRenderer>
         </>

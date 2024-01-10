@@ -30,11 +30,11 @@ const GamificationNode = ({data}) => {
             <NodeToolbar isVisible={isVisible} position={Position.Left}>
                 <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
             </NodeToolbar>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"gamification_top"} isConnectable={false}/>}
-            {data.left && <Handle type="target" position={Position.Left} id={"gamification_left"} isConnectable={false}/>}
-            {data.right && <Handle type="target" position={Position.Right} id={"gamification_right"} isConnectable={false}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"gamification_target_top"} isConnectable={false}/>}
+            {data.left && <Handle type="target" position={Position.Left} id={"gamification_target_left"} isConnectable={false}/>}
+            {data.right && <Handle type="target" position={Position.Right} id={"gamification_target_right"} isConnectable={false}/>}
             {data.bottom &&
-                <Handle type="target" position={Position.Bottom} id={"gamification_bottom"} isConnectable={false}/>}
+                <Handle type="target" position={Position.Bottom} id={"gamification_target_bottom"} isConnectable={false}/>}
             <div className={"block"}>
                 <p className={"text-xs text-center font-bold"}>
                     {!data.titleDisable && <>

@@ -19,7 +19,7 @@ export default function PhaseFive() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
-    const edgeTypes = {floating: FloatingEdge, need_dotted: NeedDottedEdge, dotted: DottedEdge, straightEdge: StraightEdge};
+    const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch()
     const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.phaseStatus);
 

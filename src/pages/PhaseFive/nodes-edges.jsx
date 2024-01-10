@@ -143,7 +143,15 @@ export const initialNodes = [
         id: "set-experience-points-system",
         type: "gamification",
         position: {x: -5500, y: 150},
-        data: {label: "Set_Experience_Points_System", left: true, num: "(1)"},
+        data: {
+            label: "Set_Experience_Points_System",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+            num: "(1)"},
         draggable: false,
     },
     {
@@ -221,7 +229,7 @@ export const initialNodes = [
         id: "set-game-structure",
         type: "gamification",
         position: {x: -4000, y: 450},
-        data: {label: "Set_Game_Structure"},
+        data: {label: "Set_Game_Structure", num: "(1)"},
         draggable: false
     },
     // set-game-structure-and
@@ -236,7 +244,7 @@ export const initialNodes = [
         id: "set-paths",
         type: "gamification",
         position: {x: -4600, y: 750},
-        data: {label: "Set_Paths", sourceRight: true},
+        data: {label: "Set_Paths", right: true, left: true, bottom:true, sourceLeft: true, sourceRight: true, sourceTop: true},
         draggable: false
     },
     // set-paths-and
@@ -274,7 +282,7 @@ export const initialNodes = [
         id: "define-graph-paths",
         type: "gamification",
         position: {x: -4650, y: 1200},
-        data: {label: "Define_Graph_Paths"},
+        data: {label: "Define_Graph_Paths",},
         draggable: false
     },
 
@@ -291,7 +299,7 @@ export const initialNodes = [
         id: "set-levels",
         type: "gamification",
         position: {x: -3600, y: 750},
-        data: {label: "Set_Levels", left: true},
+        data: {label: "Set_Levels", right: true, left: true, bottom:true, sourceLeft: true, sourceRight: true, sourceTop: true},
         draggable: false
     },
     // set-level-and
@@ -368,7 +376,7 @@ export const initialNodes = [
         id: "choose-experience-points",
         type: "gamification",
         position: {x: -3350, y: 1850}, // Adjust position as needed
-        data: {label: "Choose_Experience_Points"},
+        data: {label: "Choose_Experience_Points", sourceLeft: true},
         draggable: false
     },
     {
@@ -380,10 +388,10 @@ export const initialNodes = [
     },
     // choose-other-kinds needs
     {
-        id: "set-point-systems",
+        id: "set-point-systems-2",
         type: "gamification",
         position: {x: -3350, y: 2000}, // Adjust position as needed
-        data: {label: "Set_Point_Systems"},
+        data: {label: "Set_Point_Systems", num:"(2)"},
         draggable: false
     },
     {
@@ -422,6 +430,13 @@ export const initialNodes = [
         type: "gamification",
         position: {x: -2900, y: 1050}, // Adjust position as needed
         data: {label: "Define_Difficulty_Among_Levels"},
+        draggable: false
+    },
+    {
+        id: "use-linear-difficulty-progression",
+        type: "gamification",
+        position: {x: -3000, y: 1150}, // Adjust position as needed
+        data: {label: "Use_Linear_Difficulty_Progression"},
         draggable: false
     },
 
@@ -517,7 +532,7 @@ export const initialEdges = [
         id: "e9",
         source: "set-roles",
         target: "set-team-roles",
-        type: "straightEdge",
+        type: "straightLabel",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
         data: {
@@ -534,6 +549,7 @@ export const initialEdges = [
         target: "set-single-roles",
         source: "fast-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_left",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
@@ -543,6 +559,7 @@ export const initialEdges = [
         target: "set-single-roles",
         source: "low-cost-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_left",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
@@ -553,6 +570,7 @@ export const initialEdges = [
         id: "e12",
         target: "set-team-roles",
         source: "fast-design",
+        data: {label: "-"},
         type: "dotted",
         sourceHandle: "oval_source_left",
         style: arrowEdgeStyle,
@@ -562,6 +580,7 @@ export const initialEdges = [
         id: "e13",
         target: "set-team-roles",
         source: "low-cost-design",
+        data: {label: "-"},
         sourceHandle: "oval_source_left",
         type: "dotted",
         style: arrowEdgeStyle,
@@ -574,7 +593,7 @@ export const initialEdges = [
         target: "set-team-roles",
         source: "promote-collaboration",
         sourceHandle: "oval_source_top",
-        type: "straight",
+        type: "floating",
         style: arrowEdgeStyle,
     },
 
@@ -628,8 +647,9 @@ export const initialEdges = [
         source: "set-gamifiable-actions",
         target: "set-experience-points-system",
         sourceHandle: "gamification_source_right",
-        targetHandle: "gamification_left",
-        type: "need_dotted",
+        targetHandle: "gamification_target_left",
+        type: "dotted",
+        data: {label: "Need"},
         style: arrowEdgeStyle,
         markerStart: markerConfig,
     },
@@ -639,7 +659,7 @@ export const initialEdges = [
         target: "set-experience-points-system-and",
         type: "straight",
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerStart: markerConfig,
     },
     {
         id: "e22",
@@ -688,10 +708,10 @@ export const initialEdges = [
         id: "e27",
         source: "set-same-points-to-each-action",
         target: "define-metric",
-        type: "need_dotted",
+        type: "dotted",
         data: {label: "!"},
         sourceHandle: "gamification_source_right",
-        targetHandle: "gamification_left",
+        targetHandle: "gamification_target_left",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
         markerEnd: markerConfig
@@ -832,12 +852,13 @@ export const initialEdges = [
         markerStart: markerConfig
     },
 
-    // define-graph-paths to fast-design and high-design-quality
+    // define-graph-paths to fast-design and lost-cost-design
     {
         id: "e43",
         target: "define-graph-paths",
         source: "fast-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -845,10 +866,11 @@ export const initialEdges = [
     {
         id: "e44",
         target: "define-graph-paths",
-        source: "high-design-quality",
+        source: "low-cost-design",
         type: "dotted",
+        data: {label: "-"},
         sourceHandle: "oval_source_right",
-        targetHandle: "gamification_bottom",
+        targetHandle: "gamification_target_bottom",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -858,9 +880,9 @@ export const initialEdges = [
         id: "e41",
         source: "set-paths",
         target: "set-levels",
-        type: "need_dotted",
+        type: "dotted",
         sourceHandle: "gamification_source_right",
-        targetHandle: "gamification_left",
+        targetHandle: "gamification_target_left",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
         markerEnd: markerConfig,
@@ -967,7 +989,7 @@ export const initialEdges = [
         id: "e56",
         source: "by-gamifiable-actions",
         target: "set-gamifiable-actions-2",
-        type: "need_dotted",
+        type: "dotted",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig
@@ -982,6 +1004,16 @@ export const initialEdges = [
         markerStart: markerConfig
     },
     {
+        id: "e57_1",
+        source: "choose-experience-points",
+        target: "set-experience-points-system",
+        type: "dotted",
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerEnd: markerConfig
+    },
+    {
         id: "e58",
         source: "choose-point-kinds",
         target: "choose-other-kinds",
@@ -993,8 +1025,8 @@ export const initialEdges = [
     {
         id: "e59",
         source: "choose-other-kinds",
-        target: "set-point-systems",
-        type: "need_dotted",
+        target: "set-point-systems-2",
+        type: "dotted",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig
@@ -1021,7 +1053,7 @@ export const initialEdges = [
         id: "e62",
         source: "link-roles-to-path",
         target: "set-roles",
-        type: "need_dotted",
+        type: "dotted",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig

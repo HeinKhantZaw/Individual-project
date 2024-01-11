@@ -151,7 +151,8 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-            num: "(1)"},
+            num: "(1)"
+        },
         draggable: false,
     },
     {
@@ -172,14 +173,14 @@ export const initialNodes = [
     {
         id: "set-same-points-to-each-action",
         type: "gamification",
-        position: {x: -5700, y: 850}, // Adjust position as needed
+        position: {x: -5700, y: 850},
         data: {label: "Set_Same_Points_To_Each_Action", sourceRight: true},
         draggable: false
     },
     {
         id: "define-metric",
         type: "gamification",
-        position: {x: -5300, y: 850}, // Adjust position as needed
+        position: {x: -5300, y: 850},
         data: {label: "Define_Metric", left: true},
         draggable: false
     },
@@ -220,8 +221,8 @@ export const initialNodes = [
     {
         id: "set-game-mechanics-and-dynamics",
         type: "gamification",
-        position: {x: -2000, y: 150},
-        data: {label: "Set_Game_Mechanics_and_Dynamics"},
+        position: {x: 4000, y: 150},
+        data: {label: "Set_Game_Mechanics_and_Dynamics", num: "(1)"},
         draggable: false
     },
     // set-game-mechanics-and-dynamics children
@@ -229,7 +230,7 @@ export const initialNodes = [
         id: "set-game-structure",
         type: "gamification",
         position: {x: -4000, y: 450},
-        data: {label: "Set_Game_Structure", num: "(1)"},
+        data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true,},
         draggable: false
     },
     // set-game-structure-and
@@ -244,7 +245,15 @@ export const initialNodes = [
         id: "set-paths",
         type: "gamification",
         position: {x: -4600, y: 750},
-        data: {label: "Set_Paths", right: true, left: true, bottom:true, sourceLeft: true, sourceRight: true, sourceTop: true},
+        data: {
+            label: "Set_Paths",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true
+        },
         draggable: false
     },
     // set-paths-and
@@ -281,7 +290,7 @@ export const initialNodes = [
     {
         id: "define-graph-paths",
         type: "gamification",
-        position: {x: -4650, y: 1200},
+        position: {x: -4650, y: 1150},
         data: {label: "Define_Graph_Paths",},
         draggable: false
     },
@@ -289,7 +298,7 @@ export const initialNodes = [
     {
         id: "link-roles-to-path",
         type: "gamification",
-        position: {x: -4400, y: 1000},
+        position: {x: -4200, y: 1000},
         data: {label: "Link_Roles_to_Path"},
         draggable: false
     },
@@ -299,7 +308,15 @@ export const initialNodes = [
         id: "set-levels",
         type: "gamification",
         position: {x: -3600, y: 750},
-        data: {label: "Set_Levels", right: true, left: true, bottom:true, sourceLeft: true, sourceRight: true, sourceTop: true},
+        data: {
+            label: "Set_Levels",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true
+        },
         draggable: false
     },
     // set-level-and
@@ -314,14 +331,14 @@ export const initialNodes = [
     {
         id: "choose-level-names",
         type: "gamification",
-        position: {x: -3800, y: 1050}, // Adjust position as needed
+        position: {x: -3800, y: 1050},
         data: {label: "Choose_Level_Names"},
         draggable: false
     },
     {
         id: "set-achievement-rule",
         type: "gamification",
-        position: {x: -3500, y: 1050}, // Adjust position as needed
+        position: {x: -3500, y: 1050},
         data: {label: "Set_Achievement_Rule"},
         draggable: false
     },
@@ -329,7 +346,7 @@ export const initialNodes = [
     {
         id: "by-gamifiable-actions",
         type: "gamification",
-        position: {x: -3750, y: 1300}, // Adjust position as needed
+        position: {x: -3750, y: 1300},
         data: {label: "By_Gamifiable_Actions"},
         draggable: false
     },
@@ -337,14 +354,14 @@ export const initialNodes = [
     {
         id: "set-gamifiable-actions-2",
         type: "gamification",
-        position: {x: -4000, y: 1450}, // Adjust position as needed
+        position: {x: -4000, y: 1450},
         data: {label: "Set_Gamifiable_Actions", num: "(2)"},
         draggable: false
     },
     {
         id: "by-points",
         type: "gamification",
-        position: {x: -3500, y: 1300}, // Adjust position as needed
+        position: {x: -3500, y: 1300},
         data: {label: "By_Points"},
         draggable: false
     },
@@ -352,7 +369,7 @@ export const initialNodes = [
     {
         id: "by-points-and",
         type: "operator",
-        position: {x: -3400, y: 1450}, // Adjust position as needed
+        position: {x: -3400, y: 1450},
         data: {label: "AND"},
         draggable: false
     },
@@ -360,14 +377,14 @@ export const initialNodes = [
     {
         id: "set-thresholds",
         type: "gamification",
-        position: {x: -3600, y: 1600}, // Adjust position as needed
+        position: {x: -3600, y: 1600},
         data: {label: "Set_Thresholds"},
         draggable: false
     },
     {
         id: "choose-point-kinds",
         type: "gamification",
-        position: {x: -3200, y: 1600}, // Adjust position as needed
+        position: {x: -3300, y: 1600},
         data: {label: "Choose_Point_Kinds"},
         draggable: false
     },
@@ -375,14 +392,14 @@ export const initialNodes = [
     {
         id: "choose-experience-points",
         type: "gamification",
-        position: {x: -3350, y: 1850}, // Adjust position as needed
+        position: {x: -3450, y: 1850},
         data: {label: "Choose_Experience_Points", sourceLeft: true},
         draggable: false
     },
     {
         id: "choose-other-kinds",
         type: "gamification",
-        position: {x: -3050, y: 1850}, // Adjust position as needed
+        position: {x: -3150, y: 1850},
         data: {label: "Choose_Other_Kinds"},
         draggable: false
     },
@@ -390,8 +407,8 @@ export const initialNodes = [
     {
         id: "set-point-systems-2",
         type: "gamification",
-        position: {x: -3350, y: 2000}, // Adjust position as needed
-        data: {label: "Set_Point_Systems", num:"(2)"},
+        position: {x: -3350, y: 2000},
+        data: {label: "Set_Point_Systems", num: "(2)"},
         draggable: false
     },
     {
@@ -414,45 +431,601 @@ export const initialNodes = [
     {
         id: "by-other-achievements",
         type: "gamification",
-        position: {x: -3250, y: 1300}, // Adjust position as needed
-        data: {label: "By_Other_Achievements"},
+        position: {x: -3250, y: 1300},
+        data: {label: "By_Other_Achievements", right: true},
         draggable: false
     },
     {
         id: "link-levels-to-paths",
         type: "gamification",
-        position: {x: -3200, y: 1050}, // Adjust position as needed
+        position: {x: -3200, y: 1050},
         data: {label: "Link_Levels_to_Paths"},
         draggable: false
     },
     {
         id: "define-difficulty-among-levels",
         type: "gamification",
-        position: {x: -2900, y: 1050}, // Adjust position as needed
+        position: {x: -2700, y: 1050},
         data: {label: "Define_Difficulty_Among_Levels"},
         draggable: false
     },
     {
         id: "use-linear-difficulty-progression",
         type: "gamification",
-        position: {x: -3000, y: 1150}, // Adjust position as needed
-        data: {label: "Use_Linear_Difficulty_Progression"},
+        position: {x: -2950, y: 1250},
+        data: {
+            label: "Use_Linear_Difficulty_Progression",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
         draggable: false
+    },
+    {
+        id: "use-alternated-difficulty",
+        type: "gamification",
+        position: {x: -2500, y: 1250},
+        data: {
+            label: "Use_Alternated_Difficulty",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "use-alternated-difficulty-and",
+        type: "operator",
+        position: {x: -2400, y: 1400},
+        data: {label: "AND"},
+        draggable: false
+    },
+    {
+        id: "define-main-trend",
+        type: "gamification",
+        position: {x: -2600, y: 1550},
+        data: {
+            label: "Define_Main_Trend",
+        },
+        draggable: false
+    },
+    // define-main-trend child
+    {
+        id: "use-increasing-difficulty",
+        type: "gamification",
+        position: {x: -2600, y: 1700},
+        data: {
+            label: "Use_Increasing_Difficulty",
+        },
+        draggable: false
+    },
+    {
+        id: "insert-alternated-difficulties",
+        type: "gamification",
+        position: {x: -2200, y: 1550},
+        data: {
+            label: "Insert_Alternated_Difficulties",
+        },
+        draggable: false
+    },
+    {
+        id: "insert-alternated-difficulties-and",
+        type: "operator",
+        position: {x: -2100, y: 1700},
+        data: {label: "AND"},
+        draggable: false
+    },
+    // insert-alternated-difficulties-and
+    {
+        id: "choose-candidate-levels",
+        type: "gamification",
+        position: {x: -2300, y: 1850},
+        data: {
+            label: "Choose_Candidate_Levels",
+        },
+        draggable: false
+    },
+    {
+        id: "insert-unexpected-difficulties",
+        type: "gamification",
+        position: {x: -1900, y: 1850},
+        data: {
+            label: "Insert_Unexpected_Difficulties",
+        },
+        draggable: false
+    },
+    // insert-unexpcted-difficulties children
+    {
+        id: "insert-positive-difficulties",
+        type: "gamification",
+        position: {x: -2100, y: 2000},
+        data: {
+            label: "Insert_Positive_Difficulties",
+        },
+        draggable: false
+    },
+    {
+        id: "insert-negative-difficulties",
+        type: "gamification",
+        position: {x: -1700, y: 2000},
+        data: {
+            label: "Insert_Negative_Difficulties",
+        },
+        draggable: false
+    },
+    {
+        id: "fast-design-2",
+        type: "oval",
+        position: {x: -3050, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Fast_Design",
+            "type": "tactic",
+            "num": "(2)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "low-cost-design-2",
+        type: "oval",
+        position: {x: -2750, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Low_Cost_Design",
+            "type": "tactic",
+            "num": "(2)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "high-design-quality-2",
+        type: "oval",
+        position: {x: -2350, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "High_Design_Quality",
+            "type": "tactic",
+            "num": "(2)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "increase-user-surprise",
+        type: "oval",
+        position: {x: -2050, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Increase_User_Surprise",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "use-redeemable-points",
+        type: "gamification",
+        position: {x: -1500, y: 1050},
+        data: {
+            label: "Use_Redeemable_Points",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "use-skill-points",
+        type: "gamification",
+        position: {x: -800, y: 1150},
+        data: {
+            label: "Use_Skill_Points",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    {
+        id: "use-karma-points",
+        type: "gamification",
+        position: {x: -200, y: 1300},
+        data: {
+            label: "Use_Karma_Points",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    {
+        id: "use-reputation-points",
+        type: "gamification",
+        position: {x: 300, y: 1050},
+        data: {
+            label: "Use_Reputation_Points",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    {
+        id: "choose-kinds-of-points",
+        type: "gamification",
+        position: {x: -400, y: 800},
+        data: {
+            label: "Choose_Kinds_of_Points",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    {
+        id: "rp-define-exchange-points-rewards",
+        type: "gamification",
+        position: {x: -1700, y: 1250},
+        data: {
+            label: "RP_Define_Exchange_Points_Rewards",
+            num: "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "gp-define-exchange-points-rewards",
+        type: "gamification",
+        position: {x: -50, y: 1450},
+        data: {
+            label: "GP_Define_Exchange_Points_Rewards",
+            num: "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "support-achievement",
+        type: "oval",
+        position: {x: -1400, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Support_Achievement",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+    {
+        id: "improve-perceived-status",
+        type: "oval",
+        position: {x: -1100, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Improve_Perceived_Status",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "improve-system-loyalty",
+        type: "oval",
+        position: {x: -1250, y: 2800},
+        data: {
+            "isHidden": false,
+            "label": "Improve_System_Loyalty",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "support-social-behavior",
+        type: "oval",
+        position: {x: -800, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Support_Social_Behavior",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "promote-ethical-behavior",
+        type: "oval",
+        position: {x: -500, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Ethical_Behavior",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "promote-altruistic-behavior",
+        type: "oval",
+        position: {x: -200, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Altruistic_Behavior",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "increase-worth-vagueness",
+        type: "oval",
+        position: {x: 100, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Increase_Worth_Vagueness",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "improve-trust",
+        type: "oval",
+        position: {x: 400, y: 2500},
+        data: {
+            "isHidden": false,
+            "label": "Improve_Trust",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "set-point-systems",
+        type: "gamification",
+        position: {x: 500, y: 500},
+        data: {
+            label: "Set_Point_Systems",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-point-systems-and",
+        type: "operator",
+        position: {x: 600, y: 700},
+        data: {label: "AND"},
+        draggable: false
+    },
+
+    {
+        id: "set-achievement-rules",
+        type: "gamification",
+        position: {x: 1300, y: 800},
+        data: {
+            label: "Set_Achievement_Rules",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-achievement-rules-and",
+        type: "operator",
+        position: {x: 1400, y: 1000},
+        data: {label: "AND"},
+        draggable: false
+    },
+
+    {
+        id: "set-triggers",
+        type: "gamification",
+        position: {x: 850, y: 1050},
+        data: {
+            label: "Set_Triggers",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-amount-of-points",
+        type: "gamification",
+        position: {x: 1700, y: 1050},
+        data: {
+            label: "Set_Amount_of_Points",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-amount-of-points-and",
+        type: "operator",
+        position: {x: 1800, y: 1200},
+        data: {label: "AND"},
+        draggable: false
+    },
+
+    {
+        id: "by-gamifiable-actions-2",
+        type: "gamification",
+        position: {x: 700, y: 1350},
+        data: {
+            label: "By_Gamifiable_Actions",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-gamifiable-actions-3",
+        type: "gamification",
+        position: {x: 700, y: 1550},
+        data: {
+            label: "Set_Gamifiable_Actions",
+            num: "(3)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "by-other-achievements-2",
+        type: "gamification",
+        position: {x: 1000, y: 1350},
+        data: {
+            label: "By_Other_Achievements",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-sign-of-points",
+        type: "gamification",
+        position: {x: 1500, y: 1350},
+        data: {
+            label: "Set_Sign_of_Points",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    // set-sign-of-points children
+    {
+        id: "set-positive",
+        type: "gamification",
+        position: {x: 1300, y: 1550},
+        data: {
+            label: "Set_Positive",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+
+        },
+    },
+    {
+        id: "set-negative",
+        type: "gamification",
+        position: {x: 1600, y: 1550},
+        data: {
+            label: "Set_Negative",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-quantity-of-points",
+        type: "gamification",
+        position: {x: 2000, y: 1350},
+        data: {
+            label: "Set_Quantity_of_Points",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
     },
 
 
     {
         id: "set-virtual-environments",
         type: "gamification",
-        position: {x: 4000, y: 150},
+        position: {x: 5000, y: 150},
         data: {label: "Set_Virtual_Environments"},
         draggable: false
     },
     {
         id: "set-supporting-systems",
         type: "gamification",
-        position: {x: 5500, y: 150},
+        position: {x: 6000, y: 150},
         data: {label: "Set_Supporting_Systems"},
+
         draggable: false
     },
 
@@ -723,6 +1296,7 @@ export const initialEdges = [
         source: "fast-design",
         sourceHandle: "oval_source_right",
         type: "dotted",
+        data: {label: "+"},
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -731,6 +1305,7 @@ export const initialEdges = [
         target: "set-same-points-to-each-action",
         source: "low-cost-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -741,6 +1316,7 @@ export const initialEdges = [
         target: "define-metric",
         source: "high-design-quality",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_top",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -751,7 +1327,13 @@ export const initialEdges = [
         id: "e31",
         source: "set-game-mechanics-and-dynamics",
         target: "set-game-structure",
-        type: "straight",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR C4[Old] OR C19[Employed.No] OR \n" +
+                "C24[Goal.Clarity.Low] OR C25[Task.Variety.High] OR \n" +
+                "C26[Task.RequiredSkills.AdvancedSkills]) AND " +
+                "(NOT(C28[Task.Variety.Low, RequiredSkills.TrivialCommon]))"
+        },
         style: arrowEdgeStyle,
         markerStart: markerConfig,
     },
@@ -838,6 +1420,7 @@ export const initialEdges = [
         target: "define-parallel-paths",
         source: "fast-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -847,6 +1430,7 @@ export const initialEdges = [
         target: "define-parallel-paths",
         source: "low-cost-design",
         type: "dotted",
+        data: {label: "+"},
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -877,10 +1461,12 @@ export const initialEdges = [
 
     // set-paths and set-levels
     {
-        id: "e41",
+        id: "e41_1",
         source: "set-paths",
         target: "set-levels",
         type: "dotted",
+        data: {label: "Need"},
+
         sourceHandle: "gamification_source_right",
         targetHandle: "gamification_target_left",
         style: arrowEdgeStyle,
@@ -1008,6 +1594,8 @@ export const initialEdges = [
         source: "choose-experience-points",
         target: "set-experience-points-system",
         type: "dotted",
+        data: {label: "Need"},
+
         sourceHandle: "gamification_source_left",
         targetHandle: "gamification_target_right",
         style: arrowEdgeStyle,
@@ -1027,6 +1615,7 @@ export const initialEdges = [
         source: "choose-other-kinds",
         target: "set-point-systems-2",
         type: "dotted",
+        data: {label: "Need"},
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig
@@ -1048,14 +1637,519 @@ export const initialEdges = [
         type: "step",
         style: arrowEdgeStyle,
     },
+    // use-skill-points and support-skill-improvement
+    {
+        id: "e61_1",
+        source: "use-skill-points",
+        target: "support-skill-improvement",
+        type: "step",
+
+        style: arrowEdgeStyle,
+    },
     // link-role-to-path needs set-roles
     {
         id: "e62",
         source: "link-roles-to-path",
         target: "set-roles",
         type: "dotted",
+        data: {label: "Need"},
+
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig
     },
+    {
+        id: "e63",
+        source: "define-difficulty-among-levels",
+        target: "use-linear-difficulty-progression",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e64",
+        source: "define-difficulty-among-levels",
+        target: "use-alternated-difficulty",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-game-structure to high-design-quality
+    {
+        id: "e64_1",
+        target: "set-game-structure",
+        source: "high-design-quality",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_right",
+        targetHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e65",
+        source: "use-linear-difficulty-progression",
+        target: "use-alternated-difficulty",
+        type: "dotted",
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
+        data: {label: "!"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    //by-other-achivements to
+    {
+        id: "e65_1",
+        target: "by-other-achievements",
+        source: "set-game-mechanics-and-dynamics",
+        type: "dotted",
+        data: {label: "Need"},
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e66",
+        source: "use-alternated-difficulty",
+        target: "use-alternated-difficulty-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // use-alternated-difficulty-and children
+    {
+        id: "e67",
+        source: "use-alternated-difficulty-and",
+        target: "define-main-trend",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e68",
+        source: "use-alternated-difficulty-and",
+        target: "insert-alternated-difficulties",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // define-main-trend child
+    {
+        id: "e69",
+        source: "define-main-trend",
+        target: "use-increasing-difficulty",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // insert-alternated-difficulties-and children
+    {
+        id: "e70",
+        source: "insert-alternated-difficulties",
+        target: "insert-alternated-difficulties-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e71",
+        source: "insert-alternated-difficulties-and",
+        target: "choose-candidate-levels",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e72",
+        source: "insert-alternated-difficulties-and",
+        target: "insert-unexpected-difficulties",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e73",
+        source: "insert-unexpected-difficulties",
+        target: "insert-positive-difficulties",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e74",
+        source: "insert-unexpected-difficulties",
+        target: "insert-negative-difficulties",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // use-linear-diifficulty-progression to fast-design and low-cost-design
+    {
+        id: "e75",
+        target: "use-linear-difficulty-progression",
+        source: "fast-design-2",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e76",
+        target: "use-linear-difficulty-progression",
+        source: "low-cost-design-2",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // use-alternated-difficulty to high-design-quality and increase-user-surprise
+    {
+        id: "e77",
+        target: "use-alternated-difficulty",
+        source: "high-design-quality-2",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e77",
+        target: "use-alternated-difficulty",
+        source: "increase-user-surprise",
+        type: "straight",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+    },
+
+    //use-redeemable-points to rp-define-exchange-points-rewards
+    {
+        id: "e78",
+        target: "use-redeemable-points",
+        source: "rp-define-exchange-points-rewards",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    //use-redeemable-points to choose-kinds-of-points
+    {
+        id: "e79",
+        source: "choose-kinds-of-points",
+        target: "use-redeemable-points",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR C36[Killer] OR \n" +
+                "C32[SocialStructure.Hierarchical] OR \n" +
+                "C34[GoodProduct.Public])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    //use-skill-points to choose-kinds-of-points
+    {
+        id: "e80",
+        source: "choose-kinds-of-points",
+        target: "use-skill-points",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR \n" +
+                "C19[Employed.No]) AND \n" +
+                "(C16[Empertise.Junior])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    //use-karma-points to choose-kinds-of-points
+    {
+        id: "e81",
+        source: "choose-kinds-of-points",
+        target: "use-karma-points",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C3[Female]\n" +
+                "OR C4[Old]) AND (NOT (C36[Killer]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    //use-reputation-points to choose-kinds-of-points
+    {
+        id: "e81",
+        source: "choose-kinds-of-points",
+        target: "use-reputation-points",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C1[Achiever] OR\n" +
+                "C5[Explorer]) AND (NOT (C36[Killer]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    //use-karma-points to gp-define-exchange-points-rewards
+    {
+        id: "e82",
+        target: "use-karma-points",
+        source: "gp-define-exchange-points-rewards",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e83",
+        target: "use-redeemable-points",
+        source: "support-achievement",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e84",
+        target: "use-redeemable-points",
+        source: "improve-perceived-status",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e84_1",
+        target: "use-redeemable-points",
+        source: "increase-worth-vagueness",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+
+    //support-achievement to improve-system-loyalty
+    {
+        id: "e85",
+        target: "support-achievement",
+        source: "improve-system-loyalty",
+        type: "straight",
+        sourceHandle: "oval_source_top",
+        targetHandle: "oval_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    //improve-perceived-status to improve-system-loyalty
+    {
+        id: "e86",
+        target: "improve-perceived-status",
+        source: "improve-system-loyalty",
+        type: "straight",
+        sourceHandle: "oval_source_top",
+        targetHandle: "oval_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+
+    {
+        id: "e87",
+        target: "use-karma-points",
+        source: "support-social-behavior",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e88",
+        target: "use-karma-points",
+        source: "promote-ethical-behavior",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e89",
+        target: "use-karma-points",
+        source: "promote-altruistic-behavior",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e90",
+        target: "use-karma-points",
+        source: "increase-worth-vagueness",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e91",
+        target: "use-reputation-points",
+        source: "improve-trust",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    // set-point-systems-and connection
+    {
+        id: "e92",
+        source: "set-point-systems",
+        target: "set-point-systems-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e93",
+        source: "set-point-systems-and",
+        target: "set-achievement-rules",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e94",
+        source: "set-point-systems-and",
+        target: "choose-kinds-of-points",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-achievement-rules and choose-kinds-of-points
+    {
+        id: "e95",
+        source: "set-achievement-rules",
+        target: "choose-kinds-of-points",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerEnd: markerConfig
+    },
+
+    //set-achievement-rules and set-achievement-rules-and
+    {
+        id: "e96",
+        source: "set-achievement-rules",
+        target: "set-achievement-rules-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e97",
+        source: "set-achievement-rules-and",
+        target: "set-triggers",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e98",
+        source: "set-achievement-rules-and",
+        target: "set-amount-of-points",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // set-amount-of-points and set-amount-of-points-and
+    {
+        id: "e99",
+        source: "set-amount-of-points",
+        target: "set-amount-of-points-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e100",
+        source: "set-amount-of-points-and",
+        target: "set-sign-of-points",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e101",
+        source: "set-amount-of-points-and",
+        target: "set-quantity-of-points",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-triggers to by-gamifiable-actions-2 and by-other-achievements-2
+    {
+        id: "e102",
+        source: "set-triggers",
+        target: "by-gamifiable-actions-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e103",
+        source: "set-triggers",
+        target: "by-other-achievements-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // by-gamifiable-actions-2 and set-gamifiable-actions-3
+    {
+        id: "e104",
+        source: "by-gamifiable-actions-2",
+        target: "set-gamifiable-actions-3",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerEnd: markerConfig
+    },
+    // set-sign-of-points to set-positive and set-negative
+    {
+        id: "e105",
+        source: "set-sign-of-points",
+        target: "set-positive",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e106",
+        source: "set-sign-of-points",
+        target: "set-negative",
+        type: "straightLabel",
+        data: {label: "(NOT (C1[Achiever])"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
 ];

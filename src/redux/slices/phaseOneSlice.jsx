@@ -159,7 +159,7 @@ const initialEdges = [
     {
         id: "e4m-71",
         source: "communication-xor",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         target: "communication-medium-xor7",
         type: "straight"
     },
@@ -180,7 +180,7 @@ const initialEdges = [
     {
         id: "e4m-74",
         source: "participation-xor",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         target: "participation-medium-xor8",
         type: "straight"
     },
@@ -195,7 +195,7 @@ const initialEdges = [
     {
         id: "e4m-77",
         source: "clarity-xor",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         target: "clarity-medium-xor9",
         type: "straight"
     },
@@ -210,7 +210,7 @@ const initialEdges = [
     {
         id: "e4m-80",
         source: "variety-xor",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         target: "variety-medium-xor10",
         type: "straight"
     },
@@ -231,7 +231,7 @@ const initialEdges = [
     {
         id: "e4m-83",
         source: "specificity-xor",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         target: "specificity-medium-xor11",
         type: "straight"
     },

@@ -31,9 +31,9 @@ const OvalNode = ({data}) => {
             <NodeToolbar isVisible={isVisible} position={Position.Left}>
                 <Card title={data.label} message={getGlossary(data.label)} width={data.width * 2 || 480}/>
             </NodeToolbar>
-            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_top"} isConnectable={false}/>}
-            {data.left && <Handle type="target" position={Position.Left} id={"oval_left"} isConnectable={false}/>}
-            {data.right && <Handle type="target" position={Position.Right} id={"oval_right"} isConnectable={false}/>}
+            {!noTopHandle && <Handle type="target" position={Position.Top} id={"oval_target_top"} isConnectable={false}/>}
+            {data.left && <Handle type="target" position={Position.Left} id={"oval_target_left"} isConnectable={false}/>}
+            {data.right && <Handle type="target" position={Position.Right} id={"oval_target_right"} isConnectable={false}/>}
             {data.bottom &&
                 <Handle type="target" position={Position.Bottom} id={"oval_target_bottom"} isConnectable={false}/>}
             <div className={"block"}>

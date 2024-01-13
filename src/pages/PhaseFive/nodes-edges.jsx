@@ -971,7 +971,7 @@ export const initialNodes = [
     {
         id: "set-positive",
         type: "gamification",
-        position: {x: 1300, y: 1550},
+        position: {x: 1300, y: 1650},
         data: {
             label: "Set_Positive",
             right: true,
@@ -980,13 +980,12 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-
         },
     },
     {
         id: "set-negative",
         type: "gamification",
-        position: {x: 1600, y: 1550},
+        position: {x: 1600, y: 1650},
         data: {
             label: "Set_Negative",
             right: true,
@@ -998,9 +997,23 @@ export const initialNodes = [
         },
     },
     {
+        id: "support-user-penalization",
+        type: "oval",
+        position: {x: 1600, y: 2100},
+        data: {
+            "isHidden": false,
+            "label": "Support_User_Penalization",
+            "type": "tactic",
+            "top": "no",
+            "sourceRight": true,
+            "sourceLeft": true,
+        },
+        draggable: false
+    },
+    {
         id: "set-quantity-of-points",
         type: "gamification",
-        position: {x: 2000, y: 1350},
+        position: {x: 2100, y: 1350},
         data: {
             label: "Set_Quantity_of_Points",
             right: true,
@@ -1010,6 +1023,268 @@ export const initialNodes = [
             sourceRight: true,
             sourceTop: true,
         },
+    },
+    {
+        id: "used-fixed-amount",
+        type: "gamification",
+        position: {x: 1900, y: 1550},
+        data: {
+            label: "Used_Fixed_Amount",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    //define-calculated-amount
+    {
+        id: "define-calculated-amount",
+        type: "gamification",
+        position: {x: 2300, y: 1550},
+        data: {
+            label: "Define_Calculated_Amount",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "define-calculated-amount-and",
+        type: "operator",
+        position: {x: 2400, y: 1700},
+        data: {label: "AND"},
+        draggable: false
+    },
+    // define-calculated-amount-and children: by-functions, by-parameters
+    {
+        id: "by-functions",
+        type: "gamification",
+        position: {x: 2200, y: 1850},
+        data: {
+            label: "By_Functions",
+        },
+    },
+    {
+        id: "by-parameters",
+        type: "gamification",
+        position: {x: 2600, y: 1850},
+        data: {
+            label: "By_Parameters",
+        },
+    },
+    {
+        id: "use-trigger-params",
+        type: "gamification",
+        position: {x: 2500, y: 2050},
+        data: {
+            label: "Use_Trigger_Params",left:true,
+        },
+    },
+    {
+        id: "use-context-params",
+        type: "gamification",
+        position: {x: 2900, y: 2050},
+        data: {
+            label: "Use_Context_Params",
+        },
+    },
+    // use-context-params children: by-player-profile, by-user-profile, by-other-context-profiles
+    {
+        id: "by-player-profile",
+        type: "gamification",
+        position: {x: 2700, y: 2300},
+        data: {
+            label: "By_Player_Profile",
+        },
+    },
+    {
+        id: "by-user-profile",
+        type: "gamification",
+        position: {x: 3100, y: 2300},
+        data: {
+            label: "By_User_Profile",
+        },
+    },
+    {
+        id: "by-other-context-profiles",
+        type: "gamification",
+        position: {x: 3500, y: 2300},
+        data: {
+            label: "By_Other_Context_Profiles",
+        },
+    },
+    // fast-design-3, low-cost-design-3, high-design-quality-3
+    {
+        id: "fast-design-3",
+        type: "oval",
+        position: {x: 2000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Fast_Design",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "low-cost-design-3",
+        type: "oval",
+        position: {x: 2300, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Low_Cost_Design",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "high-design-quality-3",
+        type: "oval",
+        position: {x: 2600, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "High_Design_Quality",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    // set-badges-kinds
+    {
+        id: "set-badges-kinds",
+        type: "gamification",
+        position: {x: 3800, y: 1150},
+        data: {
+            label: "Set_Badges_Kinds",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "negative-actions-badges",
+        type: "gamification",
+        position: {x: 3300, y: 1500},
+        data: {
+            label: "Negative_Actions_Badges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "successes-badges",
+        type: "gamification",
+        position: {x: 3800, y: 1800},
+        data: {
+            label: "Successes_Badges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "failures-badges",
+        type: "gamification",
+        position: {x: 4400, y: 1500},
+        data: {
+            label: "Failures_Badges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    // promote-ethical-behavior-2, promote-altruistic-behavior-3, create-unfair-competition, create-fair-competition, support-social-behavior-2
+    {
+        id: "promote-ethical-behavior-2",
+        type: "oval",
+        position: {x: 3300, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Ethical_Behavior",
+            "type": "tactic",
+            "num": "(2)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "promote-altruistic-behavior-3",
+        type: "oval",
+        position: {x: 3600, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Altruistic_Behavior",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "create-unfair-competition",
+        type: "oval",
+        position: {x: 3850, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Create_Unfair_Competition",
+            "type": "tactic",
+            "num": "(1)",
+            right: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "create-fair-competition",
+        type: "oval",
+        position: {x: 4250, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Create_Fair_Competition",
+            "type": "tactic",
+            "num": "(1)",
+            left: true,
+            sourceLeft: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "support-social-behavior-2",
+        type: "oval",
+        position: {x: 4500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Support_Social_Behavior",
+            "type": "tactic",
+            "num": "(2)",
+            sourceTop: true,
+        },
+        draggable: false
     },
 
 
@@ -1026,6 +1301,391 @@ export const initialNodes = [
         position: {x: 6000, y: 150},
         data: {label: "Set_Supporting_Systems"},
 
+        draggable: false
+    },
+
+    {
+        id: "set-social-badges-kinds",
+        type: "gamification",
+        position: {x: 5600, y: 1150},
+        data: {
+            label: "Set_Social_Badges_Kinds",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-publishable",
+        type: "gamification",
+        position: {x: 5100, y: 1500},
+        data: {
+            label: "Set_Publishable",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-not-publishable",
+        type: "gamification",
+        position: {x: 6200, y: 1500},
+        data: {
+            label: "Set_Not_Publishable",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-community-2",
+        type: "gamification",
+        position: {x: 5300, y: 1800},
+        data: {
+            label: "Set_Community",
+            num: "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-badges-typologies",
+        type: "gamification",
+        position: {x: 4700, y: 850},
+        data: {label: "Set_Badges_Typologies",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-badges-typologies-and",
+        type: "operator",
+        position: {x: 4800, y: 1000},
+        data: {label: "AND"},
+        draggable: false
+    },
+
+    {
+        id: "configure-badges",
+        type: "gamification",
+        position: {x: 6900, y: 850},
+        data: {label: "Configure_Badges",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "configure-badges-and",
+        type: "operator",
+        position: {x: 7000, y: 1000},
+        data: {label: "AND"},
+        draggable: false
+    },
+    {
+        id: "set-names",
+        type: "gamification",
+        position: {x: 6400, y: 1150},
+        data: {
+            label: "Set_Names",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "set-icons",
+        type: "gamification",
+        position: {x: 6900, y: 1150},
+        data: {
+            label: "Set_Icons",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "use-common-icons",
+        type: "gamification",
+        position: {x: 6700, y: 1500},
+        data: {
+            label: "Use_Common_Icons",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "use-artistic-icons",
+        type: "gamification",
+        position: {x: 7000, y: 1500},
+        data: {
+            label: "Use_Artistic_Icons",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "set-achievement-rules-2",
+        type: "gamification",
+        position: {x: 7600, y: 1150},
+        data: {
+            label: "Set_Achievement_Rules",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+            right: true,
+            bottom: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-achievement-rules-2-and",
+        type: "operator",
+        position: {x: 7700, y: 1300},
+        data: {label: "AND"},
+        draggable: false
+    },
+    {
+        id: "set-triggers-2",
+        type: "gamification",
+        position: {x: 7400, y: 1500},
+        data: {
+            label: "Set_Triggers",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "set-badges-achieved",
+        type: "gamification",
+        position: {x: 7800, y: 1500},
+        data: {
+            label: "Set_Badges_Achieved",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "by-gamifiable-actions-3",
+        type: "gamification",
+        position: {x: 7200, y: 1800},
+        data: {
+            label: "By_Gamifiable_Actions",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "by-other-achievements-3",
+        type: "gamification",
+        position: {x: 7600, y: 1800},
+        data: {
+            label: "By_Other_Achievements",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "set-game-mechanics-and-dynamics-2",
+        type: "gamification",
+        position: {x: 8000, y: 1800},
+        data: {
+            label: "Set_Game_Mechanics_and_Dynamics",
+            num: "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "fast-design-4",
+        type: "oval",
+        position: {x: 7400, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Fast_Design",
+            "type": "tactic",
+            "num": "(4)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "low-cost-design-4",
+        type: "oval",
+        position: {x: 7850, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Low_Cost_Design",
+            "type": "tactic",
+            "num": "(4)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "high-design-quality-4",
+        type: "oval",
+        position: {x: 8300, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "High_Design_Quality",
+            "type": "tactic",
+            "num": "(4)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+
+    {
+        id: "set-badges",
+        type: "gamification",
+        position: {x: 5800, y: 500},
+        data: {
+            label: "Set_Badges",
+            num: "(1)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "set-badges-and",
+        type: "operator",
+        position: {x: 5900, y: 700},
+        data: {label: "AND"},
+        draggable: false
+    },
+
+    {
+        id: "support-achievement-2",
+        type: "oval",
+        position: {x: 8800, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Support_Achievement",
+            "type": "tactic",
+            "num": "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+        draggable: false
+    },
+    {
+        id: "improve-perceived-status-2",
+        type: "oval",
+        position: {x: 9200, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Improve_Perceived_Status",
+            "type": "tactic",
+            "num": "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
         draggable: false
     },
 
@@ -1069,7 +1729,7 @@ export const initialEdges = [
         source: "design-gamification-and",
         target: "set-game-mechanics-and-dynamics",
         type: "straight",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -1247,7 +1907,7 @@ export const initialEdges = [
         source: "set-experience-points-system-and",
         target: "assign-points-to-gamifiable-actions",
         type: "straight",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -1496,7 +2156,7 @@ export const initialEdges = [
         source: "set-levels-and",
         target: "set-achievement-rule",
         type: "straight",
-        sourceHandle: "operator_middle",
+        sourceHandle: "operator_bottom",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -2123,6 +2783,15 @@ export const initialEdges = [
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
+    {
+        id: "e103_1",
+        source: "set-game-mechanics-and-dynamics",
+        target: "by-other-achievements-2",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
     // by-gamifiable-actions-2 and set-gamifiable-actions-3
     {
         id: "e104",
@@ -2151,5 +2820,680 @@ export const initialEdges = [
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
+    {
+        id: "e107",
+        source: "support-user-penalization",
+        target: "set-negative",
+        type: "floating",
+        style: arrowEdgeStyle,
+    },
+    // set-quantity-of-points to used-fixed-amount and define-calculated-amount
+    {
+        id: "e108",
+        source: "set-quantity-of-points",
+        target: "used-fixed-amount",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e109",
+        source: "set-quantity-of-points",
+        target: "define-calculated-amount",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // define-calculated-amount to define-calculated-amount-and
+    {
+        id: "e110",
+        source: "define-calculated-amount",
+        target: "define-calculated-amount-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e111",
+        source: "define-calculated-amount-and",
+        target: "by-functions",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e112",
+        source: "define-calculated-amount-and",
+        target: "by-parameters",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // by-parameters children
+    {
+        id: "e113",
+        source: "by-parameters",
+        target: "use-trigger-params",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e114",
+        source: "by-parameters",
+        target: "use-context-params",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // use-context-params children relationship
+    {
+        id: "e115",
+        source: "use-context-params",
+        target: "by-player-profile",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e116",
+        source: "use-context-params",
+        target: "by-user-profile",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e117",
+        source: "use-context-params",
+        target: "by-other-context-profiles",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // define-calculated-amount and dotted need to fast-design-3, low-cost-design-3, high-design-quality-3
+    {
+        id: "e118",
+        target: "define-calculated-amount",
+        source: "fast-design-3",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e118_1",
+        target: "used-fixed-amount",
+        source: "fast-design-3",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e119",
+        target: "define-calculated-amount",
+        source: "low-cost-design-3",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e120",
+        target: "define-calculated-amount",
+        source: "high-design-quality-3",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
 
+    //set-badges-kinds to negative-actions-badges, successes-badges, failures-badges
+    {
+        id: "e121",
+        source: "set-badges-kinds",
+        target: "negative-actions-badges",
+        type: "straightLabel",
+        data:{label: "(C36[Killer])"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e122",
+        source: "set-badges-kinds",
+        target: "successes-badges",
+        type: "straightLabel",
+        data:{
+            label: "(C1[Achiever] OR C5[Explorer] OR\n" +
+                "C7[Male] OR C19[Employed.No] OR\n"+
+                "C33[SocialStructure.Hierarchy.Neutral] OR\n"+
+                "C35[GoodProduced.Private])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e123",
+        source: "set-badges-kinds",
+        target: "failures-badges",
+        type: "straightLabel",
+        data: {label: "(C36[Killer]) AND \n(NOT (C1[Achiever]))"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e124",
+        source: "set-game-mechanics-and-dynamics",
+        target: "set-point-systems",
+        type: "straight",
+        sourceHandle: "operator_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e125",
+        target: "use-trigger-params",
+        source: "set-triggers",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e126",
+        target: "failures-badges",
+        source: "support-user-penalization",
+        type: "floating",
+        sourceHandle: "oval_source_right",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e127",
+        target: "negative-actions-badges",
+        source: "promote-ethical-behavior-2",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e128",
+        target: "negative-actions-badges",
+        source: "promote-altruistic-behavior-3",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e129",
+        target: "negative-actions-badges",
+        source: "create-unfair-competition",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e130",
+        target: "negative-actions-badges",
+        source: "create-fair-competition",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e131",
+        target: "negative-actions-badges",
+        source: "support-social-behavior-2",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e132",
+        target: "successes-badges",
+        source: "create-unfair-competition",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e133",
+        target: "successes-badges",
+        source: "create-fair-competition",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e134",
+        target: "failures-badges",
+        source: "support-social-behavior-2",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e135",
+        source: "set-social-badges-kinds",
+        target: "set-publishable",
+        type: "straightLabel",
+        data:{
+            label: "(MandFor(C5[Explorer] OR C19[Employed.No] OR\n" +
+                "C2[Socializer] OR C3[Female] OR C4[Old] OR\n"+
+                "C33[SocialStructure.Hierarchy-Neutral] OR\n"+
+                "C35[GoodProduced.Private]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e136",
+        source: "set-social-badges-kinds",
+        target: "set-not-publishable",
+        type: "straightLabel",
+        data:{
+            label: "(NOT (C5[Explorer] OR C19[Employed.No] OR\n" +
+                "C2[Socializer] OR C3[Female] OR C4[Old] OR\n"+
+                "C33[SocialStructure.Hierarchy-Neutral] OR\n"+
+                "C35[GoodProduced.Private]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e137",
+        source: "set-publishable",
+        target: "set-not-publishable",
+        type: "dotted",
+        data: {label: "!"},
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e138",
+        target: "set-publishable",
+        source: "set-community-2",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e139",
+        target: "set-publishable",
+        source: "create-fair-competition",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e140",
+        target: "set-publishable",
+        source: "support-social-behavior-2",
+        type: "floating",
+        sourceHandle: "oval_source_bottom",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e140_1",
+        target: "set-publishable",
+        source: "improve-perceived-status-2",
+        type: "floating",
+        sourceHandle: "oval_source_bottom",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e141",
+        target: "set-not-publishable",
+        source: "support-social-behavior-2",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e142",
+        target: "set-badges-kinds",
+        source: "set-social-badges-kinds",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e143",
+        source: "set-badges-typologies",
+        target: "set-badges-typologies-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e144",
+        source: "set-badges-typologies-and",
+        target: "set-badges-kinds",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e145",
+        source: "set-badges-typologies-and",
+        target: "set-social-badges-kinds",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e146",
+        source: "set-game-mechanics-and-dynamics",
+        target: "set-badges",
+        type: "straight",
+        sourceHandle: "operator_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e147",
+        source: "set-badges",
+        target: "set-badges-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e148",
+        source: "set-badges-and",
+        target: "set-badges-typologies",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e149",
+        source: "set-badges-and",
+        target: "configure-badges",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e150",
+        target: "set-badges-typologies",
+        source: "configure-badges",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e147",
+        source: "configure-badges",
+        target: "configure-badges-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e148",
+        source: "configure-badges-and",
+        target: "set-names",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e149",
+        source: "configure-badges-and",
+        target: "set-icons",
+        type: "straight",
+        sourceHandle: "operator_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e150",
+        source: "configure-badges-and",
+        target: "set-achievement-rules-2",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e151",
+        source: "set-icons",
+        target: "use-common-icons",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e152",
+        source: "set-icons",
+        target: "use-artistic-icons",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e153",
+        source: "set-achievement-rules-2",
+        target: "set-achievement-rules-2-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e154",
+        source: "set-achievement-rules-2-and",
+        target: "set-triggers-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e155",
+        source: "set-achievement-rules-2-and",
+        target: "set-badges-achieved",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e156",
+        source: "set-triggers-2",
+        target: "by-gamifiable-actions-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e157",
+        source: "set-triggers-2",
+        target: "by-other-achievements-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e158",
+        target: "set-badges-achieved",
+        source: "set-game-mechanics-and-dynamics-2",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e159",
+        target: "use-common-icons",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e160",
+        target: "use-common-icons",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e161",
+        target: "use-artistic-icons",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e162",
+        target: "use-artistic-icons",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e163",
+        target: "use-artistic-icons",
+        source: "high-design-quality-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e164",
+        target: "by-gamifiable-actions-3",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e165",
+        target: "by-gamifiable-actions-3",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e166",
+        target: "by-other-achievements-3",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e167",
+        target: "by-other-achievements-3",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e168",
+        source: "create-unfair-competition",
+        target: "create-fair-competition",
+        type: "dotted",
+        data: {label: "!"},
+        sourceHandle: "oval_source_right",
+        targetHandle: "oval_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
 ];

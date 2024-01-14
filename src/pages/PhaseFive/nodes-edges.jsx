@@ -6,16 +6,14 @@ export const initialNodes = [
         id: "design-gamification",
         type: "gamification",
         position: {x: 2200, y: -200},
-        data: {label: "Design_Gamification", top: "no"},
-        draggable: false
+        data: {label: "Design_Gamification", top: "no"}
     },
     // 2nd layer
     {
         id: "design-gamification-and",
         type: "operator",
         position: {x: 2294, y: -50},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     // gamification to set-roles
@@ -23,8 +21,7 @@ export const initialNodes = [
         id: "set-roles",
         type: "gamification",
         position: {x: -8500, y: 150},
-        data: {label: "Set_Roles"},
-        draggable: false
+        data: {label: "Set_Roles"}
     },
 
     // set-roles children
@@ -32,8 +29,7 @@ export const initialNodes = [
         id: "set-single-roles",
         type: "gamification",
         position: {x: -9000, y: 550},
-        data: {label: "Set_Single_Roles", num: "(1)"},
-        draggable: false
+        data: {label: "Set_Single_Roles", num: "(1)"}
     },
 
     // set-single-roles + set-team-roles children
@@ -49,8 +45,7 @@ export const initialNodes = [
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
-        },
-        draggable: false
+        }
     },
     {
         id: "low-cost-design",
@@ -64,8 +59,7 @@ export const initialNodes = [
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
-        },
-        draggable: false
+        }
     },
 
     // set-roles children
@@ -73,8 +67,7 @@ export const initialNodes = [
         id: "set-team-roles",
         type: "gamification",
         position: {x: -8000, y: 550},
-        data: {label: "Set_Team_Roles", num: "(1)"},
-        draggable: false
+        data: {label: "Set_Team_Roles", num: "(1)"}
     },
 
     // set-team-roles children
@@ -88,23 +81,20 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(3)",
             "sourceTop": true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-gamifiable-actions",
         type: "gamification",
         position: {x: -7000, y: 150},
-        data: {label: "Set_Gamifiable_Actions", sourceRight: true, num: "(1)"},
-        draggable: false
+        data: {label: "Set_Gamifiable_Actions", sourceRight: true, num: "(1)"}
     },
     // set-gamifiable-actions and operator
     {
         id: "set-gamifiable-actions-and",
         type: "operator",
         position: {x: -6870, y: 300},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // set-gamifiable-action children
     {
@@ -112,14 +102,12 @@ export const initialNodes = [
         type: "gamification",
         position: {x: -7100, y: 450},
         data: {label: "Choose_Gamifiable_Actions"},
-        draggable: false,
     },
     {
         id: "set-kinds",
         type: "gamification",
         position: {x: -6800, y: 450},
-        data: {label: "Set_Kinds"},
-        draggable: false
+        data: {label: "Set_Kinds"}
     },
 
     // set-kinds children
@@ -127,15 +115,13 @@ export const initialNodes = [
         id: "set-as-directly-unlocked",
         type: "gamification",
         position: {x: -6900, y: 650},
-        data: {label: "Set_As_Directly_Unlocked", sourceRight: true},
-        draggable: false
+        data: {label: "Set_As_Directly_Unlocked", sourceRight: true}
     },
     {
         id: "set-as-unlockable",
         type: "gamification",
         position: {x: -6500, y: 650},
-        data: {label: "Set_As_Unlockable", num: "(1)"},
-        draggable: false
+        data: {label: "Set_As_Unlockable", num: "(1)"}
     },
 
 
@@ -153,36 +139,31 @@ export const initialNodes = [
             sourceTop: true,
             num: "(1)"
         },
-        draggable: false,
     },
     {
         id: "select-gamifiable-actions",
         type: "gamification",
         position: {x: -5900, y: 600},
-        data: {label: "Select_Gamifiable_Actions"},
-        draggable: false
+        data: {label: "Select_Gamifiable_Actions"}
     },
     {
         id: "assign-points-to-gamifiable-actions",
         type: "gamification",
         position: {x: -5500, y: 600},
-        data: {label: "Assign_Points_to_Gamifiable_Actions"},
-        draggable: false
+        data: {label: "Assign_Points_to_Gamifiable_Actions"}
     },
     // assign-points-to-gamifiable-actions children
     {
         id: "set-same-points-to-each-action",
         type: "gamification",
         position: {x: -5700, y: 850},
-        data: {label: "Set_Same_Points_To_Each_Action", sourceRight: true},
-        draggable: false
+        data: {label: "Set_Same_Points_To_Each_Action", sourceRight: true}
     },
     {
         id: "define-metric",
         type: "gamification",
         position: {x: -5300, y: 850},
-        data: {label: "Define_Metric", left: true},
-        draggable: false
+        data: {label: "Define_Metric", left: true}
     },
     // define-metric children
     {
@@ -197,16 +178,14 @@ export const initialNodes = [
             "sourceTop": true,
             "sourceRight": true,
             "sourceLeft": true,
-        },
-        draggable: false
+        }
     },
 
     {
         id: "set-expiration-time",
         type: "gamification",
         position: {x: -5000, y: 600},
-        data: {label: "Set_Expiration_Time"},
-        draggable: false
+        data: {label: "Set_Expiration_Time"}
     },
 
     // set-experience-points-system-and
@@ -214,32 +193,32 @@ export const initialNodes = [
         id: "set-experience-points-system-and",
         type: "operator",
         position: {x: -5400, y: 350},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
         id: "set-game-mechanics-and-dynamics",
         type: "gamification",
         position: {x: 4000, y: 150},
-        data: {label: "Set_Game_Mechanics_and_Dynamics", num: "(1)"},
-        draggable: false
+        data: {
+            label: "Set_Game_Mechanics_and_Dynamics",
+            num: "(1)",
+            sourceRight: true,
+        }
     },
     // set-game-mechanics-and-dynamics children
     {
         id: "set-game-structure",
         type: "gamification",
         position: {x: -4000, y: 450},
-        data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true,},
-        draggable: false
+        data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true,}
     },
     // set-game-structure-and
     {
         id: "set-game-structure-and",
         type: "operator",
         position: {x: -3900, y: 600},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     {
         id: "set-paths",
@@ -253,54 +232,47 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true
-        },
-        draggable: false
+        }
     },
     // set-paths-and
     {
         id: "set-paths-and",
         type: "operator",
         position: {x: -4500, y: 900},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // set-path-and children
     {
         id: "define-paths",
         type: "gamification",
         position: {x: -4900, y: 1000},
-        data: {label: "Define_Paths"},
-        draggable: false
+        data: {label: "Define_Paths"}
     },
     // define-paths children
     {
         id: "define-parallel-paths",
         type: "gamification",
         position: {x: -5150, y: 1200},
-        data: {label: "Define_Parallel_Paths"},
-        draggable: false
+        data: {label: "Define_Parallel_Paths"}
     },
     {
         id: "define-tree-paths",
         type: "gamification",
         position: {x: -4900, y: 1200},
-        data: {label: "Define_Tree_Paths"},
-        draggable: false
+        data: {label: "Define_Tree_Paths"}
     },
     {
         id: "define-graph-paths",
         type: "gamification",
         position: {x: -4650, y: 1150},
-        data: {label: "Define_Graph_Paths",},
-        draggable: false
+        data: {label: "Define_Graph_Paths",}
     },
 
     {
         id: "link-roles-to-path",
         type: "gamification",
         position: {x: -4200, y: 1000},
-        data: {label: "Link_Roles_to_Path"},
-        draggable: false
+        data: {label: "Link_Roles_to_Path"}
     },
 
 
@@ -316,100 +288,87 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true
-        },
-        draggable: false
+        }
     },
     // set-level-and
     {
         id: "set-levels-and",
         type: "operator",
         position: {x: -3500, y: 900},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // set-level-and children
     {
         id: "choose-level-names",
         type: "gamification",
         position: {x: -3800, y: 1050},
-        data: {label: "Choose_Level_Names"},
-        draggable: false
+        data: {label: "Choose_Level_Names"}
     },
     {
         id: "set-achievement-rule",
         type: "gamification",
         position: {x: -3500, y: 1050},
-        data: {label: "Set_Achievement_Rule"},
-        draggable: false
+        data: {label: "Set_Achievement_Rule"}
     },
     // set-achievement-rule children
     {
         id: "by-gamifiable-actions",
         type: "gamification",
         position: {x: -3750, y: 1300},
-        data: {label: "By_Gamifiable_Actions"},
-        draggable: false
+        data: {label: "By_Gamifiable_Actions"}
     },
     // by-gamifiable-actions children
     {
         id: "set-gamifiable-actions-2",
         type: "gamification",
         position: {x: -4000, y: 1450},
-        data: {label: "Set_Gamifiable_Actions", num: "(2)"},
-        draggable: false
+        data: {label: "Set_Gamifiable_Actions", num: "(2)"}
     },
     {
         id: "by-points",
         type: "gamification",
         position: {x: -3500, y: 1300},
-        data: {label: "By_Points"},
-        draggable: false
+        data: {label: "By_Points"}
     },
     // by-points-and
     {
         id: "by-points-and",
         type: "operator",
         position: {x: -3400, y: 1450},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // by-points-and-children
     {
         id: "set-thresholds",
         type: "gamification",
         position: {x: -3600, y: 1600},
-        data: {label: "Set_Thresholds"},
-        draggable: false
+        data: {label: "Set_Thresholds"}
     },
     {
         id: "choose-point-kinds",
         type: "gamification",
         position: {x: -3300, y: 1600},
-        data: {label: "Choose_Point_Kinds"},
-        draggable: false
+        data: {label: "Choose_Point_Kinds"}
     },
     // choose-point-kinds children
     {
         id: "choose-experience-points",
         type: "gamification",
         position: {x: -3450, y: 1850},
-        data: {label: "Choose_Experience_Points", sourceLeft: true},
-        draggable: false
+        data: {label: "Choose_Experience_Points", sourceLeft: true}
     },
     {
         id: "choose-other-kinds",
         type: "gamification",
         position: {x: -3150, y: 1850},
-        data: {label: "Choose_Other_Kinds"},
-        draggable: false
+        data: {label: "Choose_Other_Kinds"}
     },
     // choose-other-kinds needs
     {
         id: "set-point-systems-2",
         type: "gamification",
         position: {x: -3350, y: 2000},
-        data: {label: "Set_Point_Systems", num: "(2)"},
-        draggable: false
+        data: {label: "Set_Point_Systems", num: "(2)"}
     },
     {
         id: "support-skill-improvement",
@@ -423,8 +382,7 @@ export const initialNodes = [
             "sourceTop": true,
             "sourceRight": true,
             "sourceLeft": true,
-        },
-        draggable: false
+        }
     },
 
 
@@ -432,22 +390,19 @@ export const initialNodes = [
         id: "by-other-achievements",
         type: "gamification",
         position: {x: -3250, y: 1300},
-        data: {label: "By_Other_Achievements", right: true},
-        draggable: false
+        data: {label: "By_Other_Achievements", right: true}
     },
     {
         id: "link-levels-to-paths",
         type: "gamification",
         position: {x: -3200, y: 1050},
-        data: {label: "Link_Levels_to_Paths"},
-        draggable: false
+        data: {label: "Link_Levels_to_Paths"}
     },
     {
         id: "define-difficulty-among-levels",
         type: "gamification",
         position: {x: -2700, y: 1050},
-        data: {label: "Define_Difficulty_Among_Levels"},
-        draggable: false
+        data: {label: "Define_Difficulty_Among_Levels"}
     },
     {
         id: "use-linear-difficulty-progression",
@@ -461,8 +416,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "use-alternated-difficulty",
@@ -476,15 +430,13 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "use-alternated-difficulty-and",
         type: "operator",
         position: {x: -2400, y: 1400},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     {
         id: "define-main-trend",
@@ -492,8 +444,7 @@ export const initialNodes = [
         position: {x: -2600, y: 1550},
         data: {
             label: "Define_Main_Trend",
-        },
-        draggable: false
+        }
     },
     // define-main-trend child
     {
@@ -502,8 +453,7 @@ export const initialNodes = [
         position: {x: -2600, y: 1700},
         data: {
             label: "Use_Increasing_Difficulty",
-        },
-        draggable: false
+        }
     },
     {
         id: "insert-alternated-difficulties",
@@ -511,15 +461,13 @@ export const initialNodes = [
         position: {x: -2200, y: 1550},
         data: {
             label: "Insert_Alternated_Difficulties",
-        },
-        draggable: false
+        }
     },
     {
         id: "insert-alternated-difficulties-and",
         type: "operator",
         position: {x: -2100, y: 1700},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // insert-alternated-difficulties-and
     {
@@ -528,8 +476,7 @@ export const initialNodes = [
         position: {x: -2300, y: 1850},
         data: {
             label: "Choose_Candidate_Levels",
-        },
-        draggable: false
+        }
     },
     {
         id: "insert-unexpected-difficulties",
@@ -537,8 +484,7 @@ export const initialNodes = [
         position: {x: -1900, y: 1850},
         data: {
             label: "Insert_Unexpected_Difficulties",
-        },
-        draggable: false
+        }
     },
     // insert-unexpcted-difficulties children
     {
@@ -547,8 +493,7 @@ export const initialNodes = [
         position: {x: -2100, y: 2000},
         data: {
             label: "Insert_Positive_Difficulties",
-        },
-        draggable: false
+        }
     },
     {
         id: "insert-negative-difficulties",
@@ -556,8 +501,7 @@ export const initialNodes = [
         position: {x: -1700, y: 2000},
         data: {
             label: "Insert_Negative_Difficulties",
-        },
-        draggable: false
+        }
     },
     {
         id: "fast-design-2",
@@ -569,8 +513,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(2)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "low-cost-design-2",
@@ -582,8 +525,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(2)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "high-design-quality-2",
@@ -595,8 +537,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(2)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "increase-user-surprise",
@@ -608,8 +549,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "use-redeemable-points",
@@ -701,8 +641,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "gp-define-exchange-points-rewards",
@@ -717,8 +656,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "support-achievement",
@@ -731,8 +669,7 @@ export const initialNodes = [
             "num": "(1)",
             sourceTop: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "improve-perceived-status",
@@ -745,8 +682,7 @@ export const initialNodes = [
             "num": "(1)",
             sourceTop: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -759,8 +695,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -773,8 +708,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "promote-ethical-behavior",
@@ -786,8 +720,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "promote-altruistic-behavior",
@@ -799,8 +732,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "increase-worth-vagueness",
@@ -812,8 +744,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "improve-trust",
@@ -825,8 +756,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(1)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -848,8 +778,7 @@ export const initialNodes = [
         id: "set-point-systems-and",
         type: "operator",
         position: {x: 600, y: 700},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
@@ -870,8 +799,7 @@ export const initialNodes = [
         id: "set-achievement-rules-and",
         type: "operator",
         position: {x: 1400, y: 1000},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
@@ -906,8 +834,7 @@ export const initialNodes = [
         id: "set-amount-of-points-and",
         type: "operator",
         position: {x: 1800, y: 1200},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
@@ -1007,8 +934,7 @@ export const initialNodes = [
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-quantity-of-points",
@@ -1057,8 +983,7 @@ export const initialNodes = [
         id: "define-calculated-amount-and",
         type: "operator",
         position: {x: 2400, y: 1700},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     // define-calculated-amount-and children: by-functions, by-parameters
     {
@@ -1129,8 +1054,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(3)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "low-cost-design-3",
@@ -1142,8 +1066,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(3)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "high-design-quality-3",
@@ -1155,8 +1078,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(3)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     // set-badges-kinds
     {
@@ -1227,8 +1149,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(2)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "promote-altruistic-behavior-3",
@@ -1240,8 +1161,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(3)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "create-unfair-competition",
@@ -1255,8 +1175,7 @@ export const initialNodes = [
             right: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "create-fair-competition",
@@ -1270,8 +1189,7 @@ export const initialNodes = [
             left: true,
             sourceLeft: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "support-social-behavior-2",
@@ -1283,8 +1201,7 @@ export const initialNodes = [
             "type": "tactic",
             "num": "(2)",
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
 
@@ -1292,8 +1209,7 @@ export const initialNodes = [
         id: "set-virtual-environments",
         type: "gamification",
         position: {x: 5000, y: 150},
-        data: {label: "Set_Virtual_Environments"},
-        draggable: false
+        data: {label: "Set_Virtual_Environments"}
     },
     {
         id: "set-supporting-systems",
@@ -1316,8 +1232,7 @@ export const initialNodes = [
             left: true,
             right: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-publishable",
@@ -1331,8 +1246,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-not-publishable",
@@ -1346,8 +1260,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-community-2",
@@ -1362,8 +1275,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-badges-typologies",
@@ -1377,15 +1289,13 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-badges-typologies-and",
         type: "operator",
         position: {x: 4800, y: 1000},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
@@ -1400,15 +1310,13 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "configure-badges-and",
         type: "operator",
         position: {x: 7000, y: 1000},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     {
         id: "set-names",
@@ -1422,8 +1330,7 @@ export const initialNodes = [
             left: true,
             right: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1438,8 +1345,7 @@ export const initialNodes = [
             left: true,
             right: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1454,8 +1360,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1470,8 +1375,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1486,15 +1390,13 @@ export const initialNodes = [
             left: true,
             right: true,
             bottom: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-achievement-rules-2-and",
         type: "operator",
         position: {x: 7700, y: 1300},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
     {
         id: "set-triggers-2",
@@ -1508,8 +1410,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1524,8 +1425,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "by-gamifiable-actions-3",
@@ -1539,8 +1439,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "by-other-achievements-3",
@@ -1554,8 +1453,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "set-game-mechanics-and-dynamics-2",
@@ -1570,8 +1468,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "fast-design-4",
@@ -1588,8 +1485,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
@@ -1607,8 +1503,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "high-design-quality-4",
@@ -1625,14 +1520,13 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
 
     {
         id: "set-badges",
         type: "gamification",
-        position: {x: 5800, y: 500},
+        position: {x: 5800, y: 400},
         data: {
             label: "Set_Badges",
             num: "(1)",
@@ -1648,8 +1542,7 @@ export const initialNodes = [
         id: "set-badges-and",
         type: "operator",
         position: {x: 5900, y: 700},
-        data: {label: "AND"},
-        draggable: false
+        data: {label: "AND"}
     },
 
     {
@@ -1667,8 +1560,7 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
-        },
-        draggable: false
+        }
     },
     {
         id: "improve-perceived-status-2",
@@ -1685,10 +1577,1193 @@ export const initialNodes = [
             sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
+        }
+    },
+    {
+        id: "set-leader-boards",
+        type: "gamification",
+        position: {x: 11000, y: 450},
+        data: {
+            label: "Set_Leader_boards",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
         },
-        draggable: false
+    },
+    {
+        id: "set-leader-boards-and",
+        type: "operator",
+        position: {x: 11100, y: 600},
+        data: {label: "AND"}
+    },
+    // set-kinds
+    {
+        id: "set-kinds-2",
+        type: "gamification",
+        position: {x: 9500, y: 700},
+        data: {
+            label: "Set_Kinds",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+
+        },
+    },
+    {
+        id: "single-leader-boards",
+        type: "gamification",
+        position: {x: 8000, y: 1050},
+        data: {
+            label: "Single_Leader_boards",
+            sourceLeft: true,
+            sourceTop: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "team-leader-boards",
+        type: "gamification",
+        position: {x: 9000, y: 1200},
+        data: {
+            label: "Team_Leader_boards",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // team-leader-boards child set-team-roles-2
+    {
+        id: "set-team-roles-2",
+        type: "gamification",
+        position: {x: 8900, y: 1400},
+        data: {
+            label: "Set_Team_Roles",
+            num: "(2)",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+        },
+    },
+    {
+        id: "private-you-vs-you-leader-boards",
+        type: "gamification",
+        position: {x: 9500, y: 1400},
+        data: {
+            label: "Private_You_vs_You_Leader_boards",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true
+        },
+    },
+    // private-you child set-single-roles-2
+    {
+        id: "set-single-roles-2",
+        type: "gamification",
+        position: {x: 9400, y: 1600},
+        data: {
+            label: "Set_Single_Roles",
+            num: "(2)",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "social-leader-boards",
+        type: "gamification",
+        position: {x: 10300, y: 1200},
+        data: {
+            label: "Social_Leader_boards",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "time-dependent-leader-boards",
+        type: "gamification",
+        position: {x: 11000, y: 1250},
+        data: {
+            label: "Time_Dependent_Leader_boards",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "geo-localized-leader-boards",
+        type: "gamification",
+        position: {x: 11600, y: 1150},
+        data: {
+            label: "Geo_Localized_Leader_boards",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "create-fair-competition-2",
+        type: "oval",
+        position: {x: 10500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Create_Fair_Competition",
+            "type": "tactic",
+            "num": "(2)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    // promote-collaboration-4
+    {
+        id: "promote-collaboration-4",
+        type: "oval",
+        position: {x: 11000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Collaboration",
+            "type": "tactic",
+            "num": "(4)",
+            sourceTop: true,
+        }
+    },
+    // support-social-behavior-3
+    {
+        id: "support-social-behavior-3",
+        type: "oval",
+        position: {x: 11500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Support_Social_Behavior",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "configure-leader-boards",
+        type: "gamification",
+        position: {x: 14000, y: 550},
+        data: {
+            label: "Configure_Leader_boards",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        }
+    },
+    // configure-leader-board-and only
+    {
+        id: "configure-leader-boards-and",
+        type: "operator",
+        position: {x: 14100, y: 700},
+        data: {label: "AND"}
+    },
+    {
+        id: "set-name",
+        type: "gamification",
+        position: {x: 12250, y: 850},
+        data: {
+            label: "Set_Name",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "set-winner",
+        type: "gamification",
+        position: {x: 13250, y: 850},
+        data: {
+            label: "Set_Winner",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
     },
 
+    {
+        id: "set-winner-and",
+        type: "operator",
+        position: {x: 13350, y: 980},
+        data: {label: "AND"}
+    },
+    {
+        id: "set-podium",
+        type: "gamification",
+        position: {x: 12250, y: 1100},
+        data: {
+            label: "Set_Podium",
+        }
+    },
+    {
+        id: "set-traditional-podium",
+        type: "gamification",
+        position: {x: 12000, y: 1350},
+        data: {
+            label: "Set_Traditional_Podium",
+        }
+    },
+    {
+        id: "set-number-of-winners",
+        type: "gamification",
+        position: {x: 12500, y: 1350},
+        data: {
+            label: "Set_Number_of_Winners",
+        }
+    },
+
+    {
+        id: "set-winner-titles",
+        type: "gamification",
+        position: {x: 13250, y: 1100},
+        data: {
+            label: "Set_Winner_Titles",
+        }
+    },
+    {
+        id: "set-new-titles",
+        type: "gamification",
+        position: {x: 13000, y: 1350},
+        data: {
+            label: "Set_New_Titles",
+        }
+    },
+    {
+        id: "use-badge-names",
+        type: "gamification",
+        position: {x: 13500, y: 1350},
+        data: {
+            label: "Use_Badge_Names",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-winner-icons",
+        type: "gamification",
+        position: {x: 14500, y: 1100},
+        data: {
+            label: "Set_Winner_Icons",
+        }
+    },
+    {
+        id: "use-common-icons-2",
+        type: "gamification",
+        position: {x: 14000, y: 1350},
+        data: {
+            label: "Use_Common_Icons",
+            bottom: true,
+            left: true,
+        }
+    },
+    {
+        id: "use-artistic-icons-2",
+        type: "gamification",
+        position: {x: 14500, y: 1350},
+        data: {
+            label: "Use_Artistic_Icons",
+            bottom: true,
+            left: true,
+        }
+    },
+    {
+        id: "use-badge-icons",
+        type: "gamification",
+        position: {x: 15000, y: 1350},
+        data: {
+            label: "Use_Badge_Icons",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-achievement-rules-3",
+        type: "gamification",
+        position: {x: 16500, y: 850},
+        data: {
+            label: "Set_Achievement_Rules",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "set-leader-boards-calculation-strategy",
+        type: "gamification",
+        position: {x: 16000, y: 1100},
+        data: {
+            label: "Set_Leader-boards_Calculation_Strategy",
+            bottom: true,
+        }
+    },
+    {
+        id: "set-rewards",
+        type: "gamification",
+        position: {x: 17000, y: 1100},
+        data: {
+            label: "Set_Rewards",
+            bottom: true,
+        }
+    },
+    {
+        id: "by-point-systems",
+        type: "gamification",
+        position: {x: 15750, y: 1350},
+        data: {
+            label: "By_Point_Systems",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "by-conditions",
+        type: "gamification",
+        position: {x: 16250, y: 1350},
+        data: {
+            label: "By_Conditions",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "assign-badges",
+        type: "gamification",
+        position: {x: 16750, y: 1350},
+        data: {
+            label: "Assign_Badges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "assign-other-achievements",
+        type: "gamification",
+        position: {x: 17250, y: 1350},
+        data: {
+            label: "Assign_Other_Achievements",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-point-systems-3",
+        type: "gamification",
+        position: {x: 15500, y: 1150},
+        data: {
+            label: "Set_Point_Systmes",
+            num: "(3)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "by-gamifiable-actions-4",
+        type: "gamification",
+        position: {x: 16000, y: 1600},
+        data: {
+            label: "By_Gamifiable_Actions",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "by-other-achievements-4",
+        type: "gamification",
+        position: {x: 16500, y: 1600},
+        data: {
+            label: "By_Other_Achievements",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-gamifiable-actions-4",
+        type: "gamification",
+        position: {x: 15500, y: 1600},
+        data: {
+            label: "Set_Gamifiable_Actions",
+            num: "(4)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-game-mechanics-and-dynamics-3",
+        type: "gamification",
+        position: {x: 17500, y: 1700},
+        data: {
+            label: "Set_Game_Mechanics_and_Dynamics",
+            num: "(3)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+
+    {
+        id: "set-challenges",
+        type: "gamification",
+        position: {x: 20000, y: 550},
+        data: {
+            label: "Set_Challenges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-challenges-and",
+        type: "operator",
+        position: {x: 20100, y: 700},
+        data: {label: "AND"}
+    },
+    {
+        id: "set-kinds-3",
+        type: "gamification",
+        position: {x: 19250, y: 850},
+        data: {
+            label: "Set_Kinds",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "configure-challenges",
+        type: "gamification",
+        position: {x: 20750, y: 850},
+        data: {
+            label: "Configure_Challenges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    {
+        id: "configure-challenges-and",
+        type: "operator",
+        position: {x: 20850, y: 1000},
+        data: {label: "AND"}
+    },
+    // configure-challenges-and children: set-names, set-achievement-rules
+    {
+        id: "set-names-2",
+        type: "gamification",
+        position: {x: 20500, y: 1150},
+        data: {
+            label: "Set_Names",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "set-achievement-rules-4",
+        type: "gamification",
+        position: {x: 21200, y: 1150},
+        data: {
+            label: "Set_Achievement_Rules",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+        },
+    },
+    {
+        id: "set-triggers-3",
+        type: "gamification",
+        position: {x: 21000, y: 1350},
+        data: {
+            label: "Set_Triggers",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    // set-triggers-3 children has only two nodes: by-gamifiable-actions, by-other-achievements
+    {
+        id: "by-gamifiable-actions-5",
+        type: "gamification",
+        position: {x: 20650, y: 1600},
+        data: {
+            label: "By_Gamifiable_Actions",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    // by-gamifiable-actions-5 has set-gamifiable-actions-6
+    {
+        id: "set-gamifiable-actions-6",
+        type: "gamification",
+        position: {x: 20500, y: 1800},
+        data: {
+            label: "Set_Gamifiable_Actions",
+            num: "(6)",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "by-other-achievements-5",
+        type: "gamification",
+        position: {x: 21000, y: 1600},
+        data: {
+            label: "By_Other_Achievements",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+        },
+    },
+    {
+        id: "set-rewards-2",
+        type: "gamification",
+        position: {x: 21500, y: 1350},
+        data: {
+            label: "Set_Rewards",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+        },
+    },
+    // set-rewards-2 has only two children: assign-badges and assign-other-achievements
+    {
+        id: "assign-badges-2",
+        type: "gamification",
+        position: {x: 21500, y: 1600},
+        data: {
+            label: "Assign_Badges",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "assign-other-achievements-2",
+        type: "gamification",
+        position: {x: 22000, y: 1600},
+        data: {
+            label: "Assign_Other_Achievements",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+        },
+    },
+    {
+        id: "set-game-mechanics-and-dynamics-4",
+        type: "gamification",
+        position: {x: 21500, y: 1800},
+        data: {
+            label: "Set_Game_Mechanics_and_Dynamics",
+            num: "(4)",
+            sourceLeft: true,
+            sourceTop: true,
+            left: true,
+        },
+    },
+    {
+        id: "team-challenges",
+        type: "gamification",
+        position: {x: 18750, y: 1100},
+        data: {
+            label: "Team_Challenges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "personal-challenges",
+        type: "gamification",
+        position: {x: 19750, y: 1100},
+        data: {
+            label: "Personal_Challenges",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-team-roles-3",
+        type: "gamification",
+        position: {x: 18500, y: 1350},
+        data: {
+            label: "Set_Team_Roles",
+            num:"(3)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-community-4",
+        type: "gamification",
+        position: {x: 19000, y: 1350},
+        data: {
+            label: "Set_Community",
+            num:"(4)",
+            right: true,
+            left: true,
+            bottom: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "set-single-roles-3",
+        type: "gamification",
+        position: {x: 19750, y: 1600},
+        data: {
+            label: "Set_Single_Roles",
+            num: "(3)",
+            sourceTop: true,
+        }
+    },
+
+    {
+        id: "create-fair-competition-3",
+        type: "oval",
+        position: {x: 19750, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Create_Fair_Competition",
+            "type": "tactic",
+            "num": "(3)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "support-achievement-6",
+        type: "oval",
+        position: {x: 20500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Support_Achievement",
+            "type": "tactic",
+            "num": "(6)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "promote-collaboration-6",
+        type: "oval",
+        position: {x: 21500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Promote_Collaboration",
+            "type": "tactic",
+            "num": "(6)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "support-social-behavior-6",
+        type: "oval",
+        position: {x: 22000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Support_Social_Behavior",
+            "type": "tactic",
+            "num": "(6)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-system-perception-via-it-5",
+        type: "oval",
+        position: {x: 22500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Improve_System_Perception_via_IT",
+            "type": "tactic",
+            "num": "(5)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-system-awareness-6",
+        type: "oval",
+        position: {x: 23000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Improve_System_Awareness",
+            "type": "tactic",
+            "num": "(6)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "fast-design-5",
+        type: "oval",
+        position: {x: 23500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Fast_Design",
+            "type": "tactic",
+            "num": "(6)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "low-cost-design-5",
+        type: "oval",
+        position: {x: 24000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Low_Cost_Design",
+            "type": "tactic",
+            "num": "(5)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "high-design-quality-5",
+        type: "oval",
+        position: {x: 24500, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "High_Design_Quality",
+            "type": "tactic",
+            "num": "(5)",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-minor-assistance",
+        type: "oval",
+        position: {x: 25000, y: 2700},
+        data: {
+            "isHidden": false,
+            "label": "Improve_Minor_Assistance",
+            "type": "tactic",
+            "num": "(1)",
+            sourceTop: true,
+        }
+    },
+
+    {
+        id: "set-basic-training",
+        type: "gamification",
+        position: {x: 25900, y: 950},
+        data: {
+            label: "Set_Basic_Training",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "set-basic-training-and",
+        type: "operator",
+        position: {x: 25995, y: 1100},
+        data: {
+            label: "AND",
+        },
+    },
+
+    {
+        id: "set-community-3",
+        type: "gamification",
+        position: {x: 22100, y: 1200},
+        data: {
+            label: "Set_Community",
+            num:"(3)"
+        },
+    },
+    // choose-training-elements
+    {
+        id: "choose-training-elements",
+        type: "gamification",
+        position: {x: 23500, y: 1200},
+        data: {
+            label: "Choose_Training_Elements",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // provide forum
+    {
+        id: "provide-forum",
+        type: "gamification",
+        position: {x: 22500, y: 1450},
+        data: {
+            label: "Provide_Forum",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // provide-suggestions, provide-tricks, provide-tours, provide-tutorials
+    {
+        id: "provide-suggestions",
+        type: "gamification",
+        position: {x: 23000, y: 1650},
+        data: {
+            label: "Provide_Suggestions",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "provide-tricks",
+        type: "gamification",
+        position: {x: 23500, y: 1550},
+        data: {
+            label: "Provide_Tricks",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "provide-tours",
+        type: "gamification",
+        position: {x: 24000, y: 1650},
+        data: {
+            label: "Provide_Tours",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "provide-tutorials",
+        type: "gamification",
+        position: {x: 24500, y: 1350},
+        data: {
+            label: "Provide_Tutorials",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "choose-presentation-elements",
+        type: "gamification",
+        position: {x: 25250, y: 1200},
+        data: {
+            label: "Choose_Presentation_Elements",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // choose-presentation-elements children: set-basic-elements, set-avatar-trainer
+    {
+        id: "set-basic-elements",
+        type: "gamification",
+        position: {x: 25000, y: 1450},
+        data: {
+            label: "Set_Basic_Elements",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "set-avatar-trainer",
+        type: "gamification",
+        position: {x: 25500, y: 1450},
+        data: {
+            label: "Set_Avatar_Trainer",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "choose-training-topics",
+        type: "gamification",
+        position: {x: 26500, y: 1200},
+        data: {
+            label: "Choose_Training_Topics",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // choose-training-topics children: minimal-system-features, entire-system-procedures, advantage-vs-competitor-systems
+    {
+        id: "minimal-system-features",
+        type: "gamification",
+        position: {x: 26000, y: 1450},
+        data: {
+            label: "Minimal_System_Features",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "entire-system-procedures",
+        type: "gamification",
+        position: {x: 26500, y: 1450},
+        data: {
+            label: "Entire_System_Procedures",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "advantage-vs-competitor-systems",
+        type: "gamification",
+        position: {x: 27000, y: 1450},
+        data: {
+            label: "Advantage_vs_Competitor_Systems",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "define-strategy",
+        type: "gamification",
+        position: {x: 27750, y: 1200},
+        data: {
+            label: "Define_Strategy",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // define-strategy children: train-before-playing, train-during-playing
+    {
+        id: "train-before-playing",
+        type: "gamification",
+        position: {x: 27500, y: 1450},
+        data: {
+            label: "Train_Before_Playing",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "train-during-playing",
+        type: "gamification",
+        position: {x: 28000, y: 1450},
+        data: {
+            label: "Train_During_Playing",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // training-rewards-by-point-systems
+    {
+        id: "training-rewards-by-point-systems",
+        type: "gamification",
+        position: {x: 28500, y: 1450},
+        data: {
+            label: "Training_Rewards_by_Point_Systems",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // training-rewards-by-point-systems child: use-skill-points
+    {
+        id: "use-skill-points-2",
+        type: "gamification",
+        position: {x: 28300, y: 1600},
+        data: {
+            label: "Use_Skill_Points",
+            num: "(2)",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // by-badges, by-other-achievements
+    {
+        id: "by-badges",
+        type: "gamification",
+        position: {x: 29000, y: 1450},
+        data: {
+            label: "By_Badges",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // set-badges
+    {
+        id: "set-badges-2",
+        type: "gamification",
+        position: {x: 28800, y: 1600},
+        data: {
+            label: "Set_Badges",
+            num: "(2)",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "by-other-achievements-6",
+        type: "gamification",
+        position: {x: 29500, y: 1450},
+        data: {
+            label: "By_Other_Achievements",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    //set-advanced-training
+    {
+        id: "set-advanced-training",
+        type: "gamification",
+        position: {x: 29500, y: 800},
+        data: {
+            label: "Set_Advanced_Training",
+            num: "(1)",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // set-rewards
+    {
+        id: "set-rewards-3",
+        type: "gamification",
+        position: {x: 29000, y: 1300},
+        data: {
+            label: "Set_Rewards",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    // define-training-paths
+    {
+        id: "define-training-paths",
+        type: "gamification",
+        position: {x: 29900, y: 1300},
+        data: {
+            label: "Define_Training_Paths",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "set-game-structure-2",
+        type: "gamification",
+        position: {x: 30000, y: 1450},
+        data: {
+            label: "Set_Game_Structure",
+            num: "(2)",
+            sourceRight: true,
+            sourceTop: true,
+            right: true,
+            bottom: true,
+        },
+    },
 ];
 export const initialEdges = [
     {
@@ -2359,7 +3434,7 @@ export const initialEdges = [
         markerStart: markerConfig,
         markerEnd: markerConfig
     },
-    //by-other-achivements to
+    //by-other-achievements to
     {
         id: "e65_1",
         target: "by-other-achievements",
@@ -3189,6 +4264,15 @@ export const initialEdges = [
         style: arrowEdgeStyle,
     },
     {
+        id: "e140_2",
+        target: "social-leader-boards",
+        source: "improve-perceived-status-2",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
         id: "e141",
         target: "set-not-publishable",
         source: "support-social-behavior-2",
@@ -3495,5 +4579,1145 @@ export const initialEdges = [
         style: arrowEdgeStyle,
         markerStart: markerConfig,
         markerEnd: markerConfig
+    },
+    // support-achievement and set-badges
+    {
+        id: "e169",
+        source: "support-achievement-2",
+        target: "set-badges",
+        type: "floating",
+        sourceHandle: "oval_source_bottom",
+        style: arrowEdgeStyle,
+    },
+    // set-leader-board and set-leader-board-and
+    {
+        id: "e170",
+        source: "set-leader-boards",
+        target: "set-leader-boards-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-kinds-2 and set-leader-boards-and
+    {
+        id: "e171",
+        source: "set-leader-boards-and",
+        target: "set-kinds-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e172",
+        source: "set-kinds-2",
+        target: "single-leader-boards",
+        type: "straightLabel",
+        data: {label: "(C1[Achiever] OR C5[Explorer] OR C36[Killer])"},
+        sourceHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e173",
+        source: "set-kinds-2",
+        target: "team-leader-boards",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C3[Female] OR C4[Old] OR C23[Goal.Participation.Low] OR\n" +
+                "C24[Goal.Clarity.Low] IR 25[Task.Variety.High] OR\n"+
+                "C30[Task.Identification.Low] OR C26[Task.RequiredSkills.AdvancedSkills]) AND\n"+
+                "(NOT (C36[Killer]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-kinds-2 to private-you-vs-you-leader-boards, social-leader-boards, time-dependent-leader-boards
+    {
+        id: "e174",
+        source: "set-kinds-2",
+        target: "private-you-vs-you-leader-boards",
+        type: "straightLabel",
+        data: {
+            label: "(NOT (C5[Explorer] OR \n"+
+                "C2[Socializer] OR C3[Female] OR C4[Old]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e175",
+        source: "set-kinds-2",
+        target: "social-leader-boards",
+        type: "straightLabel",
+        data: {
+            label: "(MandFor(C2[Socializer] OR C5[Explorer] OR\n"+
+                "C3[Female] OR C4[Old] OR\n"+
+                "C33[SocialStructure.Hierarchy.Neutral]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e176",
+        source: "set-kinds-2",
+        target: "time-dependent-leader-boards",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR\n"+
+                "C5[Explorer] OR C36[Killer])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e177",
+        source: "set-kinds-2",
+        target: "geo-localized-leader-boards",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C3[Female] OR\n"+
+                "C4[Old] OR C19[Employed.No])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // team-leader-boards and set-team-roles-2 need relation
+    {
+        id: "e178",
+        target: "team-leader-boards",
+        source: "set-team-roles-2",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // private-you to set-single-roles-2
+    {
+        id: "e179",
+        target: "private-you-vs-you-leader-boards",
+        source: "set-single-roles-2",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e180",
+        target: "single-leader-boards",
+        source: "set-single-roles-2",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-leader-boards and set-game-mechanics-and-dynamics
+    {
+        id: "e181",
+        target: "set-leader-boards",
+        source: "set-game-mechanics-and-dynamics",
+        type: "straight",
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-badges and set-game-mechanics-and-dynamics
+    {
+        id: "e182",
+        target: "set-badges",
+        source: "set-game-mechanics-and-dynamics",
+        type: "straight",
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "gamification_target_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // create-fair-competition and social-leader-boards
+    {
+        id: "e183",
+        target: "social-leader-boards",
+        source: "create-fair-competition-2",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // promote-collaboration-4 and social-leader-boards
+    {
+        id: "e184",
+        target: "social-leader-boards",
+        source: "promote-collaboration-4",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // support-social-behavior-3 and social-leader-boards
+    {
+        id: "e185",
+        target: "social-leader-boards",
+        source: "support-social-behavior-3",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    // support-social-behavior-3 and private-you
+    {
+        id: "e186",
+        target: "private-you-vs-you-leader-boards",
+        source: "support-social-behavior-3",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    // set-podium children: set-traditional-podium and set-number-of-winners
+    {
+        id: "e187",
+        source: "set-podium",
+        target: "set-traditional-podium",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e188",
+        source: "set-podium",
+        target: "set-number-of-winners",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    //set-winner-titles children: set-new-titles and use-badge-names
+    {
+        id: "e189",
+        source: "set-winner-titles",
+        target: "set-new-titles",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e190",
+        source: "set-winner-titles",
+        target: "use-badge-names",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    // set-winner-icons children: use-common-icons-2, use-artistic-icons-2 and use-badge-icons
+    {
+        id: "e191",
+        source: "set-winner-icons",
+        target: "use-common-icons-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e192",
+        source: "set-winner-icons",
+        target: "use-artistic-icons-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e193",
+        source: "set-winner-icons",
+        target: "use-badge-icons",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-winner and set-winner-and
+    {
+        id: "e194",
+        source: "set-winner",
+        target: "set-winner-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-winner-and children: set-winner-titles, set-winner-icons and set-podium
+    {
+        id: "e195",
+        source: "set-winner-and",
+        target: "set-winner-titles",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_bottom"
+    },
+    {
+        id: "e196",
+        source: "set-winner-and",
+        target: "set-winner-icons",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    {
+        id: "e197",
+        source: "set-winner-and",
+        target: "set-podium",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // configure-leader-board and configure-leader-board-and
+    {
+        id: "e198",
+        source: "configure-leader-boards",
+        target: "configure-leader-boards-and",
+        type: "straight",
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "oval_target_top",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // configure-leader-board-and to set-name, set-winner, set-achievement-rules-3
+    {
+        id: "e199",
+        source: "configure-leader-boards-and",
+        target: "set-name",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e200",
+        source: "configure-leader-boards-and",
+        target: "set-winner",
+        type: "straight",
+        sourceHandle: "operator_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e201",
+        source: "configure-leader-boards-and",
+        target: "set-achievement-rules-3",
+        type: "straight",
+        sourceHandle: "operator_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // configure leader board and set-kinds need relations
+    {
+        id: "e202",
+        target: "set-kinds-2",
+        source: "configure-leader-boards",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    // configure-leader-boards and set-leader-boards-and
+    {
+        id: "e203",
+        source: "set-leader-boards-and",
+        target: "configure-leader-boards",
+        type: "straight",
+        sourceHandle: "operator_right",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e204",
+        target: "use-badge-names",
+        source: "set-badges",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_right",
+
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e205",
+        target: "use-badge-names",
+        source: "use-badge-icons",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e206",
+        target: "use-common-icons-2",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e207",
+        target: "use-common-icons-2",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e208",
+        target: "use-artistic-icons-2",
+        source: "fast-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e209",
+        target: "use-artistic-icons-2",
+        source: "low-cost-design-4",
+        type: "dotted",
+        data: {label: "-"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e210",
+        target: "use-artistic-icons-2",
+        source: "high-design-quality-4",
+        type: "dotted",
+        data: {label: "+"},
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e211",
+        source: "support-achievement-2",
+        target: "set-leader-boards",
+        type: "floating",
+        sourceHandle: "oval_source_bottom",
+        targetHandle: "gamification_target_left",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e212",
+        source: "set-achievement-rules-3",
+        target: "set-leader-boards-calculation-strategy",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e213",
+        source: "set-achievement-rules-3",
+        target: "set-rewards",
+        type: "straightLabel",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        data:{
+            label:"Pref"
+        },
+    },
+    {
+        id: "e214",
+        source: "set-leader-boards-calculation-strategy",
+        target: "by-conditions",
+        type: "straightLabel",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        data:{
+            label:"Pref"
+        },
+    },
+    {
+        id: "e215",
+        source: "set-leader-boards-calculation-strategy",
+        target: "by-point-systems",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e216",
+        source: "set-point-systems-3",
+        target: "by-point-systems",
+        sourceHandle: "gamification_source_bottom",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e217",
+        source: "set-gamifiable-actions-4",
+        target: "by-gamifiable-actions-4",
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e218",
+        source: "by-conditions",
+        target: "by-gamifiable-actions-4",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e219",
+        source: "by-conditions",
+        target: "by-other-achievements-4",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e220",
+        source: "set-rewards",
+        target: "assign-badges",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    {
+        id: "e221",
+        source: "set-rewards",
+        target: "assign-other-achievements",
+        type: "straight",
+        sourceHandle:"gamification_source_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+
+    {
+        id: "e223",
+        source: "set-game-mechanics-and-dynamics-3",
+        target: "by-other-achievements-4",
+        sourceHandle: "gamification_source_left",
+        targetHandle:"gamification_target_bottom",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e224",
+        source: "set-game-mechanics-and-dynamics-3",
+        target: "assign-other-achievements",
+        targetHandle:"gamification_target_bottom",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e225",
+        target: "use-badge-icons",
+        source: "assign-badges",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e226",
+        target: "by-gamifiable-actions-3",
+        source: "set-gamifiable-actions-4",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+
+    },
+    {
+        id: "e227",
+        source: "set-kinds-3",
+        target: "team-challenges",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C5[Explorer] OR\n" +
+                "C3[Female] OR C4[Old]) AND\n" +
+                "(NOT (C36[Killer]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e228",
+        source: "set-kinds-3",
+        target: "personal-challenges",
+        type: "straightLabel",
+        data: {
+            label: "(C7[Male] OR C1[Achiever]\n" +
+                "OR\n" +
+                "C5[Explorer] OR C36[Killer])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-challenges and set-challenges-and
+    {
+        id: "e229",
+        source: "set-challenges",
+        target: "set-challenges-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // set-challenges-and children: set-kinds-3 and configure-challenges
+    {
+        id: "e230",
+        source: "set-challenges-and",
+        target: "set-kinds-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_left"
+    },
+    {
+        id: "e231",
+        source: "set-challenges-and",
+        target: "configure-challenges",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    // set-kinds-3 and configure-challenges need relations
+    {
+        id: "e232",
+        target: "set-kinds-3",
+        source: "configure-challenges",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    // set-team-roles, set-community needs team-challenges
+    {
+        id: "e233",
+        target: "team-challenges",
+        source: "set-team-roles-3",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e234",
+        target: "team-challenges",
+        source: "set-community-4",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // personal-challenges and set-single-roles-3
+    {
+        id: "e235",
+        target: "personal-challenges",
+        source: "set-single-roles-3",
+        type: "dotted",
+        data: {label: "Need"},
+        sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // team-challenges floating with promote-collaboration-4 and support-social-behavior-3
+    {
+        id: "e236",
+        target: "team-challenges",
+        source: "promote-collaboration-4",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e237",
+        target: "team-challenges",
+        source: "support-social-behavior-3",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+    {
+        id: "e238",
+        target: "set-challenges",
+        source: "create-fair-competition-3",
+        type: "dotted",
+        data: {label: "+"},
+        style: arrowEdgeStyle,
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        markerStart: markerConfig,
+    },
+    // support-achievement-6 floating with personal challenges
+    {
+        id: "e239",
+        target: "personal-challenges",
+        source: "support-achievement-6",
+        type: "floating",
+        sourceHandle: "oval_source_top",
+        targetHandle: "gamification_target_bottom",
+        style: arrowEdgeStyle,
+    },
+
+    // configure-challenges and configure-challenges-and
+    {
+        id: "e240",
+        source: "configure-challenges",
+        target: "configure-challenges-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // configure-challenges-and children: set-names and set-achievement-rules
+    {
+        id: "e241",
+        source: "configure-challenges-and",
+        target: "set-names-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_left"
+    },
+    {
+        id: "e242",
+        source: "configure-challenges-and",
+        target: "set-achievement-rules-4",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    // set-achievement-rules-4 has set-triggers and set-rewards
+    {
+        id: "e243",
+        source: "set-achievement-rules-4",
+        target: "set-triggers-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e244",
+        source: "set-achievement-rules-4",
+        target: "set-rewards-2",
+        type: "straightLabel",
+        data: {
+            label: "Pref"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-triggers has by-gamifiable-actions and by-other-achievements
+    {
+        id: "e245",
+        source: "set-triggers-3",
+        target: "by-gamifiable-actions-5",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e246",
+        source: "set-triggers-3",
+        target: "by-other-achievements-5",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e247",
+        target: "by-gamifiable-actions-5",
+        source: "set-gamifiable-actions-6",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    // set-rewards has assign-badges and assign-other-achievements
+    {
+        id: "e248",
+        source: "set-rewards-2",
+        target: "assign-badges-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e249",
+        source: "set-rewards-2",
+        target: "assign-other-achievements-2",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // by-other-achievements and assign-other-achievements need set-game-mechanics-and-dynamics
+    {
+        id: "e250",
+        target: "by-other-achievements-5",
+        source: "set-game-mechanics-and-dynamics-4",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    {
+        id: "e251",
+        target: "assign-other-achievements-2",
+        source: "set-game-mechanics-and-dynamics-4",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    // set-community-3 needs provide-forum
+    {
+        id: "e252",
+        source: "set-community-3",
+        target: "provide-forum",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        sourceHandle: "gamification_source_bottom",
+        markerStart: markerConfig,
+    },
+    // choose-training-elements children: provide-forum,  provide-suggestions, provide-tricks, provide-tours, provide-tutorials
+    {
+        id: "e253",
+        source: "choose-training-elements",
+        target: "provide-forum",
+        type: "straightLabel",
+        data: {
+            label: "(C23[Goal.Participation.Low] OR\n"+
+                "C30[Task.Identification.Low] OR\n"+
+                "C2[Socializer] OR C5[Explorer] OR\n"+
+                "C3[Female] OR C4[Old])"
+        },
+        sourceHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e254",
+        source: "choose-training-elements",
+        target: "provide-suggestions",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR\n"+
+                "C4[Old]) AND (C16[Expertise.Junior])"
+        },
+        sourceHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e255",
+        source: "choose-training-elements",
+        target: "provide-tricks",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C36[Killer] OR\n"+
+                "C5[Explorer])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e256",
+        source: "choose-training-elements",
+        target: "provide-tours",
+        type: "straightLabel",
+        data:{
+            label: "(C1[Achiever] OR\n"+
+                "C5[Explorer] OR\n"+
+                "C4[Old])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e257",
+        source: "choose-training-elements",
+        target: "provide-tutorials",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR C4[Old] OR C19[Employed.No] OR\n"+
+                "C24[Goal.Clarity.Low] OR C25[Task.Variety.High] OR\n"+
+                "C26[Task.RequiredSkills.AdvancedSkills]) AND (C16[Expertise.Junior] AND\n"+
+                "(NOT (C28[Task.Variety.Low, RequiredSkills.TrivialCommon])))"
+        },
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // choose-presentation-elements to set-basic-elementss and set-avatar-trainer
+    {
+        id: "e258",
+        source: "choose-presentation-elements",
+        target: "set-basic-elements",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e259",
+        source: "choose-presentation-elements",
+        target: "set-avatar-trainer",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // choose-training-topics to minimal-system-features, entire-system-procedures and advantage-vs-competitor-systems
+    {
+        id: "e260",
+        source: "choose-training-topics",
+        target: "minimal-system-features",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e261",
+        source: "choose-training-topics",
+        target: "entire-system-procedures",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e262",
+        source: "choose-training-topics",
+        target: "advantage-vs-competitor-systems",
+        type: "straightLabel",
+        data: {
+            label: "C12[Precursor.Existing.Yes]"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-basic-elements and set-avatar-trainer need ! relationship
+    {
+        id: "e263",
+        target: "set-basic-elements",
+        source: "set-avatar-trainer",
+        type: "dotted",
+        data: {label: "!"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_left",
+        sourceHandle: "gamification_source_left",
+        markerStart: markerConfig,
+        markerEnd: markerConfig
+    },
+    //define-strategy to train-before-playing and train-during-playing
+    {
+        id: "e264",
+        source: "define-strategy",
+        target: "train-before-playing",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e265",
+        source: "define-strategy",
+        target: "train-during-playing",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-basic-training to set-basic-training-and
+    {
+        id: "e266",
+        source: "set-basic-training",
+        target: "set-basic-training-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-basic-training-and to choose-training-elements, choose-presentation-elements, choose-training-topics, define-strategy
+    {
+        id: "e267",
+        source: "set-basic-training-and",
+        target: "choose-training-elements",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_left"
+    },
+    {
+        id: "e268",
+        source: "set-basic-training-and",
+        target: "choose-presentation-elements",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_bottom"
+    },
+    {
+        id: "e269",
+        source: "set-basic-training-and",
+        target: "choose-training-topics",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_bottom"
+    },
+    {
+        id: "e270",
+        source: "set-basic-training-and",
+        target: "define-strategy",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    // training-rewards-by-point-systems needs use-skill-points-2
+    {
+        id: "e271",
+        target: "training-rewards-by-point-systems",
+        source: "use-skill-points-2",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+    },
+    // by-badges needs set-badges-2
+    {
+        id: "e272",
+        target: "by-badges",
+        source: "set-badges-2",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+    },
+    // set-rewards-3 to training-rewards-by-point-systems, by-badges, by-other-achievements-6
+    {
+        id: "e273",
+        source: "set-rewards-3",
+        target: "training-rewards-by-point-systems",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e274",
+        source: "set-rewards-3",
+        target: "by-badges",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e275",
+        source: "set-rewards-3",
+        target: "by-other-achievements-6",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // define-training-paths needs set-game-structure-2
+    {
+        id: "e276",
+        target: "define-training-paths",
+        source: "set-game-structure-2",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+    },
+    // set-advanced-training to set-rewards-3 and define-training-paths
+    {
+        id: "e277",
+        source: "set-advanced-training",
+        target: "set-rewards-3",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e278",
+        source: "set-advanced-training",
+        target: "define-training-paths",
+        type: "straightLabel",
+        data: {
+            label: " (C1[Achiever] OR C5[Explorer] OR C4[Old] OR C19[Employed.No] OR\n"+
+                "C24[Goal.Clarity.Low] OR C25[Task.Variety.High] OR\n"+
+                "C26[Task.RequiredSkills.AdvancedSkills]) OR C29[Task.Specificity.High] OR\n"+
+                "C30[Task.Identification.Low]) AND (C16[Expertise.Junior] AND\n"+
+                "(NOT (C28[Task.Variety.Low, RequiredSkills.TrivialCommon])))"
+        },
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
     },
 ];

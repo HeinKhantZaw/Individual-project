@@ -35,10 +35,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -7500, y: 2000},
         data: {
-            "isHidden": false,
-            "label": "Fast_Design",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Fast_Design",
+            type: "tactic",
+            num: "(1)",
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
@@ -49,10 +49,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -7000, y: 2000},
         data: {
-            "isHidden": false,
-            "label": "Low_Cost_Design",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Low_Cost_Design",
+            type: "tactic",
+            num: "(1)",
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
@@ -73,10 +73,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -8300, y: 2000},
         data: {
-            "isHidden": false,
-            "label": "Promote_Collaboration",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Promote_Collaboration",
+            type: "tactic",
+            num: "(3)",
             "sourceTop": true,
         }
     },
@@ -168,10 +168,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -5500, y: 2000},
         data: {
-            "isHidden": false,
-            "label": "High_Design_Quality",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "High_Design_Quality",
+            type: "tactic",
+            num: "(1)",
             "sourceTop": true,
             "sourceRight": true,
             "sourceLeft": true,
@@ -372,10 +372,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -4500, y: 2000},
         data: {
-            "isHidden": false,
-            "label": "Support_Skill_Improvement",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Support_Skill_Improvement",
+            type: "tactic",
+            num: "(1)",
             "sourceTop": true,
             "sourceRight": true,
             "sourceLeft": true,
@@ -505,10 +505,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -3050, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Fast_Design",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Fast_Design",
+            type: "tactic",
+            num: "(2)",
             sourceTop: true,
         }
     },
@@ -517,10 +517,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -2750, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Low_Cost_Design",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Low_Cost_Design",
+            type: "tactic",
+            num: "(2)",
             sourceTop: true,
         }
     },
@@ -529,10 +529,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -2350, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "High_Design_Quality",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "High_Design_Quality",
+            type: "tactic",
+            num: "(2)",
             sourceTop: true,
         }
     },
@@ -541,10 +541,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -2050, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Increase_User_Surprise",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Increase_User_Surprise",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -660,10 +660,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -1400, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Support_Achievement",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Support_Achievement",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
             bottom: true,
         }
@@ -673,10 +673,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -1100, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Improve_Perceived_Status",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Improve_Perceived_Status",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
             bottom: true,
         }
@@ -687,10 +687,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -1250, y: 2800},
         data: {
-            "isHidden": false,
-            "label": "Improve_System_Loyalty",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Improve_System_Loyalty",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -700,10 +700,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -800, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Support_Social_Behavior",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Support_Social_Behavior",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -712,10 +712,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -500, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Promote_Ethical_Behavior",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Promote_Ethical_Behavior",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -724,10 +724,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: -200, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Promote_Altruistic_Behavior",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Promote_Altruistic_Behavior",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -736,10 +736,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 100, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Increase_Worth_Vagueness",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Increase_Worth_Vagueness",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -748,10 +748,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 400, y: 2500},
         data: {
-            "isHidden": false,
-            "label": "Improve_Trust",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Improve_Trust",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -925,9 +925,9 @@ export const initialNodes = [
         type: "oval",
         position: {x: 1600, y: 2100},
         data: {
-            "isHidden": false,
-            "label": "Support_User_Penalization",
-            "type": "tactic",
+            isHidden: false,
+            label: "Support_User_Penalization",
+            type: "tactic",
             "top": "no",
             "sourceRight": true,
             "sourceLeft": true,
@@ -1046,10 +1046,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 2000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Fast_Design",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Fast_Design",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -1058,10 +1058,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 2300, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Low_Cost_Design",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Low_Cost_Design",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -1070,10 +1070,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 2600, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "High_Design_Quality",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "High_Design_Quality",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -1141,10 +1141,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 3300, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Promote_Ethical_Behavior",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Promote_Ethical_Behavior",
+            type: "tactic",
+            num: "(2)",
             sourceTop: true,
         }
     },
@@ -1153,10 +1153,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 3600, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Promote_Altruistic_Behavior",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Promote_Altruistic_Behavior",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -1165,10 +1165,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 3850, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Create_Unfair_Competition",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Create_Unfair_Competition",
+            type: "tactic",
+            num: "(1)",
             right: true,
             sourceRight: true,
             sourceTop: true,
@@ -1179,10 +1179,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 4250, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Create_Fair_Competition",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Create_Fair_Competition",
+            type: "tactic",
+            num: "(1)",
             left: true,
             sourceLeft: true,
             sourceTop: true,
@@ -1193,10 +1193,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 4500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Support_Social_Behavior",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Support_Social_Behavior",
+            type: "tactic",
+            num: "(2)",
             sourceTop: true,
         }
     },
@@ -1205,13 +1205,13 @@ export const initialNodes = [
     {
         id: "set-virtual-environments",
         type: "gamification",
-        position: {x: 5000, y: 150},
+        position: {x: 33500, y: 150},
         data: {label: "Set_Virtual_Environments"}
     },
     {
         id: "set-supporting-systems",
         type: "gamification",
-        position: {x: 6000, y: 150},
+        position: {x: 36000, y: 150},
         data: {label: "Set_Supporting_Systems"},
 
         draggable: false
@@ -1472,10 +1472,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 7400, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Fast_Design",
-            "type": "tactic",
-            "num": "(4)",
+            isHidden: false,
+            label: "Fast_Design",
+            type: "tactic",
+            num: "(4)",
             right: true,
             left: true,
             bottom: true,
@@ -1490,10 +1490,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 7850, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Low_Cost_Design",
-            "type": "tactic",
-            "num": "(4)",
+            isHidden: false,
+            label: "Low_Cost_Design",
+            type: "tactic",
+            num: "(4)",
             right: true,
             left: true,
             bottom: true,
@@ -1507,10 +1507,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 8300, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "High_Design_Quality",
-            "type": "tactic",
-            "num": "(4)",
+            isHidden: false,
+            label: "High_Design_Quality",
+            type: "tactic",
+            num: "(4)",
             right: true,
             left: true,
             bottom: true,
@@ -1547,10 +1547,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 8800, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Support_Achievement",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Support_Achievement",
+            type: "tactic",
+            num: "(2)",
             right: true,
             left: true,
             bottom: true,
@@ -1564,10 +1564,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 9200, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Improve_Perceived_Status",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Improve_Perceived_Status",
+            type: "tactic",
+            num: "(2)",
             right: true,
             left: true,
             bottom: true,
@@ -1712,10 +1712,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 10500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Create_Fair_Competition",
-            "type": "tactic",
-            "num": "(2)",
+            isHidden: false,
+            label: "Create_Fair_Competition",
+            type: "tactic",
+            num: "(2)",
             right: true,
             left: true,
             bottom: true,
@@ -1730,10 +1730,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 11000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Promote_Collaboration",
-            "type": "tactic",
-            "num": "(4)",
+            isHidden: false,
+            label: "Promote_Collaboration",
+            type: "tactic",
+            num: "(4)",
             sourceTop: true,
         }
     },
@@ -1743,10 +1743,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 11500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Support_Social_Behavior",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Support_Social_Behavior",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -2297,10 +2297,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 19750, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Create_Fair_Competition",
-            "type": "tactic",
-            "num": "(3)",
+            isHidden: false,
+            label: "Create_Fair_Competition",
+            type: "tactic",
+            num: "(3)",
             sourceTop: true,
         }
     },
@@ -2309,10 +2309,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 20500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Support_Achievement",
-            "type": "tactic",
-            "num": "(6)",
+            isHidden: false,
+            label: "Support_Achievement",
+            type: "tactic",
+            num: "(6)",
             sourceTop: true,
         }
     },
@@ -2321,10 +2321,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 21500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Promote_Collaboration",
-            "type": "tactic",
-            "num": "(6)",
+            isHidden: false,
+            label: "Promote_Collaboration",
+            type: "tactic",
+            num: "(6)",
             sourceTop: true,
         }
     },
@@ -2333,10 +2333,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 22000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Support_Social_Behavior",
-            "type": "tactic",
-            "num": "(6)",
+            isHidden: false,
+            label: "Support_Social_Behavior",
+            type: "tactic",
+            num: "(6)",
             sourceTop: true,
         }
     },
@@ -2345,10 +2345,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 22500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Improve_System_Perception_via_IT",
-            "type": "tactic",
-            "num": "(5)",
+            isHidden: false,
+            label: "Improve_System_Perception_via_IT",
+            type: "tactic",
+            num: "(5)",
             sourceTop: true,
         }
     },
@@ -2357,10 +2357,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 23000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Improve_System_Awareness",
-            "type": "tactic",
-            "num": "(6)",
+            isHidden: false,
+            label: "Improve_System_Awareness",
+            type: "tactic",
+            num: "(6)",
             sourceTop: true,
         }
     },
@@ -2369,10 +2369,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 23500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Fast_Design",
-            "type": "tactic",
-            "num": "(6)",
+            isHidden: false,
+            label: "Fast_Design",
+            type: "tactic",
+            num: "(6)",
             sourceTop: true,
         }
     },
@@ -2381,10 +2381,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 24000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Low_Cost_Design",
-            "type": "tactic",
-            "num": "(5)",
+            isHidden: false,
+            label: "Low_Cost_Design",
+            type: "tactic",
+            num: "(5)",
             sourceTop: true,
         }
     },
@@ -2393,10 +2393,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 24500, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "High_Design_Quality",
-            "type": "tactic",
-            "num": "(5)",
+            isHidden: false,
+            label: "High_Design_Quality",
+            type: "tactic",
+            num: "(5)",
             sourceTop: true,
         }
     },
@@ -2405,10 +2405,10 @@ export const initialNodes = [
         type: "oval",
         position: {x: 25000, y: 2700},
         data: {
-            "isHidden": false,
-            "label": "Improve_Minor_Assistance",
-            "type": "tactic",
-            "num": "(1)",
+            isHidden: false,
+            label: "Improve_Minor_Assistance",
+            type: "tactic",
+            num: "(1)",
             sourceTop: true,
         }
     },
@@ -2416,7 +2416,7 @@ export const initialNodes = [
     {
         id: "set-basic-training",
         type: "gamification",
-        position: {x: 25900, y: 950},
+        position: {x: 25900, y: 800},
         data: {
             label: "Set_Basic_Training",
             sourceRight: true,
@@ -2428,7 +2428,7 @@ export const initialNodes = [
     {
         id: "set-basic-training-and",
         type: "operator",
-        position: {x: 25995, y: 1100},
+        position: {x: 25995, y: 950},
         data: {
             label: "AND",
         },
@@ -2716,9 +2716,7 @@ export const initialNodes = [
         data: {
             label: "Set_Advanced_Training",
             num: "(1)",
-            sourceRight: true,
-            sourceTop: true,
-            right: true,
+            left: true,
             bottom: true,
         },
     },
@@ -2739,7 +2737,7 @@ export const initialNodes = [
     {
         id: "define-training-paths",
         type: "gamification",
-        position: {x: 29900, y: 1300},
+        position: {x: 29980, y: 1300},
         data: {
             label: "Define_Training_Paths",
             sourceRight: true,
@@ -2761,4 +2759,399 @@ export const initialNodes = [
             bottom: true,
         },
     },
+    // set-gamified-training-elements is between set-basic-training and set-advanced-training but above them
+    {
+        id: "set-gamified-training-elements",
+        type: "gamification",
+        position: {x: 27700, y: 600},
+        data: {
+            label: "Set_Gamified_Training_Elements",
+            sourceLeft: true,
+            sourceRight: true
+        },
+    },
+    {
+        id: "improve-system-advantage-perception-vs-competitor-systems-via-it",
+        type: "oval",
+        position: {x: 27000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Advantage_Perception_vs_Competitor_Systems_via_IT",
+            type: "tactic",
+            width: 450,
+            height: 100,
+            num: "(1)",
+            sourceTop: true,
+        }
+    },
+    // improve-system-perception is above them
+    {
+        id: "improve-system-perception",
+        type: "oval",
+        position: {x: 27750, y: 2500},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Perception",
+            type: "tactic",
+        }
+    },
+
+    // improve-system-perception-by-humans, improve-system-perception-by-it, improve-system-awareness, support-skill-improvement
+    {
+        id: "improve-system-perception-by-humans",
+        type: "oval",
+        position: {x: 27500, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Perception_by_Humans",
+            type: "tactic",
+            width: 350,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-system-perception-via-it",
+        type: "oval",
+        position: {x: 28000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Perception_via_IT",
+            num: "(1)",
+            type: "tactic",
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-system-awareness",
+        type: "oval",
+        position: {x: 28500, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Awareness",
+            num: "(1)",
+            type: "tactic",
+            sourceTop: true,
+            bottom: true,
+        }
+    },
+    {
+        id: "support-skill-improvement-2",
+        type: "oval",
+        position: {x: 29000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Support_Skill_Improvement",
+            num: "(2)",
+            type: "tactic",
+            bottom: true,
+        }
+    },
+    // between improve-system-awareness and support-skill-improvement-2, there is improve-system-loyalty under them
+    {
+        id: "improve-system-loyalty-2",
+        type: "oval",
+        position: {x: 28750, y: 2900},
+        data: {
+            isHidden: false,
+            label: "Improve_System_Loyalty",
+            num: "(2)",
+            type: "tactic",
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
+        }
+    },
+
+    // set-add-friend
+    {
+        id: "set-add-friend",
+        type: "gamification",
+        position: {x: 30500, y: 700},
+        data: {
+            label: "Set_Add_Friend",
+        },
+    },
+    // set-remove-friend, set-friendship-suggestion
+    {
+        id: "set-remove-friend",
+        type: "gamification",
+        position: {x: 31000, y: 700},
+        data: {
+            label: "Set_Remove_Friend",
+        },
+    },
+    {
+        id: "set-friendship-suggestions",
+        type: "gamification",
+        position: {x: 31500, y: 700},
+        data: {
+            label: "Set_Friendship_Suggestions",
+        },
+    },
+    // set-friendship-suggestion children: system-suggests-friendship, user-suggests-friendship-to-a-user
+    {
+        id: "system-suggests-friendship",
+        type: "gamification",
+        position: {x: 31250, y: 950},
+        data: {
+            label: "System_Suggests_Friendship",
+        },
+    },
+    {
+        id: "user-suggests-friendship-to-a-user",
+        type: "gamification",
+        position: {x: 31750, y: 950},
+        data: {
+            label: "User_Suggests_Friendship_to_a_User",
+        },
+    },
+
+    // set-activity-suggestions is between them and above
+    {
+        id: "set-activity-suggestions",
+        type: "gamification",
+        position: {x: 32250, y: 700},
+        data: {
+            label: "Set_Activity_Suggestions",
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+    // system-suggest-an-event, user-suggests-to-a-user
+    {
+        id: "system-suggests-an-event",
+        type: "gamification",
+        position: {x: 32000, y: 950},
+        data: {
+            label: "System_Suggests_an_Event",
+        },
+    },
+    {
+        id: "user-suggests-to-a-user",
+        type: "gamification",
+        position: {x: 32570, y: 950},
+        data: {
+            label: "User_Suggests_to_a_User",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    // user-suggests-to-a-user children: to-participate-to-an-event, to-carry-out-an-activity
+    {
+        id: "to-participate-to-an-event",
+        type: "gamification",
+        position: {x: 32300, y: 1200},
+        data: {
+            label: "To_Participate_to_an_Event",
+        },
+    },
+    {
+        id: "to-carry-out-an-activity",
+        type: "gamification",
+        position: {x: 32800, y: 1200},
+        data: {
+            label: "To_Carry_out_an_Activity",
+        },
+    },
+
+    // set-community is above them
+    {
+        id: "set-community",
+        type: "gamification",
+        position: {x: 31500, y: 500},
+        data: {
+            label: "Set_Community",
+            num: "(1)",
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        },
+    },
+
+    {
+        id: "add-rewards",
+        type: "gamification",
+        position: {x: 33750, y: 600},
+        data: {
+            label: "Add_Rewards",
+            sourceRight: true,
+            sourceLeft: true,
+            right:true,
+        },
+    },
+
+    {
+        id: "add-virtual-rewards",
+        type: "gamification",
+        position: {x: 33150, y: 950},
+        data: {
+            label: "Add_Virtual_Rewards",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "add-tangible-rewards",
+        type: "gamification",
+        position: {x: 33750, y: 1100},
+        data: {
+            label: "Add_Tangible_Rewards",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "add-unlockable-powers",
+        type: "gamification",
+        position: {x: 34350, y: 950},
+        data: {
+            label: "Add_Unlockable_Powers",
+            sourceRight: true,
+            sourceLeft: true,
+            left: true,
+            right: true
+        },
+    },
+    // add-unlockable-power-and
+    {
+        id: "add-unlockable-powers-and",
+        type: "operator",
+        position: {x: 34450, y: 1100},
+        data: {
+            label: "AND",
+        },
+    },
+    // set-gamifiable-actions
+    {
+        id: "set-gamifiable-actions-5",
+        type: "gamification",
+        position: {x: 33800, y: 1350},
+        data: {
+            label: "Set_Gamifiable_Actions",
+            num: "(5)",
+            sourceRight: true,
+        },
+    },
+    // his children: choose-unlockable-actions, create-new-powers
+    {
+        id: "choose-unlockable-actions",
+        type: "gamification",
+        position: {x: 34200, y: 1350},
+        data: {
+            label: "Choose_Unlockable_Actions",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "create-new-powers",
+        type: "gamification",
+        position: {x: 34700, y: 1350},
+        data: {
+            label: "Create_New_Powers",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    // set-as-unlockable-2
+    {
+        id: "set-as-unlockable-2",
+        type: "gamification",
+        position: {x: 35000, y: 1350},
+        data: {
+            label: "Set_as_Unlockable",
+            num: "(2)",
+            sourceTop: true,
+        },
+    },
+    // create-new-powers-and
+    {
+        id: "create-new-powers-and",
+        type: "operator",
+        position: {x: 34800, y: 1550},
+        data: {
+            label: "AND",
+        },
+    },
+    // his children: set-power-names, link-powers-to-unlockable-actions
+    {
+        id: "set-power-names",
+        type: "gamification",
+        position: {x: 34400, y: 1650},
+        data: {
+            label: "Set_Power_Names",
+        },
+    },
+    {
+        id: "link-powers-to-unlockable-actions",
+        type: "gamification",
+        position: {x: 35000, y: 1650},
+        data: {
+            label: "Link_Powers_to_Unlockable_Actions",
+        },
+    },
+
+    {
+        id: "set-gamified-market",
+        type: "gamification",
+        position: {x: 35750, y: 450},
+        data: {
+            label: "Set_Gamified_Market",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    // set-gamified-market-and
+    {
+        id: "set-gamified-market-and",
+        type: "operator",
+        position: {x: 35845, y: 600},
+        data: {
+            label: "AND",
+        },
+    },
+
+    {
+        id: "set-market-policies",
+        type: "gamification",
+        position: {x: 36750, y: 600},
+        data: {
+            label: "Set_Market_Policies",
+            sourceRight: true,
+            sourceLeft: true,
+            right:true,
+        },
+    },
+    // set-market-policies children: set-redeeming-policy, set-making-gift-policy, set-purchase-policy
+    {
+        id: "set-redeeming-policy",
+        type: "gamification",
+        position: {x: 35850, y: 900},
+        data: {
+            label: "Set_Redeeming_Policy",
+            left: true,
+        },
+    },
+    {
+        id: "set-making-gift-policy",
+        type: "gamification",
+        position: {x: 36850, y: 900},
+        data: {
+            label: "Set_Making_Gift_Policy",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "set-purchase-policy",
+        type: "gamification",
+        position: {x: 37550, y: 900},
+        data: {
+            label: "Set_Purchase_Policy",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+
 ];

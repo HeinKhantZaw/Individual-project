@@ -2956,4 +2956,397 @@ export const initialEdges = [
         style: arrowEdgeStyle,
         markerStart: markerConfig,
     },
+    // set-advanced-training needs set-basic-training
+    {
+        id: "e279",
+        target: "set-advanced-training",
+        source: "set-basic-training",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_left",
+        sourceHandle: "gamification_source_right",
+        markerStart: markerConfig,
+    },
+    // set-gamified-training-elements to set-basic-training and set-advanced-training
+    {
+        id: "e280",
+        source: "set-gamified-training-elements",
+        target: "set-basic-training",
+        type: "straight",
+        sourceHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e281",
+        source: "set-gamified-training-elements",
+        target: "set-advanced-training",
+        type: "straight",
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    // set-game-mechanics-and-dynamics to set-gamified-training-elements
+    {
+        id: "e282",
+        source: "set-game-mechanics-and-dynamics",
+        target: "set-gamified-training-elements",
+        type: "straight",
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-game-mechanics-and-dynamics to set-challenges
+    {
+        id: "e283",
+        source: "set-game-mechanics-and-dynamics",
+        target: "set-challenges",
+        type: "straight",
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // improve-system-perception to improve-system-perception-by-humans and improve-system-perception-via-it
+    {
+        id: "e284",
+        source: "improve-system-perception",
+        target: "improve-system-perception-by-humans",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e285",
+        source: "improve-system-perception",
+        target: "improve-system-perception-via-it",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // improve-system-loyalty to improve-system-awareness and support-skill-improvement
+    {
+        id: "e286",
+        source: "improve-system-loyalty-2",
+        target: "improve-system-awareness",
+        type: "straight",
+        style: arrowEdgeStyle,
+        sourceHandle: "oval_source_left",
+        targetHandle: "oval_target_bottom",
+        markerStart: markerConfig,
+    },
+    {
+        id: "e287",
+        source: "improve-system-loyalty-2",
+        target: "support-skill-improvement-2",
+        type: "straight",
+        sourceHandle: "oval_source_right",
+        targetHandle: "oval_target_bottom",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-activity-suggestions to user-suggests-to-a-user
+    {
+        id: "e288",
+        source: "set-activity-suggestions",
+        target: "user-suggests-to-a-user",
+        type: "straightLabel",
+        data: {
+            label: "MandFor(C23[Goal.Participation.Low] OR \n"+
+                "C30[Task.Identification.Low] OR\n"+
+                "C32[SocialStructure.Hierarchical])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-activity-suggestions to system-suggests-an-event
+    {
+        id: "e289",
+        source: "set-activity-suggestions",
+        target: "system-suggests-an-event",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-community to  set-add-friend, set-remove-friend, set-friendship-suggestions, set-activity-suggestions
+    {
+        id: "e290",
+        source: "set-community",
+        target: "set-add-friend",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e291",
+        source: "set-community",
+        target: "set-remove-friend",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e292",
+        source: "set-community",
+        target: "set-friendship-suggestions",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e293",
+        source: "set-community",
+        target: "set-activity-suggestions",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // user-suggests-to-a-user children: to-participate-to-an-event, to-carry-out-an-activity
+    {
+        id: "e294",
+        source: "user-suggests-to-a-user",
+        target: "to-participate-to-an-event",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "gamification_source_left"
+    },
+    {
+        id: "e295",
+        source: "user-suggests-to-a-user",
+        target: "to-carry-out-an-activity",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "gamification_source_right"
+    },
+    // set-friendship-suggestions to system-suggests-friendship, user-suggests-friendship-to-a-user
+    {
+        id: "e296",
+        source: "set-friendship-suggestions",
+        target: "system-suggests-friendship",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e297",
+        source: "set-friendship-suggestions",
+        target: "user-suggests-friendship-to-a-user",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-virtual-environments to set-community
+    {
+        id: "e298",
+        source: "set-virtual-environments",
+        target: "set-community",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C3[Female] OR C4[Old] OR C23[Goal.Participation.Low] OR C30[Task.Identification.Low] OR C32[SocialStructure.Hierarchical])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+    // add-rewards to add-virtual-rewards, add-tangible-rewards, add-unlockable-powers straightLabel
+    {
+        id: "e299",
+        source: "add-rewards",
+        target: "add-virtual-rewards",
+        type: "straightLabel",
+        data: {
+            label: "MandFor(C32[SocialStructure.Hierarchical] OR\n"+
+                "C34[GoodProduced.Public])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e300",
+        source: "add-rewards",
+        target: "add-tangible-rewards",
+        type: "straightLabel",
+        data: {
+            label: "MandFor(C32[SocialStructure.Hierarchical] OR\n"+
+                "C34[GoodProduced.Public])"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e301",
+        source: "add-rewards",
+        target: "add-unlockable-powers",
+        type: "straightLabel",
+        data: {
+            label: "C1[Achiever] OR C5[Explorer] OR\n"+
+                "C36[Killer] OR C32[SocialStructure.Hierarchical]"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e302",
+        source: "add-unlockable-powers",
+        target: "add-unlockable-powers-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig
+    },
+    // create-new-powers to create-new-powers-and
+    {
+        id: "e303",
+        source: "create-new-powers",
+        target: "create-new-powers-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // create-unlockable-powers-and to choose-unlockable-actions, create-new-powers
+    {
+        id: "e304",
+        source: "add-unlockable-powers-and",
+        target: "choose-unlockable-actions",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_left"
+    },
+    {
+        id: "e305",
+        source: "add-unlockable-powers-and",
+        target: "create-new-powers",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    // create-new-powers-and to set-power-names and link-power-to-unlockable-actions
+    {
+        id: "e306",
+        source: "create-new-powers-and",
+        target: "set-power-names",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_left"
+    },
+    {
+        id: "e307",
+        source: "create-new-powers-and",
+        target: "link-powers-to-unlockable-actions",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+
+    // set-gamifiable-actions-5 needs add-unlockable-powers
+    {
+        id: "e308",
+        source: "set-gamifiable-actions-5",
+        target: "add-unlockable-powers",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_left",
+        sourceHandle: "gamification_source_right",
+        markerStart: markerConfig,
+    },
+    // set-as-unlockable-2 needs add-unlockable-powers
+    {
+        id: "e309",
+        source: "set-as-unlockable-2",
+        target: "add-unlockable-powers",
+        type: "dotted",
+        data: {label: "Need"},
+        style: arrowEdgeStyle,
+        targetHandle: "gamification_target_right",
+        sourceHandle: "gamification_source_top",
+        markerStart: markerConfig,
+    },
+    // set-gamified-market-and to add-rewards
+    {
+        id: "e310",
+        source: "set-gamified-market-and",
+        target: "add-rewards",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        targetHandle: "gamification_target_right",
+    },
+    // set-gamified-market and set-gamified-market-and
+    {
+        id: "e311",
+        source: "set-gamified-market",
+        target: "set-gamified-market-and",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-gamified-market to set-virtual-environments straightLabel
+    {
+        id: "e312",
+        target: "set-gamified-market",
+        source: "set-virtual-environments",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR C2[Socializer] OR\n"+
+                "C3[Female] OR C4[Old] OR\n"+
+                "C32[SocialStructure.Hierarchical] OR C34[GoodProduced.Public])"
+        },
+        sourceHandle: "gamification_source_right",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    // set-gamified-market-and and set-market-policies
+    {
+        id: "e313",
+        source: "set-gamified-market-and",
+        target: "set-market-policies",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+        sourceHandle: "operator_right"
+    },
+    // set-market-policies to set-redeeming-policy, set-making-gift-policy, set-purchase-policy straightLabel
+    {
+        id: "e314",
+        source: "set-market-policies",
+        target: "set-redeeming-policy",
+        type: "straightLabel",
+        data: {
+            label: "(C1[Achiever] OR C5[Explorer] OR\n"+
+                "C32[SocialStructure.Hierarchical] OR\n"+
+                "C34[GoodProduced.Public])"
+        },
+        sourceHandle: "gamification_source_left",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e315",
+        source: "set-market-policies",
+        target: "set-making-gift-policy",
+        type: "straightLabel",
+        data: {
+            label: "(C2[Socializer] OR C3[Female] OR C4[Old] AND (NOT (C36[Killer]))"
+        },
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+    {
+        id: "e316",
+        source: "set-market-policies",
+        target: "set-purchase-policy",
+        sourceHandle: "gamification_source_right",
+        type: "straight",
+        style: arrowEdgeStyle,
+        markerStart: markerConfig,
+    },
+
+
 ];

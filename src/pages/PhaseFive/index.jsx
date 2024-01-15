@@ -8,10 +8,11 @@ import ConnectionLine from "../../components/ConnectionLine/index.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import GamificationNode from "../../components/Shapes/GamificationNode.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
-import {initialEdges, initialNodes} from "./nodes-edges.jsx";
 import DottedEdge from "../../components/DottedEdge/index.jsx";
 import StraightEdge from "../../components/StraightEdge/index.jsx";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
+import {initialNodes} from "./initial-nodes.jsx";
+import {initialEdges} from "./initial-edges.jsx";
 
 
 
@@ -61,6 +62,7 @@ export default function PhaseFive() {
                 edges={edges}
                 // onNodesChange={onNodesChange}
                 // onEdgesChange={onEdgesChange}
+                panOnScroll={true}
                 nodeTypes={nodeTypes}
                 edgeTypes={edgeTypes}
                 defaultEdgeOptions={defaultEdgeOptions}

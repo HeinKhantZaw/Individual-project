@@ -626,7 +626,7 @@ export const initialNodes = [
     },
 
     {
-        id: "rp-define-exchange-points-rewards",
+        id: "rp-define-exchange-points-rewards-2",
         type: "gamification",
         position: {x: -1700, y: 1250},
         data: {
@@ -641,7 +641,7 @@ export const initialNodes = [
         }
     },
     {
-        id: "gp-define-exchange-points-rewards",
+        id: "gp-define-exchange-points-rewards-2",
         type: "gamification",
         position: {x: -50, y: 1450},
         data: {
@@ -1208,14 +1208,7 @@ export const initialNodes = [
         position: {x: 33500, y: 150},
         data: {label: "Set_Virtual_Environments"}
     },
-    {
-        id: "set-supporting-systems",
-        type: "gamification",
-        position: {x: 36000, y: 150},
-        data: {label: "Set_Supporting_Systems"},
 
-        draggable: false
-    },
 
     {
         id: "set-social-badges-kinds",
@@ -2365,21 +2358,34 @@ export const initialNodes = [
         }
     },
     {
-        id: "fast-design-5",
+        id: "increase-user-surprise-2",
         type: "oval",
         position: {x: 23500, y: 2700},
         data: {
             isHidden: false,
+            label: "Increase_User_Surprise",
+            type: "tactic",
+            num: "(2)",
+            sourceTop: true,
+        }
+    },
+
+    {
+        id: "fast-design-5",
+        type: "oval",
+        position: {x: 23900, y: 2700},
+        data: {
+            isHidden: false,
             label: "Fast_Design",
             type: "tactic",
-            num: "(6)",
+            num: "(5)",
             sourceTop: true,
         }
     },
     {
         id: "low-cost-design-5",
         type: "oval",
-        position: {x: 24000, y: 2700},
+        position: {x: 24500, y: 2700},
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
@@ -2391,7 +2397,7 @@ export const initialNodes = [
     {
         id: "high-design-quality-5",
         type: "oval",
-        position: {x: 24500, y: 2700},
+        position: {x: 25100, y: 2700},
         data: {
             isHidden: false,
             label: "High_Design_Quality",
@@ -2403,13 +2409,15 @@ export const initialNodes = [
     {
         id: "improve-minor-assistance",
         type: "oval",
-        position: {x: 25000, y: 2700},
+        position: {x: 25500, y: 2700},
         data: {
             isHidden: false,
             label: "Improve_Minor_Assistance",
             type: "tactic",
             num: "(1)",
             sourceTop: true,
+            left: true,
+            sourceLeft:true,
         }
     },
 
@@ -2554,6 +2562,7 @@ export const initialNodes = [
             sourceTop: true,
             right: true,
             bottom: true,
+            left:true,
         },
     },
     {
@@ -2653,6 +2662,7 @@ export const initialNodes = [
             sourceTop: true,
             right: true,
             bottom: true,
+            left:true,
         },
     },
     // training-rewards-by-point-systems child: use-skill-points
@@ -2844,6 +2854,7 @@ export const initialNodes = [
             num: "(2)",
             type: "tactic",
             bottom: true,
+            right: true,
         }
     },
     // between improve-system-awareness and support-skill-improvement-2, there is improve-system-loyalty under them
@@ -3131,6 +3142,7 @@ export const initialNodes = [
         data: {
             label: "Set_Redeeming_Policy",
             left: true,
+            sourceLeft:true,
         },
     },
     {
@@ -3146,12 +3158,340 @@ export const initialNodes = [
     {
         id: "set-purchase-policy",
         type: "gamification",
-        position: {x: 37550, y: 900},
+        position: {x: 38000, y: 900},
         data: {
             label: "Set_Purchase_Policy",
             sourceRight: true,
             sourceLeft: true,
         },
     },
+    {
+        id: "set-purchase-policy-and",
+        type: "operator",
+        position: {x: 38100, y: 1125},
+        data: {
+            label: "AND",
+        },
+    },
 
+    {
+        id: "rp-by-points",
+        type: "gamification",
+        position: {x: 35850, y: 1350},
+        data: {
+            label: "RP_By_Points",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+
+    {
+        id: "rp-define-exchange-points-rewards",
+        type: "gamification",
+        position: {x: 35850, y: 1650},
+        data: {
+            label: "RP_Define_Exchange_Points_Rewards",
+            num: "(1)",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+    {
+        id: "use-redeemable-points-2",
+        type: "gamification",
+        position: {x: 35750, y: 1950},
+        data: {
+            label: "Use_Redeemable_Points",
+            num: "(2)",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+
+    {
+        id: "gp-by-points",
+        type: "gamification",
+        position: {x: 36850, y: 1350},
+        data: {
+            label: "GP_By_Points",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+
+    {
+        id: "gp-define-exchange-points-rewards",
+        type: "gamification",
+        position: {x: 36850, y: 1650},
+        data: {
+            label: "GP_Define_Exchange_Points_Rewards",
+            num: "(1)",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+    {
+        id: "use-karma-points-2",
+        type: "gamification",
+        position: {x: 36950, y: 1950},
+        data: {
+            label: "Use_Redeemable_Points",
+            num: "(2)",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+        },
+    },
+    {
+        id: "set-payment-system",
+        type: "gamification",
+        position: {x: 37500, y: 1350},
+        data: {
+            label: "Set_Payment_System",
+            right: true,
+        },
+    },
+    {
+        id: "define-currency",
+        type: "gamification",
+        position: {x: 38500, y: 1350},
+        data: {
+            label: "Define_Currency",
+            left: true,
+            bottom: true,
+        },
+    },
+    {
+        id: "define-virtual-currency",
+        type: "gamification",
+        position: {x: 38000, y: 1650},
+        data: {
+            label: "Define_Virtual_Currency",
+            sourceTop: true,
+            top : true,
+            bottom: true,
+            right: true,
+        },
+    },
+    {
+        id: "define-virtual-currency-and",
+        type: "operator",
+        position: {x: 38100, y: 1850},
+        data: {
+            label: "AND",
+        },
+    },
+    {
+        id: "by-money",
+        type: "gamification",
+        position: {x: 39000, y: 1650},
+        data: {
+            label: "By_Money",
+            sourceTop: true,
+            sourceLeft: true,
+            sourceRight: true,
+            top : true,
+            bottom: true,
+            right: true,
+            left: true,
+        },
+    },
+
+    {
+        id: "define-exchange-money-currency",
+        type: "gamification",
+        position: {x: 37750, y: 1950},
+        data: {
+            label: "Define_Exchange_Money_Currency",
+            sourceTop: true,
+            top : true,
+        },
+    },
+    {
+        id: "define-exchange-currency-rewards",
+        type: "gamification",
+        position: {x: 38250, y: 1950},
+        data: {
+            label: "Define_Exchange_Currency_Rewards",
+            sourceTop: true,
+            top : true,
+        },
+    },
+    {
+        id: "define-exchange-money-rewards",
+        type: "gamification",
+        position: {x: 39000, y: 1950},
+        data: {
+            label: "Define_Exchange_Money_Rewards",
+            sourceTop: true,
+            top : true,
+        },
+    },
+    {
+        id: "set-supporting-systems",
+        type: "gamification",
+        position: {x: 38500, y: 150},
+        data: {label: "Set_Supporting_Systems"},
+        bottom: true,
+        right: true,
+        draggable: false
+    },
+    {
+        id: "set-monitoring-system",
+        type: "gamification",
+        position: {x: 38100, y: 450},
+        data: {
+            label: "Set_Monitoring_System",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "set-analyzing-system",
+        type: "gamification",
+        position: {x: 38500, y: 450},
+        data: {
+            label: "Set_Analyzing_System",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "set-adaptation-system",
+        type: "gamification",
+        position: {x: 38900, y: 450},
+        data: {
+            label: "Set_Adaptation_System",
+            sourceRight: true,
+            sourceLeft: true,
+        },
+    },
+    {
+        id: "set-experience-points-system-2",
+        type: "gamification",
+        position: {x: 38900, y:  600},
+        data: {
+            label: "Set_Experience_Points_System",
+            num: "(2)",
+            sourceRight: true,
+            sourceLeft: true,
+
+        },
+    },
+    {
+        id: "promote-collaboration-5",
+        type: "oval",
+        position: {x: 32800, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Promote_Collaboration",
+            num: "(5)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "support-achievement-3",
+        type: "oval",
+        position: {x: 34000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Support_Achievement",
+            num: "(3)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "improve-perceived-status-3",
+        type: "oval",
+        position: {x: 34500, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Improve_Perceivd_Status",
+            num: "(3)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "support-social-behavior-4",
+        type: "oval",
+        position: {x: 35000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Support_Social_Behavior",
+            num: "(4)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "promote-altruistic-behavior-2",
+        type: "oval",
+        position: {x: 35500, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Promote_Altruistic_Behavior",
+            num: "(2)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "increase-profit",
+        type: "oval",
+        position: {x: 36000, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Increase_Profit",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
+    {
+        id: "increase-worth-vagueness-2",
+        type: "oval",
+        position: {x: 36500, y: 2700},
+        data: {
+            isHidden: false,
+            label: "Increase_Worth_Vagues",
+            num: "(2)",
+            type: "tactic",
+            bottom: true,
+            right: true,
+            sourceLeft: true,
+            sourceRight: true,
+            sourceTop: true,
+        }
+    },
 ];

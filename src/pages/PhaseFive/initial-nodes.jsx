@@ -18,7 +18,10 @@ export const initialNodes = [
         id: "set-roles",
         type: "gamification",
         position: {x: -8500, y: 150},
-        data: {label: "Set_Roles"}
+        data: {
+            label: "Set_Roles",
+            right: true,
+        }
     },
 
     // set-roles children
@@ -83,7 +86,7 @@ export const initialNodes = [
     {
         id: "set-gamifiable-actions",
         type: "gamification",
-        position: {x: -7000, y: 150},
+        position: {x: -6965, y: 150},
         data: {label: "Set_Gamifiable_Actions", sourceRight: true, num: "(1)"}
     },
     // set-gamifiable-actions and operator

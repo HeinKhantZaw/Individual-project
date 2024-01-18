@@ -547,6 +547,7 @@ export const initialEdges = [
         source: "by-gamifiable-actions",
         target: "set-gamifiable-actions-2",
         type: "dotted",
+        data: {label: "Need"},
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig
@@ -583,19 +584,18 @@ export const initialEdges = [
     // choose-other-kinds needs set-point-systems
     {
         id: "e59",
-        source: "choose-other-kinds",
-        target: "set-point-systems-2",
+        target: "choose-other-kinds",
+        source: "set-point-systems-2",
         type: "dotted",
         data: {label: "Need"},
-        sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
-        markerEnd: markerConfig
+        markerStart: markerConfig
     },
     // set-paths and support-skill-improvement
     {
         id: "e60",
-        source: "set-paths",
-        target: "support-skill-improvement",
+        target: "set-paths",
+        source: "support-skill-improvement",
         type: "step",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
@@ -603,18 +603,18 @@ export const initialEdges = [
     // set-levels and support-skill-improvement
     {
         id: "e61",
-        source: "set-levels",
-        target: "support-skill-improvement",
+        target: "set-levels",
+        source: "support-skill-improvement",
         type: "step",
         style: arrowEdgeStyle,
     },
     // use-skill-points and support-skill-improvement
     {
         id: "e61_1",
-        source: "use-skill-points",
-        target: "support-skill-improvement",
+        target: "use-skill-points",
+        source: "support-skill-improvement",
         type: "step",
-
+        sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
     },
     // link-role-to-path needs set-roles
@@ -624,7 +624,7 @@ export const initialEdges = [
         target: "set-roles",
         type: "dotted",
         data: {label: "Need"},
-
+        targetHandle: "gamification_target_right",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
         markerEnd: markerConfig

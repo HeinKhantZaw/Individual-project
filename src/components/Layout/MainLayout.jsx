@@ -173,9 +173,8 @@ export default function MainLayout() {
                             <Button animate className={"font-semibold text-lg custom-button"}
                                     // buttonProps={{onMouseEnter: () => bleeps.hover?.play()}}
                                     disabled={!nextPhaseEnabled}
-                                    onClick={goToNextPhase}
-                            >
-                                Next Phase
+                                    onClick={goToNextPhase}>
+                                { currentPhase !== 5 ? "Next Phase" : "Finalize"}
                             </Button>
                         </div>
                         <div className="flex items-center lg:order-2">
@@ -222,10 +221,10 @@ export default function MainLayout() {
                 Acceptance Requirements Refinement
             </Tooltip>
             <Tooltip anchorSelect=".phase-4" place="bottom">
-                Context-Based Operationalization via Gamification
+                Requirements Summary
             </Tooltip>
             <Tooltip anchorSelect=".phase-5" place="bottom">
-                Domain-Dependent Instantiation of Incentive Mechanisms
+                Context-Based Operationalization via Gamification
             </Tooltip>
         </div>
     );

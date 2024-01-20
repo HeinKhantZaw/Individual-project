@@ -2,14 +2,14 @@ export const initialNodes = [
     {
         id: "design-gamification",
         type: "gamification",
-        position: {x: 2200, y: -200},
+        position: {x: 2200, y: -500},
         data: {label: "Design_Gamification", top: "no"}
     },
     // 2nd layer
     {
         id: "design-gamification-and",
         type: "operator",
-        position: {x: 2294, y: -50},
+        position: {x: 2294, y: -300},
         data: {label: "AND"}
     },
 
@@ -43,8 +43,8 @@ export const initialNodes = [
             type: "tactic",
             num: "(1)",
             "top": "no",
-            "sourceRight": true,
-            "sourceLeft": true,
+            sourceRight: true,
+            sourceLeft: true,
         }
     },
     {
@@ -57,8 +57,8 @@ export const initialNodes = [
             type: "tactic",
             num: "(1)",
             "top": "no",
-            "sourceRight": true,
-            "sourceLeft": true,
+            sourceRight: true,
+            sourceLeft: true,
         }
     },
 
@@ -82,7 +82,7 @@ export const initialNodes = [
             label: "Promote_Collaboration",
             type: "tactic",
             num: "(3)",
-            "sourceTop": true,
+            sourceTop: true,
         }
     },
     {
@@ -177,9 +177,9 @@ export const initialNodes = [
             label: "High_Design_Quality",
             type: "tactic",
             num: "(1)",
-            "sourceTop": true,
-            "sourceRight": true,
-            "sourceLeft": true,
+            sourceTop: true,
+            sourceRight: true,
+            sourceLeft: true,
         }
     },
 
@@ -383,9 +383,9 @@ export const initialNodes = [
             label: "Support_Skill_Improvement",
             type: "tactic",
             num: "(1)",
-            "sourceTop": true,
-            "sourceRight": true,
-            "sourceLeft": true,
+            sourceTop: true,
+            sourceRight: true,
+            sourceLeft: true,
         }
     },
 
@@ -945,9 +945,9 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_User_Penalization",
             type: "tactic",
-            "top": "no",
-            "sourceRight": true,
-            "sourceLeft": true,
+            sourceRight: true,
+            sourceLeft: true,
+            sourceTop: true,
         }
     },
     {
@@ -1221,6 +1221,7 @@ export const initialNodes = [
             type: "tactic",
             num: "(2)",
             sourceTop: true,
+            sourceRight: true,
         }
     },
 
@@ -2817,7 +2818,7 @@ export const initialNodes = [
     {
         id: "set-game-structure-2",
         type: "gamification",
-        position: {x: 30000, y: 1450},
+        position: {x: 29750, y: 1550},
         data: {
             label: "Set_Game_Structure",
             num: "(2)",
@@ -2912,7 +2913,7 @@ export const initialNodes = [
             num: "(2)",
             type: "tactic",
             bottom: true,
-            right: true,
+            sourceTop: true,
         }
     },
     // between improve-system-awareness and support-skill-improvement-2, there is improve-system-loyalty under them

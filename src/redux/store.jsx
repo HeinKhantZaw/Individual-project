@@ -4,6 +4,7 @@ import phaseStatusReducer from "./slices/phaseStatusSlice.jsx";
 import phaseTwoReducer from "./slices/phaseTwoSlice.jsx";
 import phaseThreeReducer from "./slices/phaseThreeSlice.jsx";
 import phaseFourReducer from "./slices/phaseFourSlice.jsx";
+import phaseFiveReducer from "./slices/phaseFiveSlice.jsx";
 
 export const store = configureStore({
     reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
         phaseOne: phaseOneReducer,
         phaseTwo: phaseTwoReducer,
         phaseThree: phaseThreeReducer,
-        phaseFour: phaseFourReducer
+        phaseFour: phaseFourReducer,
+        phaseFive: phaseFiveReducer,
     }
 })

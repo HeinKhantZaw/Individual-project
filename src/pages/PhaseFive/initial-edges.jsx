@@ -863,7 +863,7 @@ export const initialEdges = [
 
     //use-reputation-points to choose-kinds-of-points
     {
-        id: "e81",
+        id: "e81_1",
         source: "choose-kinds-of-points",
         target: "use-reputation-points",
         type: "straightLabel",
@@ -1574,7 +1574,7 @@ export const initialEdges = [
         markerStart: markerConfig
     },
     {
-        id: "e148",
+        id: "e148_1",
         source: "set-badges-and",
         target: "set-badges-typologies",
         type: "straight",
@@ -1582,7 +1582,7 @@ export const initialEdges = [
         markerStart: markerConfig
     },
     {
-        id: "e149",
+        id: "e149_1",
         source: "set-badges-and",
         target: "configure-badges",
         type: "straight",
@@ -1603,7 +1603,7 @@ export const initialEdges = [
         markerEnd: markerConfig
     },
     {
-        id: "e147",
+        id: "e147_1",
         source: "configure-badges",
         target: "configure-badges-and",
         type: "straight",
@@ -1628,7 +1628,7 @@ export const initialEdges = [
         markerStart: markerConfig
     },
     {
-        id: "e150",
+        id: "e150_1",
         source: "configure-badges-and",
         target: "set-achievement-rules-2",
         type: "straight",
@@ -3708,7 +3708,7 @@ export const initialEdges = [
         markerStart: markerConfig,
     },
     {
-        id: "e349",
+        id: "e349_1",
         target: "by-other-achievements-6",
         source: "fast-design-5",
         type: "dotted",
@@ -3719,7 +3719,7 @@ export const initialEdges = [
         markerStart: markerConfig,
     },
     {
-        id: "e350",
+        id: "e350_1",
         target: "by-other-achievements-6",
         source: "low-cost-design-5",
         type: "dotted",
@@ -3730,7 +3730,7 @@ export const initialEdges = [
         markerStart: markerConfig,
     },
     {
-        id: "e351",
+        id: "e351_1",
         target: "by-other-achievements-6",
         source: "assign-other-achievements-2",
         type: "dotted",
@@ -3741,7 +3741,7 @@ export const initialEdges = [
         markerStart: markerConfig,
     },
     {
-        id: "e352",
+        id: "e352_1",
         source: "set-redeeming-policy",
         target: "rp-by-points",
         type: "straight",

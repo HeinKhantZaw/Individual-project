@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect} from "react";
-import ReactFlow, {addEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import React, {useEffect} from "react";
+import ReactFlow, {Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
@@ -8,20 +8,20 @@ import ConnectionLine from "../../components/ConnectionLine/index.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import GamificationNode from "../../components/Shapes/GamificationNode.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
-import DottedEdge from "../../components/DottedEdge/index.jsx";
 import StraightEdge from "../../components/StraightEdge/index.jsx";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
-import {initialNodes} from "./initial-nodes.jsx";
-import {initialEdges} from "./initial-edges.jsx";
-
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
 
 
 export default function PhaseFive() {
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseFive);
+    const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
+    const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
     const {nextPhaseEnabled, currentPhase} = useSelector((state) => state.phaseStatus);
 
     // useEffect(() => {
@@ -44,6 +44,38 @@ export default function PhaseFive() {
     // useEffect(() => {
     //     setEdges(edgeState);
     // }, [phaseOneState.uploaded])
+    const updateGraph = () => {
+        return nodeState.filter(node => {
+            if (!node.conditions) return true;
+            else {
+                const replacedExpression = node.conditions.replace(/\b\w+\b/g, (match) => {
+                    if (userSelectedNodes.includes(match)) {
+                        return "true";
+                    } else if (match === "NOT") {
+                        return "!";
+                    } else if (match === "OR") {
+                        return "||";
+                    } else if (match === "AND") {
+                        return "&&";
+                    } else {
+                        return "false";
+                    }
+                });
+                return eval(replacedExpression);
+            }
+        });
+    };
+
+    useEffect(() => {
+        dispatch(setPhaseFiveNodes(updateGraph()));
+        dispatch(setCurrentPhase(5));
+        dispatch(setNextPhaseEnabled(true));
+    }, []);
+
+    useEffect(() => {
+        setNodes(nodeState);
+        setEdges(edgeState)
+    }, [nodeState, edgeState, uploaded]);
 
     const defaultEdgeOptions = {
         style: {strokeWidth: 2, stroke: 'white'},

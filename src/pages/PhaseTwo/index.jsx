@@ -42,7 +42,6 @@ export default function PhaseTwo() {
     // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10', 'C28']
 
     const updateGraph = () => {
-        console.log(initialNodes);
         const visibleNodes = initialNodes.filter(node => {
             if (!node.conditions) return true;
             else {

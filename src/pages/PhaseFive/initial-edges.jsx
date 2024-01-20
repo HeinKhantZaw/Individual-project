@@ -48,19 +48,25 @@ export const initialEdges = [
         id: "e6",
         source: "design-gamification-and",
         target: "set-virtual-environments",
-        type: "straight",
         sourceHandle: "operator_right",
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerStart: markerConfig,
+        type: "straightLabel",
+        data: {
+            label: "Pref(C1[Achiever] OR C5[Explorer] OR C2[Socializer] OR C3[Female] OR C4[Old])"
+        },
     },
     {
         id: "e7",
         source: "design-gamification-and",
         target: "set-supporting-systems",
-        type: "straight",
         sourceHandle: "operator_right",
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerStart: markerConfig,
+        type: "straightLabel",
+        data: {
+            label: "Pref"
+        },
     },
 
     // set-roles children relationship
@@ -413,7 +419,7 @@ export const initialEdges = [
         target: "define-graph-paths",
         source: "fast-design",
         type: "dotted",
-        data: {label: "+"},
+        data: {label: "-"},
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -1019,9 +1025,11 @@ export const initialEdges = [
         target: "choose-kinds-of-points",
         type: "dotted",
         data: {label: "Need"},
-        sourceHandle: "gamification_source_right",
+        sourceHandle: "gamification_source_left",
+        targetHandle:"gamification_target_right",
         style: arrowEdgeStyle,
-        markerEnd: markerConfig
+        markerEnd: markerConfig,
+        markerStart: markerConfig
     },
 
     //set-achievement-rules and set-achievement-rules-and
@@ -1860,7 +1868,7 @@ export const initialEdges = [
         type: "straightLabel",
         data: {
             label: "(C2[Socializer] OR C3[Female] OR C4[Old] OR C23[Goal.Participation.Low] OR\n" +
-                "C24[Goal.Clarity.Low] OR 25[Task.Variety.High] OR\n"+
+                "C24[Goal.Clarity.Low] OR C25[Task.Variety.High] OR\n"+
                 "C30[Task.Identification.Low] OR C26[Task.RequiredSkills.AdvancedSkills]) AND\n"+
                 "(NOT (C36[Killer]))"
         },
@@ -1989,7 +1997,7 @@ export const initialEdges = [
     // promote-collaboration-4 and social-leader-boards
     {
         id: "e184",
-        target: "social-leader-boards",
+        target: "team-leader-boards",
         source: "promote-collaboration-4",
         type: "floating",
         sourceHandle: "oval_source_top",
@@ -2082,8 +2090,8 @@ export const initialEdges = [
     // set-winner and set-winner-and
     {
         id: "e194",
-        source: "set-winner",
-        target: "set-winner-and",
+        source: "set-winners",
+        target: "set-winners-and",
         type: "straight",
         style: arrowEdgeStyle,
         markerStart: markerConfig
@@ -2091,7 +2099,7 @@ export const initialEdges = [
     // set-winner-and children: set-winner-titles, set-winner-icons and set-podium
     {
         id: "e195",
-        source: "set-winner-and",
+        source: "set-winners-and",
         target: "set-winner-titles",
         type: "straight",
         style: arrowEdgeStyle,
@@ -2100,7 +2108,7 @@ export const initialEdges = [
     },
     {
         id: "e196",
-        source: "set-winner-and",
+        source: "set-winners-and",
         target: "set-winner-icons",
         type: "straight",
         style: arrowEdgeStyle,
@@ -2109,7 +2117,7 @@ export const initialEdges = [
     },
     {
         id: "e197",
-        source: "set-winner-and",
+        source: "set-winners-and",
         target: "set-podium",
         type: "straight",
         style: arrowEdgeStyle,
@@ -2138,7 +2146,7 @@ export const initialEdges = [
     {
         id: "e200",
         source: "configure-leader-boards-and",
-        target: "set-winner",
+        target: "set-winners",
         type: "straight",
         sourceHandle: "operator_bottom",
         style: arrowEdgeStyle,

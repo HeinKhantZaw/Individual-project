@@ -1814,11 +1814,11 @@ export const initialNodes = [
         },
     },
     {
-        id: "set-winner",
+        id: "set-winners",
         type: "gamification",
         position: {x: 13250, y: 850},
         data: {
-            label: "Set_Winner",
+            label: "Set_Winners",
             sourceLeft: true,
             sourceTop: true,
             left: true,
@@ -1826,7 +1826,7 @@ export const initialNodes = [
     },
 
     {
-        id: "set-winner-and",
+        id: "set-winners-and",
         type: "operator",
         position: {x: 13350, y: 980},
         data: {label: "AND"}

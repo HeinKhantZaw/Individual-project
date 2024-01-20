@@ -65,6 +65,8 @@ export const initialNodes = [
     // set-roles children
     {
         id: "set-team-roles",
+        conditions: "(C2 OR C3 OR C4 OR C23 OR C24 OR C25 OR C30 OR C26) AND (NOT C36)",
+        parentId: "set-roles",
         type: "gamification",
         position: {x: -8000, y: 550},
         data: {label: "Set_Team_Roles", num: "(1)"}
@@ -209,6 +211,8 @@ export const initialNodes = [
     // set-game-mechanics-and-dynamics children
     {
         id: "set-game-structure",
+        conditions: "(C1 OR C5 OR C4 OR C19 OR C24 OR C25 OR C26) AND (NOT C28)",
+        parentId: "set-game-mechanics-and-dynamics",
         type: "gamification",
         position: {x: -4000, y: 450},
         data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true,}
@@ -553,6 +557,8 @@ export const initialNodes = [
     },
     {
         id: "use-redeemable-points",
+        conditions: "C1 OR C5 OR C36 OR C32 OR C34",
+        parentId: "choose-kinds-of-points",
         type: "gamification",
         position: {x: -1500, y: 1050},
         data: {
@@ -568,6 +574,8 @@ export const initialNodes = [
     },
     {
         id: "use-skill-points",
+        conditions: "(C1 OR C5 OR C19) AND C16",
+        parentId: "choose-kinds-of-points",
         type: "gamification",
         position: {x: -800, y: 1150},
         data: {
@@ -584,6 +592,8 @@ export const initialNodes = [
 
     {
         id: "use-karma-points",
+        conditions: "(C2 OR C3 OR C4) AND (NOT C36)",
+        parentId: "choose-kinds-of-points",
         type: "gamification",
         position: {x: -200, y: 1300},
         data: {
@@ -600,6 +610,8 @@ export const initialNodes = [
 
     {
         id: "use-reputation-points",
+        conditions: "(C2 OR C1 OR C5) AND (NOT C36)",
+        parentId: "choose-kinds-of-points",
         type: "gamification",
         position: {x: 300, y: 1050},
         data: {
@@ -911,6 +923,8 @@ export const initialNodes = [
     },
     {
         id: "set-negative",
+        conditions: "NOT C1",
+        parentId: "set-sign-of-points",
         type: "gamification",
         position: {x: 1600, y: 1650},
         data: {
@@ -1097,6 +1111,8 @@ export const initialNodes = [
     },
     {
         id: "negative-actions-badges",
+        conditions: "C36",
+        parentId: "set-badges-kinds",
         type: "gamification",
         position: {x: 3300, y: 1500},
         data: {
@@ -1111,6 +1127,8 @@ export const initialNodes = [
     },
     {
         id: "successes-badges",
+        conditions: "C1 OR C5 OR C7 OR C19 OR C33 OR C35",
+        parentId: "set-badges-kinds",
         type: "gamification",
         position: {x: 3800, y: 1800},
         data: {
@@ -1125,6 +1143,8 @@ export const initialNodes = [
     },
     {
         id: "failures-badges",
+        conditions: "C36 AND (NOT C1)",
+        parentId: "set-badges-kinds",
         type: "gamification",
         position: {x: 4400, y: 1500},
         data: {
@@ -1207,6 +1227,8 @@ export const initialNodes = [
 
     {
         id: "set-virtual-environments",
+        conditions: "C1 OR C5 OR C2 OR C3 OR C4 OR C32 OR C34",
+        parentId: "set-gamified-market",
         type: "gamification",
         position: {x: 33500, y: 150},
         data: {label: "Set_Virtual_Environments"}
@@ -1229,6 +1251,8 @@ export const initialNodes = [
     },
     {
         id: "set-publishable",
+        conditions: "C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35",
+        parentId: "set-social-badges-kinds",
         type: "gamification",
         position: {x: 5100, y: 1500},
         data: {
@@ -1243,6 +1267,8 @@ export const initialNodes = [
     },
     {
         id: "set-not-publishable",
+        conditions: "NOT (C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35)",
+        parentId: "set-social-badges-kinds",
         type: "gamification",
         position: {x: 6200, y: 1500},
         data: {
@@ -1610,6 +1636,8 @@ export const initialNodes = [
     },
     {
         id: "single-leader-boards",
+        conditions: "C1 OR C5 OR C36",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 8000, y: 1050},
         data: {
@@ -1621,6 +1649,8 @@ export const initialNodes = [
     },
     {
         id: "team-leader-boards",
+        conditions: "(C2 OR C3 OR C4 OR C23 OR C24 OR C25 OR C30 OR C26) AND (NOT C36)",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 9000, y: 1200},
         data: {
@@ -1646,6 +1676,8 @@ export const initialNodes = [
     },
     {
         id: "private-you-vs-you-leader-boards",
+        conditions: "NOT (C5 OR C2 OR C3 OR C4)",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 9500, y: 1400},
         data: {
@@ -1671,6 +1703,8 @@ export const initialNodes = [
     },
     {
         id: "social-leader-boards",
+        conditions: "C2 OR C5 OR C3 OR C4 OR C33",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 10300, y: 1200},
         data: {
@@ -1683,6 +1717,8 @@ export const initialNodes = [
     },
     {
         id: "time-dependent-leader-boards",
+        conditions: "C1 OR C5 OR C36",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 11000, y: 1250},
         data: {
@@ -1694,6 +1730,8 @@ export const initialNodes = [
     },
     {
         id: "geo-localized-leader-boards",
+        conditions: "C2 OR C3 OR C4 OR C19",
+        parentId: "set-kinds-2",
         type: "gamification",
         position: {x: 11600, y: 1150},
         data: {
@@ -2221,6 +2259,8 @@ export const initialNodes = [
     },
     {
         id: "team-challenges",
+        conditions: "(C2 OR C5 OR C3 OR C4) AND (NOT C36)",
+        parentId: "set-kinds-3",
         type: "gamification",
         position: {x: 18750, y: 1100},
         data: {
@@ -2235,6 +2275,8 @@ export const initialNodes = [
     },
     {
         id: "personal-challenges",
+        conditions: "C7 OR C1 OR C5 OR C36",
+        parentId: "set-kinds-3",
         type: "gamification",
         position: {x: 19750, y: 1100},
         data: {
@@ -2471,6 +2513,8 @@ export const initialNodes = [
     // provide forum
     {
         id: "provide-forum",
+        conditions: "C23 OR C30 OR C2 OR C5 OR C3 OR C4",
+        parentId: "choose-training-elements",
         type: "gamification",
         position: {x: 22500, y: 1450},
         data: {
@@ -2484,6 +2528,8 @@ export const initialNodes = [
     // provide-suggestions, provide-tricks, provide-tours, provide-tutorials
     {
         id: "provide-suggestions",
+        conditions: "(C1 OR C5 OR C4) AND C16",
+        parentId: "choose-training-elements",
         type: "gamification",
         position: {x: 23000, y: 1650},
         data: {
@@ -2496,6 +2542,8 @@ export const initialNodes = [
     },
     {
         id: "provide-tricks",
+        conditions: "C1 OR C36 OR C5",
+        parentId: "choose-training-elements",
         type: "gamification",
         position: {x: 23500, y: 1550},
         data: {
@@ -2508,6 +2556,8 @@ export const initialNodes = [
     },
     {
         id: "provide-tours",
+        conditions: "C1 OR C5 OR C4",
+        parentId: "choose-training-elements",
         type: "gamification",
         position: {x: 24000, y: 1650},
         data: {
@@ -2520,6 +2570,7 @@ export const initialNodes = [
     },
     {
         id: "provide-tutorials",
+        conditions: "(C1 OR C5 OR C19 OR C24 OR C25 OR C26) AND (C16 AND (NOT C28))",
         type: "gamification",
         position: {x: 24500, y: 1350},
         data: {
@@ -2607,6 +2658,8 @@ export const initialNodes = [
     },
     {
         id: "advantage-vs-competitor-systems",
+        conditions: "C12",
+        parentId: "choose-training-topics",
         type: "gamification",
         position: {x: 27000, y: 1450},
         data: {
@@ -2749,6 +2802,8 @@ export const initialNodes = [
     // define-training-paths
     {
         id: "define-training-paths",
+        conditions: "(C1 OR C5 OR C4 OR C19 OR C24 OR C25 OR C26 OR C29 OR C30) AND (C16 AND (NOT C28))",
+        parentId: "set-advanced-training",
         type: "gamification",
         position: {x: 29980, y: 1300},
         data: {
@@ -2943,6 +2998,8 @@ export const initialNodes = [
     },
     {
         id: "user-suggests-to-a-user",
+        conditions: "C23 OR C30 OR C32",
+        parentId: "set-activity-suggestions",
         type: "gamification",
         position: {x: 32570, y: 950},
         data: {
@@ -2972,6 +3029,8 @@ export const initialNodes = [
     // set-community is above them
     {
         id: "set-community",
+        conditions: "C2 OR C3 OR C4 OR C23 OR C30 OR C32",
+        parentId: "set-virtual-environments",
         type: "gamification",
         position: {x: 31500, y: 500},
         data: {
@@ -2997,6 +3056,8 @@ export const initialNodes = [
 
     {
         id: "add-virtual-rewards",
+        conditions: "C32 OR C34",
+        parentId: "add-rewards",
         type: "gamification",
         position: {x: 33150, y: 950},
         data: {
@@ -3007,6 +3068,8 @@ export const initialNodes = [
     },
     {
         id: "add-tangible-rewards",
+        conditions: "C32 OR C34",
+        parentId: "add-rewards",
         type: "gamification",
         position: {x: 33750, y: 1100},
         data: {
@@ -3017,6 +3080,8 @@ export const initialNodes = [
     },
     {
         id: "add-unlockable-powers",
+        conditions: "C1 OR C5 OR C36 OR C32",
+        parentId: "add-rewards",
         type: "gamification",
         position: {x: 34350, y: 950},
         data: {
@@ -3140,6 +3205,8 @@ export const initialNodes = [
     // set-market-policies children: set-redeeming-policy, set-making-gift-policy, set-purchase-policy
     {
         id: "set-redeeming-policy",
+        conditions: "C1 OR C5 OR C32 OR C34",
+        parentId: "set-market-policies",
         type: "gamification",
         position: {x: 35850, y: 900},
         data: {
@@ -3150,6 +3217,8 @@ export const initialNodes = [
     },
     {
         id: "set-making-gift-policy",
+        conditions: "(C2 OR C3 OR C4) AND (NOT C36)",
+        parentId: "set-market-policies",
         type: "gamification",
         position: {x: 36850, y: 900},
         data: {

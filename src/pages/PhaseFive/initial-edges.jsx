@@ -1860,7 +1860,7 @@ export const initialEdges = [
         type: "straightLabel",
         data: {
             label: "(C2[Socializer] OR C3[Female] OR C4[Old] OR C23[Goal.Participation.Low] OR\n" +
-                "C24[Goal.Clarity.Low] IR 25[Task.Variety.High] OR\n"+
+                "C24[Goal.Clarity.Low] OR 25[Task.Variety.High] OR\n"+
                 "C30[Task.Identification.Low] OR C26[Task.RequiredSkills.AdvancedSkills]) AND\n"+
                 "(NOT (C36[Killer]))"
         },
@@ -2936,7 +2936,7 @@ export const initialEdges = [
         data: {
             label: " (C1[Achiever] OR C5[Explorer] OR C4[Old] OR C19[Employed.No] OR\n"+
                 "C24[Goal.Clarity.Low] OR C25[Task.Variety.High] OR\n"+
-                "C26[Task.RequiredSkills.AdvancedSkills]) OR C29[Task.Specificity.High] OR\n"+
+                "C26[Task.RequiredSkills.AdvancedSkills] OR C29[Task.Specificity.High] OR\n"+
                 "C30[Task.Identification.Low]) AND (C16[Expertise.Junior] AND\n"+
                 "(NOT (C28[Task.Variety.Low, RequiredSkills.TrivialCommon])))"
         },

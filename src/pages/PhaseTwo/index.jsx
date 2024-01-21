@@ -112,6 +112,7 @@ export default function PhaseTwo() {
         <div style={{width: "100vw", height: "93vh"}}>
             <ReactFlow
                 nodes={nodes}
+                panOnScroll={true}
                 edges={edges}
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}

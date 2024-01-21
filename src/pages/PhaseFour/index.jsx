@@ -42,6 +42,7 @@ export default function PhaseFour() {
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
+                panOnScroll={true}
                 nodeTypes={nodeTypes}
                 zoomOnDoubleClick={false}
                 edgeTypes={edgeTypes}

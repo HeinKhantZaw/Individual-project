@@ -1574,10 +1574,6 @@ export const initialNodes = [
             label: "Support_Achievement",
             type: "tactic",
             num: "(2)",
-            right: true,
-            left: true,
-            bottom: true,
-            sourceLeft: true,
             sourceRight: true,
             sourceTop: true,
         }

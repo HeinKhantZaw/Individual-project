@@ -219,7 +219,7 @@ export default function MainLayout() {
                 Acceptance Requirements Refinement
             </Tooltip>
             <Tooltip anchorSelect=".phase-4" place="bottom">
-                Requirements Summary
+                Specification Summary
             </Tooltip>
             <Tooltip anchorSelect=".phase-5" place="bottom">
                 Context-Based Operationalization via Gamification

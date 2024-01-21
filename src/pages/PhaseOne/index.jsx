@@ -705,6 +705,7 @@ export default function PhaseOne() {
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
+                panOnScroll={true}
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
                 nodeTypes={nodeTypes}

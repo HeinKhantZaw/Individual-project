@@ -76,6 +76,7 @@ export default function PhaseThreeC() {
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
+                panOnScroll={true}
                 deleteKeyCode={''}
                 zoomOnDoubleClick={false}
                 fitView

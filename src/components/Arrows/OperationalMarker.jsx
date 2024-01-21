@@ -14,25 +14,25 @@ export const OperationalMarker = () => (
                 <path
                     d="M35 23H25C23.8954 23 23 23.8954 23 25V35C23 36.1046 23.8954 37 25 37H35C36.1046 37 37 36.1046 37 35V25C37 23.8954 36.1046 23 35 23Z"
                     stroke="#1A192B"
-                    stroke-width="2"
+                    strokeWidth="2"
                     fill="white"
                 />
                 <path
                     d="M35 3H25C23.8954 3 23 3.89543 23 5V15C23 16.1046 23.8954 17 25 17H35C36.1046 17 37 16.1046 37 15V5C37 3.89543 36.1046 3 35 3Z"
-                    stroke="#FF0072"
-                    stroke-width="2"
+                    stroke="#1A192B"
+                    strokeWidth="2"
                     fill="white"
                 />
                 <path
                     d="M15 23H5C3.89543 23 3 23.8954 3 25V35C3 36.1046 3.89543 37 5 37H15C16.1046 37 17 36.1046 17 35V25C17 23.8954 16.1046 23 15 23Z"
                     stroke="#1A192B"
-                    stroke-width="2"
+                    strokeWidth="2"
                     fill="white"
                 />
                 <path
                     d="M15 3H5C3.89543 3 3 3.89543 3 5V15C3 16.1046 3.89543 17 5 17H15C16.1046 17 17 16.1046 17 15V5C17 3.89543 16.1046 3 15 3Z"
                     stroke="#1A192B"
-                    stroke-width="2"
+                    strokeWidth="2"
                     fill="white"
                 />
                 <path
@@ -80,11 +80,11 @@ export const OperationalMarker = () => (
                 />
                 <path
                     d="M23 12C24.1046 12 25 11.1046 25 10C25 8.89543 24.1046 8 23 8C21.8954 8 21 8.89543 21 10C21 11.1046 21.8954 12 23 12Z"
-                    fill="#FF0072"
+                    fill="#white"
                 />
                 <path
                     d="M30 19C31.1046 19 32 18.1046 32 17C32 15.8954 31.1046 15 30 15C28.8954 15 28 15.8954 28 17C28 18.1046 28.8954 19 30 19Z"
-                    fill="#FF0072"
+                    fill="#white"
                 />
             </marker>
         </defs>

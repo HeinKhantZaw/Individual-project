@@ -1847,7 +1847,7 @@ export const initialEdges = [
         target: "set-badges",
         type: "straight",
         markerStart: "operate",
-        sourceHandle: "oval_source_bottom",
+        sourceHandle: "oval_source_top",
         style: arrowEdgeStyle,
     },
     // set-leader-board and set-leader-board-and
@@ -2288,7 +2288,7 @@ export const initialEdges = [
         target: "set-leader-boards",
         type: "straight",
         markerStart: "operate",
-        sourceHandle: "oval_source_bottom",
+        sourceHandle: "oval_source_right",
         targetHandle: "gamification_target_left",
         style: arrowEdgeStyle,
     },

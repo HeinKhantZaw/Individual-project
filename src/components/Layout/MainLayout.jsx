@@ -85,9 +85,6 @@ export default function MainLayout() {
             case 4:
                 navigate("phase5");
                 break;
-            default:
-                navigate("/app");
-                break;
         }
     }
     const goToPhase1 = () => {
@@ -118,15 +115,15 @@ export default function MainLayout() {
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
                             key={currentPhase}>
                             <li>
-                                <Button animate className={"font-semibold text-lg phase-button phase-1"}
-                                        layer={"secondary"} onClick={goToPhase1}>
+                                <Button className={"font-semibold text-lg phase-button phase-1"}
+                                        layer={currentPhase === 1 ? "success" : "secondary"} onClick={goToPhase1}>
                                     Phase A
                                 </Button>
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-2"}
                                         disabled={currentPhase < 2}
-                                        layer={"secondary"} onClick={goToPhase2}>
+                                        layer={currentPhase === 2 ? "success" : "secondary"} onClick={goToPhase2}>
                                     Phase B
                                 </Button>
                             </li>
@@ -147,8 +144,9 @@ export default function MainLayout() {
                                     optionValueId={"id"}
                                     optionInnerContent={"value"}
                                     style={{
-                                        color: currentPhase < 3 ? "#999" : "#df9527",
+                                        color: currentPhase < 3 ? "#999" : currentPhase === 3 ? "#00ff00" :"#df9527",
                                     }}
+                                    currentPhase={currentPhase}
                                     required
                                     selected={phase3Value}
                                     disabled={currentPhase < 3}
@@ -157,14 +155,14 @@ export default function MainLayout() {
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-4"}
                                         disabled={currentPhase < 4}
-                                        layer={"secondary"}>
+                                        layer={currentPhase === 4 ? "success" : "secondary"}>
                                     Phase D
                                 </Button>
                             </li>
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-5"}
                                         disabled={currentPhase < 5}
-                                        layer={"secondary"}>
+                                        layer={currentPhase === 5 ? "success" : "secondary"}>
                                     Phase E
                                 </Button>
                             </li>

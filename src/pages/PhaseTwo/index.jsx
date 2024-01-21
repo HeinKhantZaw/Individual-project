@@ -21,10 +21,13 @@ import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
 import {buildTree} from "../../utils/buildTree.jsx";
 import {searchNode} from "../../utils/searchNode.jsx";
 import getTacticNodes from "../../utils/getTacticNodes.jsx";
+import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
 
 
 const nodeTypes = {oval: OvalNode, operator: OperatorNode};
 const edgeTypes = {dotted: DottedEdge};
+
+
 export default function PhaseTwo() {
     const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseTwo);
     const {currentPhase} = useSelector((state) => state.phaseStatus);
@@ -42,28 +45,7 @@ export default function PhaseTwo() {
     // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10', 'C28']
 
     const updateGraph = () => {
-        const visibleNodes = initialNodes.filter(node => {
-            if (!node.conditions) return true;
-            else {
-                const replacedExpression = node.conditions.replace(/\b\w+\b/g, (match) => {
-                    if (userSelectedNodes.includes(match)) {
-                        return "true";
-                    } else if (match === "NOT") {
-                        return "!";
-                    } else if (match === "OR") {
-                        return "||";
-                    } else if (match === "AND") {
-                        return "&&";
-                    } else {
-                        return "false";
-                    }
-                });
-
-                // (C3 OR C8 OR C9 OR C20 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)
-                // (true || false || true || false || false || false || false || false) && (!true)
-                return eval(replacedExpression);
-            }
-        });
+        const visibleNodes = evalAndRegexConditions(initialNodes, userSelectedNodes);
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
         idToBeRemoved = invisibleNodes.map(item => item.id);
         const allHiddenIds = idToBeRemoved.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();

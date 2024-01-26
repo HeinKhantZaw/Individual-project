@@ -5,7 +5,7 @@ import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
-import DottedEdge from "../../components/DottedEdge/index.jsx";
+import DottedEdge from "../../components/DottedEdge";
 import {phase3Style} from "../PhaseThree/style.jsx";
 import Heading from "arwes/lib/Heading/index.js";
 import {setPhaseFourNodes, showSelectedNodes} from "../../redux/slices/phaseFourSlice.jsx";

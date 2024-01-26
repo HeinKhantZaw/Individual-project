@@ -1,6 +1,6 @@
 import Frame from "arwes/lib/Frame/Frame.js";
 import {createTheme} from "arwes";
-import Card from "../../components/Card/index.jsx";
+import Card from "../../components/Card";
 
 export default function Intro() {
     return (

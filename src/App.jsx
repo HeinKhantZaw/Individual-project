@@ -4,7 +4,7 @@ import {
     createTheme,
 } from 'arwes';
 import {useRoutes} from "react-router-dom";
-import routes from "./routes/index.jsx";
+import routes from "./routes";
 import {AnimatorGeneralProvider} from "@arwes/react-animator";
 // import {BleepsProvider} from "@arwes/react-bleeps";
 

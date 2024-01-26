@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Handle, NodeToolbar, Position} from "reactflow";
-import Card from "../Card/index.jsx";
+import Card from "../Card";
 import {getGlossary} from "../../utils/getGlossary.jsx";
 import {useSelector} from "react-redux";
 

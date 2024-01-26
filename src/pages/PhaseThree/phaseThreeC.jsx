@@ -6,7 +6,7 @@ import {phase3Style} from "./style.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
 import {markerConfig} from "../../components/Arrows/Marker.jsx";
-import DottedEdge from "../../components/DottedEdge/index.jsx";
+import DottedEdge from "../../components/DottedEdge";
 import {Phase3cNodes} from "../../data/PhaseThreeNodes.jsx";
 import {setChosenTactic, setPhase3aTacticNodes, setPhase3cNodes} from "../../redux/slices/phaseThreeSlice.jsx";
 

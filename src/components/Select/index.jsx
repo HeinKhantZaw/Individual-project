@@ -59,7 +59,6 @@ const SelectOption = withStyles(styles)(({
                                              style
                                          }) =>
 {
-    console.log(currentPhase);
     return (<div>
         <Frame
             show={true}

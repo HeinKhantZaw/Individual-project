@@ -1,14 +1,14 @@
-import Home from "../pages/Start/index.jsx";
-import PhaseOne from "../pages/PhaseOne/index.jsx";
-import Intro from "../pages/Intro/index.jsx";
-import PhaseTwo from "../pages/PhaseTwo/index.jsx";
+import Home from "../pages/Start";
+import PhaseOne from "../pages/PhaseOne";
+import Intro from "../pages/Intro";
+import PhaseTwo from "../pages/PhaseTwo";
 import PhaseThreeA from "../pages/PhaseThree/phaseThreeA.jsx";
 import MainLayout from "../components/Layout/MainLayout.jsx";
 import PhaseThreeB from "../pages/PhaseThree/phaseThreeB.jsx";
 import {useParams} from "react-router-dom";
 import PhaseThreeC from "../pages/PhaseThree/phaseThreeC.jsx";
-import PhaseFour from "../pages/PhaseFour/index.jsx";
-import PhaseFive from "../pages/PhaseFive/index.jsx";
+import PhaseFour from "../pages/PhaseFour";
+import PhaseFive from "../pages/PhaseFive";
 
 const RenderPhaseThree = () => {
     const {p} = useParams();

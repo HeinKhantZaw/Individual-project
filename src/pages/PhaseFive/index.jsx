@@ -3,12 +3,12 @@ import ReactFlow, {Background, Controls, MiniMap, useEdgesState, useNodesState,}
 
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
-import FloatingEdge from "../../components/FloatingEdge/index.jsx";
-import ConnectionLine from "../../components/ConnectionLine/index.jsx";
+import FloatingEdge from "../../components/FloatingEdge";
+import ConnectionLine from "../../components/ConnectionLine";
 import {useDispatch, useSelector} from "react-redux";
 import GamificationNode from "../../components/Shapes/GamificationNode.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
-import StraightEdge from "../../components/StraightEdge/index.jsx";
+import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import {setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";

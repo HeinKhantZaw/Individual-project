@@ -8,7 +8,7 @@ import {Text} from "@arwes/react-text";
 import {setPhase3Value, setPhaseStatusState, toggleInfo} from "../../redux/slices/phaseStatusSlice.jsx";
 import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.jsx";
 import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.jsx";
-import SelectOption from "../Select/index.jsx";
+import SelectOption from "../Select";
 
 export default function MainLayout() {
     // const bleeps = useBleeps();

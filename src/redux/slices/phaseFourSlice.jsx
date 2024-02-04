@@ -261,6 +261,15 @@ const gamifiedNodes = [
 ]
 const initialState = {
     phaseFourNodes: [],
+    selectedTacticNodes: [
+        "fast-design",
+        "low-cost-design",
+        "high-design-quality",
+        "increase-user-surprise",
+        "improve-perceived-status",
+        "promote-collaboration",
+        "improve-minor-assistance"
+    ]
 }
 
 export const phaseFourSlice = createSlice({
@@ -269,6 +278,7 @@ export const phaseFourSlice = createSlice({
     reducers: {
         setPhaseFourNodes: (state, action) => {
             state.phaseFourNodes = action.payload
+            state.selectedTacticNodes = []
         },
         showSelectedNodes: (state, action) => {
             const selectedNodes = action.payload.map(node => node.data.label)
@@ -283,6 +293,7 @@ export const phaseFourSlice = createSlice({
                     state.phaseFourNodes.push(node)
                 }
             })
+            state.selectedTacticNodes = selectedNodes.map(node => node.toLowerCase().replaceAll("_", "-"));
         },
     },
 })

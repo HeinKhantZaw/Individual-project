@@ -93,9 +93,6 @@ export default function MainLayout() {
     const goToPhase2 = () => {
         navigate("phase2");
     }
-    const goToPhase3 = () => {
-        navigate("phase3");
-    }
     const goToPhase4 = () => {
         navigate("phase4");
     }
@@ -155,6 +152,7 @@ export default function MainLayout() {
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-4"}
                                         disabled={currentPhase < 4}
+                                        onClick={goToPhase4}
                                         layer={currentPhase === 4 ? "success" : "secondary"}>
                                     Phase D
                                 </Button>
@@ -162,6 +160,7 @@ export default function MainLayout() {
                             <li>
                                 <Button animate className={"font-semibold text-lg phase-button phase-5"}
                                         disabled={currentPhase < 5}
+                                        onClick={goToPhase5}
                                         layer={currentPhase === 5 ? "success" : "secondary"}>
                                     Phase E
                                 </Button>

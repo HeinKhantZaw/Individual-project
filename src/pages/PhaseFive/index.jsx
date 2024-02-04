@@ -11,7 +11,7 @@ import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
-import {setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
+import {removeNegativeConnections, setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
 import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
 import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
 
@@ -20,16 +20,20 @@ export default function PhaseFive() {
     const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
+    const {selectedTacticNodes} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10', 'C28']
+    console.log(selectedTacticNodes);
 
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
 
 
     useEffect(() => {
         dispatch(setPhaseFiveNodes(updateGraph()));
+        dispatch(removeNegativeConnections(selectedTacticNodes))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
     }, []);

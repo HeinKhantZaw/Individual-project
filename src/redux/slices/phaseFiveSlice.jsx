@@ -25,10 +25,17 @@ export const phaseFiveSlice = createSlice({
                 return sourceIds.includes(node.id) || targetIds.includes(node.id)
             })
         },
+        removeNegativeConnections: (state, action) => {
+            const selectedNodes = action.payload;
+            state.edgeState = state.edgeState.filter(edge=>
+            {
+                return !(selectedNodes.some(node=> edge.source.startsWith(node)) && edge.data && edge.data.label === "-");
+            })
+        }
     }
 });
 
-export const {setPhaseFiveNodes} = phaseFiveSlice.actions;
+export const {setPhaseFiveNodes, removeNegativeConnections} = phaseFiveSlice.actions;
 
 export default phaseFiveSlice.reducer;
 

@@ -206,6 +206,7 @@ export const initialNodes = [
             label: "Set_Game_Mechanics_and_Dynamics",
             num: "(1)",
             sourceRight: true,
+            sourceLeft: true
         }
     },
     // set-game-mechanics-and-dynamics children
@@ -215,7 +216,7 @@ export const initialNodes = [
         parentId: "set-game-mechanics-and-dynamics",
         type: "gamification",
         position: {x: -4000, y: 450},
-        data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true,}
+        data: {label: "Set_Game_Structure", num: "(1)", sourceLeft: true, sourceRight: true, sourceTop: true, top: true}
     },
     // set-game-structure-and
     {
@@ -3490,7 +3491,7 @@ export const initialNodes = [
         position: {x: 34500, y: 2700},
         data: {
             isHidden: false,
-            label: "Improve_Perceivd_Status",
+            label: "Improve_Perceived_Status",
             num: "(3)",
             type: "tactic",
             bottom: true,

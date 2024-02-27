@@ -24,8 +24,8 @@ export default function PhaseFive() {
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10', 'C28']
+    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10']
     console.log(selectedTacticNodes);
 
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);

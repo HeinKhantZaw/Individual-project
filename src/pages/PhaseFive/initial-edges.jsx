@@ -312,6 +312,8 @@ export const initialEdges = [
                 "C26[Task.RequiredSkills.AdvancedSkills]) AND " +
                 "(NOT(C28[Task.Variety.Low, RequiredSkills.TrivialCommon]))"
         },
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_top",
         style: arrowEdgeStyle,
         markerStart: markerConfig,
     },
@@ -1327,7 +1329,8 @@ export const initialEdges = [
         source: "set-game-mechanics-and-dynamics",
         target: "set-point-systems",
         type: "straight",
-        sourceHandle: "operator_bottom",
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_top",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
@@ -1577,15 +1580,6 @@ export const initialEdges = [
         target: "set-social-badges-kinds",
         type: "straight",
         sourceHandle: "operator_right",
-        style: arrowEdgeStyle,
-        markerStart: markerConfig
-    },
-    {
-        id: "e146",
-        source: "set-game-mechanics-and-dynamics",
-        target: "set-badges",
-        type: "straight",
-        sourceHandle: "operator_bottom",
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },

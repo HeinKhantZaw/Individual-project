@@ -40,7 +40,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Fast_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             "top": "no",
             sourceRight: true,
@@ -54,7 +56,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             "top": "no",
             sourceRight: true,
@@ -81,6 +85,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Promote_Collaboration",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(3)",
             sourceTop: true,
         }
@@ -175,7 +180,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "High_Design_Quality",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
             sourceRight: true,
@@ -383,6 +390,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Skill_Improvement",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
             sourceRight: true,
@@ -514,8 +522,10 @@ export const initialNodes = [
         position: {x: -3050, y: 2500},
         data: {
             isHidden: false,
-            label: "Fast_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
+            label: "Fast_Design",
             num: "(2)",
             sourceTop: true,
         }
@@ -527,7 +537,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(2)",
             sourceTop: true,
         }
@@ -539,7 +551,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "High_Design_Quality",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(2)",
             sourceTop: true,
         }
@@ -551,7 +565,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Increase_User_Surprise",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
         }
@@ -679,6 +695,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Achievement",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
             bottom: true,
@@ -692,6 +709,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_Perceived_Status",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
             bottom: true,
@@ -705,7 +723,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Improve_System_Loyalty",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
         }
@@ -719,6 +739,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Social_Behavior",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
         }
@@ -730,7 +751,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Promote_Ethical_Behavior",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
         }
@@ -742,7 +765,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Promote_Altruistic_Behavior",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
         }
@@ -755,6 +780,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Increase_Worth_Vagueness",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
         }
@@ -766,7 +792,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Improve_Trust",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(1)",
             sourceTop: true,
         }
@@ -945,7 +973,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Support_User_Penalization",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             sourceRight: true,
             sourceLeft: true,
             sourceTop: true,
@@ -1066,7 +1096,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Fast_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(3)",
             sourceTop: true,
         }
@@ -1078,7 +1110,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(3)",
             sourceTop: true,
         }
@@ -1090,7 +1124,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "High_Design_Quality",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(3)",
             sourceTop: true,
         }
@@ -1167,7 +1203,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Promote_Ethical_Behavior",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(2)",
             sourceTop: true,
         }
@@ -1179,7 +1217,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Promote_Altruistic_Behavior",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(3)",
             sourceTop: true,
         }
@@ -1192,6 +1232,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Create_Unfair_Competition",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             right: true,
             sourceRight: true,
@@ -1206,6 +1247,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Create_Fair_Competition",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             left: true,
             sourceLeft: true,
@@ -1220,6 +1262,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Social_Behavior",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(2)",
             sourceTop: true,
             sourceRight: true,
@@ -1498,7 +1541,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Fast_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(4)",
             right: true,
             left: true,
@@ -1516,7 +1561,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(4)",
             right: true,
             left: true,
@@ -1533,7 +1580,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "High_Design_Quality",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(4)",
             right: true,
             left: true,
@@ -1574,6 +1623,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Achievement",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(2)",
             sourceRight: true,
             sourceTop: true,
@@ -1587,6 +1637,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_Perceived_Status",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(2)",
             right: true,
             left: true,
@@ -1747,6 +1798,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Create_Fair_Competition",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(2)",
             right: true,
             left: true,
@@ -1765,6 +1817,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Promote_Collaboration",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(4)",
             sourceTop: true,
         }
@@ -1778,6 +1831,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Social_Behavior",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(3)",
             sourceTop: true,
         }
@@ -2336,6 +2390,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Create_Fair_Competition",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(3)",
             sourceTop: true,
         }
@@ -2348,6 +2403,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Achievement",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(6)",
             sourceTop: true,
         }
@@ -2360,6 +2416,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Promote_Collaboration",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(6)",
             sourceTop: true,
         }
@@ -2372,6 +2429,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Support_Social_Behavior",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(6)",
             sourceTop: true,
         }
@@ -2384,6 +2442,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_System_Perception_via_IT",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(5)",
             sourceTop: true,
         }
@@ -2396,6 +2455,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_System_Awareness",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(6)",
             sourceTop: true,
         }
@@ -2407,7 +2467,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Increase_User_Surprise",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(2)",
             sourceTop: true,
         }
@@ -2420,7 +2482,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Fast_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(5)",
             sourceTop: true,
         }
@@ -2432,7 +2496,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(5)",
             sourceTop: true,
         }
@@ -2444,7 +2510,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "High_Design_Quality",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             num: "(5)",
             sourceTop: true,
         }
@@ -2457,6 +2525,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_Minor_Assistance",
             type: "tactic",
+            tacticType: "acceptance",
             num: "(1)",
             sourceTop: true,
             left: true,
@@ -2844,6 +2913,7 @@ export const initialNodes = [
             isHidden: false,
             label: "Improve_System_Advantage_Perception_vs_Competitor_Systems_via_IT",
             type: "tactic",
+            tacticType: "acceptance",
             width: 450,
             height: 100,
             num: "(1)",
@@ -2858,7 +2928,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Improve_System_Perception",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
         }
     },
 
@@ -2870,7 +2942,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Improve_System_Perception_by_Humans",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             width: 350,
             sourceTop: true,
         }
@@ -2884,6 +2958,7 @@ export const initialNodes = [
             label: "Improve_System_Perception_via_IT",
             num: "(1)",
             type: "tactic",
+            tacticType: "acceptance",
             sourceTop: true,
         }
     },
@@ -2896,6 +2971,7 @@ export const initialNodes = [
             label: "Improve_System_Awareness",
             num: "(1)",
             type: "tactic",
+            tacticType: "acceptance",
             sourceTop: true,
             bottom: true,
         }
@@ -2909,6 +2985,7 @@ export const initialNodes = [
             label: "Support_Skill_Improvement",
             num: "(2)",
             type: "tactic",
+            tacticType: "acceptance",
             bottom: true,
             sourceTop: true,
         }
@@ -2921,8 +2998,10 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Improve_System_Loyalty",
-            num: "(2)",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
+            num: "(2)",
             sourceRight: true,
             sourceLeft: true,
             sourceTop: true,
@@ -3462,6 +3541,7 @@ export const initialNodes = [
             label: "Promote_Collaboration",
             num: "(5)",
             type: "tactic",
+            tacticType: "acceptance",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3478,6 +3558,7 @@ export const initialNodes = [
             label: "Support_Achievement",
             num: "(3)",
             type: "tactic",
+            tacticType: "acceptance",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3494,6 +3575,7 @@ export const initialNodes = [
             label: "Improve_Perceived_Status",
             num: "(3)",
             type: "tactic",
+            tacticType: "acceptance",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3510,6 +3592,7 @@ export const initialNodes = [
             label: "Support_Social_Behavior",
             num: "(4)",
             type: "tactic",
+            tacticType: "acceptance",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3525,7 +3608,9 @@ export const initialNodes = [
             isHidden: false,
             label: "Promote_Altruistic_Behavior",
             num: "(2)",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3540,7 +3625,9 @@ export const initialNodes = [
         data: {
             isHidden: false,
             label: "Increase_Profit",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             bottom: true,
             right: true,
             sourceLeft: true,
@@ -3556,7 +3643,9 @@ export const initialNodes = [
             isHidden: false,
             label: "Increase_Worth_Vagues",
             num: "(2)",
+            isChosen: false,
             type: "tactic",
+            tacticType: "gamified",
             bottom: true,
             right: true,
             sourceLeft: true,

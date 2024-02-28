@@ -20,19 +20,22 @@ export default function PhaseFive() {
     const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    const {selectedTacticNodes} = useSelector((state) => state.phaseFour);
+    const {selectedTacticNodes, selectedNodeNames} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
     const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
     // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10']
-    console.log(selectedTacticNodes);
+    // console.log(selectedTacticNodes);
 
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
 
 
     useEffect(() => {
-        dispatch(setPhaseFiveNodes(updateGraph()));
+        dispatch(setPhaseFiveNodes({
+            nodes: updateGraph(),
+            selectedTacticNodes: selectedNodeNames
+        }));
         dispatch(removeNegativeConnections(selectedTacticNodes))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
@@ -55,7 +58,7 @@ export default function PhaseFive() {
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <OperationalMarker />
+            <OperationalMarker/>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

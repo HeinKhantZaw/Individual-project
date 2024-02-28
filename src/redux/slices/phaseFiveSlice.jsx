@@ -15,7 +15,7 @@ export const phaseFiveSlice = createSlice({
     initialState,
     reducers: {
         setPhaseFiveNodes: (state, action) => {
-            const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.map(node => node.id).includes(id));
+            const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
             state.edgeState = state.edgeState.filter(edge => {
                 return !removedNodeIds.includes(edge.target)
             })
@@ -23,6 +23,11 @@ export const phaseFiveSlice = createSlice({
             const targetIds = state.edgeState.map(edge => edge.target)
             state.nodeState = state.nodeState.filter(node => {
                 return sourceIds.includes(node.id) || targetIds.includes(node.id)
+            })
+            state.nodeState.map(node => {
+                if(action.payload.selectedTacticNodes.includes(node.data.label)){
+                    node.data.isChosen = true;
+                }
             })
         },
         removeNegativeConnections: (state, action) => {

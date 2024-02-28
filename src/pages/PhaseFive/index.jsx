@@ -36,7 +36,7 @@ export default function PhaseFive() {
             nodes: updateGraph(),
             selectedTacticNodes: selectedNodeNames
         }));
-        dispatch(removeNegativeConnections(selectedTacticNodes))
+        // dispatch(removeNegativeConnections(selectedTacticNodes))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
     }, []);

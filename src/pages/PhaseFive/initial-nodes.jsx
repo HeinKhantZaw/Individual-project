@@ -1557,7 +1557,7 @@ export const initialNodes = [
     {
         id: "low-cost-design-4",
         type: "oval",
-        position: {x: 7850, y: 2700},
+        position: {x: 7810, y: 2700},
         data: {
             isHidden: false,
             label: "Low_Cost_Design",
@@ -1843,7 +1843,6 @@ export const initialNodes = [
         data: {
             label: "Configure_Leader_boards",
             sourceLeft: true,
-            sourceTop: true,
             left: true,
         }
     },
@@ -2501,6 +2500,7 @@ export const initialNodes = [
             tacticType: "gamified",
             num: "(5)",
             sourceTop: true,
+            sourceLeft: true
         }
     },
     {
@@ -2515,6 +2515,7 @@ export const initialNodes = [
             tacticType: "gamified",
             num: "(5)",
             sourceTop: true,
+            sourceRight: true
         }
     },
     {
@@ -2960,6 +2961,7 @@ export const initialNodes = [
             type: "tactic",
             tacticType: "acceptance",
             sourceTop: true,
+            sourceLeft: true
         }
     },
     {

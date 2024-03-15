@@ -14,6 +14,7 @@ export default defineConfig({
       usePolling: true,
       disableGlobbing: false,
     },
+    hmr: false
   },
   resolve: {
     extensions: [".js", ".json", ".jsx"],

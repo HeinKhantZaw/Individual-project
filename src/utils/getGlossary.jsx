@@ -1,4 +1,4 @@
-import {NodeGlossary} from "../data/NodeGlossary.jsx";
+import {NodeGlossary} from "../data/NodeGlossary.js";
 
 export function getGlossary(term) {
     for (const type of NodeGlossary) {

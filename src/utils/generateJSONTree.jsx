@@ -23,6 +23,7 @@ export function generateJSONTree(initialNodes, initialEdges) {
                 const targetNode = nodeMap.get(edge.target);
                 return {
                     ...targetNode,
+                    parentId: parentId,
                     children: buildTree(targetNode.id, targetNode),
                 };
             });

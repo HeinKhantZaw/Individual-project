@@ -17,17 +17,35 @@ import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
 
 
 export default function PhaseFive() {
-    const {nodeState, edgeState, hiddenNodes, uploaded, nodeTree} = useSelector((state) => state.phaseFive);
+    const {nodeState, edgeState, hiddenNodes, uploaded} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    const {selectedTacticNodes, selectedNodeNames} = useSelector((state) => state.phaseFour);
+    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    // const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10']
-    // console.log(selectedTacticNodes);
-
+    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10']
+    const selectedNodeNames = [
+        "Fast_Design",
+        "Low_Cost_Design",
+        "Promote_Collaboration",
+        // "High_Design_Quality",
+        // "Support_Skill_Improvement",
+        // "Increase_User_Surprise",
+        // "Support_Achievement",
+        // "Improve_Perceived_Status",
+        // "Promote_Collaboration",
+        // "Improve_System_Perception",
+        // "Promote_Ethical_Behavior",
+        // "Promote_Altruistic_Behavior",
+        // "Improve_Minor_Assistance",
+        // "Improve_System_Perception_by_Humans",
+        // "Improve_System_Perception_via_IT",
+        // "Improve_System_Awareness",
+        // "Increase_Profit",
+        // "Increase_Worth_Vagueness"
+    ]
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
 
 
@@ -36,7 +54,7 @@ export default function PhaseFive() {
             nodes: updateGraph(),
             selectedTacticNodes: selectedNodeNames
         }));
-        // dispatch(removeNegativeConnections(selectedTacticNodes))
+        dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
     }, []);

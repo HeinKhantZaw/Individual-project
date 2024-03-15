@@ -2,20 +2,8 @@ import {TreeModel} from "../classes/TreeModel.jsx";
 import _ from "lodash";
 
 export const buildTree = (nodeList, metaFunc) => {
-    /**
-     * Assuming node list of structure
-     *  {
-     *      "id": string,
-     *      "parentId": string,
-     *      "taskName": string,         // TODO: Generalize.
-     *
-     *  }
-     *
-     *  metaFunc - a method which is customizable and can attach meta properties to the node.
-     * defaulting it to
-     */
-        // Mapping for TaskID -> Index in response Array.
-        // For fast lookup of details of each ID.
+    // Mapping for TaskID -> Index in response Array.
+    // For fast lookup of details of each ID.
 
     const idMapping = nodeList.reduce((acc, el, i) => {
             acc[el.id] = i;

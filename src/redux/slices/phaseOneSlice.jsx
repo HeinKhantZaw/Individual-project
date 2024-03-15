@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {PhaseOneKeyValue, PhaseOneSecondaryLogic} from "../../data/PhaseOneKeyValue.jsx";
+import {PhaseOneKeyValue, PhaseOneSecondaryLogic} from "../../data/PhaseOneKeyValue.js";
 
 const initialEdges = [
     // 1st edge

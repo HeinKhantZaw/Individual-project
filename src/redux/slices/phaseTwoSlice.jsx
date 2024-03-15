@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {PhaseTwoTreeDS} from "../../data/PhaseTwoTreeDS.jsx";
+import {PhaseTwoTreeDS} from "../../data/PhaseTwoTreeDS.js";
 import {MarkerType} from "reactflow";
 import {markerConfig} from "../../components/Arrows/Marker.jsx";
 import {arrowEdgeStyle} from "../../components/Arrows/ArrowEdge.jsx";

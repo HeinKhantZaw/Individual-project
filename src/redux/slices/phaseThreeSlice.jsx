@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import getTacticNodes from "../../utils/getTacticNodes.jsx";
-import {Phase3aNodes} from "../../data/PhaseThreeNodes.jsx";
+import {Phase3aNodes} from "../../data/PhaseThreeNodes.js";
 
 const initialState = {
     initialPhase3aTacticNodes: [],

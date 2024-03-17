@@ -31,16 +31,16 @@ export default function PhaseFive() {
     const {nodeState, edgeState, uploaded} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
+    const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C1", "C2", "C8", "C9", "C10"]
-    const selectedNodeNames = [
-        "Fast_Design",
-        "Low_Cost_Design",
-        "Promote_Collaboration",
+    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    // const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C1", "C2", "C8", "C9", "C10"]
+    // const selectedNodeNames = [
+    //     "Fast_Design",
+    //     "Low_Cost_Design",
+    //     "Promote_Collaboration",
         // "High_Design_Quality",
         // "Support_Skill_Improvement",
         // "Increase_User_Surprise",
@@ -56,7 +56,7 @@ export default function PhaseFive() {
         // "Improve_System_Awareness",
         // "Increase_Profit",
         // "Increase_Worth_Vagueness"
-    ]
+    // ]
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
 
     const checkConflicts = () => {

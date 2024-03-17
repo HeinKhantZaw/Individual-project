@@ -5,7 +5,6 @@ import {buildTree} from "../../utils/buildTree.jsx";
 import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
 import {searchNode} from "../../utils/searchNode.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
-import {generateJSONTree} from "../../utils/generateJSONTree.jsx";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 const initialState = {
     nodeState: initialNodes,
@@ -65,11 +64,15 @@ export const phaseFiveSlice = createSlice({
 
             // can finally change the nodes state now
             state.nodeState =  state.nodeState.filter(node => !childNodesToRemove.includes(node.id) && !parentNodesToRemove.includes(node.id));
+        },
+        resolveConflicts: (state, action) => {
+            const childNodes = action.payload.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
+            state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id));
         }
     }
 });
 
-export const {setPhaseFiveNodes, removeNegativeConnections} = phaseFiveSlice.actions;
+export const {setPhaseFiveNodes, removeNegativeConnections, resolveConflicts} = phaseFiveSlice.actions;
 
 export default phaseFiveSlice.reducer;
 

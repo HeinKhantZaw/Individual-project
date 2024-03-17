@@ -1,11 +1,13 @@
 import {NodeGlossary} from "../data/NodeGlossary.js";
 
 export function getGlossary(term) {
+    const lowerCaseTerm = term.toLowerCase();
     for (const type of NodeGlossary) {
-            const definition = type.glossary[term];
-            if (definition) {
-                return definition;
+        for (const key in type.glossary) {
+            if (key.toLowerCase() === lowerCaseTerm) {
+                return type.glossary[key];
             }
         }
+    }
     return "Term not available.";
 }

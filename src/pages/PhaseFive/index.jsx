@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ReactFlow, {Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
@@ -11,13 +11,25 @@ import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
-import {removeNegativeConnections, setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
+import {removeNegativeConnections, resolveConflicts, setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
 import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
 import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
+import Loading from "arwes/lib/Loading/index.js";
+import {phase3Style} from "../PhaseThree/style.jsx";
+import Heading from "arwes/lib/Heading/index.js";
+import {getGlossary} from "../../utils/getGlossary.jsx";
+import Project from "arwes/lib/Project/index.js";
 
 
 export default function PhaseFive() {
-    const {nodeState, edgeState, hiddenNodes, uploaded} = useSelector((state) => state.phaseFive);
+
+    const [loading, setLoading] = useState(true);
+    const [solved, setSolved] = useState(false);
+    const [conflictNodes, setConflictNodes] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [removedNode, setRemovedNode] = useState([]);
+
+    const {nodeState, edgeState, uploaded} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
     // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
@@ -48,6 +60,25 @@ export default function PhaseFive() {
     ]
     const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
 
+    const checkConflicts = () => {
+        let conflictNodes = [];
+        edgeState.map(edge => {
+            if (edge.data && edge.data.label === "!") {
+                conflictNodes.push({n1: edge.source, n2: edge.target})
+            }
+        });
+        return conflictNodes;
+    }
+
+    const resolveConflict = (node) => {
+        const newRemovedNode = [...removedNode, node];
+        setRemovedNode(newRemovedNode);
+        setCurrentIndex(currentIndex + 1);
+        if(currentIndex === conflictNodes.length - 1) {
+            dispatch(resolveConflicts(newRemovedNode));
+            setSolved(true);
+        }
+    }
 
     useEffect(() => {
         dispatch(setPhaseFiveNodes({
@@ -57,7 +88,14 @@ export default function PhaseFive() {
         dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
+        setLoading(false);
     }, []);
+
+    useEffect(() => {
+        if (!loading) {
+            setConflictNodes(checkConflicts());
+        }
+    }, [loading]);
 
     useEffect(() => {
         setNodes(nodeState);
@@ -76,28 +114,71 @@ export default function PhaseFive() {
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
+            {loading && <Loading
+                animate={true}
+                show={loading}
+                size={2}
+                speed={4}
+                full
+            />}
+            {!loading && conflictNodes.length > 0 && !solved &&
+                <>
+                    <Heading node="h2" style={phase3Style.title}>
+                        Conflict Detected
+                        <br/>
+                        <span>There are conflicts in the graph. Please resolve them by choosing one.</span>
+                    </Heading>
+                    <div className={"grid grid-cols-2 gap-4"}>
+                        <Project
+                            animate
+                            classes={{root: 'heading-font'}}
+                            header={conflictNodes[currentIndex].n1}
+                            style={{cursor: "pointer"}}
+                            onClick={() => resolveConflict(conflictNodes[currentIndex].n2)}
+                        >
+                                    <span>
+                                        {getGlossary(conflictNodes[currentIndex].n1.replace(/-/g, "_").replace(/_[0-9]+$/, ''))}
+                                    </span>
+                        </Project>
+
+                        <Project
+                            animate
+                            classes={{root: 'heading-font'}}
+                            header={conflictNodes[currentIndex].n2}
+                            style={{cursor: "pointer"}}
+                            onClick={() => resolveConflict(conflictNodes[currentIndex].n1)}
+                        >
+                                    <span>
+                                        {getGlossary(conflictNodes[currentIndex].n2.replace(/-/g, "_").replace(/_[0-9]+$/, ''))}
+                                    </span>
+                        </Project>
+                    </div>
+                </>
+            }
             <OperationalMarker/>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                // onNodesChange={onNodesChange}
-                // onEdgesChange={onEdgesChange}
-                panOnScroll={true}
-                nodeTypes={nodeTypes}
-                edgeTypes={edgeTypes}
-                defaultEdgeOptions={defaultEdgeOptions}
-                connectionLineComponent={ConnectionLine}
-                zoomOnDoubleClick={false}
-                connectionLineStyle={connectionLineStyle}
-                deleteKeyCode={''}
-                fitView
-                maxZoom={1.5}
-                minZoom={0.18}
-            >
-                <Controls/>
-                <MiniMap pannable zoomable/>
-                <Background variant="dots" gap={12} size={1}/>
-            </ReactFlow>
+            {!loading && solved &&
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    // onNodesChange={onNodesChange}
+                    // onEdgesChange={onEdgesChange}
+                    panOnScroll={true}
+                    nodeTypes={nodeTypes}
+                    edgeTypes={edgeTypes}
+                    defaultEdgeOptions={defaultEdgeOptions}
+                    connectionLineComponent={ConnectionLine}
+                    zoomOnDoubleClick={false}
+                    connectionLineStyle={connectionLineStyle}
+                    deleteKeyCode={''}
+                    fitView
+                    maxZoom={1.5}
+                    minZoom={0.18}
+                >
+                    <Controls/>
+                    <MiniMap pannable zoomable/>
+                    <Background variant="dots" gap={12} size={1}/>
+                </ReactFlow>
+            }
         </div>
     );
 }

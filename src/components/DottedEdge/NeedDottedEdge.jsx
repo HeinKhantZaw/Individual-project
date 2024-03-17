@@ -1,7 +1,8 @@
 import React from 'react';
 import {EdgeLabelRenderer, BaseEdge, getStraightPath} from 'reactflow';
+import {isUndefined} from "lodash";
 
-const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data, markerStart, markerEnd}) => {
+const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data, markerStart, markerEnd, selected=true}) => {
     const [edgePath, labelX, labelY] = getStraightPath({
         sourceX,
         sourceY,
@@ -10,13 +11,12 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
         targetY,
         targetPosition,
     });
-
     return (
         <>
             <BaseEdge id={id} path={edgePath}
                       style={{
-                          stroke: '#fff',
-                          strokeWidth: 2,
+                          stroke: selected ? '#0F0' : '#fff',
+                          strokeWidth: selected ? 4 : 2,
                           strokeDasharray: '5 5',
                           pointerEvents: 'none',
                       }}
@@ -30,6 +30,7 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
                         transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
                         padding: 4,
                         borderRadius: 5,
+                        color: selected ? '#0F0' : '#fff',
                         background: "#242424",
                         fontSize: 30,
                         fontWeight: 700,

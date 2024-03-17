@@ -181,3 +181,7 @@ input:checked + .slider:before {
     font-weight: 600;
     font-size: 1.5em;
 }
+.c016:hover {
+    color: #4BF2F6;
+    background-color: #2b7d80;
+}

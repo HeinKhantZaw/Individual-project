@@ -37,7 +37,7 @@ export default function PhaseFive() {
     const edgeTypes = {floating: FloatingEdge, dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
     // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const userSelectedNodes = ['C13', 'C3', 'C4', 'C14', 'C16', 'C21', 'C27', 'C33', 'C34', 'C5', 'C1', 'C2', 'C8', 'C9', 'C10']
+    const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C1", "C2", "C8", "C9", "C10"]
     const selectedNodeNames = [
         "Fast_Design",
         "Low_Cost_Design",
@@ -74,7 +74,7 @@ export default function PhaseFive() {
         const newRemovedNode = [...removedNode, node];
         setRemovedNode(newRemovedNode);
         setCurrentIndex(currentIndex + 1);
-        if(currentIndex === conflictNodes.length - 1) {
+        if (currentIndex === conflictNodes.length - 1) {
             dispatch(resolveConflicts(newRemovedNode));
             setSolved(true);
         }
@@ -103,13 +103,13 @@ export default function PhaseFive() {
     }, [nodeState, edgeState, uploaded]);
 
     const defaultEdgeOptions = {
-        style: {strokeWidth: 2, stroke: 'white'},
-        type: 'floating',
+        style: {strokeWidth: 2, stroke: "white"},
+        type: "floating",
     };
     const connectionLineStyle = {
         strokeWidth: 3,
-        stroke: 'grey',
-        strokeDasharray: '5,5',
+        stroke: "grey",
+        strokeDasharray: "5,5",
     };
 
     return (
@@ -131,25 +131,23 @@ export default function PhaseFive() {
                     <div className={"grid grid-cols-2 gap-4"}>
                         <Project
                             animate
-                            classes={{root: 'heading-font'}}
+                            classes={{root: "heading-font"}}
                             header={conflictNodes[currentIndex].n1}
                             style={{cursor: "pointer"}}
-                            onClick={() => resolveConflict(conflictNodes[currentIndex].n2)}
-                        >
+                            onClick={() => resolveConflict(conflictNodes[currentIndex].n2)}>
                                     <span>
-                                        {getGlossary(conflictNodes[currentIndex].n1.replace(/-/g, "_").replace(/_[0-9]+$/, ''))}
+                                        {getGlossary(conflictNodes[currentIndex].n1.replace(/-/g, "_").replace(/_[0-9]+$/, ""))}
                                     </span>
                         </Project>
-
                         <Project
                             animate
-                            classes={{root: 'heading-font'}}
+                            classes={{root: "heading-font"}}
                             header={conflictNodes[currentIndex].n2}
                             style={{cursor: "pointer"}}
                             onClick={() => resolveConflict(conflictNodes[currentIndex].n1)}
                         >
                                     <span>
-                                        {getGlossary(conflictNodes[currentIndex].n2.replace(/-/g, "_").replace(/_[0-9]+$/, ''))}
+                                        {getGlossary(conflictNodes[currentIndex].n2.replace(/-/g, "_").replace(/_[0-9]+$/, ""))}
                                     </span>
                         </Project>
                     </div>
@@ -169,7 +167,7 @@ export default function PhaseFive() {
                     connectionLineComponent={ConnectionLine}
                     zoomOnDoubleClick={false}
                     connectionLineStyle={connectionLineStyle}
-                    deleteKeyCode={''}
+                    deleteKeyCode={""}
                     fitView
                     maxZoom={1.5}
                     minZoom={0.18}

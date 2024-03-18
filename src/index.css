@@ -182,8 +182,8 @@ input:checked + .slider:before {
     font-size: 1.5em;
 }
 
-/* ArwesSounds\(Frame2\)-children-0-1-6 is compiled into c016 after building process, this will work only in production */
-.c016:hover {
+/* ArwesSounds\(Frame2\)-children is compiled into c01880 after building process, this will work only in production */
+.c01880:hover {
     color: #4BF2F6;
     background-color: #2b7d80;
 }

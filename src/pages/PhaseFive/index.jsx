@@ -151,15 +151,15 @@ export default function PhaseFive() {
                 return prevElements?.map((elem) => {
                     let newElem = {}
                         if (selection) {
-                            const animated =
+                            const isConnected =
                                 (connectedId.includes(elem.target) && node.id === elem.source)
                             newElem = {
                                 ...elem,
-                                selected: animated,
+                                selected: isConnected,
                                 style: {
                                     ...elem.style,
-                                    stroke: animated ? "#0F0" : "#b1b1b7",
-                                    strokeWidth: animated ? 4 : 2,
+                                    stroke: isConnected ? "#0F0" : "#b1b1b7",
+                                    strokeWidth: isConnected ? 4 : 2,
                                 }
                             };
                         } else {
@@ -169,6 +169,7 @@ export default function PhaseFive() {
                                 style: {
                                     ...elem.style,
                                     stroke: '#b1b1b7',
+                                    strokeWidth: 2,
                                 }
                             }
                         }

@@ -206,6 +206,7 @@ export default function PhaseFive() {
                     style: {
                         ...elem.style,
                         stroke: "#FFF",
+                        strokeWidth: 2,
                         opacity: 1,
                     }
                 }

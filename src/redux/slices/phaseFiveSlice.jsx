@@ -23,11 +23,14 @@ export const phaseFiveSlice = createSlice({
     reducers: {
         setPhaseFiveNodes: (state, action) => {
             const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
+            // console.log("removed:", removedNodeIds)
             state.edgeState = state.edgeState.filter(edge => {
                 return !removedNodeIds.includes(edge.target)
             })
             const sourceIds = state.edgeState.map(edge => edge.source)
             const targetIds = state.edgeState.map(edge => edge.target)
+            // console.log("sourceIds:", sourceIds)
+            // console.log("targetIds:", targetIds)
             state.nodeState = state.nodeState.filter(node => {
                 return sourceIds.includes(node.id) || targetIds.includes(node.id)
             })
@@ -39,7 +42,7 @@ export const phaseFiveSlice = createSlice({
         },
         removeNegativeConnections: (state, action) => {
             const regex = new RegExp(`^(${action.payload.join('|')})-?\\d*$`);
-            const selectedEdges = state.edgeState.filter(edge => regex.test(edge.source));
+            const selectedEdges = state.edgeState.filter(edge => regex.test(edge.source) && Object.hasOwnProperty(edge, "data") && Object.hasOwnProperty(edge.data, "weight"));
             let weights = {};
             let parentNodesToRemove = [];
             selectedEdges.forEach(edge => {

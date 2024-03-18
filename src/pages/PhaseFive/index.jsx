@@ -22,8 +22,8 @@ import Project from "arwes/lib/Project/index.js";
 export default function PhaseFive() {
     const [elements, setElements] = useState([]);
 
-    const [loading, setLoading] = useState(false);
-    const [solved, setSolved] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [solved, setSolved] = useState(false);
     const [conflictNodes, setConflictNodes] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [removedNode, setRemovedNode] = useState([]);
@@ -80,21 +80,21 @@ export default function PhaseFive() {
     }
 
     useEffect(() => {
+        dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setPhaseFiveNodes({
             nodes: updateGraph(),
             selectedTacticNodes: selectedNodeNames
         }));
-        dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
         setLoading(false);
     }, []);
 
-    // useEffect(() => {
-    //     if (!loading) {
-    //         setConflictNodes(checkConflicts());
-    //     }
-    // }, [loading]);
+    useEffect(() => {
+        if (!loading) {
+            setConflictNodes(checkConflicts());
+        }
+    }, [loading]);
 
     useEffect(() => {
         setNodes(nodeState);

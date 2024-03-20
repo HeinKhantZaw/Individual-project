@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ReactFlow, {Background, Controls, isEdge, isNode, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import ReactFlow, {Background, Controls, isNode, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";

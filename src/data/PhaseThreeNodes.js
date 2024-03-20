@@ -343,9 +343,10 @@ export const Phase3cNodes  = [
             "y": 500
         },
         "data": {
-            "tacticType": "acceptance",
+            "default": true,
+            "tacticType": "gamified",
             "isHidden": false,
-            "isChosen": true,
+            "isChosen": false,
             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
             "width": 450,
             "height": 100,
@@ -359,10 +360,51 @@ export const Phase3cNodes  = [
         "height": 100
     },
     {
-        "id": "promote-collaboration",
+        "id": "create-fair-competition",
+        "type": "oval",
+        "position": {
+            "x": 1000,
+            "y": 500
+        },
+        "data": {
+            "default": true,
+            "tacticType": "gamified",
+            "isHidden": false,
+            "isChosen": false,
+            "label": "Create_Fair_Competition",
+            "type": "tactic",
+            "top": "no"
+        },
+        "draggable": false,
+        "inPreviousPhase": true,
+        "width": 240,
+        "height": 80
+    },
+    {
+        "id": "create-unfair-competition",
         "type": "oval",
         "position": {
             "x": 1500,
+            "y": 500
+        },
+        "data": {
+            "tacticType": "gamified",
+            "isHidden": false,
+            "isChosen": false,
+            "label": "Create_Unfair_Competition",
+            "type": "tactic",
+            "top": "no"
+        },
+        "draggable": false,
+        "inPreviousPhase": true,
+        "width": 240,
+        "height": 80
+    },
+    {
+        "id": "promote-collaboration",
+        "type": "oval",
+        "position": {
+            "x": 2000,
             "y": 500
         },
         "data": {

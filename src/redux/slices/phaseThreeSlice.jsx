@@ -64,7 +64,12 @@ export const phaseThreeSlice = createSlice({
             })
         },
         setChosenTactic: (state, action) => {
+            const otherTactic = action.payload === "create-fair-competition" ? "create-unfair-competition" : "create-fair-competition";
             state.initialPhase3cTacticNodes.map((node) => {
+                // special case for avoiding conflict in next phase
+                if (node.id === otherTactic && (action.payload === "create-fair-competition" || action.payload === "create-unfair-competition")) {
+                    node.data.isChosen = false;
+                }
                 if (node.id === action.payload) {
                     node.data.isChosen = !node.data.isChosen
                 }

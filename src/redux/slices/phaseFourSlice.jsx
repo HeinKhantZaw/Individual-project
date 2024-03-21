@@ -257,6 +257,46 @@ const gamifiedNodes = [
         "draggable": false,
         "width": 240,
         "height": 80
+    },
+    {
+        "id": "create-fair-competition",
+        "type": "oval",
+        "position": {
+            "x": 8250,
+            "y": 2050
+        },
+        "data": {
+            "tacticType": "gamified",
+            "isHidden": false,
+            "isChosen": true,
+            "label": "Create_Fair_Competition",
+            "type": "tactic",
+            "width": 300,
+            "top": "no"
+        },
+        "draggable": false,
+        "width": 240,
+        "height": 80
+    },
+    {
+        "id": "create-unfair-competition",
+        "type": "oval",
+        "position": {
+            "x": 8250,
+            "y": 2050
+        },
+        "data": {
+            "tacticType": "gamified",
+            "isHidden": false,
+            "isChosen": true,
+            "label": "Create_Unfair_Competition",
+            "type": "tactic",
+            "width": 300,
+            "top": "no"
+        },
+        "draggable": false,
+        "width": 240,
+        "height": 80
     }
 ]
 const initialState = {

@@ -48,6 +48,7 @@ const styles = (theme) => {
 const SelectOption = withStyles(styles)(({
                                              classes,
                                              onChange,
+                                             onClick,
                                              name,
                                              options,
                                              optionValueId,
@@ -57,19 +58,18 @@ const SelectOption = withStyles(styles)(({
                                              currentPhase,
                                              disabled,
                                              style
-                                         }) =>
-{
+                                         }) => {
     return (<div>
         <Frame
             show={true}
             animate={true}
             corners={4}
             className={classes.frame}
-            layer={disabled ? "disabled" : currentPhase===3 ? "success" : "secondary"}
+            layer={disabled ? "disabled" : currentPhase === 3 ? "success" : "secondary"}
         >
             <select name={name} onChange={onChange} className={currentPhase === 3 ? classes.selected : classes.select}
                     required={required} disabled={disabled}
-                    value={selected} style={style}
+                    value={selected} style={style} onClick={onClick}
             >
                 {options.map((option) => {
                     return (<option

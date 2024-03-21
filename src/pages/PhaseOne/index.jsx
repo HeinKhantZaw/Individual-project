@@ -654,10 +654,10 @@ export default function PhaseOne() {
 
     useEffect(() => {
         dispatch(setCurrentPhase(1))
-        if(phaseTwoState.length > 0) {
+        if (phaseTwoState.length > 0) {
             dispatch(resetPhaseTwo())
         }
-        if(initialPhase3aTacticNodes.length > 0 || initialPhase3cTacticNodes.length > 0) {
+        if (initialPhase3aTacticNodes.length > 0 || initialPhase3cTacticNodes.length > 0) {
             dispatch(resetPhaseThree())
         }
     }, [currentPhase]);
@@ -686,18 +686,83 @@ export default function PhaseOne() {
         strokeDasharray: '5,5',
     };
 
-    const onConnect = useCallback((params) => {
-        const {source} = params;
-        const xorNode = source.match(regexForXor);
+    // const onConnect = useCallback((params) => {
+    //     const {source} = params;
+    //     const xorNode = source.match(regexForXor);
+    //         setEdges((edges) => {
+    //             if (xorNode) {
+    //                 edges = edges.filter((edge) => !edge.source.includes(xorNode[0]));
+    //             }
+    //             const updatedEdge = {
+    //                 ...params,
+    //                 id: source + "-edge",
+    //                 animated: true
+    //             };
+    //             return addEdge(updatedEdge, edges);
+    //         });
+    //         setNodes((nodes) => {
+    //             return nodes.map((node) => {
+    //                 if (node.id === source) {
+    //                     node.data.isChosen = true;
+    //                 }
+    //                 return node;
+    //             })
+    //         });
+    //
+    // }, [setEdges]);
 
-        setEdges((edges) => {
+    const connectToBase = useCallback((event, element) => {
+        const xorNode = element.id.match(regexForXor);
+        const clickedNode = nodes.find(node => node.id === element.id);
+        if(!clickedNode.data.isConnectable) {
+            return;
+        }
+        if (clickedNode.data.isChosen) {
+            setEdges((edges) => edges.filter(edge => edge.id !== element.id + "-edge"));
+            setNodes((nodes) => nodes.map(node => {
+                if (node.id === element.id) {
+                    node.data.isChosen = false;
+                }
+                return node;
+            }));
+        } else {
+            setEdges((edges) => {
+                if (xorNode) {
+                    edges = edges.filter((edge) => !edge.source.includes(xorNode[0]));
+                }
+                const updatedEdge = {
+                    id: element.id + "-edge",
+                    target: "phase-one-result",
+                    source: element.id,
+                    animated: true,
+                    ...defaultEdgeOptions
+                };
+                return addEdge(updatedEdge, edges);
+            });
             if (xorNode) {
-                edges = edges.filter((edge) => !edge.source.includes(xorNode[0]));
+                setNodes((nodes) => {
+                    return nodes.map((node) => {
+                        if (node.id.includes(xorNode[0]) && node.id !== element.id) {
+                            node.data.isChosen = false;
+                        } else if (node.id === element.id) {
+                            node.data.isChosen = true;
+                        }
+                        return node;
+                    })
+                });
+            } else {
+                setNodes((nodes) => {
+                    return nodes.map((node) => {
+                        if (node.id === element.id) {
+                            node.data.isChosen = true;
+                        }
+                        return node;
+                    })
+                })
             }
-            const updatedEdge = {...params, animated: true};
-            return addEdge(updatedEdge, edges);
-        });
-    }, [setEdges]);
+        }
+    }, [setEdges, nodes, setNodes]);
+
 
 
     return (
@@ -710,11 +775,12 @@ export default function PhaseOne() {
                 onEdgesChange={onEdgesChange}
                 nodeTypes={nodeTypes}
                 edgeTypes={edgeTypes}
-                onConnect={onConnect}
+                // onConnect={onConnect}
                 defaultEdgeOptions={defaultEdgeOptions}
                 connectionLineComponent={ConnectionLine}
                 connectionLineStyle={connectionLineStyle}
                 deleteKeyCode={''}
+                onNodeClick={connectToBase}
                 fitView
                 maxZoom={1.5}
                 minZoom={0.18}

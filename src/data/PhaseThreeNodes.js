@@ -344,7 +344,7 @@ export const Phase3cNodes  = [
         },
         "data": {
             "default": true,
-            "tacticType": "gamified",
+            "tacticType": "acceptance",
             "isHidden": false,
             "isChosen": false,
             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",

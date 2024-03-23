@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import ReactFlow, {addEdge, Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 
 import "reactflow/dist/style.css";
@@ -8,16 +8,24 @@ import HexagonNode from "../../components/Shapes/HexagonNode.jsx";
 import FloatingEdge from "../../components/FloatingEdge";
 import ConnectionLine from "../../components/ConnectionLine";
 import {useDispatch, useSelector} from "react-redux";
-import {connectEdge, updateNodes} from "../../redux/slices/phaseOneSlice.jsx";
+import {connectEdge, setPhaseOneState, updateNodes} from "../../redux/slices/phaseOneSlice.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import {resetPhaseTwo} from "../../redux/slices/phaseTwoSlice.jsx";
 import {resetPhaseThree} from "../../redux/slices/phaseThreeSlice.jsx";
+import Heading from "arwes/lib/Heading/index.js";
+import {phase3Style} from "../PhaseThree/style.jsx";
+import {getGlossary} from "../../utils/getGlossary.jsx";
+import Project from "arwes/lib/Project/index.js";
+import Button from "arwes/lib/Button/index.js";
+import {templateOne} from "../../data/Phase1_template.js";
 
 const nodeTypes = {circle: CircleNode, operator: OperatorNode, hexagon: HexagonNode};
 
 export default function PhaseOne() {
     const phaseOneState = useSelector((state) => state.phaseOne);
     const phaseTwoState = useSelector((state) => state.phaseTwo.nodeState);
+    const [useTemplate, setUseTemplate] = useState(false);
+    const [loading, setLoading] = useState(true);
     const {initialPhase3aTacticNodes, initialPhase3cTacticNodes} = useSelector((state) => state.phaseThree);
     const {edgeState, nodeState} = phaseOneState;
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
@@ -42,6 +50,12 @@ export default function PhaseOne() {
         }
         dispatch(connectEdge(edges));
     }, [edges]);
+
+    useEffect(() => {
+        if(useTemplate) {
+            dispatch(setPhaseOneState(templateOne))
+        }
+    }, [useTemplate]);
 
     useEffect(() => {
         setNodes(nodeState)
@@ -92,7 +106,7 @@ export default function PhaseOne() {
     const connectToBase = useCallback((event, element) => {
         const xorNode = element.id.match(regexForXor);
         const clickedNode = nodes.find(node => node.id === element.id);
-        if(!clickedNode.data.isConnectable) {
+        if (!clickedNode.data.isConnectable) {
             return;
         }
         if (clickedNode.data.isChosen) {
@@ -116,32 +130,46 @@ export default function PhaseOne() {
         dispatch(updateNodes(element.id))
     }, [setEdges, nodes, setNodes]);
 
-
-
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                panOnScroll={true}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                nodeTypes={nodeTypes}
-                edgeTypes={edgeTypes}
-                // onConnect={onConnect}
-                defaultEdgeOptions={defaultEdgeOptions}
-                connectionLineComponent={ConnectionLine}
-                connectionLineStyle={connectionLineStyle}
-                deleteKeyCode={''}
-                onNodeClick={connectToBase}
-                fitView
-                maxZoom={1.5}
-                minZoom={0.18}
-            >
-                <Controls/>
-                <MiniMap pannable zoomable/>
-                <Background variant="dots" gap={12} size={1}/>
-            </ReactFlow>
+            {
+                loading && <>
+                    <Heading node="h2" style={phase3Style.title}>
+                        Do you wanna use templates in this phase?
+                    </Heading>
+                <div className={"flex justify-center gap-4"}>
+                    <Button animate layer="alert" className={"hover:bg-slate-900"} onClick={()=>setLoading(false)}>NO</Button>
+                    <Button animate layer="success" className={"hover:bg-slate-900"} onClick={()=>{
+                        setLoading(false);
+                        setUseTemplate (true);
+                    }}>YES</Button>
+                </div>
+                </>
+            }
+            {!loading &&
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    panOnScroll={true}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    nodeTypes={nodeTypes}
+                    edgeTypes={edgeTypes}
+                    // onConnect={onConnect}
+                    defaultEdgeOptions={defaultEdgeOptions}
+                    connectionLineComponent={ConnectionLine}
+                    connectionLineStyle={connectionLineStyle}
+                    deleteKeyCode={''}
+                    onNodeClick={connectToBase}
+                    fitView
+                    maxZoom={1.5}
+                    minZoom={0.18}
+                >
+                    <Controls/>
+                    <MiniMap pannable zoomable/>
+                    <Background variant="dots" gap={12} size={1}/>
+                </ReactFlow>
+            }
         </div>
     );
 }

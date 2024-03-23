@@ -138,7 +138,7 @@ export default function MainLayout() {
                                         { id: "Phase C3", value: "Phase C3" },
                                     ]}
                                     onChange={phaseThreeOnChange}
-                                    onClick={phaseThreeOnChange}
+                                    // onClick={phaseThreeOnChange}
                                     optionValueId={"id"}
                                     optionInnerContent={"value"}
                                     style={{

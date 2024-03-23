@@ -1,7 +1,7 @@
 import {TreeModel} from "../classes/TreeModel.jsx";
 import _ from "lodash";
 
-export const buildTree = (nodeList, metaFunc) => {
+export const buildTree = (nodeList) => {
     // Mapping for TaskID -> Index in response Array.
     // For fast lookup of details of each ID.
 
@@ -20,7 +20,7 @@ export const buildTree = (nodeList, metaFunc) => {
         idMapMaps[task.parentId][task.id] = true;
     });
 
-    // BFS to create the tree - O(N)
+    // BFS to build the tree
     let root = nodeList[idMapping[Object.keys(idMapMaps["null"])[0]]]
     root = new TreeModel(root.id, root.parentId)
 

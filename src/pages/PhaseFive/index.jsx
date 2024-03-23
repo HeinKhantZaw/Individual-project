@@ -9,7 +9,11 @@ import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
-import {removeNegativeConnections, resolveConflicts, setPhaseFiveNodes} from "../../redux/slices/phaseFiveSlice.jsx";
+import {
+    preResolveConflict, removeNegativeConnections,
+    resolveConflicts,
+    setPhaseFiveNodes
+} from "../../redux/slices/phaseFiveSlice.jsx";
 import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
 import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
 import Loading from "arwes/lib/Loading/index.js";
@@ -80,11 +84,11 @@ export default function PhaseFive() {
     }
 
     useEffect(() => {
-        dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setPhaseFiveNodes({
-            nodes: updateGraph(),
-            selectedTacticNodes: selectedNodeNames
+            nodes: evalAndRegexConditions(nodeState, userSelectedNodes),
+            selectedTacticNodes: selectedNodeNames,
         }));
+        dispatch(removeNegativeConnections(selectedNodeNames.map(node => node.toLowerCase().replaceAll("_", "-"))))
         dispatch(setCurrentPhase(5));
         dispatch(setNextPhaseEnabled(true));
         setLoading(false);
@@ -92,6 +96,12 @@ export default function PhaseFive() {
 
     useEffect(() => {
         if (!loading) {
+            // special case
+            if(selectedNodeNames.includes("Create_Fair_Competition")) {
+                preResolveConflict("create-unfair-competition");
+            } else if (selectedNodeNames.includes("Create_Unfair_Competition")){
+                preResolveConflict("create-fair-competition");
+            }
             setConflictNodes(checkConflicts());
         }
     }, [loading]);

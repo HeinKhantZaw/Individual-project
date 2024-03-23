@@ -6,8 +6,12 @@ import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
 import {searchNode} from "../../utils/searchNode.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
+import _ from "lodash";
+import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 const initialState = {
+    nodeTree: null,
     nodeState: initialNodes,
+    // nodeState: flattenNodes(PhaseFiveTreeDS),
     originalNodesIds: initialNodes.map(node => node.id),
     edgeState: initialEdges,
     hiddenEdges: [],
@@ -15,7 +19,7 @@ const initialState = {
     hiddenTactics: [],
     uploaded: 0,
 }
-const treeMap = buildTree(flattenNodes(PhaseFiveTreeDS))
+const treeMap = buildTree(flattenNodes(PhaseFiveTreeDS));
 
 export const phaseFiveSlice = createSlice({
     name: 'phaseFive',
@@ -42,7 +46,7 @@ export const phaseFiveSlice = createSlice({
         },
         removeNegativeConnections: (state, action) => {
             const regex = new RegExp(`^(${action.payload.join('|')})-?\\d*$`);
-            const selectedEdges = state.edgeState.filter(edge => regex.test(edge.source) && Object.hasOwnProperty(edge, "data") && Object.hasOwnProperty(edge.data, "weight"));
+            const selectedEdges = state.edgeState.filter(edge => regex.test(edge.source) && _.has(edge, "data") && _.has(edge.data, "weight"));
             let weights = {};
             let parentNodesToRemove = [];
             selectedEdges.forEach(edge => {
@@ -67,6 +71,7 @@ export const phaseFiveSlice = createSlice({
 
             // can finally change the nodes state now
             state.nodeState =  state.nodeState.filter(node => !childNodesToRemove.includes(node.id) && !parentNodesToRemove.includes(node.id));
+            // state.nodeTree =  removeAndFlattenNodes(nodeTree, idToBeRemoved);
         },
         preResolveConflict: (state, action) => {
             state.nodeState = state.nodeState.filter(node => action.payload !== node.id);
@@ -74,6 +79,9 @@ export const phaseFiveSlice = createSlice({
         },
         resolveConflicts: (state, action) => {
             const childNodes = action.payload.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
+            if(action.payload.includes === "by-money"){
+                childNodes.push("increase-worth-vagueness-2")
+            }
             state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id));
         }
     }

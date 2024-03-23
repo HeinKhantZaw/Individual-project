@@ -3985,7 +3985,6 @@ export const initialEdges = [
         target: "by-money",
         source: "increase-worth-vagueness-2",
         type: "dotted",
-        data: {label: "!"},
         targetHandle: "gamification_target_right",
         sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,

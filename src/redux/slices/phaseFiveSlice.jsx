@@ -68,6 +68,10 @@ export const phaseFiveSlice = createSlice({
             // can finally change the nodes state now
             state.nodeState =  state.nodeState.filter(node => !childNodesToRemove.includes(node.id) && !parentNodesToRemove.includes(node.id));
         },
+        preResolveConflict: (state, action) => {
+            state.nodeState = state.nodeState.filter(node => action.payload !== node.id);
+            state.edgeState = state.edgeState.filter(edge => action.payload !== edge.source && action.payload !== edge.target);
+        },
         resolveConflicts: (state, action) => {
             const childNodes = action.payload.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
             state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id));
@@ -75,7 +79,7 @@ export const phaseFiveSlice = createSlice({
     }
 });
 
-export const {setPhaseFiveNodes, removeNegativeConnections, resolveConflicts} = phaseFiveSlice.actions;
+export const {setPhaseFiveNodes, removeNegativeConnections, preResolveConflict, resolveConflicts} = phaseFiveSlice.actions;
 
 export default phaseFiveSlice.reducer;
 

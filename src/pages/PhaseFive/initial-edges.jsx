@@ -1845,18 +1845,19 @@ export const initialEdges = [
         style: arrowEdgeStyle,
         markerStart: markerConfig
     },
-    {
-        id: "e168",
-        source: "create-unfair-competition",
-        target: "create-fair-competition",
-        type: "dotted",
-        data: {label: "!"},
-        sourceHandle: "oval_source_right",
-        targetHandle: "oval_target_left",
-        style: arrowEdgeStyle,
-        markerStart: markerConfig,
-        markerEnd: markerConfig
-    },
+    // Conflict is resolved in previous phases
+    // {
+    //     id: "e168",
+    //     source: "create-unfair-competition",
+    //     target: "create-fair-competition",
+    //     type: "dotted",
+    //     data: {label: "!"},
+    //     sourceHandle: "oval_source_right",
+    //     targetHandle: "oval_target_left",
+    //     style: arrowEdgeStyle,
+    //     markerStart: markerConfig,
+    //     markerEnd: markerConfig
+    // },
     // support-achievement and set-badges
     {
         id: "e169",

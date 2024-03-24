@@ -3643,7 +3643,7 @@ export const initialNodes = [
         position: {x: 36500, y: 2700},
         data: {
             isHidden: false,
-            label: "Increase_Worth_Vagues",
+            label: "Increase_Worth_Vagueness",
             num: "(2)",
             isChosen: false,
             type: "tactic",

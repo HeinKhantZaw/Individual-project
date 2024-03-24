@@ -87,7 +87,7 @@ export default function PhaseTwo() {
                     dispatch(setHiddenNodes(hiddenNodes.filter(node => node.id !== element.id)));
                 } else {
                     const ids = getAllChildrenIds(searchNode(treeMap, element.id));
-                    let tacticNodes = getTacticNodes(ids);
+                    const tacticNodes = getTacticNodes(ids);
                     const needNodes = ids.filter(id => !tacticNodes.includes(id));
                     const newNodes = nodeState.filter(node => !needNodes.includes(node.id));
                     dispatch(updateNodes(newNodes));

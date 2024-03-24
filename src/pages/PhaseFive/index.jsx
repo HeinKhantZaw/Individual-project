@@ -10,6 +10,8 @@ import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
 import {
+    hideElements,
+    updateNodes,
     preResolveConflict, removeNegativeConnections,
     resolveConflicts,
     setPhaseFiveNodes
@@ -21,6 +23,7 @@ import {phase3Style} from "../PhaseThree/style.jsx";
 import Heading from "arwes/lib/Heading/index.js";
 import {getGlossary} from "../../utils/getGlossary.jsx";
 import Project from "arwes/lib/Project/index.js";
+import {findNodeById} from "../../utils/findNodeById.jsx";
 
 
 export default function PhaseFive() {
@@ -32,36 +35,48 @@ export default function PhaseFive() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [removedNode, setRemovedNode] = useState([]);
 
-    const {nodeState, edgeState, uploaded} = useSelector((state) => state.phaseFive);
+    const {nodeState, edgeState, hiddenNodes, uploaded, treeMap} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    const {selectedNodeNames} = useSelector((state) => state.phaseFour);
+    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    // const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C1", "C2", "C8", "C9", "C10"]
-    // const selectedNodeNames = [
-    //     "Fast_Design",
-    //     "Low_Cost_Design",
-    //     "Promote_Collaboration",
-        // "High_Design_Quality",
-        // "Support_Skill_Improvement",
-        // "Increase_User_Surprise",
-        // "Support_Achievement",
-        // "Improve_Perceived_Status",
-        // "Promote_Collaboration",
-        // "Improve_System_Perception",
-        // "Promote_Ethical_Behavior",
-        // "Promote_Altruistic_Behavior",
-        // "Improve_Minor_Assistance",
-        // "Improve_System_Perception_by_Humans",
-        // "Improve_System_Perception_via_IT",
-        // "Improve_System_Awareness",
-        // "Increase_Profit",
-        // "Increase_Worth_Vagueness"
-    // ]
-    const updateGraph = () => evalAndRegexConditions(nodeState, userSelectedNodes);
+    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C2", "C8", "C9", "C10", "C33" ,"C36"]
+    const selectedNodeNames = [
+        "Fast_Design",
+        "Low_Cost_Design",
+        "Promote_Collaboration",
+        "High_Design_Quality",
+        "Support_Skill_Improvement",
+        "Increase_User_Surprise",
+        "Support_Achievement",
+        "Improve_Perceived_Status",
+        "Promote_Collaboration",
+        "Improve_System_Perception",
+        "Promote_Ethical_Behavior",
+        "Promote_Altruistic_Behavior",
+        "Improve_Minor_Assistance",
+        "Improve_System_Perception_by_Humans",
+        "Improve_System_Perception_via_IT",
+        "Improve_System_Awareness",
+        "Increase_Profit",
+        "Increase_Worth_Vagueness",
+        "Create_Fair_Competition"
+    ]
+    const handleNodeClick = (event, element) => {
+        if(element.data.type === "gamification" && element.id !== "design-gamification"){
+            const isHidden = findNodeById(hiddenNodes, element.id);
+            if (isHidden) {
+                const newNodes = [...nodeState, ...isHidden.children];
+                dispatch(updateNodes(newNodes));
+                // dispatch(addEdges(isHidden.children.length > 0 ? isHidden.children.filter(c => !c.data.isHidden).map(child => child.id) : isHidden.id));
+            } else {
+                dispatch(hideElements(element.id));
+            }
+        }
+    }
 
     const checkConflicts = () => {
         let conflictNodes = [];
@@ -98,9 +113,9 @@ export default function PhaseFive() {
         if (!loading) {
             // special case
             if(selectedNodeNames.includes("Create_Fair_Competition")) {
-                preResolveConflict("create-unfair-competition");
+                dispatch(preResolveConflict("create-unfair-competition"));
             } else if (selectedNodeNames.includes("Create_Unfair_Competition")){
-                preResolveConflict("create-fair-competition");
+                dispatch(preResolveConflict("create-fair-competition"));
             }
             setConflictNodes(checkConflicts());
         }
@@ -306,6 +321,7 @@ export default function PhaseFive() {
                     fitView
                     maxZoom={1.5}
                     minZoom={0.18}
+                    onNodeClick={handleNodeClick}
                 >
                     <Controls/>
                     <MiniMap pannable zoomable/>

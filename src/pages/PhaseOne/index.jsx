@@ -135,7 +135,7 @@ export default function PhaseOne() {
             {
                 loading && <>
                     <Heading node="h2" style={phase3Style.title}>
-                        Do you wanna use templates in this phase?
+                        Do you wanna use default template in this phase?
                     </Heading>
                 <div className={"flex justify-center gap-4"}>
                     <Button animate layer="alert" className={"hover:bg-slate-900"} onClick={()=>setLoading(false)}>NO</Button>

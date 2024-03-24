@@ -87,8 +87,15 @@ export const phaseFiveSlice = createSlice({
             if(action.payload.includes === "by-money"){
                 childNodes.push("increase-worth-vagueness-2")
             }
+            console.log("removed nodes:", action.payload);
+            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data")).map(e=>e.source);
             state.edgeState = state.edgeState.filter(edge => !childNodes.includes(edge.target) && !action.payload.includes(edge.target));
-            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge.data, "weight")).map(e=>e.source);
+            for(let edge of state.edgeState){
+                if(tacticNodesToRemove.includes(edge.source)){
+                    // if there is a source, remove from tacticNodesToRemove, it should not be removed
+                    tacticNodesToRemove = tacticNodesToRemove.filter(node => node !== edge.source);
+                }
+            }
             state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id) && !tacticNodesToRemove.includes(node.id));
         },
         updateNodes: (state, action) => {

@@ -43,28 +43,36 @@ export default function PhaseFive() {
     const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
     // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const userSelectedNodes = ["C13", "C3", "C4", "C14", "C16", "C21", "C27", "C33", "C34", "C5", "C2", "C8", "C9", "C10", "C33" ,"C36"]
+    const userSelectedNodes = ["C7", "C4", "C2", "C1", "C5", "C14", "C17", "C18", "C12", "C24", "C25", "C29", "C26", "C33", "C34", "C8", "C11"];
     const selectedNodeNames = [
-        "Fast_Design",
-        "Low_Cost_Design",
-        "Promote_Collaboration",
         "High_Design_Quality",
-        "Support_Skill_Improvement",
         "Increase_User_Surprise",
-        "Support_Achievement",
-        "Improve_Perceived_Status",
         "Promote_Collaboration",
-        "Improve_System_Perception",
-        "Promote_Ethical_Behavior",
-        "Promote_Altruistic_Behavior",
         "Improve_Minor_Assistance",
-        "Improve_System_Perception_by_Humans",
         "Improve_System_Perception_via_IT",
         "Improve_System_Awareness",
-        "Increase_Profit",
-        "Increase_Worth_Vagueness",
-        "Create_Fair_Competition"
+        "Improve_Trust"
     ]
+    //     "Fast_Design",
+    //     "Low_Cost_Design",
+    //     "Promote_Collaboration",
+    //     "High_Design_Quality",
+    //     "Support_Skill_Improvement",
+    //     "Increase_User_Surprise",
+    //     "Support_Achievement",
+    //     "Improve_Perceived_Status",
+    //     "Promote_Collaboration",
+    //     "Improve_System_Perception",
+    //     "Promote_Ethical_Behavior",
+    //     "Promote_Altruistic_Behavior",
+    //     "Improve_Minor_Assistance",
+    //     "Improve_System_Perception_by_Humans",
+    //     "Improve_System_Perception_via_IT",
+    //     "Improve_System_Awareness",
+    //     "Increase_Profit",
+    //     "Increase_Worth_Vagueness",
+    //     "Create_Fair_Competition"
+    // ]
     const handleNodeClick = (event, element) => {
         if(element.data.type === "gamification" && element.id !== "design-gamification"){
             const isHidden = findNodeById(hiddenNodes, element.id);

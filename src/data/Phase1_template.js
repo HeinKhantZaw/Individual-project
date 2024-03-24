@@ -613,17 +613,6 @@ export const templateOne = {
             "type": "floating"
         },
         {
-            "id": "killer-edge",
-            "target": "phase-one-result",
-            "source": "killer",
-            "animated": true,
-            "style": {
-                "strokeWidth": 2,
-                "stroke": "white"
-            },
-            "type": "floating"
-        },
-        {
             "id": "employed-yes-xor3-edge",
             "target": "phase-one-result",
             "source": "employed-yes-xor3",
@@ -1411,7 +1400,7 @@ export const templateOne = {
             "data": {
                 "label": "Killer",
                 "isConnectable": true,
-                "isChosen": true
+                "isChosen": false
             },
             "draggable": false
         },

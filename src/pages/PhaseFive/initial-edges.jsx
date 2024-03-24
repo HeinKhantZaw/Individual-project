@@ -609,7 +609,7 @@ export const initialEdges = [
         type: "step",
         markerStart: "operate",
         data: {weight: 2},
-        sourceHandle: "gamification_source_right",
+        sourceHandle: "oval_source_left",
         style: arrowEdgeStyle,
     },
     // set-levels and support-skill-improvement
@@ -630,7 +630,7 @@ export const initialEdges = [
         type: "step",
         markerStart: "operate",
         data: {weight: 2},
-        sourceHandle: "gamification_source_right",
+        sourceHandle: "oval_source_right",
         style: arrowEdgeStyle,
     },
     // link-role-to-path needs set-roles

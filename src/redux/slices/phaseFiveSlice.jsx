@@ -7,11 +7,9 @@ import {searchNode} from "../../utils/searchNode.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 import _ from "lodash";
-import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 import getTacticNodes from "../../utils/getTacticNodes.jsx";
 const initialState = {
     nodeState: initialNodes,
-    // nodeState: flattenNodes(PhaseFiveTreeDS),
     originalNodesIds: initialNodes.map(node => node.id),
     edgeState: initialEdges,
     hiddenEdges: [],
@@ -27,14 +25,14 @@ export const phaseFiveSlice = createSlice({
     reducers: {
         setPhaseFiveNodes: (state, action) => {
             const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
+            console.log(removedNodeIds)
+            let childNodesToRemove = removedNodeIds.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
             state.edgeState = state.edgeState.filter(edge => {
-                return !removedNodeIds.includes(edge.target)
+                return !removedNodeIds.includes(edge.target) && !childNodesToRemove.includes(edge.target)
             })
             const sourceIds = state.edgeState.map(edge => edge.source)
             const targetIds = state.edgeState.map(edge => edge.target)
-            state.nodeState = state.nodeState.filter(node => {
-                return sourceIds.includes(node.id) || targetIds.includes(node.id)
-            })
+            state.nodeState = state.nodeState.filter(node => (sourceIds.includes(node.id) || targetIds.includes(node.id)) && (!removedNodeIds.includes(node.id) && !childNodesToRemove.includes(node.id)));
             state.nodeState.map(node => {
                 if(action.payload.selectedTacticNodes.includes(node.data.label)){
                     node.data.isChosen = true;
@@ -87,7 +85,6 @@ export const phaseFiveSlice = createSlice({
             if(action.payload.includes === "by-money"){
                 childNodes.push("increase-worth-vagueness-2")
             }
-            console.log("removed nodes:", action.payload);
             let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data")).map(e=>e.source);
             state.edgeState = state.edgeState.filter(edge => !childNodes.includes(edge.target) && !action.payload.includes(edge.target));
             for(let edge of state.edgeState){

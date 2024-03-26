@@ -8,14 +8,14 @@ import GamificationNode from "../../components/Shapes/GamificationNode.jsx";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import StraightEdge from "../../components/StraightEdge";
 import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
-import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.js";
 import {
     hideElements,
     updateNodes,
     preResolveConflict, removeNegativeConnections,
     resolveConflicts,
     setPhaseFiveNodes
-} from "../../redux/slices/phaseFiveSlice.jsx";
+} from "../../redux/slices/phaseFiveSlice.js";
 import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
 import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
 import Loading from "arwes/lib/Loading/index.js";
@@ -38,21 +38,21 @@ export default function PhaseFive() {
     const {nodeState, edgeState, hiddenNodes, uploaded, treeMap} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    const {selectedNodeNames} = useSelector((state) => state.phaseFour);
+    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
     const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
     const dispatch = useDispatch();
-    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    // const userSelectedNodes = ["C7", "C4", "C2", "C1", "C5", "C14", "C17", "C18", "C12", "C24", "C25", "C29", "C26", "C33", "C34", "C8", "C11"];
-    // const selectedNodeNames = [
-    //     "High_Design_Quality",
-    //     "Increase_User_Surprise",
-    //     "Promote_Collaboration",
-    //     "Improve_Minor_Assistance",
-    //     "Improve_System_Perception_via_IT",
-    //     "Improve_System_Awareness",
-    //     "Improve_Trust"
-    // ]
+    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const userSelectedNodes = ["C7", "C4", "C2", "C1", "C5", "C14", "C17", "C18", "C12", "C24", "C25", "C29", "C26", "C33", "C34", "C8", "C11"];
+    const selectedNodeNames = [
+        "High_Design_Quality",
+        "Increase_User_Surprise",
+        "Promote_Collaboration",
+        "Improve_Minor_Assistance",
+        "Improve_System_Perception_via_IT",
+        "Improve_System_Awareness",
+        "Improve_Trust"
+    ]
     //     "Fast_Design",
     //     "Low_Cost_Design",
     //     "Promote_Collaboration",
@@ -192,7 +192,7 @@ export default function PhaseFive() {
                                 style: {
                                     ...elem.style,
                                     stroke: isConnected ? "#0F0" : "#b1b1b7",
-                                    strokeWidth: isConnected ? 4 : 2,
+                                    strokeWidth: isConnected ? 5 : 3,
                                 }
                             };
                         } else {
@@ -272,7 +272,7 @@ export default function PhaseFive() {
             />}
             {!loading && conflictNodes.length > 0 && !solved &&
                 <>
-                    <Heading node="h2" style={phase3Style.title}>
+                    <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                         Conflict Detected
                         <br/>
                         <span>There are conflicts in the graph. Please resolve them by choosing one.</span>

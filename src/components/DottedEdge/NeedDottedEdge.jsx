@@ -16,7 +16,7 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
             <BaseEdge id={id} path={edgePath}
                       style={{
                           stroke: selected ? '#0F0' : '#fff',
-                          strokeWidth: selected ? 4 : 2,
+                          strokeWidth: selected ? 5 : 3,
                           strokeDasharray: '5 5',
                           pointerEvents: 'none',
                       }}
@@ -31,15 +31,14 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
                         padding: 4,
                         borderRadius: 5,
                         color: selected ? '#0F0' : '#fff',
-                        background: "#242424",
                         fontSize: 30,
                         fontWeight: 700,
                         marginTop: data?.hasLineBreak || 0,
                         marginLeft: data?.hasMarginLeft || 0,
                     }}
-                    className="nodrag nopan"
+                    className="nodrag nopan bg-slate-300 dark:bg-slate-900"
                 >
-                    <pre className={"text-center text-3xl bold"}>{ data?.label }</pre>
+                    <pre className={"text-center text-3xl bold text-white"}>{ data?.label }</pre>
                 </div>
             </EdgeLabelRenderer>
         </>

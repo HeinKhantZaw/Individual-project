@@ -3,7 +3,7 @@ import ReactFlow, {Background, Controls, MarkerType, MiniMap, useEdgesState, use
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.js";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge";
 import {
@@ -13,7 +13,7 @@ import {
     setHiddenNodes,
     toggleHidden,
     updateNodes
-} from "../../redux/slices/phaseTwoSlice.jsx";
+} from "../../redux/slices/phaseTwoSlice.js";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
 import {findNodeById} from "../../utils/findNodeById.jsx";

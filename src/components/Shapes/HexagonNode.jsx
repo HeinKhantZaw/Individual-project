@@ -1,7 +1,7 @@
 import React, {useCallback} from "react";
 import {Handle} from "reactflow";
 import {useDispatch, useSelector} from "react-redux";
-import {updateResultName} from "../../redux/slices/phaseOneSlice.jsx";
+import {updateResultName} from "../../redux/slices/phaseOneSlice.js";
 
 const HexagonNode = () => {
     const dispatch = useDispatch();

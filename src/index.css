@@ -187,3 +187,12 @@ input:checked + .slider:before {
     color: #4BF2F6;
     background-color: #2b7d80;
 }
+
+.hide{
+    display: none;
+}
+.moon, .sun{
+    width: 34px;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+}

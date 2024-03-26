@@ -14,9 +14,9 @@ const DottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, tar
     return (
         <>
             <BaseEdge id={id} path={edgePath}
+                      className={"stroke-white"}
                       style={{
-                          stroke: '#fff',
-                          strokeWidth: 2,
+                          strokeWidth: 4,
                           strokeDasharray: '5 5',
                           pointerEvents: 'none',
                       }}
@@ -29,15 +29,14 @@ const DottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, tar
                         transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
                         padding: 4,
                         borderRadius: 5,
-                        background: "#242424",
                         fontSize: 30,
                         fontWeight: 700,
                         marginTop: data?.hasLineBreak || 0,
                         marginLeft: data?.hasMarginLeft || 0,
                     }}
-                    className="nodrag nopan"
+                    className="nodrag nopan bg-slate-300 dark:bg-slate-900"
                 >
-                    <pre className={"text-center text-lg"}>+ {data?.label}</pre>
+                    <pre className={"text-center text-lg text-white"}>+ {data?.label}</pre>
                 </div>
             </EdgeLabelRenderer>
         </>

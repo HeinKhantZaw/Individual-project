@@ -8,14 +8,12 @@ import HexagonNode from "../../components/Shapes/HexagonNode.jsx";
 import FloatingEdge from "../../components/FloatingEdge";
 import ConnectionLine from "../../components/ConnectionLine";
 import {useDispatch, useSelector} from "react-redux";
-import {connectEdge, setPhaseOneState, updateNodes} from "../../redux/slices/phaseOneSlice.jsx";
-import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
-import {resetPhaseTwo} from "../../redux/slices/phaseTwoSlice.jsx";
-import {resetPhaseThree} from "../../redux/slices/phaseThreeSlice.jsx";
+import {connectEdge, setPhaseOneState, updateNodes} from "../../redux/slices/phaseOneSlice.js";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.js";
+import {resetPhaseTwo} from "../../redux/slices/phaseTwoSlice.js";
+import {resetPhaseThree} from "../../redux/slices/phaseThreeSlice.js";
 import Heading from "arwes/lib/Heading/index.js";
 import {phase3Style} from "../PhaseThree/style.jsx";
-import {getGlossary} from "../../utils/getGlossary.jsx";
-import Project from "arwes/lib/Project/index.js";
 import Button from "arwes/lib/Button/index.js";
 import {templateOne} from "../../data/Phase1_template.js";
 
@@ -71,11 +69,6 @@ export default function PhaseOne() {
     const defaultEdgeOptions = {
         style: {strokeWidth: 2, stroke: 'white'},
         type: 'floating',
-    };
-    const connectionLineStyle = {
-        strokeWidth: 3,
-        stroke: 'grey',
-        strokeDasharray: '5,5',
     };
 
     // const onConnect = useCallback((params) => {
@@ -134,7 +127,7 @@ export default function PhaseOne() {
         <div style={{width: "100vw", height: "93vh"}}>
             {
                 loading && <>
-                    <Heading node="h2" style={phase3Style.title}>
+                    <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                         Do you wanna use default template in this phase?
                     </Heading>
                 <div className={"flex justify-center gap-4"}>
@@ -155,10 +148,8 @@ export default function PhaseOne() {
                     onEdgesChange={onEdgesChange}
                     nodeTypes={nodeTypes}
                     edgeTypes={edgeTypes}
-                    // onConnect={onConnect}
                     defaultEdgeOptions={defaultEdgeOptions}
                     connectionLineComponent={ConnectionLine}
-                    connectionLineStyle={connectionLineStyle}
                     deleteKeyCode={''}
                     onNodeClick={connectToBase}
                     fitView

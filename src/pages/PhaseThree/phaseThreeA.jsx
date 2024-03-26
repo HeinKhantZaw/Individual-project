@@ -1,9 +1,9 @@
 import ReactFlow, {Background, Controls, MiniMap, useNodesState} from "reactflow";
 import React, {useEffect} from "react";
-import {setCurrentPhase, setNextPhaseEnabled, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setNextPhaseEnabled, setPhase3Value} from "../../redux/slices/phaseStatusSlice.js";
 import {useDispatch, useSelector} from "react-redux";
 import Heading from "arwes/lib/Heading/index.js";
-import {hideTactic, setHiddenTactic, setPhase3aTacticNodes} from "../../redux/slices/phaseThreeSlice.jsx";
+import {hideTactic, setHiddenTactic, setPhase3aTacticNodes} from "../../redux/slices/phaseThreeSlice.js";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import {phase3Style} from "./style.jsx";
 
@@ -37,7 +37,7 @@ export default function PhaseThreeA() {
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <Heading node="h2" style={phase3Style.title}>
+            <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                 The following tactics can refine the acceptance needs selected:
                 <br/>
                 <span>which ones do you want to use?</span>

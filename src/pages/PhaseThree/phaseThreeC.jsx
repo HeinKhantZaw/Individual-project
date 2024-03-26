@@ -4,11 +4,11 @@ import ReactFlow, {Background, useEdgesState, useNodesState} from "reactflow";
 import Heading from "arwes/lib/Heading/index.js";
 import {phase3Style} from "./style.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.js";
 import {markerConfig} from "../../components/Arrows/Marker.jsx";
 import DottedEdge from "../../components/DottedEdge";
 import {Phase3cNodes} from "../../data/PhaseThreeNodes.js";
-import {setChosenTactic, setPhase3aTacticNodes, setPhase3cNodes} from "../../redux/slices/phaseThreeSlice.jsx";
+import {setChosenTactic, setPhase3aTacticNodes, setPhase3cNodes} from "../../redux/slices/phaseThreeSlice.js";
 
 const edgeState = [
     {
@@ -68,7 +68,7 @@ export default function PhaseThreeC() {
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <Heading node="h2" style={phase3Style.title}>
+            <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                 The operationalization chosen can operationalize also other tactics, the following ones:
                 <br/>
                 <span>do you want to include some of them?</span>

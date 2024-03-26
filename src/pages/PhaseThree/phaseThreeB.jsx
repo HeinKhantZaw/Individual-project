@@ -4,7 +4,7 @@ import ReactFlow, {Background, useNodesState} from "reactflow";
 import Heading from "arwes/lib/Heading/index.js";
 import {phase3Style} from "./style.jsx";
 import {useDispatch} from "react-redux";
-import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSlice.js";
 
 let initialNodes = [
     {
@@ -81,7 +81,7 @@ export default function PhaseThreeB() {
     };
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <Heading node="h2" style={phase3Style.title}>
+            <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                 The following operationalization can operationalize your tactics selected:
                 <br/>
                 <span>which ones do you want to use?</span>

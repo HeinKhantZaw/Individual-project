@@ -15,7 +15,8 @@ const StraightEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, t
         <>
             <BaseEdge id={id} path={edgePath}
                       style={{
-                          strokeWidth: 3,
+                          strokeWidth: 4,
+                          stroke: "white",
                           pointerEvents: 'none',
                       }}
                       markerStart={markerStart}
@@ -27,15 +28,14 @@ const StraightEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition, t
                         transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
                         padding: 4,
                         borderRadius: 5,
-                        background: "#242424",
                         fontSize: 30,
                         fontWeight: 700,
                         marginTop: data?.hasLineBreak || 0,
                         marginLeft: data?.hasMarginLeft || 0,
                     }}
-                    className="nodrag nopan"
+                    className="nodrag nopan bg-slate-300 dark:bg-slate-900"
                 >
-                    <pre className={"text-center text-lg"}>{data?.label}</pre>
+                    <pre className={"text-center text-lg text-white"}>{data?.label}</pre>
                 </div>
             </EdgeLabelRenderer>
         </>

@@ -3,12 +3,12 @@ import ReactFlow, {Background, useEdgesState, useNodesState,} from "reactflow";
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.jsx";
+import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.js";
 import OvalNode from "../../components/Shapes/OvalNode.jsx";
 import DottedEdge from "../../components/DottedEdge";
 import {phase3Style} from "../PhaseThree/style.jsx";
 import Heading from "arwes/lib/Heading/index.js";
-import {setPhaseFourNodes, showSelectedNodes} from "../../redux/slices/phaseFourSlice.jsx";
+import {setPhaseFourNodes, showSelectedNodes} from "../../redux/slices/phaseFourSlice.js";
 
 
 const nodeTypes = {oval: OvalNode, operator: OperatorNode};
@@ -36,7 +36,7 @@ export default function PhaseFour() {
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>
-            <Heading node="h2" style={phase3Style.title}>
+            <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                 (Acceptance, Tactical and Gamification) specification summary:
             </Heading>
             <ReactFlow

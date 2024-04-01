@@ -8,7 +8,7 @@ import {setCurrentPhase, setPhase3Value} from "../../redux/slices/phaseStatusSli
 import {markerConfig} from "../../components/Arrows/Marker.jsx";
 import DottedEdge from "../../components/DottedEdge";
 import {Phase3cNodes} from "../../data/PhaseThreeNodes.js";
-import {setChosenTactic, setPhase3aTacticNodes, setPhase3cNodes} from "../../redux/slices/phaseThreeSlice.js";
+import {setChosenTactic, setPhase3cNodes} from "../../redux/slices/phaseThreeSlice.js";
 
 const edgeState = [
     {

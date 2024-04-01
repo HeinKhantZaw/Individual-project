@@ -7,7 +7,7 @@ import {searchNode} from "../../utils/searchNode.jsx";
 import {flattenNodes} from "../../utils/flattenNodes.jsx";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 import _ from "lodash";
-import getTacticNodes from "../../utils/getTacticNodes.jsx";
+
 const initialState = {
     nodeState: initialNodes,
     originalNodesIds: initialNodes.map(node => node.id),
@@ -24,8 +24,8 @@ export const phaseFiveSlice = createSlice({
     initialState,
     reducers: {
         setPhaseFiveNodes: (state, action) => {
+            // console.log(generateJSONTree(initialNodes, initialEdges))
             const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
-            console.log(removedNodeIds)
             let childNodesToRemove = removedNodeIds.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
             state.edgeState = state.edgeState.filter(edge => {
                 return !removedNodeIds.includes(edge.target) && !childNodesToRemove.includes(edge.target)
@@ -82,30 +82,44 @@ export const phaseFiveSlice = createSlice({
         },
         resolveConflicts: (state, action) => {
             const childNodes = action.payload.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
-            if(action.payload.includes === "by-money"){
+            if(action.payload.includes("define-virtual-currency")){
                 childNodes.push("increase-worth-vagueness-2")
             }
-            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data")).map(e=>e.source);
+            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data") && edge.data.label !== "!").map(e=>e.source);
             state.edgeState = state.edgeState.filter(edge => !childNodes.includes(edge.target) && !action.payload.includes(edge.target));
             for(let edge of state.edgeState){
                 if(tacticNodesToRemove.includes(edge.source)){
-                    // if there is a source, remove from tacticNodesToRemove, it should not be removed
+                    // if there is a source, remove from tacticNodesToRemove
                     tacticNodesToRemove = tacticNodesToRemove.filter(node => node !== edge.source);
                 }
             }
             state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id) && !tacticNodesToRemove.includes(node.id));
         },
-        updateNodes: (state, action) => {
-            state.nodeState = action.payload
-        },
         hideElements: (state, action) => {
             const ids = getAllChildrenIds(searchNode(treeMap, action.payload));
-            const nodes = getTacticNodes(ids)
+            let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
+            if(!isHidden) {
+                state.hiddenNodes = [
+                    ...state.hiddenNodes,
+                    {
+                        id: action.payload,
+                        children: state.nodeState.filter(node => ids.includes(node.id)),
+                    }
+                ]
+                state.nodeState = state.nodeState.filter(node => !ids.includes(node.id));
+            } else {
+                state.nodeState = [
+                    ...state.nodeState,
+                    ...state.hiddenNodes.find(node => node.id === action.payload).children
+                ]
+                state.hiddenNodes = state.hiddenNodes.filter(node => node.id !== action.payload);
+            }
+            state.nodeState.find(node => node.id === action.payload).data.isHidden = !isHidden;
         }
     }
 });
 
-export const {setPhaseFiveNodes, removeNegativeConnections, preResolveConflict, resolveConflicts, updateNodes, hideElements} = phaseFiveSlice.actions;
+export const {setPhaseFiveNodes, removeNegativeConnections, preResolveConflict, resolveConflicts, hideElements} = phaseFiveSlice.actions;
 
 export default phaseFiveSlice.reducer;
 

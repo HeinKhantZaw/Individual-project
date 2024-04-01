@@ -196,14 +196,14 @@ export const initialEdges = [
 
     {
         id: "e20",
-        source: "set-gamifiable-actions",
-        target: "set-experience-points-system",
-        sourceHandle: "gamification_source_right",
-        targetHandle: "gamification_target_left",
+        target: "set-gamifiable-actions",
+        source: "set-experience-points-system",
+        sourceHandle: "gamification_source_left",
+        targetHandle: "gamification_target_right",
         type: "dotted",
         data: {label: "Need"},
         style: arrowEdgeStyle,
-        markerStart: markerConfig,
+        markerEnd: markerConfig,
     },
     {
         id: "e21",
@@ -825,14 +825,14 @@ export const initialEdges = [
     //use-redeemable-points to rp-define-exchange-points-rewards
     {
         id: "e78",
-        target: "use-redeemable-points",
-        source: "rp-define-exchange-points-rewards-2",
+        source: "use-redeemable-points",
+        target: "rp-define-exchange-points-rewards-2",
         type: "dotted",
         data: {label: "Need"},
-        sourceHandle: "gamification_source_top",
-        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "gamification_target_top",
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerEnd: markerConfig
     },
 
     //use-redeemable-points to choose-kinds-of-points
@@ -896,14 +896,14 @@ export const initialEdges = [
     //use-karma-points to gp-define-exchange-points-rewards
     {
         id: "e82",
-        target: "use-karma-points",
-        source: "gp-define-exchange-points-rewards-2",
+        source: "use-karma-points",
+        target: "gp-define-exchange-points-rewards-2",
         type: "dotted",
         data: {label: "Need"},
-        sourceHandle: "gamification_source_top",
-        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_bottom",
+        targetHandle: "gamification_target_top",
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerEnd: markerConfig
     },
 
     {

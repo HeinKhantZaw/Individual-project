@@ -11,7 +11,6 @@ import NeedDottedEdge from "../../components/DottedEdge/NeedDottedEdge.jsx";
 import {setCurrentPhase, setNextPhaseEnabled} from "../../redux/slices/phaseStatusSlice.js";
 import {
     hideElements,
-    updateNodes,
     preResolveConflict, removeNegativeConnections,
     resolveConflicts,
     setPhaseFiveNodes
@@ -25,6 +24,8 @@ import {getGlossary} from "../../utils/getGlossary.jsx";
 import Project from "arwes/lib/Project/index.js";
 import {findNodeById} from "../../utils/findNodeById.jsx";
 
+const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
+const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
 
 export default function PhaseFive() {
     const [elements, setElements] = useState([]);
@@ -38,21 +39,19 @@ export default function PhaseFive() {
     const {nodeState, edgeState, hiddenNodes, uploaded, treeMap} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
-    const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
-    const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};
+    const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const dispatch = useDispatch();
-    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    const userSelectedNodes = ["C7", "C4", "C2", "C1", "C5", "C14", "C17", "C18", "C12", "C24", "C25", "C29", "C26", "C33", "C34", "C8", "C11"];
-    const selectedNodeNames = [
-        "High_Design_Quality",
-        "Increase_User_Surprise",
-        "Promote_Collaboration",
-        "Improve_Minor_Assistance",
-        "Improve_System_Perception_via_IT",
-        "Improve_System_Awareness",
-        "Improve_Trust"
-    ]
+    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    // const userSelectedNodes = ["C7", "C4", "C2", "C1", "C5", "C14", "C17", "C18", "C12", "C24", "C25", "C29", "C26", "C33", "C34", "C8", "C11"];
+    // const selectedNodeNames = [
+    //     "High_Design_Quality",
+    //     "Increase_User_Surprise",
+    //     "Promote_Collaboration",
+    //     "Improve_Minor_Assistance",
+    //     "Improve_System_Perception_via_IT",
+    //     "Improve_System_Awareness",
+    //     "Improve_Trust"
+    // ]
     //     "Fast_Design",
     //     "Low_Cost_Design",
     //     "Promote_Collaboration",
@@ -74,15 +73,9 @@ export default function PhaseFive() {
     //     "Create_Fair_Competition"
     // ]
     const handleNodeClick = (event, element) => {
-        if(element.data.type === "gamification" && element.id !== "design-gamification"){
+        if(element.type === "gamification" && element.id !== "design-gamification"){
             const isHidden = findNodeById(hiddenNodes, element.id);
-            if (isHidden) {
-                const newNodes = [...nodeState, ...isHidden.children];
-                dispatch(updateNodes(newNodes));
-                // dispatch(addEdges(isHidden.children.length > 0 ? isHidden.children.filter(c => !c.data.isHidden).map(child => child.id) : isHidden.id));
-            } else {
-                dispatch(hideElements(element.id));
-            }
+            dispatch(hideElements(element.id));
         }
     }
 
@@ -93,7 +86,11 @@ export default function PhaseFive() {
                 conflictNodes.push({n1: edge.source, n2: edge.target})
             }
         });
-        return conflictNodes;
+        if(conflictNodes.length > 0) {
+            setConflictNodes(conflictNodes);
+        } else {
+            setSolved(true);
+        }
     }
 
     const resolveConflict = (node) => {
@@ -125,7 +122,7 @@ export default function PhaseFive() {
             } else if (selectedNodeNames.includes("Create_Unfair_Competition")){
                 dispatch(preResolveConflict("create-fair-competition"));
             }
-            setConflictNodes(checkConflicts());
+            checkConflicts();
         }
     }, [loading]);
 
@@ -260,6 +257,7 @@ export default function PhaseFive() {
             })
         })
     }
+
 
     return (
         <div style={{width: "100vw", height: "93vh"}}>

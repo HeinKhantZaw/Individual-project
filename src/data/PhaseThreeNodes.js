@@ -346,7 +346,7 @@ export const Phase3cNodes  = [
             "default": true,
             "tacticType": "acceptance",
             "isHidden": false,
-            "isChosen": false,
+            "isChosen": true,
             "label": "Improve_System_Advantage_Perception_VS_Competitor_Systems_via_IT",
             "width": 450,
             "height": 100,

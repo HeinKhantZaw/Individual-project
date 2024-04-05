@@ -16,9 +16,15 @@ export function evalAndRegexConditions(initialNodes, userSelectedNodes) {
                 }
             });
 
+            // Check that the string only contains allowed elements
+            if (!/^(\s*true\s*|\s*false\s*|\s*\|\|\s*|\s*\&\&\s*|\s*!\s*|\s*\(\s*|\s*\)\s*)*$/.test(replacedExpression)) {
+                throw new Error('Invalid characters in condition');
+            }
+
             // (C3 OR C8 OR C9 OR C20 OR C24 OR C25 OR C26 OR C29) AND (NOT C28)
             // (true || false || true || false || false || false || false || false) && (!true)
             return eval(replacedExpression);
         }
     });
 }
+

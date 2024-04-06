@@ -15,14 +15,14 @@ import {
     resolveConflicts,
     setPhaseFiveNodes
 } from "../../redux/slices/phaseFiveSlice.js";
-import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
+import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.js";
 import {OperationalMarker} from "../../components/Arrows/OperationalMarker.jsx";
 import Loading from "arwes/lib/Loading/index.js";
 import {phase3Style} from "../PhaseThree/style.jsx";
 import Heading from "arwes/lib/Heading/index.js";
-import {getGlossary} from "../../utils/getGlossary.jsx";
+import {getGlossary} from "../../utils/getGlossary.js";
 import Project from "arwes/lib/Project/index.js";
-import {findNodeById} from "../../utils/findNodeById.jsx";
+import {findNodeById} from "../../utils/findNodeById.js";
 
 const nodeTypes = {gamification: GamificationNode, operator: OperatorNode, oval: OvalNode};
 const edgeTypes = {dotted: NeedDottedEdge, straightLabel: StraightEdge};

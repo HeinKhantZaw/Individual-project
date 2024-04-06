@@ -1,4 +1,4 @@
-import {TreeModel} from "../classes/TreeModel.jsx";
+import {TreeModel} from "../classes/TreeModel.js";
 import _ from "lodash";
 
 export const buildTree = (nodeList) => {

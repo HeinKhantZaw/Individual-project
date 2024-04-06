@@ -1,10 +1,10 @@
 import {initialNodes} from "../../pages/PhaseFive/initial-nodes.jsx";
 import {initialEdges} from "../../pages/PhaseFive/initial-edges.jsx";
 import {createSlice} from "@reduxjs/toolkit";
-import {buildTree} from "../../utils/buildTree.jsx";
-import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
-import {searchNode} from "../../utils/searchNode.jsx";
-import {flattenNodes} from "../../utils/flattenNodes.jsx";
+import {buildTree} from "../../utils/buildTree.js";
+import {getAllChildrenIds} from "../../utils/getAllChildrenIds.js";
+import {searchNode} from "../../utils/searchNode.js";
+import {flattenNodes} from "../../utils/flattenNodes.js";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 import _ from "lodash";
 

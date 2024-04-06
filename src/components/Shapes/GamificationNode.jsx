@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Handle, NodeToolbar, Position} from "reactflow";
 import Card from "../Card";
-import {getGlossary} from "../../utils/getGlossary.jsx";
+import {getGlossary} from "../../utils/getGlossary.js";
 import {useSelector} from "react-redux";
 
 const GamificationNode = ({data}) => {

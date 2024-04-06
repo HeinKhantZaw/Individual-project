@@ -14,14 +14,14 @@ import {
     toggleHidden,
     updateNodes
 } from "../../redux/slices/phaseTwoSlice.js";
-import {flattenNodes} from "../../utils/flattenNodes.jsx";
-import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.jsx";
-import {findNodeById} from "../../utils/findNodeById.jsx";
-import {getAllChildrenIds} from "../../utils/getAllChildrenIds.jsx";
-import {buildTree} from "../../utils/buildTree.jsx";
-import {searchNode} from "../../utils/searchNode.jsx";
-import getTacticNodes from "../../utils/getTacticNodes.jsx";
-import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.jsx";
+import {flattenNodes} from "../../utils/flattenNodes.js";
+import {removeAndFlattenNodes} from "../../utils/removeAndFlattenNodes.js";
+import {findNodeById} from "../../utils/findNodeById.js";
+import {getAllChildrenIds} from "../../utils/getAllChildrenIds.js";
+import {buildTree} from "../../utils/buildTree.js";
+import {searchNode} from "../../utils/searchNode.js";
+import getTacticNodes from "../../utils/getTacticNodes.js";
+import {evalAndRegexConditions} from "../../utils/evalAndRegexConditions.js";
 
 
 const nodeTypes = {oval: OvalNode, operator: OperatorNode};

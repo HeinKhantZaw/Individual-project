@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useStore, getStraightPath } from 'reactflow';
-import {getEdgeParams} from "../../utils/getNodeIntersection.jsx";
+import {getEdgeParams} from "../../utils/getNodeIntersection.js";
 
 
 function FloatingEdge({ id, source, target, markerEnd, style }) {

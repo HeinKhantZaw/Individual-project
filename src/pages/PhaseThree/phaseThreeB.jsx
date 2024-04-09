@@ -84,7 +84,7 @@ export default function PhaseThreeB() {
             <Heading node="h2" style={phase3Style.title} className={"!text-black dark:!text-cyan-400"}>
                 The following operationalization can operationalize your tactics selected:
                 <br/>
-                <span>which ones do you want to use?</span>
+                <span>Deselect the tactics that are not applicable to your project.</span>
             </Heading>
             <ReactFlow
                 nodes={nodes}

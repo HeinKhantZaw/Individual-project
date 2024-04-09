@@ -119,7 +119,7 @@ export default function MainLayout() {
         navigate("phase5");
     }
     return (
-        <div className="holy-grail bg-slate-300 dark:bg-slate-900">
+        <div className="holy-grail bg-slate-400 dark:bg-slate-900">
             <header>
                 <nav className=" bg-zinc-900 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
                     <div className="flex flex-wrap justify-between items-center mx-auto">

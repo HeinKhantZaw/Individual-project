@@ -36,7 +36,7 @@ const NeedDottedEdge = ({id, sourceX, sourceY, targetX, targetY, sourcePosition,
                         marginTop: data?.hasLineBreak || 0,
                         marginLeft: data?.hasMarginLeft || 0,
                     }}
-                    className="nodrag nopan bg-slate-300 dark:bg-slate-900"
+                    className="nodrag nopan bg-slate-400 dark:bg-slate-900"
                 >
                     <pre className={"text-center text-3xl bold text-white"}>{ data?.label }</pre>
                 </div>

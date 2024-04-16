@@ -843,7 +843,6 @@ export const phaseTwoSlice = createSlice({
             state.hiddenEdges = state.hiddenEdges.filter((edge) => {
                 return !nodes.includes(edge.source)
             })
-            // console.log(JSON.parse(JSON.stringify(edgesToBeAdded)));
             state.edgeState = [...state.edgeState, ...edgesToBeAdded]
             const targetList = edgesToBeAdded.map(edge => edge.target)
             const check = targetList.every(target => state.nodeState.some(node => node.id === target));

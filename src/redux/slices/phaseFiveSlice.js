@@ -7,6 +7,9 @@ import {searchNode} from "../../utils/searchNode.js";
 import {flattenNodes} from "../../utils/flattenNodes.js";
 import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 import _ from "lodash";
+import {getAllParentIds} from "../../utils/getAllParentIds.js";
+import {findNodeById} from "../../utils/findNodeById.js";
+import {generateJSONTree} from "../../utils/generateJSONTree.js";
 
 const initialState = {
     nodeState: initialNodes,
@@ -97,20 +100,37 @@ export const phaseFiveSlice = createSlice({
         },
         hideElements: (state, action) => {
             const ids = getAllChildrenIds(searchNode(treeMap, action.payload));
+            const totalIds = [action.payload, ...ids]
+            const parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
             if(!isHidden) {
+                state.hiddenEdges = [...state.hiddenEdges, state.edgeState.filter(edge => parents.includes(edge.source) && totalIds.includes(edge.target))].flat();
+                state.edgeState = state.edgeState.filter(edge => !(parents.includes(edge.source) && totalIds.includes(edge.target)));
+                const parentsWithConnection = state.edgeState.filter(edge => parents.includes(edge.source)).map(e => e.source);
+                const parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent));
                 state.hiddenNodes = [
                     ...state.hiddenNodes,
                     {
                         id: action.payload,
-                        children: state.nodeState.filter(node => ids.includes(node.id)),
+                        children: state.nodeState.filter(node => ids.includes(node.id) || parentsToBeHidden.includes(node.id)),
                     }
                 ]
-                state.nodeState = state.nodeState.filter(node => !ids.includes(node.id));
+                state.nodeState = state.nodeState.filter(node => !ids.includes(node.id) && !parentsToBeHidden.includes(node.id));
             } else {
                 state.nodeState = [
                     ...state.nodeState,
                     ...state.hiddenNodes.find(node => node.id === action.payload).children
+                ]
+                const checkNodes = findNodeById(state.hiddenNodes, action.payload);
+                const filter = checkNodes.children.filter(c => !c.data.isHidden).map(child => child.id);
+                const i = [...filter, action.payload]
+                const edgesToBeAdded = state.hiddenEdges.filter(edge => (
+                    i.includes(edge.target)
+                ))
+                state.hiddenEdges = state.hiddenEdges.filter(edge => !i.includes(edge.target));
+                state.edgeState = [
+                    ...state.edgeState,
+                    ...edgesToBeAdded
                 ]
                 state.hiddenNodes = state.hiddenNodes.filter(node => node.id !== action.payload);
             }

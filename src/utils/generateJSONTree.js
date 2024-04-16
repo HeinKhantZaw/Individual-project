@@ -20,7 +20,7 @@ export function generateJSONTree(initialNodes, initialEdges) {
     // Recursively build the tree starting from the root nodes
     const buildTree = (parentId, parent) => {
         const children = initialEdges
-            .filter((edge) => edge.source === parentId && !( _.has(edge, "markerEnd") && _.has(edge, "markerStart")) )            .map((edge) => {
+            .filter((edge) => edge.source === parentId && !(_.has(edge, "markerEnd") && _.has(edge, "markerStart"))).map((edge) => {
                 const targetNode = nodeMap.get(edge.target);
                 return {
                     ...targetNode,

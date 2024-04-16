@@ -8,7 +8,8 @@ export const PhaseFiveTreeDS = [
         },
         "data": {
             "label": "Design_Gamification",
-            "top": "no"
+            "top": "no",
+            "isHidden": false
         },
         "children": [
             {
@@ -32,7 +33,8 @@ export const PhaseFiveTreeDS = [
                         },
                         "data": {
                             "label": "Set_Roles",
-                            "right": true
+                            "right": true,
+                            "isHidden": false
                         },
                         "parentId": "design-gamification-and",
                         "children": [
@@ -45,7 +47,8 @@ export const PhaseFiveTreeDS = [
                                 },
                                 "data": {
                                     "label": "Set_Single_Roles",
-                                    "num": "(1)"
+                                    "num": "(1)",
+                                    "isHidden": false
                                 },
                                 "parentId": "set-roles",
                                 "children": null
@@ -61,7 +64,8 @@ export const PhaseFiveTreeDS = [
                                 },
                                 "data": {
                                     "label": "Set_Team_Roles",
-                                    "num": "(1)"
+                                    "num": "(1)",
+                                    "isHidden": false
                                 },
                                 "children": null
                             }
@@ -76,8 +80,9 @@ export const PhaseFiveTreeDS = [
                         },
                         "data": {
                             "label": "Set_Gamifiable_Actions",
-                            "sourceRight": true,
-                            "num": "(1)"
+                            "right": true,
+                            "num": "(1)",
+                            "isHidden": false
                         },
                         "parentId": "design-gamification-and",
                         "children": [
@@ -101,7 +106,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 450
                                         },
                                         "data": {
-                                            "label": "Set_Kinds"
+                                            "label": "Set_Kinds",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-gamifiable-actions-and",
                                         "children": [
@@ -114,7 +120,8 @@ export const PhaseFiveTreeDS = [
                                                 },
                                                 "data": {
                                                     "label": "Set_As_Directly_Unlocked",
-                                                    "sourceRight": true
+                                                    "sourceRight": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-kinds",
                                                 "children": null
@@ -128,7 +135,8 @@ export const PhaseFiveTreeDS = [
                                                 },
                                                 "data": {
                                                     "label": "Set_As_Unlockable",
-                                                    "num": "(1)"
+                                                    "num": "(1)",
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-kinds",
                                                 "children": null
@@ -143,113 +151,11 @@ export const PhaseFiveTreeDS = [
                                             "y": 450
                                         },
                                         "data": {
-                                            "label": "Choose_Gamifiable_Actions"
+                                            "label": "Choose_Gamifiable_Actions",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-gamifiable-actions-and",
                                         "children": null
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "set-experience-points-system",
-                                "type": "gamification",
-                                "position": {
-                                    "x": -5500,
-                                    "y": 150
-                                },
-                                "data": {
-                                    "label": "Set_Experience_Points_System",
-                                    "right": true,
-                                    "left": true,
-                                    "bottom": true,
-                                    "sourceLeft": true,
-                                    "sourceRight": true,
-                                    "sourceTop": true,
-                                    "num": "(1)"
-                                },
-                                "parentId": "set-gamifiable-actions",
-                                "children": [
-                                    {
-                                        "id": "set-experience-points-system-and",
-                                        "type": "operator",
-                                        "position": {
-                                            "x": -5400,
-                                            "y": 350
-                                        },
-                                        "data": {
-                                            "label": "AND"
-                                        },
-                                        "parentId": "set-experience-points-system",
-                                        "children": [
-                                            {
-                                                "id": "select-gamifiable-actions",
-                                                "type": "gamification",
-                                                "position": {
-                                                    "x": -5900,
-                                                    "y": 600
-                                                },
-                                                "data": {
-                                                    "label": "Select_Gamifiable_Actions"
-                                                },
-                                                "parentId": "set-experience-points-system-and",
-                                                "children": null
-                                            },
-                                            {
-                                                "id": "assign-points-to-gamifiable-actions",
-                                                "type": "gamification",
-                                                "position": {
-                                                    "x": -5500,
-                                                    "y": 600
-                                                },
-                                                "data": {
-                                                    "label": "Assign_Points_to_Gamifiable_Actions"
-                                                },
-                                                "parentId": "set-experience-points-system-and",
-                                                "children": [
-                                                    {
-                                                        "id": "set-same-points-to-each-action",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -5700,
-                                                            "y": 850
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_Same_Points_To_Each_Action",
-                                                            "sourceRight": true
-                                                        },
-                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                        "children": null
-                                                    },
-                                                    {
-                                                        "id": "define-metric",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -5300,
-                                                            "y": 850
-                                                        },
-                                                        "data": {
-                                                            "label": "Define_Metric",
-                                                            "left": true
-                                                        },
-                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                        "children": null
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "id": "set-expiration-time",
-                                                "type": "gamification",
-                                                "position": {
-                                                    "x": -5000,
-                                                    "y": 600
-                                                },
-                                                "data": {
-                                                    "label": "Set_Expiration_Time"
-                                                },
-                                                "parentId": "set-experience-points-system-and",
-                                                "children": null
-                                            }
-                                        ]
                                     }
                                 ]
                             }
@@ -270,10 +176,101 @@ export const PhaseFiveTreeDS = [
                             "sourceLeft": true,
                             "sourceRight": true,
                             "sourceTop": true,
-                            "num": "(1)"
+                            "num": "(1)",
+                            "isHidden": false
                         },
                         "parentId": "design-gamification-and",
                         "children": [
+                            {
+                                "id": "set-gamifiable-actions",
+                                "type": "gamification",
+                                "position": {
+                                    "x": -6965,
+                                    "y": 150
+                                },
+                                "data": {
+                                    "label": "Set_Gamifiable_Actions",
+                                    "right": true,
+                                    "num": "(1)",
+                                    "isHidden": false
+                                },
+                                "parentId": "set-experience-points-system",
+                                "children": [
+                                    {
+                                        "id": "set-gamifiable-actions-and",
+                                        "type": "operator",
+                                        "position": {
+                                            "x": -6870,
+                                            "y": 300
+                                        },
+                                        "data": {
+                                            "label": "AND"
+                                        },
+                                        "parentId": "set-gamifiable-actions",
+                                        "children": [
+                                            {
+                                                "id": "set-kinds",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": -6800,
+                                                    "y": 450
+                                                },
+                                                "data": {
+                                                    "label": "Set_Kinds",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "set-gamifiable-actions-and",
+                                                "children": [
+                                                    {
+                                                        "id": "set-as-directly-unlocked",
+                                                        "type": "gamification",
+                                                        "position": {
+                                                            "x": -6900,
+                                                            "y": 650
+                                                        },
+                                                        "data": {
+                                                            "label": "Set_As_Directly_Unlocked",
+                                                            "sourceRight": true,
+                                                            "isHidden": false
+                                                        },
+                                                        "parentId": "set-kinds",
+                                                        "children": null
+                                                    },
+                                                    {
+                                                        "id": "set-as-unlockable",
+                                                        "type": "gamification",
+                                                        "position": {
+                                                            "x": -6500,
+                                                            "y": 650
+                                                        },
+                                                        "data": {
+                                                            "label": "Set_As_Unlockable",
+                                                            "num": "(1)",
+                                                            "isHidden": false
+                                                        },
+                                                        "parentId": "set-kinds",
+                                                        "children": null
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "choose-gamifiable-actions",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": -7100,
+                                                    "y": 450
+                                                },
+                                                "data": {
+                                                    "label": "Choose_Gamifiable_Actions",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "set-gamifiable-actions-and",
+                                                "children": null
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
                             {
                                 "id": "set-experience-points-system-and",
                                 "type": "operator",
@@ -294,7 +291,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 600
                                         },
                                         "data": {
-                                            "label": "Select_Gamifiable_Actions"
+                                            "label": "Select_Gamifiable_Actions",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-experience-points-system-and",
                                         "children": null
@@ -307,7 +305,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 600
                                         },
                                         "data": {
-                                            "label": "Assign_Points_to_Gamifiable_Actions"
+                                            "label": "Assign_Points_to_Gamifiable_Actions",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-experience-points-system-and",
                                         "children": [
@@ -320,7 +319,8 @@ export const PhaseFiveTreeDS = [
                                                 },
                                                 "data": {
                                                     "label": "Set_Same_Points_To_Each_Action",
-                                                    "sourceRight": true
+                                                    "sourceRight": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "assign-points-to-gamifiable-actions",
                                                 "children": null
@@ -334,7 +334,8 @@ export const PhaseFiveTreeDS = [
                                                 },
                                                 "data": {
                                                     "label": "Define_Metric",
-                                                    "left": true
+                                                    "left": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "assign-points-to-gamifiable-actions",
                                                 "children": null
@@ -349,7 +350,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 600
                                         },
                                         "data": {
-                                            "label": "Set_Expiration_Time"
+                                            "label": "Set_Expiration_Time",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-experience-points-system-and",
                                         "children": null
@@ -369,7 +371,8 @@ export const PhaseFiveTreeDS = [
                             "label": "Set_Game_Mechanics_and_Dynamics",
                             "num": "(1)",
                             "sourceRight": true,
-                            "sourceLeft": true
+                            "sourceLeft": true,
+                            "isHidden": false
                         },
                         "parentId": "design-gamification-and",
                         "children": [
@@ -388,7 +391,8 @@ export const PhaseFiveTreeDS = [
                                     "sourceLeft": true,
                                     "sourceRight": true,
                                     "sourceTop": true,
-                                    "top": true
+                                    "top": true,
+                                    "isHidden": false
                                 },
                                 "children": [
                                     {
@@ -417,7 +421,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-game-structure-and",
                                                 "children": [
@@ -441,7 +446,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1000
                                                                 },
                                                                 "data": {
-                                                                    "label": "Define_Paths"
+                                                                    "label": "Define_Paths",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-paths-and",
                                                                 "children": [
@@ -453,7 +459,8 @@ export const PhaseFiveTreeDS = [
                                                                             "y": 1200
                                                                         },
                                                                         "data": {
-                                                                            "label": "Define_Parallel_Paths"
+                                                                            "label": "Define_Parallel_Paths",
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "define-paths",
                                                                         "children": null
@@ -466,7 +473,8 @@ export const PhaseFiveTreeDS = [
                                                                             "y": 1200
                                                                         },
                                                                         "data": {
-                                                                            "label": "Define_Tree_Paths"
+                                                                            "label": "Define_Tree_Paths",
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "define-paths",
                                                                         "children": null
@@ -479,7 +487,8 @@ export const PhaseFiveTreeDS = [
                                                                             "y": 1150
                                                                         },
                                                                         "data": {
-                                                                            "label": "Define_Graph_Paths"
+                                                                            "label": "Define_Graph_Paths",
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "define-paths",
                                                                         "children": null
@@ -494,7 +503,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1000
                                                                 },
                                                                 "data": {
-                                                                    "label": "Link_Roles_to_Path"
+                                                                    "label": "Link_Roles_to_Path",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-paths-and",
                                                                 "children": [
@@ -507,7 +517,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "Set_Roles",
-                                                                            "right": true
+                                                                            "right": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "link-roles-to-path",
                                                                         "children": [
@@ -520,7 +531,8 @@ export const PhaseFiveTreeDS = [
                                                                                 },
                                                                                 "data": {
                                                                                     "label": "Set_Single_Roles",
-                                                                                    "num": "(1)"
+                                                                                    "num": "(1)",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-roles",
                                                                                 "children": null
@@ -536,486 +548,10 @@ export const PhaseFiveTreeDS = [
                                                                                 },
                                                                                 "data": {
                                                                                     "label": "Set_Team_Roles",
-                                                                                    "num": "(1)"
+                                                                                    "num": "(1)",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "children": null
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "id": "set-levels",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -3600,
-                                                            "y": 750
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_Levels",
-                                                            "right": true,
-                                                            "left": true,
-                                                            "bottom": true,
-                                                            "sourceLeft": true,
-                                                            "sourceRight": true,
-                                                            "sourceTop": true
-                                                        },
-                                                        "parentId": "set-paths",
-                                                        "children": [
-                                                            {
-                                                                "id": "set-levels-and",
-                                                                "type": "operator",
-                                                                "position": {
-                                                                    "x": -3500,
-                                                                    "y": 900
-                                                                },
-                                                                "data": {
-                                                                    "label": "AND"
-                                                                },
-                                                                "parentId": "set-levels",
-                                                                "children": [
-                                                                    {
-                                                                        "id": "choose-level-names",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": -3800,
-                                                                            "y": 1050
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Choose_Level_Names"
-                                                                        },
-                                                                        "parentId": "set-levels-and",
-                                                                        "children": null
-                                                                    },
-                                                                    {
-                                                                        "id": "set-achievement-rule",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": -3500,
-                                                                            "y": 1050
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Achievement_Rule"
-                                                                        },
-                                                                        "parentId": "set-levels-and",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "by-gamifiable-actions",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -3750,
-                                                                                    "y": 1300
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "By_Gamifiable_Actions"
-                                                                                },
-                                                                                "parentId": "set-achievement-rule",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "set-gamifiable-actions-2",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": -4000,
-                                                                                            "y": 1450
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Set_Gamifiable_Actions",
-                                                                                            "num": "(2)"
-                                                                                        },
-                                                                                        "parentId": "by-gamifiable-actions",
-                                                                                        "children": null
-                                                                                    }
-                                                                                ]
-                                                                            },
-                                                                            {
-                                                                                "id": "by-points",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -3500,
-                                                                                    "y": 1300
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "By_Points"
-                                                                                },
-                                                                                "parentId": "set-achievement-rule",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "by-points-and",
-                                                                                        "type": "operator",
-                                                                                        "position": {
-                                                                                            "x": -3400,
-                                                                                            "y": 1450
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "AND"
-                                                                                        },
-                                                                                        "parentId": "by-points",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "set-thresholds",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -3600,
-                                                                                                    "y": 1600
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Set_Thresholds"
-                                                                                                },
-                                                                                                "parentId": "by-points-and",
-                                                                                                "children": null
-                                                                                            },
-                                                                                            {
-                                                                                                "id": "choose-point-kinds",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -3300,
-                                                                                                    "y": 1600
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Choose_Point_Kinds"
-                                                                                                },
-                                                                                                "parentId": "by-points-and",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "choose-experience-points",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -3450,
-                                                                                                            "y": 1850
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Choose_Experience_Points",
-                                                                                                            "sourceLeft": true
-                                                                                                        },
-                                                                                                        "parentId": "choose-point-kinds",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "set-experience-points-system",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -5500,
-                                                                                                                    "y": 150
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Set_Experience_Points_System",
-                                                                                                                    "right": true,
-                                                                                                                    "left": true,
-                                                                                                                    "bottom": true,
-                                                                                                                    "sourceLeft": true,
-                                                                                                                    "sourceRight": true,
-                                                                                                                    "sourceTop": true,
-                                                                                                                    "num": "(1)"
-                                                                                                                },
-                                                                                                                "parentId": "choose-experience-points",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "set-experience-points-system-and",
-                                                                                                                        "type": "operator",
-                                                                                                                        "position": {
-                                                                                                                            "x": -5400,
-                                                                                                                            "y": 350
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "AND"
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "select-gamifiable-actions",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5900,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Select_Gamifiable_Actions"
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": null
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "assign-points-to-gamifiable-actions",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5500,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Assign_Points_to_Gamifiable_Actions"
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": [
-                                                                                                                                    {
-                                                                                                                                        "id": "set-same-points-to-each-action",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -5700,
-                                                                                                                                            "y": 850
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Set_Same_Points_To_Each_Action",
-                                                                                                                                            "sourceRight": true
-                                                                                                                                        },
-                                                                                                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                        "children": null
-                                                                                                                                    },
-                                                                                                                                    {
-                                                                                                                                        "id": "define-metric",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -5300,
-                                                                                                                                            "y": 850
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Define_Metric",
-                                                                                                                                            "left": true
-                                                                                                                                        },
-                                                                                                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                        "children": null
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "set-expiration-time",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5000,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Set_Expiration_Time"
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": null
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "id": "choose-other-kinds",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -3150,
-                                                                                                            "y": 1850
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Choose_Other_Kinds"
-                                                                                                        },
-                                                                                                        "parentId": "choose-point-kinds",
-                                                                                                        "children": null
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
-                                                                            },
-                                                                            {
-                                                                                "id": "by-other-achievements",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -3250,
-                                                                                    "y": 1300
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "By_Other_Achievements",
-                                                                                    "right": true
-                                                                                },
-                                                                                "parentId": "set-achievement-rule",
-                                                                                "children": null
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "id": "link-levels-to-paths",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": -3200,
-                                                                            "y": 1050
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Link_Levels_to_Paths"
-                                                                        },
-                                                                        "parentId": "set-levels-and",
-                                                                        "children": null
-                                                                    },
-                                                                    {
-                                                                        "id": "define-difficulty-among-levels",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": -2700,
-                                                                            "y": 1050
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Define_Difficulty_Among_Levels"
-                                                                        },
-                                                                        "parentId": "set-levels-and",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "use-linear-difficulty-progression",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -2950,
-                                                                                    "y": 1250
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Use_Linear_Difficulty_Progression",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "parentId": "define-difficulty-among-levels",
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "use-alternated-difficulty",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -2500,
-                                                                                    "y": 1250
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Use_Alternated_Difficulty",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "parentId": "define-difficulty-among-levels",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "use-alternated-difficulty-and",
-                                                                                        "type": "operator",
-                                                                                        "position": {
-                                                                                            "x": -2400,
-                                                                                            "y": 1400
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "AND"
-                                                                                        },
-                                                                                        "parentId": "use-alternated-difficulty",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "define-main-trend",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -2600,
-                                                                                                    "y": 1550
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Define_Main_Trend"
-                                                                                                },
-                                                                                                "parentId": "use-alternated-difficulty-and",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "use-increasing-difficulty",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -2600,
-                                                                                                            "y": 1700
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Use_Increasing_Difficulty"
-                                                                                                        },
-                                                                                                        "parentId": "define-main-trend",
-                                                                                                        "children": null
-                                                                                                    }
-                                                                                                ]
-                                                                                            },
-                                                                                            {
-                                                                                                "id": "insert-alternated-difficulties",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -2200,
-                                                                                                    "y": 1550
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Insert_Alternated_Difficulties"
-                                                                                                },
-                                                                                                "parentId": "use-alternated-difficulty-and",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "insert-alternated-difficulties-and",
-                                                                                                        "type": "operator",
-                                                                                                        "position": {
-                                                                                                            "x": -2100,
-                                                                                                            "y": 1700
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "AND"
-                                                                                                        },
-                                                                                                        "parentId": "insert-alternated-difficulties",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "choose-candidate-levels",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -2300,
-                                                                                                                    "y": 1850
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Choose_Candidate_Levels"
-                                                                                                                },
-                                                                                                                "parentId": "insert-alternated-difficulties-and",
-                                                                                                                "children": null
-                                                                                                            },
-                                                                                                            {
-                                                                                                                "id": "insert-unexpected-difficulties",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -1900,
-                                                                                                                    "y": 1850
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Insert_Unexpected_Difficulties"
-                                                                                                                },
-                                                                                                                "parentId": "insert-alternated-difficulties-and",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "insert-positive-difficulties",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -2100,
-                                                                                                                            "y": 2000
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Insert_Positive_Difficulties"
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-unexpected-difficulties",
-                                                                                                                        "children": null
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "insert-negative-difficulties",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -1700,
-                                                                                                                            "y": 2000
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Insert_Negative_Difficulties"
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-unexpected-difficulties",
-                                                                                                                        "children": null
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
                                                                             }
                                                                         ]
                                                                     }
@@ -1039,7 +575,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-game-structure-and",
                                                 "children": [
@@ -1063,7 +600,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1050
                                                                 },
                                                                 "data": {
-                                                                    "label": "Choose_Level_Names"
+                                                                    "label": "Choose_Level_Names",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-levels-and",
                                                                 "children": null
@@ -1076,7 +614,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1050
                                                                 },
                                                                 "data": {
-                                                                    "label": "Set_Achievement_Rule"
+                                                                    "label": "Set_Achievement_Rule",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-levels-and",
                                                                 "children": [
@@ -1088,7 +627,8 @@ export const PhaseFiveTreeDS = [
                                                                             "y": 1300
                                                                         },
                                                                         "data": {
-                                                                            "label": "By_Gamifiable_Actions"
+                                                                            "label": "By_Gamifiable_Actions",
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rule",
                                                                         "children": [
@@ -1101,7 +641,8 @@ export const PhaseFiveTreeDS = [
                                                                                 },
                                                                                 "data": {
                                                                                     "label": "Set_Gamifiable_Actions",
-                                                                                    "num": "(2)"
+                                                                                    "num": "(2)",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "by-gamifiable-actions",
                                                                                 "children": null
@@ -1116,7 +657,8 @@ export const PhaseFiveTreeDS = [
                                                                             "y": 1300
                                                                         },
                                                                         "data": {
-                                                                            "label": "By_Points"
+                                                                            "label": "By_Points",
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rule",
                                                                         "children": [
@@ -1140,7 +682,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1600
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Set_Thresholds"
+                                                                                            "label": "Set_Thresholds",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "by-points-and",
                                                                                         "children": null
@@ -1153,7 +696,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1600
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Choose_Point_Kinds"
+                                                                                            "label": "Choose_Point_Kinds",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "by-points-and",
                                                                                         "children": [
@@ -1166,7 +710,8 @@ export const PhaseFiveTreeDS = [
                                                                                                 },
                                                                                                 "data": {
                                                                                                     "label": "Choose_Experience_Points",
-                                                                                                    "sourceLeft": true
+                                                                                                    "sourceLeft": true,
+                                                                                                    "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "choose-point-kinds",
                                                                                                 "children": [
@@ -1185,10 +730,101 @@ export const PhaseFiveTreeDS = [
                                                                                                             "sourceLeft": true,
                                                                                                             "sourceRight": true,
                                                                                                             "sourceTop": true,
-                                                                                                            "num": "(1)"
+                                                                                                            "num": "(1)",
+                                                                                                            "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "choose-experience-points",
                                                                                                         "children": [
+                                                                                                            {
+                                                                                                                "id": "set-gamifiable-actions",
+                                                                                                                "type": "gamification",
+                                                                                                                "position": {
+                                                                                                                    "x": -6965,
+                                                                                                                    "y": 150
+                                                                                                                },
+                                                                                                                "data": {
+                                                                                                                    "label": "Set_Gamifiable_Actions",
+                                                                                                                    "right": true,
+                                                                                                                    "num": "(1)",
+                                                                                                                    "isHidden": false
+                                                                                                                },
+                                                                                                                "parentId": "set-experience-points-system",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "id": "set-gamifiable-actions-and",
+                                                                                                                        "type": "operator",
+                                                                                                                        "position": {
+                                                                                                                            "x": -6870,
+                                                                                                                            "y": 300
+                                                                                                                        },
+                                                                                                                        "data": {
+                                                                                                                            "label": "AND"
+                                                                                                                        },
+                                                                                                                        "parentId": "set-gamifiable-actions",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "id": "set-kinds",
+                                                                                                                                "type": "gamification",
+                                                                                                                                "position": {
+                                                                                                                                    "x": -6800,
+                                                                                                                                    "y": 450
+                                                                                                                                },
+                                                                                                                                "data": {
+                                                                                                                                    "label": "Set_Kinds",
+                                                                                                                                    "isHidden": false
+                                                                                                                                },
+                                                                                                                                "parentId": "set-gamifiable-actions-and",
+                                                                                                                                "children": [
+                                                                                                                                    {
+                                                                                                                                        "id": "set-as-directly-unlocked",
+                                                                                                                                        "type": "gamification",
+                                                                                                                                        "position": {
+                                                                                                                                            "x": -6900,
+                                                                                                                                            "y": 650
+                                                                                                                                        },
+                                                                                                                                        "data": {
+                                                                                                                                            "label": "Set_As_Directly_Unlocked",
+                                                                                                                                            "sourceRight": true,
+                                                                                                                                            "isHidden": false
+                                                                                                                                        },
+                                                                                                                                        "parentId": "set-kinds",
+                                                                                                                                        "children": null
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "id": "set-as-unlockable",
+                                                                                                                                        "type": "gamification",
+                                                                                                                                        "position": {
+                                                                                                                                            "x": -6500,
+                                                                                                                                            "y": 650
+                                                                                                                                        },
+                                                                                                                                        "data": {
+                                                                                                                                            "label": "Set_As_Unlockable",
+                                                                                                                                            "num": "(1)",
+                                                                                                                                            "isHidden": false
+                                                                                                                                        },
+                                                                                                                                        "parentId": "set-kinds",
+                                                                                                                                        "children": null
+                                                                                                                                    }
+                                                                                                                                ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "id": "choose-gamifiable-actions",
+                                                                                                                                "type": "gamification",
+                                                                                                                                "position": {
+                                                                                                                                    "x": -7100,
+                                                                                                                                    "y": 450
+                                                                                                                                },
+                                                                                                                                "data": {
+                                                                                                                                    "label": "Choose_Gamifiable_Actions",
+                                                                                                                                    "isHidden": false
+                                                                                                                                },
+                                                                                                                                "parentId": "set-gamifiable-actions-and",
+                                                                                                                                "children": null
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            },
                                                                                                             {
                                                                                                                 "id": "set-experience-points-system-and",
                                                                                                                 "type": "operator",
@@ -1209,7 +845,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 600
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "Select_Gamifiable_Actions"
+                                                                                                                            "label": "Select_Gamifiable_Actions",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "set-experience-points-system-and",
                                                                                                                         "children": null
@@ -1222,7 +859,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 600
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "Assign_Points_to_Gamifiable_Actions"
+                                                                                                                            "label": "Assign_Points_to_Gamifiable_Actions",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "set-experience-points-system-and",
                                                                                                                         "children": [
@@ -1235,7 +873,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                                 },
                                                                                                                                 "data": {
                                                                                                                                     "label": "Set_Same_Points_To_Each_Action",
-                                                                                                                                    "sourceRight": true
+                                                                                                                                    "sourceRight": true,
+                                                                                                                                    "isHidden": false
                                                                                                                                 },
                                                                                                                                 "parentId": "assign-points-to-gamifiable-actions",
                                                                                                                                 "children": null
@@ -1249,7 +888,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                                 },
                                                                                                                                 "data": {
                                                                                                                                     "label": "Define_Metric",
-                                                                                                                                    "left": true
+                                                                                                                                    "left": true,
+                                                                                                                                    "isHidden": false
                                                                                                                                 },
                                                                                                                                 "parentId": "assign-points-to-gamifiable-actions",
                                                                                                                                 "children": null
@@ -1264,7 +904,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 600
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "Set_Expiration_Time"
+                                                                                                                            "label": "Set_Expiration_Time",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "set-experience-points-system-and",
                                                                                                                         "children": null
@@ -1283,7 +924,8 @@ export const PhaseFiveTreeDS = [
                                                                                                     "y": 1850
                                                                                                 },
                                                                                                 "data": {
-                                                                                                    "label": "Choose_Other_Kinds"
+                                                                                                    "label": "Choose_Other_Kinds",
+                                                                                                    "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "choose-point-kinds",
                                                                                                 "children": null
@@ -1303,7 +945,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "By_Other_Achievements",
-                                                                            "right": true
+                                                                            "right": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rule",
                                                                         "children": null
@@ -1318,7 +961,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1050
                                                                 },
                                                                 "data": {
-                                                                    "label": "Link_Levels_to_Paths"
+                                                                    "label": "Link_Levels_to_Paths",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-levels-and",
                                                                 "children": null
@@ -1331,7 +975,8 @@ export const PhaseFiveTreeDS = [
                                                                     "y": 1050
                                                                 },
                                                                 "data": {
-                                                                    "label": "Define_Difficulty_Among_Levels"
+                                                                    "label": "Define_Difficulty_Among_Levels",
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-levels-and",
                                                                 "children": [
@@ -1349,7 +994,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "define-difficulty-among-levels",
                                                                         "children": null
@@ -1368,7 +1014,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "define-difficulty-among-levels",
                                                                         "children": [
@@ -1392,7 +1039,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1550
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Define_Main_Trend"
+                                                                                            "label": "Define_Main_Trend",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "use-alternated-difficulty-and",
                                                                                         "children": [
@@ -1404,7 +1052,8 @@ export const PhaseFiveTreeDS = [
                                                                                                     "y": 1700
                                                                                                 },
                                                                                                 "data": {
-                                                                                                    "label": "Use_Increasing_Difficulty"
+                                                                                                    "label": "Use_Increasing_Difficulty",
+                                                                                                    "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "define-main-trend",
                                                                                                 "children": null
@@ -1419,7 +1068,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1550
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Insert_Alternated_Difficulties"
+                                                                                            "label": "Insert_Alternated_Difficulties",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "use-alternated-difficulty-and",
                                                                                         "children": [
@@ -1443,7 +1093,8 @@ export const PhaseFiveTreeDS = [
                                                                                                             "y": 1850
                                                                                                         },
                                                                                                         "data": {
-                                                                                                            "label": "Choose_Candidate_Levels"
+                                                                                                            "label": "Choose_Candidate_Levels",
+                                                                                                            "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "insert-alternated-difficulties-and",
                                                                                                         "children": null
@@ -1456,7 +1107,8 @@ export const PhaseFiveTreeDS = [
                                                                                                             "y": 1850
                                                                                                         },
                                                                                                         "data": {
-                                                                                                            "label": "Insert_Unexpected_Difficulties"
+                                                                                                            "label": "Insert_Unexpected_Difficulties",
+                                                                                                            "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "insert-alternated-difficulties-and",
                                                                                                         "children": [
@@ -1468,7 +1120,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                     "y": 2000
                                                                                                                 },
                                                                                                                 "data": {
-                                                                                                                    "label": "Insert_Positive_Difficulties"
+                                                                                                                    "label": "Insert_Positive_Difficulties",
+                                                                                                                    "isHidden": false
                                                                                                                 },
                                                                                                                 "parentId": "insert-unexpected-difficulties",
                                                                                                                 "children": null
@@ -1481,7 +1134,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                     "y": 2000
                                                                                                                 },
                                                                                                                 "data": {
-                                                                                                                    "label": "Insert_Negative_Difficulties"
+                                                                                                                    "label": "Insert_Negative_Difficulties",
+                                                                                                                    "isHidden": false
                                                                                                                 },
                                                                                                                 "parentId": "insert-unexpected-difficulties",
                                                                                                                 "children": null
@@ -1515,7 +1169,8 @@ export const PhaseFiveTreeDS = [
                                 },
                                 "data": {
                                     "label": "By_Other_Achievements",
-                                    "right": true
+                                    "right": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": null
@@ -1534,7 +1189,8 @@ export const PhaseFiveTreeDS = [
                                     "bottom": true,
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": null
@@ -1554,7 +1210,8 @@ export const PhaseFiveTreeDS = [
                                     "bottom": true,
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": [
@@ -1584,113 +1241,11 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-point-systems-and",
                                                 "children": [
-                                                    {
-                                                        "id": "choose-kinds-of-points",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -400,
-                                                            "y": 800
-                                                        },
-                                                        "data": {
-                                                            "label": "Choose_Kinds_of_Points",
-                                                            "right": true,
-                                                            "left": true,
-                                                            "bottom": true,
-                                                            "sourceLeft": true,
-                                                            "sourceRight": true,
-                                                            "sourceTop": true
-                                                        },
-                                                        "parentId": "set-achievement-rules",
-                                                        "children": [
-                                                            {
-                                                                "id": "use-redeemable-points",
-                                                                "conditions": "C1 OR C5 OR C36 OR C32 OR C34",
-                                                                "parentId": "choose-kinds-of-points",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": -1500,
-                                                                    "y": 1050
-                                                                },
-                                                                "data": {
-                                                                    "label": "Use_Redeemable_Points",
-                                                                    "num": "(1)",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "use-skill-points",
-                                                                "conditions": "(C1 OR C5 OR C19) AND C16",
-                                                                "parentId": "choose-kinds-of-points",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": -800,
-                                                                    "y": 1150
-                                                                },
-                                                                "data": {
-                                                                    "label": "Use_Skill_Points",
-                                                                    "num": "(1)",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "use-karma-points",
-                                                                "conditions": "(C2 OR C3 OR C4) AND (NOT C36)",
-                                                                "parentId": "choose-kinds-of-points",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": -200,
-                                                                    "y": 1300
-                                                                },
-                                                                "data": {
-                                                                    "label": "Use_Karma_Points",
-                                                                    "num": "(1)",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "use-reputation-points",
-                                                                "conditions": "(C2 OR C1 OR C5) AND (NOT C36)",
-                                                                "parentId": "choose-kinds-of-points",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 300,
-                                                                    "y": 1050
-                                                                },
-                                                                "data": {
-                                                                    "label": "Use_Reputation_Points",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            }
-                                                        ]
-                                                    },
                                                     {
                                                         "id": "set-achievement-rules-and",
                                                         "type": "operator",
@@ -1717,7 +1272,8 @@ export const PhaseFiveTreeDS = [
                                                                     "bottom": true,
                                                                     "sourceLeft": true,
                                                                     "sourceRight": true,
-                                                                    "sourceTop": true
+                                                                    "sourceTop": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-achievement-rules-and",
                                                                 "children": [
@@ -1735,7 +1291,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-triggers",
                                                                         "children": [
@@ -1754,7 +1311,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "by-gamifiable-actions-2",
                                                                                 "children": null
@@ -1775,7 +1333,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-triggers",
                                                                         "children": null
@@ -1789,7 +1348,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "Use_Trigger_Params",
-                                                                            "left": true
+                                                                            "left": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-triggers",
                                                                         "children": null
@@ -1810,7 +1370,8 @@ export const PhaseFiveTreeDS = [
                                                                     "bottom": true,
                                                                     "sourceLeft": true,
                                                                     "sourceRight": true,
-                                                                    "sourceTop": true
+                                                                    "sourceTop": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-achievement-rules-and",
                                                                 "children": [
@@ -1840,7 +1401,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-amount-of-points-and",
                                                                                 "children": [
@@ -1858,7 +1420,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-sign-of-points",
                                                                                         "children": null
@@ -1879,7 +1442,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "children": null
                                                                                     }
@@ -1899,7 +1463,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-amount-of-points-and",
                                                                                 "children": [
@@ -1917,7 +1482,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-quantity-of-points",
                                                                                         "children": null
@@ -1936,7 +1502,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "sourceTop": true,
                                                                                             "left": true,
                                                                                             "right": true,
-                                                                                            "bottom": true
+                                                                                            "bottom": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-quantity-of-points",
                                                                                         "children": [
@@ -1960,7 +1527,8 @@ export const PhaseFiveTreeDS = [
                                                                                                             "y": 1850
                                                                                                         },
                                                                                                         "data": {
-                                                                                                            "label": "By_Functions"
+                                                                                                            "label": "By_Functions",
+                                                                                                            "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "define-calculated-amount-and",
                                                                                                         "children": null
@@ -1973,7 +1541,8 @@ export const PhaseFiveTreeDS = [
                                                                                                             "y": 1850
                                                                                                         },
                                                                                                         "data": {
-                                                                                                            "label": "By_Parameters"
+                                                                                                            "label": "By_Parameters",
+                                                                                                            "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "define-calculated-amount-and",
                                                                                                         "children": [
@@ -1986,7 +1555,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                 },
                                                                                                                 "data": {
                                                                                                                     "label": "Use_Trigger_Params",
-                                                                                                                    "left": true
+                                                                                                                    "left": true,
+                                                                                                                    "isHidden": false
                                                                                                                 },
                                                                                                                 "parentId": "by-parameters",
                                                                                                                 "children": null
@@ -1999,7 +1569,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                     "y": 2050
                                                                                                                 },
                                                                                                                 "data": {
-                                                                                                                    "label": "Use_Context_Params"
+                                                                                                                    "label": "Use_Context_Params",
+                                                                                                                    "isHidden": false
                                                                                                                 },
                                                                                                                 "parentId": "by-parameters",
                                                                                                                 "children": [
@@ -2011,7 +1582,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 2300
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "By_Player_Profile"
+                                                                                                                            "label": "By_Player_Profile",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "use-context-params",
                                                                                                                         "children": null
@@ -2024,7 +1596,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 2300
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "By_User_Profile"
+                                                                                                                            "label": "By_User_Profile",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "use-context-params",
                                                                                                                         "children": null
@@ -2037,7 +1610,8 @@ export const PhaseFiveTreeDS = [
                                                                                                                             "y": 2300
                                                                                                                         },
                                                                                                                         "data": {
-                                                                                                                            "label": "By_Other_Context_Profiles"
+                                                                                                                            "label": "By_Other_Context_Profiles",
+                                                                                                                            "isHidden": false
                                                                                                                         },
                                                                                                                         "parentId": "use-context-params",
                                                                                                                         "children": null
@@ -2074,7 +1648,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-point-systems-and",
                                                 "children": [
@@ -2095,9 +1670,32 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
-                                                        "children": null
+                                                        "children": [
+                                                            {
+                                                                "id": "rp-define-exchange-points-rewards-2",
+                                                                "type": "gamification",
+                                                                "position": {
+                                                                    "x": -1700,
+                                                                    "y": 1250
+                                                                },
+                                                                "data": {
+                                                                    "label": "RP_Define_Exchange_Points_Rewards",
+                                                                    "num": "(2)",
+                                                                    "right": true,
+                                                                    "left": true,
+                                                                    "bottom": true,
+                                                                    "sourceLeft": true,
+                                                                    "sourceRight": true,
+                                                                    "sourceTop": true,
+                                                                    "isHidden": false
+                                                                },
+                                                                "parentId": "use-redeemable-points",
+                                                                "children": null
+                                                            }
+                                                        ]
                                                     },
                                                     {
                                                         "id": "use-skill-points",
@@ -2116,7 +1714,8 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2137,9 +1736,32 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
-                                                        "children": null
+                                                        "children": [
+                                                            {
+                                                                "id": "gp-define-exchange-points-rewards-2",
+                                                                "type": "gamification",
+                                                                "position": {
+                                                                    "x": -50,
+                                                                    "y": 1450
+                                                                },
+                                                                "data": {
+                                                                    "label": "GP_Define_Exchange_Points_Rewards",
+                                                                    "num": "(2)",
+                                                                    "right": true,
+                                                                    "left": true,
+                                                                    "bottom": true,
+                                                                    "sourceLeft": true,
+                                                                    "sourceRight": true,
+                                                                    "sourceTop": true,
+                                                                    "isHidden": false
+                                                                },
+                                                                "parentId": "use-karma-points",
+                                                                "children": null
+                                                            }
+                                                        ]
                                                     },
                                                     {
                                                         "id": "use-reputation-points",
@@ -2157,7 +1779,8 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     }
@@ -2181,7 +1804,8 @@ export const PhaseFiveTreeDS = [
                                     "bottom": true,
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": [
@@ -2211,7 +1835,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-leader-boards-and",
                                                 "children": [
@@ -2228,7 +1853,8 @@ export const PhaseFiveTreeDS = [
                                                             "label": "Single_Leader_boards",
                                                             "sourceLeft": true,
                                                             "sourceTop": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2246,7 +1872,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2264,7 +1891,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2282,7 +1910,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2299,7 +1928,8 @@ export const PhaseFiveTreeDS = [
                                                             "label": "Time_Dependent_Leader_boards",
                                                             "sourceLeft": true,
                                                             "sourceTop": true,
-                                                            "left": true
+                                                            "left": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -2316,7 +1946,8 @@ export const PhaseFiveTreeDS = [
                                                             "label": "Geo_Localized_Leader_boards",
                                                             "sourceLeft": true,
                                                             "sourceTop": true,
-                                                            "left": true
+                                                            "left": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     }
@@ -2332,7 +1963,8 @@ export const PhaseFiveTreeDS = [
                                                 "data": {
                                                     "label": "Configure_Leader_boards",
                                                     "sourceLeft": true,
-                                                    "left": true
+                                                    "left": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-leader-boards-and",
                                                 "children": [
@@ -2359,7 +1991,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "Set_Name",
                                                                     "sourceLeft": true,
                                                                     "sourceTop": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-leader-boards-and",
                                                                 "children": null
@@ -2375,7 +2008,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "Set_Winners",
                                                                     "sourceLeft": true,
                                                                     "sourceTop": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-leader-boards-and",
                                                                 "children": [
@@ -2399,7 +2033,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "y": 1100
                                                                                 },
                                                                                 "data": {
-                                                                                    "label": "Set_Winner_Titles"
+                                                                                    "label": "Set_Winner_Titles",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-winners-and",
                                                                                 "children": [
@@ -2411,7 +2046,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1350
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Set_New_Titles"
+                                                                                            "label": "Set_New_Titles",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-winner-titles",
                                                                                         "children": null
@@ -2430,7 +2066,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-winner-titles",
                                                                                         "children": null
@@ -2445,7 +2082,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "y": 1100
                                                                                 },
                                                                                 "data": {
-                                                                                    "label": "Set_Winner_Icons"
+                                                                                    "label": "Set_Winner_Icons",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-winners-and",
                                                                                 "children": [
@@ -2459,7 +2097,8 @@ export const PhaseFiveTreeDS = [
                                                                                         "data": {
                                                                                             "label": "Use_Common_Icons",
                                                                                             "bottom": true,
-                                                                                            "left": true
+                                                                                            "left": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-winner-icons",
                                                                                         "children": null
@@ -2474,7 +2113,8 @@ export const PhaseFiveTreeDS = [
                                                                                         "data": {
                                                                                             "label": "Use_Artistic_Icons",
                                                                                             "bottom": true,
-                                                                                            "left": true
+                                                                                            "left": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-winner-icons",
                                                                                         "children": null
@@ -2493,30 +2133,11 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-winner-icons",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "use-badge-names",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": 13500,
-                                                                                                    "y": 1350
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Use_Badge_Names",
-                                                                                                    "right": true,
-                                                                                                    "left": true,
-                                                                                                    "bottom": true,
-                                                                                                    "sourceLeft": true,
-                                                                                                    "sourceRight": true,
-                                                                                                    "sourceTop": true
-                                                                                                },
-                                                                                                "parentId": "use-badge-icons",
-                                                                                                "children": null
-                                                                                            }
-                                                                                        ]
+                                                                                        "children": null
                                                                                     }
                                                                                 ]
                                                                             },
@@ -2528,7 +2149,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "y": 1100
                                                                                 },
                                                                                 "data": {
-                                                                                    "label": "Set_Podium"
+                                                                                    "label": "Set_Podium",
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-winners-and",
                                                                                 "children": [
@@ -2540,7 +2162,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1350
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Set_Traditional_Podium"
+                                                                                            "label": "Set_Traditional_Podium",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-podium",
                                                                                         "children": null
@@ -2553,7 +2176,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1350
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Set_Number_of_Winners"
+                                                                                            "label": "Set_Number_of_Winners",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-podium",
                                                                                         "children": null
@@ -2575,7 +2199,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "Set_Achievement_Rules",
                                                                     "sourceLeft": true,
                                                                     "sourceTop": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-leader-boards-and",
                                                                 "children": [
@@ -2588,7 +2213,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "Set_Leader-boards_Calculation_Strategy",
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rules-3",
                                                                         "children": [
@@ -2606,7 +2232,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-leader-boards-calculation-strategy",
                                                                                 "children": [
@@ -2624,7 +2251,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "by-conditions",
                                                                                         "children": null
@@ -2643,7 +2271,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "by-conditions",
                                                                                         "children": null
@@ -2664,7 +2293,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-leader-boards-calculation-strategy",
                                                                                 "children": null
@@ -2680,7 +2310,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "Set_Rewards",
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rules-3",
                                                                         "children": [
@@ -2698,50 +2329,11 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-rewards",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "use-badge-icons",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 15000,
-                                                                                            "y": 1350
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Use_Badge_Icons",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true
-                                                                                        },
-                                                                                        "parentId": "assign-badges",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "use-badge-names",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": 13500,
-                                                                                                    "y": 1350
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Use_Badge_Names",
-                                                                                                    "right": true,
-                                                                                                    "left": true,
-                                                                                                    "bottom": true,
-                                                                                                    "sourceLeft": true,
-                                                                                                    "sourceRight": true,
-                                                                                                    "sourceTop": true
-                                                                                                },
-                                                                                                "parentId": "use-badge-icons",
-                                                                                                "children": null
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
+                                                                                "children": null
                                                                             },
                                                                             {
                                                                                 "id": "assign-other-achievements",
@@ -2757,7 +2349,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-rewards",
                                                                                 "children": null
@@ -2765,131 +2358,6 @@ export const PhaseFiveTreeDS = [
                                                                         ]
                                                                     }
                                                                 ]
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "id": "set-kinds-2",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": 9500,
-                                                            "y": 700
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_Kinds",
-                                                            "right": true,
-                                                            "left": true,
-                                                            "bottom": true,
-                                                            "sourceLeft": true,
-                                                            "sourceRight": true,
-                                                            "sourceTop": true
-                                                        },
-                                                        "parentId": "configure-leader-boards",
-                                                        "children": [
-                                                            {
-                                                                "id": "single-leader-boards",
-                                                                "conditions": "C1 OR C5 OR C36",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 8000,
-                                                                    "y": 1050
-                                                                },
-                                                                "data": {
-                                                                    "label": "Single_Leader_boards",
-                                                                    "sourceLeft": true,
-                                                                    "sourceTop": true,
-                                                                    "bottom": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "team-leader-boards",
-                                                                "conditions": "(C2 OR C3 OR C4 OR C23 OR C24 OR C25 OR C30 OR C26) AND (NOT C36)",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 9000,
-                                                                    "y": 1200
-                                                                },
-                                                                "data": {
-                                                                    "label": "Team_Leader_boards",
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true,
-                                                                    "right": true,
-                                                                    "bottom": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "private-you-vs-you-leader-boards",
-                                                                "conditions": "NOT (C5 OR C2 OR C3 OR C4)",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 9500,
-                                                                    "y": 1400
-                                                                },
-                                                                "data": {
-                                                                    "label": "Private_You_vs_You_Leader_boards",
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true,
-                                                                    "right": true,
-                                                                    "bottom": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "social-leader-boards",
-                                                                "conditions": "C2 OR C5 OR C3 OR C4 OR C33",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 10300,
-                                                                    "y": 1200
-                                                                },
-                                                                "data": {
-                                                                    "label": "Social_Leader_boards",
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true,
-                                                                    "right": true,
-                                                                    "bottom": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "time-dependent-leader-boards",
-                                                                "conditions": "C1 OR C5 OR C36",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 11000,
-                                                                    "y": 1250
-                                                                },
-                                                                "data": {
-                                                                    "label": "Time_Dependent_Leader_boards",
-                                                                    "sourceLeft": true,
-                                                                    "sourceTop": true,
-                                                                    "left": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "geo-localized-leader-boards",
-                                                                "conditions": "C2 OR C3 OR C4 OR C19",
-                                                                "parentId": "set-kinds-2",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 11600,
-                                                                    "y": 1150
-                                                                },
-                                                                "data": {
-                                                                    "label": "Geo_Localized_Leader_boards",
-                                                                    "sourceLeft": true,
-                                                                    "sourceTop": true,
-                                                                    "left": true
-                                                                },
-                                                                "children": null
                                                             }
                                                         ]
                                                     }
@@ -2914,7 +2382,8 @@ export const PhaseFiveTreeDS = [
                                     "bottom": true,
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": [
@@ -2945,7 +2414,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-badges-and",
                                                 "children": [
@@ -2975,7 +2445,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "left": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-badges-typologies-and",
                                                                 "children": [
@@ -2995,7 +2466,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": null
                                                                     },
@@ -3015,7 +2487,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": null
                                                                     },
@@ -3035,7 +2508,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": null
                                                                     }
@@ -3055,7 +2529,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "left": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-badges-typologies-and",
                                                                 "children": [
@@ -3075,7 +2550,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": null
                                                                     },
@@ -3095,89 +2571,10 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": null
-                                                                    },
-                                                                    {
-                                                                        "id": "set-badges-kinds",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": 3800,
-                                                                            "y": 1150
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Badges_Kinds",
-                                                                            "sourceRight": true,
-                                                                            "sourceLeft": true,
-                                                                            "sourceTop": true,
-                                                                            "left": true,
-                                                                            "right": true,
-                                                                            "bottom": true
-                                                                        },
-                                                                        "parentId": "set-social-badges-kinds",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "negative-actions-badges",
-                                                                                "conditions": "C36",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 3300,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Negative_Actions_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "successes-badges",
-                                                                                "conditions": "C1 OR C5 OR C7 OR C19 OR C33 OR C35",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 3800,
-                                                                                    "y": 1800
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Successes_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "failures-badges",
-                                                                                "conditions": "C36 AND (NOT C1)",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 4400,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Failures_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            }
-                                                                        ]
                                                                     }
                                                                 ]
                                                             }
@@ -3200,265 +2597,11 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-badges-and",
                                                 "children": [
-                                                    {
-                                                        "id": "set-badges-typologies",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": 4700,
-                                                            "y": 850
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_Badges_Typologies",
-                                                            "num": "(1)",
-                                                            "right": true,
-                                                            "left": true,
-                                                            "bottom": true,
-                                                            "sourceLeft": true,
-                                                            "sourceRight": true,
-                                                            "sourceTop": true
-                                                        },
-                                                        "parentId": "configure-badges",
-                                                        "children": [
-                                                            {
-                                                                "id": "set-badges-typologies-and",
-                                                                "type": "operator",
-                                                                "position": {
-                                                                    "x": 4800,
-                                                                    "y": 1000
-                                                                },
-                                                                "data": {
-                                                                    "label": "AND"
-                                                                },
-                                                                "parentId": "set-badges-typologies",
-                                                                "children": [
-                                                                    {
-                                                                        "id": "set-badges-kinds",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": 3800,
-                                                                            "y": 1150
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Badges_Kinds",
-                                                                            "sourceRight": true,
-                                                                            "sourceLeft": true,
-                                                                            "sourceTop": true,
-                                                                            "left": true,
-                                                                            "right": true,
-                                                                            "bottom": true
-                                                                        },
-                                                                        "parentId": "set-badges-typologies-and",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "negative-actions-badges",
-                                                                                "conditions": "C36",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 3300,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Negative_Actions_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "successes-badges",
-                                                                                "conditions": "C1 OR C5 OR C7 OR C19 OR C33 OR C35",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 3800,
-                                                                                    "y": 1800
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Successes_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "failures-badges",
-                                                                                "conditions": "C36 AND (NOT C1)",
-                                                                                "parentId": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 4400,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Failures_Badges",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "id": "set-social-badges-kinds",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": 5600,
-                                                                            "y": 1150
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Social_Badges_Kinds",
-                                                                            "sourceRight": true,
-                                                                            "sourceLeft": true,
-                                                                            "sourceTop": true,
-                                                                            "left": true,
-                                                                            "right": true,
-                                                                            "bottom": true
-                                                                        },
-                                                                        "parentId": "set-badges-typologies-and",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "set-publishable",
-                                                                                "conditions": "C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35",
-                                                                                "parentId": "set-social-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 5100,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Publishable",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "set-not-publishable",
-                                                                                "conditions": "NOT (C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35)",
-                                                                                "parentId": "set-social-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 6200,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Not_Publishable",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true
-                                                                                },
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "set-badges-kinds",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 3800,
-                                                                                    "y": 1150
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Badges_Kinds",
-                                                                                    "sourceRight": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceTop": true,
-                                                                                    "left": true,
-                                                                                    "right": true,
-                                                                                    "bottom": true
-                                                                                },
-                                                                                "parentId": "set-social-badges-kinds",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "negative-actions-badges",
-                                                                                        "conditions": "C36",
-                                                                                        "parentId": "set-badges-kinds",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 3300,
-                                                                                            "y": 1500
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Negative_Actions_Badges",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true
-                                                                                        },
-                                                                                        "children": null
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "successes-badges",
-                                                                                        "conditions": "C1 OR C5 OR C7 OR C19 OR C33 OR C35",
-                                                                                        "parentId": "set-badges-kinds",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 3800,
-                                                                                            "y": 1800
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Successes_Badges",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true
-                                                                                        },
-                                                                                        "children": null
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "failures-badges",
-                                                                                        "conditions": "C36 AND (NOT C1)",
-                                                                                        "parentId": "set-badges-kinds",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 4400,
-                                                                                            "y": 1500
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Failures_Badges",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true
-                                                                                        },
-                                                                                        "children": null
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    },
                                                     {
                                                         "id": "configure-badges-and",
                                                         "type": "operator",
@@ -3485,7 +2628,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "left": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-badges-and",
                                                                 "children": null
@@ -3504,7 +2648,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "left": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-badges-and",
                                                                 "children": [
@@ -3522,7 +2667,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-icons",
                                                                         "children": null
@@ -3541,7 +2687,8 @@ export const PhaseFiveTreeDS = [
                                                                             "bottom": true,
                                                                             "sourceLeft": true,
                                                                             "sourceRight": true,
-                                                                            "sourceTop": true
+                                                                            "sourceTop": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-icons",
                                                                         "children": null
@@ -3562,7 +2709,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "left": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-badges-and",
                                                                 "children": [
@@ -3592,7 +2740,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-achievement-rules-2-and",
                                                                                 "children": [
@@ -3610,7 +2759,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-triggers-2",
                                                                                         "children": null
@@ -3629,7 +2779,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "bottom": true,
                                                                                             "sourceLeft": true,
                                                                                             "sourceRight": true,
-                                                                                            "sourceTop": true
+                                                                                            "sourceTop": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "set-triggers-2",
                                                                                         "children": null
@@ -3650,7 +2801,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "bottom": true,
                                                                                     "sourceLeft": true,
                                                                                     "sourceRight": true,
-                                                                                    "sourceTop": true
+                                                                                    "sourceTop": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-achievement-rules-2-and",
                                                                                 "children": null
@@ -3679,7 +2831,8 @@ export const PhaseFiveTreeDS = [
                                             "bottom": true,
                                             "sourceLeft": true,
                                             "sourceRight": true,
-                                            "sourceTop": true
+                                            "sourceTop": true,
+                                            "isHidden": false
                                         },
                                         "parentId": "set-badges",
                                         "children": null
@@ -3696,7 +2849,8 @@ export const PhaseFiveTreeDS = [
                                 "data": {
                                     "label": "Set_Gamified_Training_Elements",
                                     "sourceLeft": true,
-                                    "sourceRight": true
+                                    "sourceRight": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": [
@@ -3712,7 +2866,8 @@ export const PhaseFiveTreeDS = [
                                             "sourceRight": true,
                                             "sourceTop": true,
                                             "right": true,
-                                            "bottom": true
+                                            "bottom": true,
+                                            "isHidden": false
                                         },
                                         "parentId": "set-gamified-training-elements",
                                         "children": [
@@ -3741,7 +2896,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceLeft": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-basic-training-and",
                                                         "children": [
@@ -3759,7 +2915,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "children": null
                                                             },
@@ -3777,7 +2934,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "children": null
                                                             },
@@ -3795,7 +2953,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "children": null
                                                             },
@@ -3813,7 +2972,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "children": null
                                                             },
@@ -3830,7 +2990,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "choose-training-elements",
                                                                 "children": [
@@ -3848,7 +3009,8 @@ export const PhaseFiveTreeDS = [
                                                                             "sourceRight": true,
                                                                             "sourceTop": true,
                                                                             "right": true,
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "children": [
                                                                             {
@@ -3864,7 +3026,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "sourceRight": true,
                                                                                     "sourceTop": true,
                                                                                     "right": true,
-                                                                                    "bottom": true
+                                                                                    "bottom": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "define-training-paths",
                                                                                 "children": null
@@ -3887,7 +3050,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-basic-training-and",
                                                         "children": [
@@ -3903,7 +3067,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "choose-presentation-elements",
                                                                 "children": null
@@ -3921,7 +3086,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "right": true,
                                                                     "bottom": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "choose-presentation-elements",
                                                                 "children": null
@@ -3940,7 +3106,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-basic-training-and",
                                                         "children": [
@@ -3956,7 +3123,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "choose-training-topics",
                                                                 "children": null
@@ -3973,7 +3141,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "choose-training-topics",
                                                                 "children": null
@@ -3992,7 +3161,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "children": null
                                                             }
@@ -4010,7 +3180,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-basic-training-and",
                                                         "children": [
@@ -4026,7 +3197,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "define-strategy",
                                                                 "children": null
@@ -4043,7 +3215,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "define-strategy",
                                                                 "children": null
@@ -4063,7 +3236,8 @@ export const PhaseFiveTreeDS = [
                                                     "label": "Set_Advanced_Training",
                                                     "num": "(1)",
                                                     "left": true,
-                                                    "bottom": true
+                                                    "bottom": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-basic-training",
                                                 "children": [
@@ -4079,7 +3253,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-advanced-training",
                                                         "children": [
@@ -4096,7 +3271,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceTop": true,
                                                                     "right": true,
                                                                     "bottom": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-rewards-3",
                                                                 "children": null
@@ -4113,7 +3289,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-rewards-3",
                                                                 "children": null
@@ -4130,7 +3307,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-rewards-3",
                                                                 "children": null
@@ -4151,7 +3329,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": [
                                                             {
@@ -4167,7 +3346,8 @@ export const PhaseFiveTreeDS = [
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
                                                                     "right": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "define-training-paths",
                                                                 "children": null
@@ -4189,7 +3369,8 @@ export const PhaseFiveTreeDS = [
                                             "label": "Set_Advanced_Training",
                                             "num": "(1)",
                                             "left": true,
-                                            "bottom": true
+                                            "bottom": true,
+                                            "isHidden": false
                                         },
                                         "parentId": "set-gamified-training-elements",
                                         "children": [
@@ -4205,7 +3386,8 @@ export const PhaseFiveTreeDS = [
                                                     "sourceRight": true,
                                                     "sourceTop": true,
                                                     "right": true,
-                                                    "bottom": true
+                                                    "bottom": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-advanced-training",
                                                 "children": [
@@ -4222,7 +3404,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceTop": true,
                                                             "right": true,
                                                             "bottom": true,
-                                                            "left": true
+                                                            "left": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-rewards-3",
                                                         "children": null
@@ -4239,7 +3422,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-rewards-3",
                                                         "children": null
@@ -4256,7 +3440,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-rewards-3",
                                                         "children": null
@@ -4277,7 +3462,8 @@ export const PhaseFiveTreeDS = [
                                                     "sourceRight": true,
                                                     "sourceTop": true,
                                                     "right": true,
-                                                    "bottom": true
+                                                    "bottom": true,
+                                                    "isHidden": false
                                                 },
                                                 "children": [
                                                     {
@@ -4293,7 +3479,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceTop": true,
                                                             "right": true,
-                                                            "bottom": true
+                                                            "bottom": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "define-training-paths",
                                                         "children": null
@@ -4318,7 +3505,8 @@ export const PhaseFiveTreeDS = [
                                     "bottom": true,
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-game-mechanics-and-dynamics",
                                 "children": [
@@ -4348,7 +3536,8 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-challenges-and",
                                                 "children": [
@@ -4368,7 +3557,8 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -4388,7 +3578,8 @@ export const PhaseFiveTreeDS = [
                                                             "bottom": true,
                                                             "sourceLeft": true,
                                                             "sourceRight": true,
-                                                            "sourceTop": true
+                                                            "sourceTop": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     }
@@ -4408,70 +3599,11 @@ export const PhaseFiveTreeDS = [
                                                     "bottom": true,
                                                     "sourceLeft": true,
                                                     "sourceRight": true,
-                                                    "sourceTop": true
+                                                    "sourceTop": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-challenges-and",
                                                 "children": [
-                                                    {
-                                                        "id": "set-kinds-3",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": 19250,
-                                                            "y": 850
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_Kinds",
-                                                            "right": true,
-                                                            "left": true,
-                                                            "bottom": true,
-                                                            "sourceLeft": true,
-                                                            "sourceRight": true,
-                                                            "sourceTop": true
-                                                        },
-                                                        "parentId": "configure-challenges",
-                                                        "children": [
-                                                            {
-                                                                "id": "team-challenges",
-                                                                "conditions": "(C2 OR C5 OR C3 OR C4) AND (NOT C36)",
-                                                                "parentId": "set-kinds-3",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 18750,
-                                                                    "y": 1100
-                                                                },
-                                                                "data": {
-                                                                    "label": "Team_Challenges",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            },
-                                                            {
-                                                                "id": "personal-challenges",
-                                                                "conditions": "C7 OR C1 OR C5 OR C36",
-                                                                "parentId": "set-kinds-3",
-                                                                "type": "gamification",
-                                                                "position": {
-                                                                    "x": 19750,
-                                                                    "y": 1100
-                                                                },
-                                                                "data": {
-                                                                    "label": "Personal_Challenges",
-                                                                    "right": true,
-                                                                    "left": true,
-                                                                    "bottom": true,
-                                                                    "sourceLeft": true,
-                                                                    "sourceRight": true,
-                                                                    "sourceTop": true
-                                                                },
-                                                                "children": null
-                                                            }
-                                                        ]
-                                                    },
                                                     {
                                                         "id": "configure-challenges-and",
                                                         "type": "operator",
@@ -4495,7 +3627,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "Set_Names",
                                                                     "sourceLeft": true,
                                                                     "sourceTop": true,
-                                                                    "left": true
+                                                                    "left": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-challenges-and",
                                                                 "children": null
@@ -4511,7 +3644,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "Set_Achievement_Rules",
                                                                     "sourceRight": true,
                                                                     "sourceTop": true,
-                                                                    "right": true
+                                                                    "right": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "configure-challenges-and",
                                                                 "children": [
@@ -4526,7 +3660,8 @@ export const PhaseFiveTreeDS = [
                                                                             "label": "Set_Triggers",
                                                                             "sourceLeft": true,
                                                                             "sourceTop": true,
-                                                                            "left": true
+                                                                            "left": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rules-4",
                                                                         "children": [
@@ -4541,7 +3676,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "label": "By_Gamifiable_Actions",
                                                                                     "sourceLeft": true,
                                                                                     "sourceTop": true,
-                                                                                    "left": true
+                                                                                    "left": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-triggers-3",
                                                                                 "children": null
@@ -4557,7 +3693,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "label": "By_Other_Achievements",
                                                                                     "sourceRight": true,
                                                                                     "sourceTop": true,
-                                                                                    "right": true
+                                                                                    "right": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-triggers-3",
                                                                                 "children": null
@@ -4575,7 +3712,8 @@ export const PhaseFiveTreeDS = [
                                                                             "label": "Set_Rewards",
                                                                             "sourceRight": true,
                                                                             "sourceTop": true,
-                                                                            "right": true
+                                                                            "right": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-achievement-rules-4",
                                                                         "children": [
@@ -4590,7 +3728,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "label": "Assign_Badges",
                                                                                     "sourceLeft": true,
                                                                                     "sourceTop": true,
-                                                                                    "left": true
+                                                                                    "left": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-rewards-2",
                                                                                 "children": null
@@ -4606,7 +3745,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "label": "Assign_Other_Achievements",
                                                                                     "sourceRight": true,
                                                                                     "sourceTop": true,
-                                                                                    "right": true
+                                                                                    "right": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "set-rewards-2",
                                                                                 "children": [
@@ -4622,7 +3762,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "sourceRight": true,
                                                                                             "sourceTop": true,
                                                                                             "right": true,
-                                                                                            "bottom": true
+                                                                                            "bottom": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "assign-other-achievements-2",
                                                                                         "children": null
@@ -4653,7 +3794,8 @@ export const PhaseFiveTreeDS = [
                             "y": 150
                         },
                         "data": {
-                            "label": "Set_Virtual_Environments"
+                            "label": "Set_Virtual_Environments",
+                            "isHidden": false
                         },
                         "children": [
                             {
@@ -4670,7 +3812,8 @@ export const PhaseFiveTreeDS = [
                                     "num": "(1)",
                                     "sourceLeft": true,
                                     "sourceRight": true,
-                                    "sourceTop": true
+                                    "sourceTop": true,
+                                    "isHidden": false
                                 },
                                 "children": [
                                     {
@@ -4681,7 +3824,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 700
                                         },
                                         "data": {
-                                            "label": "Set_Add_Friend"
+                                            "label": "Set_Add_Friend",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-community",
                                         "children": null
@@ -4694,7 +3838,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 700
                                         },
                                         "data": {
-                                            "label": "Set_Remove_Friend"
+                                            "label": "Set_Remove_Friend",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-community",
                                         "children": null
@@ -4707,7 +3852,8 @@ export const PhaseFiveTreeDS = [
                                             "y": 700
                                         },
                                         "data": {
-                                            "label": "Set_Friendship_Suggestions"
+                                            "label": "Set_Friendship_Suggestions",
+                                            "isHidden": false
                                         },
                                         "parentId": "set-community",
                                         "children": [
@@ -4719,7 +3865,8 @@ export const PhaseFiveTreeDS = [
                                                     "y": 950
                                                 },
                                                 "data": {
-                                                    "label": "System_Suggests_Friendship"
+                                                    "label": "System_Suggests_Friendship",
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-friendship-suggestions",
                                                 "children": null
@@ -4732,7 +3879,8 @@ export const PhaseFiveTreeDS = [
                                                     "y": 950
                                                 },
                                                 "data": {
-                                                    "label": "User_Suggests_Friendship_to_a_User"
+                                                    "label": "User_Suggests_Friendship_to_a_User",
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-friendship-suggestions",
                                                 "children": null
@@ -4750,7 +3898,8 @@ export const PhaseFiveTreeDS = [
                                             "label": "Set_Activity_Suggestions",
                                             "sourceLeft": true,
                                             "sourceRight": true,
-                                            "sourceTop": true
+                                            "sourceTop": true,
+                                            "isHidden": false
                                         },
                                         "parentId": "set-community",
                                         "children": [
@@ -4766,7 +3915,8 @@ export const PhaseFiveTreeDS = [
                                                 "data": {
                                                     "label": "User_Suggests_to_a_User",
                                                     "sourceRight": true,
-                                                    "sourceLeft": true
+                                                    "sourceLeft": true,
+                                                    "isHidden": false
                                                 },
                                                 "children": [
                                                     {
@@ -4777,7 +3927,8 @@ export const PhaseFiveTreeDS = [
                                                             "y": 1200
                                                         },
                                                         "data": {
-                                                            "label": "To_Participate_to_an_Event"
+                                                            "label": "To_Participate_to_an_Event",
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "user-suggests-to-a-user",
                                                         "children": null
@@ -4790,7 +3941,8 @@ export const PhaseFiveTreeDS = [
                                                             "y": 1200
                                                         },
                                                         "data": {
-                                                            "label": "To_Carry_out_an_Activity"
+                                                            "label": "To_Carry_out_an_Activity",
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "user-suggests-to-a-user",
                                                         "children": null
@@ -4805,7 +3957,8 @@ export const PhaseFiveTreeDS = [
                                                     "y": 950
                                                 },
                                                 "data": {
-                                                    "label": "System_Suggests_an_Event"
+                                                    "label": "System_Suggests_an_Event",
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-activity-suggestions",
                                                 "children": null
@@ -4824,7 +3977,8 @@ export const PhaseFiveTreeDS = [
                                 "data": {
                                     "label": "Set_Gamified_Market",
                                     "sourceRight": true,
-                                    "sourceLeft": true
+                                    "sourceLeft": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-virtual-environments",
                                 "children": [
@@ -4851,7 +4005,8 @@ export const PhaseFiveTreeDS = [
                                                     "label": "Add_Rewards",
                                                     "sourceRight": true,
                                                     "sourceLeft": true,
-                                                    "right": true
+                                                    "right": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-gamified-market-and",
                                                 "children": [
@@ -4867,7 +4022,8 @@ export const PhaseFiveTreeDS = [
                                                         "data": {
                                                             "label": "Add_Virtual_Rewards",
                                                             "sourceRight": true,
-                                                            "sourceLeft": true
+                                                            "sourceLeft": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -4883,7 +4039,8 @@ export const PhaseFiveTreeDS = [
                                                         "data": {
                                                             "label": "Add_Tangible_Rewards",
                                                             "sourceRight": true,
-                                                            "sourceLeft": true
+                                                            "sourceLeft": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": null
                                                     },
@@ -4901,7 +4058,8 @@ export const PhaseFiveTreeDS = [
                                                             "sourceRight": true,
                                                             "sourceLeft": true,
                                                             "left": true,
-                                                            "right": true
+                                                            "right": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": [
                                                             {
@@ -4926,7 +4084,8 @@ export const PhaseFiveTreeDS = [
                                                                         "data": {
                                                                             "label": "Choose_Unlockable_Actions",
                                                                             "sourceRight": true,
-                                                                            "sourceLeft": true
+                                                                            "sourceLeft": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "add-unlockable-powers-and",
                                                                         "children": null
@@ -4941,7 +4100,8 @@ export const PhaseFiveTreeDS = [
                                                                         "data": {
                                                                             "label": "Create_New_Powers",
                                                                             "sourceRight": true,
-                                                                            "sourceLeft": true
+                                                                            "sourceLeft": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "add-unlockable-powers-and",
                                                                         "children": [
@@ -4965,7 +4125,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1650
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Set_Power_Names"
+                                                                                            "label": "Set_Power_Names",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "create-new-powers-and",
                                                                                         "children": null
@@ -4978,7 +4139,8 @@ export const PhaseFiveTreeDS = [
                                                                                             "y": 1650
                                                                                         },
                                                                                         "data": {
-                                                                                            "label": "Link_Powers_to_Unlockable_Actions"
+                                                                                            "label": "Link_Powers_to_Unlockable_Actions",
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "create-new-powers-and",
                                                                                         "children": null
@@ -5004,7 +4166,8 @@ export const PhaseFiveTreeDS = [
                                                     "label": "Set_Market_Policies",
                                                     "sourceRight": true,
                                                     "sourceLeft": true,
-                                                    "right": true
+                                                    "right": true,
+                                                    "isHidden": false
                                                 },
                                                 "parentId": "set-gamified-market-and",
                                                 "children": [
@@ -5020,7 +4183,8 @@ export const PhaseFiveTreeDS = [
                                                         "data": {
                                                             "label": "Set_Redeeming_Policy",
                                                             "left": true,
-                                                            "sourceLeft": true
+                                                            "sourceLeft": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": [
                                                             {
@@ -5034,7 +4198,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "RP_By_Points",
                                                                     "sourceTop": true,
                                                                     "top": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-redeeming-policy",
                                                                 "children": [
@@ -5050,7 +4215,8 @@ export const PhaseFiveTreeDS = [
                                                                             "num": "(1)",
                                                                             "sourceTop": true,
                                                                             "top": true,
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "rp-by-points",
                                                                         "children": null
@@ -5071,7 +4237,8 @@ export const PhaseFiveTreeDS = [
                                                         "data": {
                                                             "label": "Set_Making_Gift_Policy",
                                                             "sourceRight": true,
-                                                            "sourceLeft": true
+                                                            "sourceLeft": true,
+                                                            "isHidden": false
                                                         },
                                                         "children": [
                                                             {
@@ -5085,7 +4252,8 @@ export const PhaseFiveTreeDS = [
                                                                     "label": "GP_By_Points",
                                                                     "sourceTop": true,
                                                                     "top": true,
-                                                                    "bottom": true
+                                                                    "bottom": true,
+                                                                    "isHidden": false
                                                                 },
                                                                 "parentId": "set-making-gift-policy",
                                                                 "children": [
@@ -5101,7 +4269,8 @@ export const PhaseFiveTreeDS = [
                                                                             "num": "(1)",
                                                                             "sourceTop": true,
                                                                             "top": true,
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "gp-by-points",
                                                                         "children": null
@@ -5120,7 +4289,8 @@ export const PhaseFiveTreeDS = [
                                                         "data": {
                                                             "label": "Set_Purchase_Policy",
                                                             "sourceRight": true,
-                                                            "sourceLeft": true
+                                                            "sourceLeft": true,
+                                                            "isHidden": false
                                                         },
                                                         "parentId": "set-market-policies",
                                                         "children": [
@@ -5145,7 +4315,8 @@ export const PhaseFiveTreeDS = [
                                                                         },
                                                                         "data": {
                                                                             "label": "Set_Payment_System",
-                                                                            "right": true
+                                                                            "right": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-purchase-policy-and",
                                                                         "children": null
@@ -5160,7 +4331,8 @@ export const PhaseFiveTreeDS = [
                                                                         "data": {
                                                                             "label": "Define_Currency",
                                                                             "left": true,
-                                                                            "bottom": true
+                                                                            "bottom": true,
+                                                                            "isHidden": false
                                                                         },
                                                                         "parentId": "set-purchase-policy-and",
                                                                         "children": [
@@ -5176,7 +4348,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "sourceTop": true,
                                                                                     "top": true,
                                                                                     "bottom": true,
-                                                                                    "right": true
+                                                                                    "right": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "define-currency",
                                                                                 "children": [
@@ -5202,7 +4375,8 @@ export const PhaseFiveTreeDS = [
                                                                                                 "data": {
                                                                                                     "label": "Define_Exchange_Money_Currency",
                                                                                                     "sourceTop": true,
-                                                                                                    "top": true
+                                                                                                    "top": true,
+                                                                                                    "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "define-virtual-currency-and",
                                                                                                 "children": null
@@ -5217,7 +4391,8 @@ export const PhaseFiveTreeDS = [
                                                                                                 "data": {
                                                                                                     "label": "Define_Exchange_Currency_Rewards",
                                                                                                     "sourceTop": true,
-                                                                                                    "top": true
+                                                                                                    "top": true,
+                                                                                                    "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "define-virtual-currency-and",
                                                                                                 "children": null
@@ -5241,7 +4416,8 @@ export const PhaseFiveTreeDS = [
                                                                                     "top": true,
                                                                                     "bottom": true,
                                                                                     "right": true,
-                                                                                    "left": true
+                                                                                    "left": true,
+                                                                                    "isHidden": false
                                                                                 },
                                                                                 "parentId": "define-currency",
                                                                                 "children": [
@@ -5255,7 +4431,8 @@ export const PhaseFiveTreeDS = [
                                                                                         "data": {
                                                                                             "label": "Define_Exchange_Money_Rewards",
                                                                                             "sourceTop": true,
-                                                                                            "top": true
+                                                                                            "top": true,
+                                                                                            "isHidden": false
                                                                                         },
                                                                                         "parentId": "by-money",
                                                                                         "children": null
@@ -5284,7 +4461,8 @@ export const PhaseFiveTreeDS = [
                             "y": 150
                         },
                         "data": {
-                            "label": "Set_Supporting_Systems"
+                            "label": "Set_Supporting_Systems",
+                            "isHidden": false
                         },
                         "bottom": true,
                         "right": true,
@@ -5301,7 +4479,8 @@ export const PhaseFiveTreeDS = [
                                 "data": {
                                     "label": "Set_Monitoring_System",
                                     "sourceRight": true,
-                                    "sourceLeft": true
+                                    "sourceLeft": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-supporting-systems",
                                 "children": null
@@ -5316,7 +4495,8 @@ export const PhaseFiveTreeDS = [
                                 "data": {
                                     "label": "Set_Analyzing_System",
                                     "sourceRight": true,
-                                    "sourceLeft": true
+                                    "sourceLeft": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-supporting-systems",
                                 "children": null
@@ -5331,12 +4511,1103 @@ export const PhaseFiveTreeDS = [
                                 "data": {
                                     "label": "Set_Adaptation_System",
                                     "sourceRight": true,
-                                    "sourceLeft": true
+                                    "sourceLeft": true,
+                                    "isHidden": false
                                 },
                                 "parentId": "set-supporting-systems",
                                 "children": null
                             }
                         ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "set-point-systems-2",
+        "type": "gamification",
+        "position": {
+            "x": -3350,
+            "y": 2000
+        },
+        "data": {
+            "label": "Set_Point_Systems",
+            "num": "(2)",
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "choose-other-kinds",
+                "type": "gamification",
+                "position": {
+                    "x": -3150,
+                    "y": 1850
+                },
+                "data": {
+                    "label": "Choose_Other_Kinds",
+                    "isHidden": false
+                },
+                "parentId": "set-point-systems-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-community-2",
+        "type": "gamification",
+        "position": {
+            "x": 5300,
+            "y": 1800
+        },
+        "data": {
+            "label": "Set_Community",
+            "num": "(2)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "set-publishable",
+                "conditions": "C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35",
+                "parentId": "set-community-2",
+                "type": "gamification",
+                "position": {
+                    "x": 5100,
+                    "y": 1500
+                },
+                "data": {
+                    "label": "Set_Publishable",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-game-mechanics-and-dynamics-2",
+        "type": "gamification",
+        "position": {
+            "x": 8000,
+            "y": 1800
+        },
+        "data": {
+            "label": "Set_Game_Mechanics_and_Dynamics",
+            "num": "(2)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "set-badges-achieved",
+                "type": "gamification",
+                "position": {
+                    "x": 7800,
+                    "y": 1500
+                },
+                "data": {
+                    "label": "Set_Badges_Achieved",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-game-mechanics-and-dynamics-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-team-roles-2",
+        "type": "gamification",
+        "position": {
+            "x": 8900,
+            "y": 1400
+        },
+        "data": {
+            "label": "Set_Team_Roles",
+            "num": "(2)",
+            "sourceRight": true,
+            "sourceTop": true,
+            "right": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "team-leader-boards",
+                "conditions": "(C2 OR C3 OR C4 OR C23 OR C24 OR C25 OR C30 OR C26) AND (NOT C36)",
+                "parentId": "set-team-roles-2",
+                "type": "gamification",
+                "position": {
+                    "x": 9000,
+                    "y": 1200
+                },
+                "data": {
+                    "label": "Team_Leader_boards",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-single-roles-2",
+        "type": "gamification",
+        "position": {
+            "x": 9400,
+            "y": 1600
+        },
+        "data": {
+            "label": "Set_Single_Roles",
+            "num": "(2)",
+            "sourceLeft": true,
+            "sourceTop": true,
+            "left": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "private-you-vs-you-leader-boards",
+                "conditions": "NOT (C5 OR C2 OR C3 OR C4)",
+                "parentId": "set-single-roles-2",
+                "type": "gamification",
+                "position": {
+                    "x": 9500,
+                    "y": 1400
+                },
+                "data": {
+                    "label": "Private_You_vs_You_Leader_boards",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "children": null
+            },
+            {
+                "id": "single-leader-boards",
+                "conditions": "C1 OR C5 OR C36",
+                "parentId": "set-single-roles-2",
+                "type": "gamification",
+                "position": {
+                    "x": 8000,
+                    "y": 1050
+                },
+                "data": {
+                    "label": "Single_Leader_boards",
+                    "sourceLeft": true,
+                    "sourceTop": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-point-systems-3",
+        "type": "gamification",
+        "position": {
+            "x": 15500,
+            "y": 1150
+        },
+        "data": {
+            "label": "Set_Point_Systmes",
+            "num": "(3)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "by-point-systems",
+                "type": "gamification",
+                "position": {
+                    "x": 15750,
+                    "y": 1350
+                },
+                "data": {
+                    "label": "By_Point_Systems",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-point-systems-3",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-gamifiable-actions-4",
+        "type": "gamification",
+        "position": {
+            "x": 15500,
+            "y": 1600
+        },
+        "data": {
+            "label": "Set_Gamifiable_Actions",
+            "num": "(4)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "by-gamifiable-actions-4",
+                "type": "gamification",
+                "position": {
+                    "x": 16000,
+                    "y": 1600
+                },
+                "data": {
+                    "label": "By_Gamifiable_Actions",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-gamifiable-actions-4",
+                "children": null
+            },
+            {
+                "id": "by-gamifiable-actions-3",
+                "type": "gamification",
+                "position": {
+                    "x": 7200,
+                    "y": 1800
+                },
+                "data": {
+                    "label": "By_Gamifiable_Actions",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-gamifiable-actions-4",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-game-mechanics-and-dynamics-3",
+        "type": "gamification",
+        "position": {
+            "x": 17500,
+            "y": 1700
+        },
+        "data": {
+            "label": "Set_Game_Mechanics_and_Dynamics",
+            "num": "(3)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "by-other-achievements-4",
+                "type": "gamification",
+                "position": {
+                    "x": 16500,
+                    "y": 1600
+                },
+                "data": {
+                    "label": "By_Other_Achievements",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-game-mechanics-and-dynamics-3",
+                "children": null
+            },
+            {
+                "id": "assign-other-achievements",
+                "type": "gamification",
+                "position": {
+                    "x": 17250,
+                    "y": 1350
+                },
+                "data": {
+                    "label": "Assign_Other_Achievements",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "parentId": "set-game-mechanics-and-dynamics-3",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-gamifiable-actions-6",
+        "type": "gamification",
+        "position": {
+            "x": 20500,
+            "y": 1800
+        },
+        "data": {
+            "label": "Set_Gamifiable_Actions",
+            "num": "(6)",
+            "sourceLeft": true,
+            "sourceTop": true,
+            "left": true,
+            "isHidden": false
+        },
+        "children": null
+    },
+    {
+        "id": "set-game-mechanics-and-dynamics-4",
+        "type": "gamification",
+        "position": {
+            "x": 21500,
+            "y": 1800
+        },
+        "data": {
+            "label": "Set_Game_Mechanics_and_Dynamics",
+            "num": "(4)",
+            "sourceLeft": true,
+            "sourceTop": true,
+            "left": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "by-other-achievements-5",
+                "type": "gamification",
+                "position": {
+                    "x": 21000,
+                    "y": 1600
+                },
+                "data": {
+                    "label": "By_Other_Achievements",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "isHidden": false
+                },
+                "parentId": "set-game-mechanics-and-dynamics-4",
+                "children": null
+            },
+            {
+                "id": "assign-other-achievements-2",
+                "type": "gamification",
+                "position": {
+                    "x": 22000,
+                    "y": 1600
+                },
+                "data": {
+                    "label": "Assign_Other_Achievements",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "isHidden": false
+                },
+                "parentId": "set-game-mechanics-and-dynamics-4",
+                "children": [
+                    {
+                        "id": "by-other-achievements-6",
+                        "type": "gamification",
+                        "position": {
+                            "x": 29500,
+                            "y": 1450
+                        },
+                        "data": {
+                            "label": "By_Other_Achievements",
+                            "sourceRight": true,
+                            "sourceTop": true,
+                            "right": true,
+                            "bottom": true,
+                            "isHidden": false
+                        },
+                        "parentId": "assign-other-achievements-2",
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "set-team-roles-3",
+        "type": "gamification",
+        "position": {
+            "x": 18500,
+            "y": 1350
+        },
+        "data": {
+            "label": "Set_Team_Roles",
+            "num": "(3)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "team-challenges",
+                "conditions": "(C2 OR C5 OR C3 OR C4) AND (NOT C36)",
+                "parentId": "set-team-roles-3",
+                "type": "gamification",
+                "position": {
+                    "x": 18750,
+                    "y": 1100
+                },
+                "data": {
+                    "label": "Team_Challenges",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-community-4",
+        "type": "gamification",
+        "position": {
+            "x": 19000,
+            "y": 1350
+        },
+        "data": {
+            "label": "Set_Community",
+            "num": "(4)",
+            "right": true,
+            "left": true,
+            "bottom": true,
+            "sourceLeft": true,
+            "sourceRight": true,
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "team-challenges",
+                "conditions": "(C2 OR C5 OR C3 OR C4) AND (NOT C36)",
+                "parentId": "set-community-4",
+                "type": "gamification",
+                "position": {
+                    "x": 18750,
+                    "y": 1100
+                },
+                "data": {
+                    "label": "Team_Challenges",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-single-roles-3",
+        "type": "gamification",
+        "position": {
+            "x": 19750,
+            "y": 1600
+        },
+        "data": {
+            "label": "Set_Single_Roles",
+            "num": "(3)",
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "personal-challenges",
+                "conditions": "C7 OR C1 OR C5 OR C36",
+                "parentId": "set-single-roles-3",
+                "type": "gamification",
+                "position": {
+                    "x": 19750,
+                    "y": 1100
+                },
+                "data": {
+                    "label": "Personal_Challenges",
+                    "right": true,
+                    "left": true,
+                    "bottom": true,
+                    "sourceLeft": true,
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-community-3",
+        "type": "gamification",
+        "position": {
+            "x": 22100,
+            "y": 1200
+        },
+        "data": {
+            "label": "Set_Community",
+            "num": "(3)",
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "provide-forum",
+                "conditions": "C23 OR C30 OR C2 OR C5 OR C3 OR C4",
+                "parentId": "set-community-3",
+                "type": "gamification",
+                "position": {
+                    "x": 22500,
+                    "y": 1450
+                },
+                "data": {
+                    "label": "Provide_Forum",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "use-skill-points-2",
+        "type": "gamification",
+        "position": {
+            "x": 28300,
+            "y": 1600
+        },
+        "data": {
+            "label": "Use_Skill_Points",
+            "num": "(2)",
+            "sourceRight": true,
+            "sourceTop": true,
+            "right": true,
+            "bottom": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "training-rewards-by-point-systems",
+                "type": "gamification",
+                "position": {
+                    "x": 28500,
+                    "y": 1450
+                },
+                "data": {
+                    "label": "Training_Rewards_by_Point_Systems",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "bottom": true,
+                    "left": true,
+                    "isHidden": false
+                },
+                "parentId": "use-skill-points-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-badges-2",
+        "type": "gamification",
+        "position": {
+            "x": 28800,
+            "y": 1600
+        },
+        "data": {
+            "label": "Set_Badges",
+            "num": "(2)",
+            "sourceRight": true,
+            "sourceTop": true,
+            "right": true,
+            "bottom": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "by-badges",
+                "type": "gamification",
+                "position": {
+                    "x": 29000,
+                    "y": 1450
+                },
+                "data": {
+                    "label": "By_Badges",
+                    "sourceRight": true,
+                    "sourceTop": true,
+                    "right": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "parentId": "set-badges-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-gamifiable-actions-5",
+        "type": "gamification",
+        "position": {
+            "x": 33800,
+            "y": 1350
+        },
+        "data": {
+            "label": "Set_Gamifiable_Actions",
+            "num": "(5)",
+            "sourceRight": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "add-unlockable-powers",
+                "conditions": "C1 OR C5 OR C36 OR C32",
+                "parentId": "set-gamifiable-actions-5",
+                "type": "gamification",
+                "position": {
+                    "x": 34350,
+                    "y": 950
+                },
+                "data": {
+                    "label": "Add_Unlockable_Powers",
+                    "sourceRight": true,
+                    "sourceLeft": true,
+                    "left": true,
+                    "right": true,
+                    "isHidden": false
+                },
+                "children": [
+                    {
+                        "id": "add-unlockable-powers-and",
+                        "type": "operator",
+                        "position": {
+                            "x": 34450,
+                            "y": 1100
+                        },
+                        "data": {
+                            "label": "AND"
+                        },
+                        "parentId": "add-unlockable-powers",
+                        "children": [
+                            {
+                                "id": "choose-unlockable-actions",
+                                "type": "gamification",
+                                "position": {
+                                    "x": 34200,
+                                    "y": 1350
+                                },
+                                "data": {
+                                    "label": "Choose_Unlockable_Actions",
+                                    "sourceRight": true,
+                                    "sourceLeft": true,
+                                    "isHidden": false
+                                },
+                                "parentId": "add-unlockable-powers-and",
+                                "children": null
+                            },
+                            {
+                                "id": "create-new-powers",
+                                "type": "gamification",
+                                "position": {
+                                    "x": 34700,
+                                    "y": 1350
+                                },
+                                "data": {
+                                    "label": "Create_New_Powers",
+                                    "sourceRight": true,
+                                    "sourceLeft": true,
+                                    "isHidden": false
+                                },
+                                "parentId": "add-unlockable-powers-and",
+                                "children": [
+                                    {
+                                        "id": "create-new-powers-and",
+                                        "type": "operator",
+                                        "position": {
+                                            "x": 34800,
+                                            "y": 1550
+                                        },
+                                        "data": {
+                                            "label": "AND"
+                                        },
+                                        "parentId": "create-new-powers",
+                                        "children": [
+                                            {
+                                                "id": "set-power-names",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": 34400,
+                                                    "y": 1650
+                                                },
+                                                "data": {
+                                                    "label": "Set_Power_Names",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "create-new-powers-and",
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "link-powers-to-unlockable-actions",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": 35000,
+                                                    "y": 1650
+                                                },
+                                                "data": {
+                                                    "label": "Link_Powers_to_Unlockable_Actions",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "create-new-powers-and",
+                                                "children": null
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "set-as-unlockable-2",
+        "type": "gamification",
+        "position": {
+            "x": 35000,
+            "y": 1350
+        },
+        "data": {
+            "label": "Set_as_Unlockable",
+            "num": "(2)",
+            "sourceTop": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "add-unlockable-powers",
+                "conditions": "C1 OR C5 OR C36 OR C32",
+                "parentId": "set-as-unlockable-2",
+                "type": "gamification",
+                "position": {
+                    "x": 34350,
+                    "y": 950
+                },
+                "data": {
+                    "label": "Add_Unlockable_Powers",
+                    "sourceRight": true,
+                    "sourceLeft": true,
+                    "left": true,
+                    "right": true,
+                    "isHidden": false
+                },
+                "children": [
+                    {
+                        "id": "add-unlockable-powers-and",
+                        "type": "operator",
+                        "position": {
+                            "x": 34450,
+                            "y": 1100
+                        },
+                        "data": {
+                            "label": "AND"
+                        },
+                        "parentId": "add-unlockable-powers",
+                        "children": [
+                            {
+                                "id": "choose-unlockable-actions",
+                                "type": "gamification",
+                                "position": {
+                                    "x": 34200,
+                                    "y": 1350
+                                },
+                                "data": {
+                                    "label": "Choose_Unlockable_Actions",
+                                    "sourceRight": true,
+                                    "sourceLeft": true,
+                                    "isHidden": false
+                                },
+                                "parentId": "add-unlockable-powers-and",
+                                "children": null
+                            },
+                            {
+                                "id": "create-new-powers",
+                                "type": "gamification",
+                                "position": {
+                                    "x": 34700,
+                                    "y": 1350
+                                },
+                                "data": {
+                                    "label": "Create_New_Powers",
+                                    "sourceRight": true,
+                                    "sourceLeft": true,
+                                    "isHidden": false
+                                },
+                                "parentId": "add-unlockable-powers-and",
+                                "children": [
+                                    {
+                                        "id": "create-new-powers-and",
+                                        "type": "operator",
+                                        "position": {
+                                            "x": 34800,
+                                            "y": 1550
+                                        },
+                                        "data": {
+                                            "label": "AND"
+                                        },
+                                        "parentId": "create-new-powers",
+                                        "children": [
+                                            {
+                                                "id": "set-power-names",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": 34400,
+                                                    "y": 1650
+                                                },
+                                                "data": {
+                                                    "label": "Set_Power_Names",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "create-new-powers-and",
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "link-powers-to-unlockable-actions",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": 35000,
+                                                    "y": 1650
+                                                },
+                                                "data": {
+                                                    "label": "Link_Powers_to_Unlockable_Actions",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "create-new-powers-and",
+                                                "children": null
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "use-redeemable-points-2",
+        "type": "gamification",
+        "position": {
+            "x": 35750,
+            "y": 1950
+        },
+        "data": {
+            "label": "Use_Redeemable_Points",
+            "num": "(2)",
+            "sourceTop": true,
+            "top": true,
+            "bottom": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "rp-define-exchange-points-rewards",
+                "type": "gamification",
+                "position": {
+                    "x": 35850,
+                    "y": 1650
+                },
+                "data": {
+                    "label": "RP_Define_Exchange_Points_Rewards",
+                    "num": "(1)",
+                    "sourceTop": true,
+                    "top": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "parentId": "use-redeemable-points-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "use-karma-points-2",
+        "type": "gamification",
+        "position": {
+            "x": 36950,
+            "y": 1950
+        },
+        "data": {
+            "label": "Use_Redeemable_Points",
+            "num": "(2)",
+            "sourceTop": true,
+            "top": true,
+            "bottom": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "gp-define-exchange-points-rewards",
+                "type": "gamification",
+                "position": {
+                    "x": 36850,
+                    "y": 1650
+                },
+                "data": {
+                    "label": "GP_Define_Exchange_Points_Rewards",
+                    "num": "(1)",
+                    "sourceTop": true,
+                    "top": true,
+                    "bottom": true,
+                    "isHidden": false
+                },
+                "parentId": "use-karma-points-2",
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": "set-experience-points-system-2",
+        "type": "gamification",
+        "position": {
+            "x": 38900,
+            "y": 600
+        },
+        "data": {
+            "label": "Set_Experience_Points_System",
+            "num": "(2)",
+            "sourceRight": true,
+            "sourceLeft": true,
+            "isHidden": false
+        },
+        "children": [
+            {
+                "id": "set-supporting-systems",
+                "type": "gamification",
+                "position": {
+                    "x": 38500,
+                    "y": 150
+                },
+                "data": {
+                    "label": "Set_Supporting_Systems",
+                    "isHidden": false
+                },
+                "bottom": true,
+                "right": true,
+                "draggable": false,
+                "parentId": "set-experience-points-system-2",
+                "children": [
+                    {
+                        "id": "set-monitoring-system",
+                        "type": "gamification",
+                        "position": {
+                            "x": 38100,
+                            "y": 450
+                        },
+                        "data": {
+                            "label": "Set_Monitoring_System",
+                            "sourceRight": true,
+                            "sourceLeft": true,
+                            "isHidden": false
+                        },
+                        "parentId": "set-supporting-systems",
+                        "children": null
+                    },
+                    {
+                        "id": "set-analyzing-system",
+                        "type": "gamification",
+                        "position": {
+                            "x": 38500,
+                            "y": 450
+                        },
+                        "data": {
+                            "label": "Set_Analyzing_System",
+                            "sourceRight": true,
+                            "sourceLeft": true,
+                            "isHidden": false
+                        },
+                        "parentId": "set-supporting-systems",
+                        "children": null
+                    },
+                    {
+                        "id": "set-adaptation-system",
+                        "type": "gamification",
+                        "position": {
+                            "x": 38900,
+                            "y": 450
+                        },
+                        "data": {
+                            "label": "Set_Adaptation_System",
+                            "sourceRight": true,
+                            "sourceLeft": true,
+                            "isHidden": false
+                        },
+                        "parentId": "set-supporting-systems",
+                        "children": null
                     }
                 ]
             }

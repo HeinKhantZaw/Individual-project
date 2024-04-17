@@ -9,7 +9,7 @@ import {PhaseFiveTreeDS} from "../../data/PhaseFiveTreeDS.js";
 import _ from "lodash";
 import {getAllParentIds} from "../../utils/getAllParentIds.js";
 import {findNodeById} from "../../utils/findNodeById.js";
-import {generateJSONTree} from "../../utils/generateJSONTree.js";
+import {searchNodeInMultipleRoots} from "../../utils/searchNodeInMultipleRoots.js";
 
 const initialState = {
     nodeState: initialNodes,
@@ -21,6 +21,7 @@ const initialState = {
     uploaded: 0,
 }
 const treeMap = buildTree(flattenNodes(PhaseFiveTreeDS));
+console.log(treeMap)
 
 export const phaseFiveSlice = createSlice({
     name: 'phaseFive',
@@ -99,7 +100,12 @@ export const phaseFiveSlice = createSlice({
             state.nodeState = state.nodeState.filter(node => !childNodes.includes(node.id) && !action.payload.includes(node.id) && !tacticNodesToRemove.includes(node.id));
         },
         hideElements: (state, action) => {
-            const ids = getAllChildrenIds(searchNode(treeMap, action.payload));
+            let searchNodeData = searchNode(treeMap, action.payload);
+            let ids = getAllChildrenIds(searchNodeData);
+            if(searchNodeData === null){
+                searchNodeData = searchNodeInMultipleRoots(PhaseFiveTreeDS, action.payload);
+                // ids = state.edgeState
+            }
             const totalIds = [action.payload, ...ids]
             const parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
@@ -132,6 +138,18 @@ export const phaseFiveSlice = createSlice({
                     ...state.edgeState,
                     ...edgesToBeAdded
                 ]
+                const targetList = edgesToBeAdded.map(edge => edge.source)
+                console.log(targetList)
+                const check = targetList.every(target => state.nodeState.some(node => node.id === target));
+                console.log(check)
+                if(!check) {
+                    const tacticNodesToBeAdded = state.hiddenNodes.map(node => node.children.filter(target => targetList.includes(target.id))).flat();
+                    console.log(JSON.parse(JSON.stringify(tacticNodesToBeAdded)));
+                    state.hiddenNodes = state.hiddenNodes.filter((node) => {
+                        return !i.includes(node.id)
+                    })
+                    state.nodeState = [...state.nodeState, ...tacticNodesToBeAdded]
+                }
                 state.hiddenNodes = state.hiddenNodes.filter(node => node.id !== action.payload);
             }
             state.nodeState.find(node => node.id === action.payload).data.isHidden = !isHidden;

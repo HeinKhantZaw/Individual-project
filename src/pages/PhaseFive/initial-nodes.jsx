@@ -2743,7 +2743,7 @@ export const initialNodes = [
             "y": 1150
         },
         "data": {
-            "label": "Set_Point_Systmes",
+            "label": "Set_Point_Systems",
             "num": "(3)",
             "right": true,
             "left": true,
@@ -2961,6 +2961,7 @@ export const initialNodes = [
             "sourceLeft": true,
             "sourceTop": true,
             "left": true,
+            "bottom": true,
             "isHidden": false
         }
     },

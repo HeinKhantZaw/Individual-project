@@ -21,7 +21,6 @@ const initialState = {
     uploaded: 0,
 }
 const treeMap = buildTree(flattenNodes(PhaseFiveTreeDS));
-console.log(treeMap)
 
 export const phaseFiveSlice = createSlice({
     name: 'phaseFive',
@@ -38,7 +37,7 @@ export const phaseFiveSlice = createSlice({
             const targetIds = state.edgeState.map(edge => edge.target)
             state.nodeState = state.nodeState.filter(node => (sourceIds.includes(node.id) || targetIds.includes(node.id)) && (!removedNodeIds.includes(node.id) && !childNodesToRemove.includes(node.id)));
             state.nodeState.map(node => {
-                if(action.payload.selectedTacticNodes.includes(node.data.label)){
+                if (action.payload.selectedTacticNodes.includes(node.data.label)) {
                     node.data.isChosen = true;
                 }
             })
@@ -60,25 +59,16 @@ export const phaseFiveSlice = createSlice({
             }
             // Get all child nodes of the parent
             let childNodesToRemove = parentNodesToRemove.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
-            let tacticNodesToRemove = state.edgeState.filter(edge => parentNodesToRemove.includes(edge.target) && _.has(edge.data, "weight")).map(e=>e.source);
+            let tacticNodesToRemove = state.edgeState.filter(edge => parentNodesToRemove.includes(edge.target) && _.has(edge.data, "weight")).map(e => e.source);
             // Removing all the edges with that have negative impact on the user selected tactic
             state.edgeState = state.edgeState.filter(edge => !parentNodesToRemove.includes(edge.target))
-            for(let edge of state.edgeState){
-                if(tacticNodesToRemove.includes(edge.source)){
+            for (let edge of state.edgeState) {
+                if (tacticNodesToRemove.includes(edge.source)) {
                     // if there is a source, remove from tacticNodesToRemove, it should not be removed
                     tacticNodesToRemove = tacticNodesToRemove.filter(node => node !== edge.source);
                 }
             }
-
-            // const needEdgeConditions = state.edgeState.filter(edge => childNodesToRemove.includes(edge.target) && edge.data && edge.data.label === "Need").map(e=>e.target);
-
-            // filter out needEdgeConditions from child nodes
-            // Discuss with Luca to add this feature or not
-            // childNodesToRemove = childNodesToRemove.filter(node => !needEdgeConditions.includes(node));
-
-            // can finally change the nodes state now
-            state.nodeState =  state.nodeState.filter(node => !childNodesToRemove.includes(node.id) && !parentNodesToRemove.includes(node.id) && !tacticNodesToRemove.includes(node.id));
-            // state.nodeTree =  removeAndFlattenNodes(nodeTree, idToBeRemoved);
+            state.nodeState = state.nodeState.filter(node => !childNodesToRemove.includes(node.id) && !parentNodesToRemove.includes(node.id) && !tacticNodesToRemove.includes(node.id));
         },
         preResolveConflict: (state, action) => {
             state.nodeState = state.nodeState.filter(node => action.payload !== node.id);
@@ -86,13 +76,13 @@ export const phaseFiveSlice = createSlice({
         },
         resolveConflicts: (state, action) => {
             const childNodes = action.payload.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
-            if(action.payload.includes("define-virtual-currency")){
+            if (action.payload.includes("define-virtual-currency")) {
                 childNodes.push("increase-worth-vagueness-2")
             }
-            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data") && edge.data.label !== "!").map(e=>e.source);
+            let tacticNodesToRemove = state.edgeState.filter(edge => action.payload.includes(edge.target) && _.has(edge, "data") && edge.data.label !== "!").map(e => e.source);
             state.edgeState = state.edgeState.filter(edge => !childNodes.includes(edge.target) && !action.payload.includes(edge.target));
-            for(let edge of state.edgeState){
-                if(tacticNodesToRemove.includes(edge.source)){
+            for (let edge of state.edgeState) {
+                if (tacticNodesToRemove.includes(edge.source)) {
                     // if there is a source, remove from tacticNodesToRemove
                     tacticNodesToRemove = tacticNodesToRemove.filter(node => node !== edge.source);
                 }
@@ -101,19 +91,29 @@ export const phaseFiveSlice = createSlice({
         },
         hideElements: (state, action) => {
             let searchNodeData = searchNode(treeMap, action.payload);
+            let neededChildren = [];
+            let neededParents = [];
             let ids = getAllChildrenIds(searchNodeData);
-            if(searchNodeData === null){
-                searchNodeData = searchNodeInMultipleRoots(PhaseFiveTreeDS, action.payload);
-                // ids = state.edgeState
+            if (searchNodeData === null) {
+                ids = searchNodeInMultipleRoots(PhaseFiveTreeDS, action.payload).children.map(node => node.id);
             }
             const totalIds = [action.payload, ...ids]
-            const parents = getAllParentIds(state.edgeState, totalIds);
+            let parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
-            if(!isHidden) {
+            if (!isHidden) {
+                // special case with both dependency
+                const doubleNeed = state.edgeState.filter(edge => edge.source !== action.payload && !ids.includes(edge.source) && parents.includes(edge.source) && (_.has(edge, "markerStart") && _.has(edge, "markerEnd"))).map(e => e.source).flat();
+                console.log(doubleNeed);
+                if(doubleNeed.length > 0){
+                    neededChildren = getAllChildrenIds(searchNode(treeMap, doubleNeed[0])).filter(id => id !== action.payload);
+                    neededParents = getAllParentIds(state.edgeState, neededChildren);
+                }
+                ids = [...ids, ...neededChildren, doubleNeed[0]];
+                parents = [...parents, ...neededParents];
                 state.hiddenEdges = [...state.hiddenEdges, state.edgeState.filter(edge => parents.includes(edge.source) && totalIds.includes(edge.target))].flat();
                 state.edgeState = state.edgeState.filter(edge => !(parents.includes(edge.source) && totalIds.includes(edge.target)));
                 const parentsWithConnection = state.edgeState.filter(edge => parents.includes(edge.source)).map(e => e.source);
-                const parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent));
+                const parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent) && parent !== action.payload);
                 state.hiddenNodes = [
                     ...state.hiddenNodes,
                     {
@@ -128,7 +128,7 @@ export const phaseFiveSlice = createSlice({
                     ...state.hiddenNodes.find(node => node.id === action.payload).children
                 ]
                 const checkNodes = findNodeById(state.hiddenNodes, action.payload);
-                const filter = checkNodes.children.filter(c => !c.data.isHidden).map(child => child.id);
+                const filter = checkNodes.children.length > 0 ? checkNodes.children.filter(c => !c.data.isHidden).map(child => child.id) : [];
                 const i = [...filter, action.payload]
                 const edgesToBeAdded = state.hiddenEdges.filter(edge => (
                     i.includes(edge.target)
@@ -139,12 +139,9 @@ export const phaseFiveSlice = createSlice({
                     ...edgesToBeAdded
                 ]
                 const targetList = edgesToBeAdded.map(edge => edge.source)
-                console.log(targetList)
                 const check = targetList.every(target => state.nodeState.some(node => node.id === target));
-                console.log(check)
-                if(!check) {
+                if (!check) {
                     const tacticNodesToBeAdded = state.hiddenNodes.map(node => node.children.filter(target => targetList.includes(target.id))).flat();
-                    console.log(JSON.parse(JSON.stringify(tacticNodesToBeAdded)));
                     state.hiddenNodes = state.hiddenNodes.filter((node) => {
                         return !i.includes(node.id)
                     })
@@ -157,7 +154,13 @@ export const phaseFiveSlice = createSlice({
     }
 });
 
-export const {setPhaseFiveNodes, removeNegativeConnections, preResolveConflict, resolveConflicts, hideElements} = phaseFiveSlice.actions;
+export const {
+    setPhaseFiveNodes,
+    removeNegativeConnections,
+    preResolveConflict,
+    resolveConflicts,
+    hideElements
+} = phaseFiveSlice.actions;
 
 export default phaseFiveSlice.reducer;
 

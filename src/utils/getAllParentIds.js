@@ -4,7 +4,7 @@ export function getAllParentIds(edges, ids) {
     let parentIds = [];
     ids.forEach(id => {
         edges.map(edge => {
-            if ((id === edge.target) && (_.has(edge.data, "weight") || edge.data?.label === "Need") && !(_.has(edge, "markerStart") && _.has(edge, "markerEnd"))) {
+            if ((id === edge.target) && (_.has(edge.data, "weight") || edge.data?.label === "Need")) {
                 parentIds.push(edge.source);
             }
         });

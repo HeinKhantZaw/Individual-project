@@ -2429,7 +2429,8 @@ export const initialEdges = [
         id: "e224",
         source: "set-game-mechanics-and-dynamics-3",
         target: "assign-other-achievements",
-        targetHandle:"gamification_target_bottom",
+        targetHandle: "gamification_target_bottom",
+        sourceHandle: "gamification_source_top",
         type: "dotted",
         data: {label: "Need"},
         style: arrowEdgeStyle,
@@ -2681,8 +2682,8 @@ export const initialEdges = [
         data: {label: "Need"},
         style: arrowEdgeStyle,
         sourceHandle: "gamification_source_top",
+        targetHandle: "gamification_target_bottom",
         markerStart: markerConfig,
-        markerEnd: markerConfig
     },
     // set-rewards has assign-badges and assign-other-achievements
     {
@@ -2934,7 +2935,7 @@ export const initialEdges = [
         data: {label: "Need"},
         style: arrowEdgeStyle,
         targetHandle: "gamification_target_bottom",
-        sourceHandle: "gamification_source_top",
+        sourceHandle: "gamification_source_right",
         markerStart: markerConfig,
     },
     // set-rewards-3 to training-rewards-by-point-systems, by-badges, by-other-achievements-6

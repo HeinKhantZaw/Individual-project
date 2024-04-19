@@ -39,37 +39,37 @@ export default function PhaseFive() {
     const {nodeState, edgeState, hiddenNodes, uploaded, treeMap} = useSelector((state) => state.phaseFive);
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeState);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeState);
-    const {selectedNodeNames} = useSelector((state) => state.phaseFour);
+    // const {selectedNodeNames} = useSelector((state) => state.phaseFour);
     const dispatch = useDispatch();
-    const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
-    // const userSelectedNodes = [
-    //     "C7",
-    //     "C4",
-    //     "C2",
-    //     "C1",
-    //     "C5",
-    //     "C14",
-    //     "C17",
-    //     "C18",
-    //     "C12",
-    //     "C24",
-    //     "C25",
-    //     "C29",
-    //     "C26",
-    //     "C33",
-    //     "C34",
-    //     "C8",
-    //     "C11"
-    // ];
-    // const selectedNodeNames = [
-    //     "High_Design_Quality",
-    //     "Increase_User_Surprise",
-    //     "Promote_Collaboration",
-    //     "Improve_Minor_Assistance",
-    //     "Improve_System_Perception_via_IT",
-    //     "Improve_System_Awareness",
-    //     "Improve_Trust"
-    // ]
+    // const userSelectedNodes = useSelector((state) => state.phaseOne.selectedNodes);
+    const userSelectedNodes = [
+        "C7",
+        "C4",
+        "C2",
+        "C1",
+        "C5",
+        "C14",
+        "C17",
+        "C18",
+        "C12",
+        "C24",
+        "C25",
+        "C29",
+        "C26",
+        "C33",
+        "C34",
+        "C8",
+        "C11"
+    ];
+    const selectedNodeNames = [
+        "High_Design_Quality",
+        "Increase_User_Surprise",
+        "Promote_Collaboration",
+        "Improve_Minor_Assistance",
+        "Improve_System_Perception_via_IT",
+        "Improve_System_Awareness",
+        "Improve_Trust"
+    ]
     //     "Fast_Design",
     //     "Low_Cost_Design",
     //     "Promote_Collaboration",
@@ -112,6 +112,7 @@ export default function PhaseFive() {
     }
 
     const resolveConflict = (node) => {
+        console.log(node)
         const newRemovedNode = [...removedNode, node];
         setRemovedNode(newRemovedNode);
         setCurrentIndex(currentIndex + 1);
@@ -344,7 +345,7 @@ export default function PhaseFive() {
                     deleteKeyCode={""}
                     fitView
                     maxZoom={1.5}
-                    minZoom={0.18}
+                    minZoom={0.00001}
                     onNodeClick={handleNodeClick}
                 >
                     <Controls/>

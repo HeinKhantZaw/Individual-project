@@ -10,6 +10,7 @@ import _ from "lodash";
 import {getAllParentIds} from "../../utils/getAllParentIds.js";
 import {findNodeById} from "../../utils/findNodeById.js";
 import {searchNodeInMultipleRoots} from "../../utils/searchNodeInMultipleRoots.js";
+import {generateJSONTree} from "../../utils/generateJSONTree.js";
 
 const initialState = {
     nodeState: initialNodes,
@@ -103,7 +104,6 @@ export const phaseFiveSlice = createSlice({
             if (!isHidden) {
                 // special case with both dependency
                 const doubleNeed = state.edgeState.filter(edge => edge.source !== action.payload && !ids.includes(edge.source) && parents.includes(edge.source) && (_.has(edge, "markerStart") && _.has(edge, "markerEnd"))).map(e => e.source).flat();
-                console.log(doubleNeed);
                 if(doubleNeed.length > 0){
                     neededChildren = getAllChildrenIds(searchNode(treeMap, doubleNeed[0])).filter(id => id !== action.payload);
                     neededParents = getAllParentIds(state.edgeState, neededChildren);

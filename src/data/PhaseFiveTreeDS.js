@@ -323,23 +323,7 @@ export const PhaseFiveTreeDS = [
                                                     "isHidden": false
                                                 },
                                                 "parentId": "assign-points-to-gamifiable-actions",
-                                                "children": [
-                                                    {
-                                                        "id": "define-metric",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -5300,
-                                                            "y": 850
-                                                        },
-                                                        "data": {
-                                                            "label": "Define_Metric",
-                                                            "left": true,
-                                                            "isHidden": false
-                                                        },
-                                                        "parentId": "set-same-points-to-each-action",
-                                                        "children": null
-                                                    }
-                                                ]
+                                                "children": null
                                             },
                                             {
                                                 "id": "define-metric",
@@ -891,23 +875,7 @@ export const PhaseFiveTreeDS = [
                                                                                                                                             "isHidden": false
                                                                                                                                         },
                                                                                                                                         "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                        "children": [
-                                                                                                                                            {
-                                                                                                                                                "id": "define-metric",
-                                                                                                                                                "type": "gamification",
-                                                                                                                                                "position": {
-                                                                                                                                                    "x": -5300,
-                                                                                                                                                    "y": 850
-                                                                                                                                                },
-                                                                                                                                                "data": {
-                                                                                                                                                    "label": "Define_Metric",
-                                                                                                                                                    "left": true,
-                                                                                                                                                    "isHidden": false
-                                                                                                                                                },
-                                                                                                                                                "parentId": "set-same-points-to-each-action",
-                                                                                                                                                "children": null
-                                                                                                                                            }
-                                                                                                                                        ]
+                                                                                                                                        "children": null
                                                                                                                                     },
                                                                                                                                     {
                                                                                                                                         "id": "define-metric",
@@ -1028,158 +996,7 @@ export const PhaseFiveTreeDS = [
                                                                                     "isHidden": false
                                                                                 },
                                                                                 "parentId": "define-difficulty-among-levels",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "use-alternated-difficulty",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": -2500,
-                                                                                            "y": 1250
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Use_Alternated_Difficulty",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true,
-                                                                                            "isHidden": false
-                                                                                        },
-                                                                                        "parentId": "use-linear-difficulty-progression",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "use-alternated-difficulty-and",
-                                                                                                "type": "operator",
-                                                                                                "position": {
-                                                                                                    "x": -2400,
-                                                                                                    "y": 1400
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "AND"
-                                                                                                },
-                                                                                                "parentId": "use-alternated-difficulty",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "define-main-trend",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -2600,
-                                                                                                            "y": 1550
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Define_Main_Trend",
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "use-alternated-difficulty-and",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "use-increasing-difficulty",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -2600,
-                                                                                                                    "y": 1700
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Use_Increasing_Difficulty",
-                                                                                                                    "isHidden": false
-                                                                                                                },
-                                                                                                                "parentId": "define-main-trend",
-                                                                                                                "children": null
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "id": "insert-alternated-difficulties",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -2200,
-                                                                                                            "y": 1550
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Insert_Alternated_Difficulties",
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "use-alternated-difficulty-and",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "insert-alternated-difficulties-and",
-                                                                                                                "type": "operator",
-                                                                                                                "position": {
-                                                                                                                    "x": -2100,
-                                                                                                                    "y": 1700
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "AND"
-                                                                                                                },
-                                                                                                                "parentId": "insert-alternated-difficulties",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "choose-candidate-levels",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -2300,
-                                                                                                                            "y": 1850
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Choose_Candidate_Levels",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-alternated-difficulties-and",
-                                                                                                                        "children": null
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "insert-unexpected-difficulties",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -1900,
-                                                                                                                            "y": 1850
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Insert_Unexpected_Difficulties",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-alternated-difficulties-and",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "insert-positive-difficulties",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -2100,
-                                                                                                                                    "y": 2000
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Insert_Positive_Difficulties",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "insert-unexpected-difficulties",
-                                                                                                                                "children": null
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "insert-negative-difficulties",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -1700,
-                                                                                                                                    "y": 2000
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Insert_Negative_Difficulties",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "insert-unexpected-difficulties",
-                                                                                                                                "children": null
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
+                                                                                "children": null
                                                                             },
                                                                             {
                                                                                 "id": "use-alternated-difficulty",
@@ -1655,23 +1472,7 @@ export const PhaseFiveTreeDS = [
                                                                                                                                     "isHidden": false
                                                                                                                                 },
                                                                                                                                 "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                "children": [
-                                                                                                                                    {
-                                                                                                                                        "id": "define-metric",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -5300,
-                                                                                                                                            "y": 850
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Define_Metric",
-                                                                                                                                            "left": true,
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "set-same-points-to-each-action",
-                                                                                                                                        "children": null
-                                                                                                                                    }
-                                                                                                                                ]
+                                                                                                                                "children": null
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "id": "define-metric",
@@ -1792,158 +1593,7 @@ export const PhaseFiveTreeDS = [
                                                                             "isHidden": false
                                                                         },
                                                                         "parentId": "define-difficulty-among-levels",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "use-alternated-difficulty",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -2500,
-                                                                                    "y": 1250
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Use_Alternated_Difficulty",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true,
-                                                                                    "isHidden": false
-                                                                                },
-                                                                                "parentId": "use-linear-difficulty-progression",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "use-alternated-difficulty-and",
-                                                                                        "type": "operator",
-                                                                                        "position": {
-                                                                                            "x": -2400,
-                                                                                            "y": 1400
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "AND"
-                                                                                        },
-                                                                                        "parentId": "use-alternated-difficulty",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "define-main-trend",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -2600,
-                                                                                                    "y": 1550
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Define_Main_Trend",
-                                                                                                    "isHidden": false
-                                                                                                },
-                                                                                                "parentId": "use-alternated-difficulty-and",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "use-increasing-difficulty",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -2600,
-                                                                                                            "y": 1700
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Use_Increasing_Difficulty",
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "define-main-trend",
-                                                                                                        "children": null
-                                                                                                    }
-                                                                                                ]
-                                                                                            },
-                                                                                            {
-                                                                                                "id": "insert-alternated-difficulties",
-                                                                                                "type": "gamification",
-                                                                                                "position": {
-                                                                                                    "x": -2200,
-                                                                                                    "y": 1550
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "Insert_Alternated_Difficulties",
-                                                                                                    "isHidden": false
-                                                                                                },
-                                                                                                "parentId": "use-alternated-difficulty-and",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "insert-alternated-difficulties-and",
-                                                                                                        "type": "operator",
-                                                                                                        "position": {
-                                                                                                            "x": -2100,
-                                                                                                            "y": 1700
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "AND"
-                                                                                                        },
-                                                                                                        "parentId": "insert-alternated-difficulties",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "choose-candidate-levels",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -2300,
-                                                                                                                    "y": 1850
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Choose_Candidate_Levels",
-                                                                                                                    "isHidden": false
-                                                                                                                },
-                                                                                                                "parentId": "insert-alternated-difficulties-and",
-                                                                                                                "children": null
-                                                                                                            },
-                                                                                                            {
-                                                                                                                "id": "insert-unexpected-difficulties",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -1900,
-                                                                                                                    "y": 1850
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Insert_Unexpected_Difficulties",
-                                                                                                                    "isHidden": false
-                                                                                                                },
-                                                                                                                "parentId": "insert-alternated-difficulties-and",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "insert-positive-difficulties",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -2100,
-                                                                                                                            "y": 2000
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Insert_Positive_Difficulties",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-unexpected-difficulties",
-                                                                                                                        "children": null
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "insert-negative-difficulties",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -1700,
-                                                                                                                            "y": 2000
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Insert_Negative_Difficulties",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "insert-unexpected-difficulties",
-                                                                                                                        "children": null
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ]
+                                                                        "children": null
                                                                     },
                                                                     {
                                                                         "id": "use-alternated-difficulty",
@@ -3845,29 +3495,7 @@ export const PhaseFiveTreeDS = [
                                                                             "sourceTop": true,
                                                                             "isHidden": false
                                                                         },
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "set-not-publishable",
-                                                                                "conditions": "NOT (C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35)",
-                                                                                "parentId": "set-publishable",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": 6200,
-                                                                                    "y": 1500
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Not_Publishable",
-                                                                                    "right": true,
-                                                                                    "left": true,
-                                                                                    "bottom": true,
-                                                                                    "sourceLeft": true,
-                                                                                    "sourceRight": true,
-                                                                                    "sourceTop": true,
-                                                                                    "isHidden": false
-                                                                                },
-                                                                                "children": null
-                                                                            }
-                                                                        ]
+                                                                        "children": null
                                                                     },
                                                                     {
                                                                         "id": "set-not-publishable",
@@ -4154,29 +3782,7 @@ export const PhaseFiveTreeDS = [
                                                                                     "sourceTop": true,
                                                                                     "isHidden": false
                                                                                 },
-                                                                                "children": [
-                                                                                    {
-                                                                                        "id": "set-not-publishable",
-                                                                                        "conditions": "NOT (C5 OR C19 OR C2 OR C3 OR C4 OR C33 OR C35)",
-                                                                                        "parentId": "set-publishable",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 6200,
-                                                                                            "y": 1500
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Set_Not_Publishable",
-                                                                                            "right": true,
-                                                                                            "left": true,
-                                                                                            "bottom": true,
-                                                                                            "sourceLeft": true,
-                                                                                            "sourceRight": true,
-                                                                                            "sourceTop": true,
-                                                                                            "isHidden": false
-                                                                                        },
-                                                                                        "children": null
-                                                                                    }
-                                                                                ]
+                                                                                "children": null
                                                                             },
                                                                             {
                                                                                 "id": "set-not-publishable",
@@ -4758,27 +4364,7 @@ export const PhaseFiveTreeDS = [
                                                                     "isHidden": false
                                                                 },
                                                                 "parentId": "choose-presentation-elements",
-                                                                "children": [
-                                                                    {
-                                                                        "id": "set-avatar-trainer",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": 25500,
-                                                                            "y": 1450
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Avatar_Trainer",
-                                                                            "sourceRight": true,
-                                                                            "sourceTop": true,
-                                                                            "right": true,
-                                                                            "bottom": true,
-                                                                            "left": true,
-                                                                            "isHidden": false
-                                                                        },
-                                                                        "parentId": "set-basic-elements",
-                                                                        "children": null
-                                                                    }
-                                                                ]
+                                                                "children": null
                                                             },
                                                             {
                                                                 "id": "set-avatar-trainer",
@@ -6192,71 +5778,6 @@ export const PhaseFiveTreeDS = [
                                                                                 },
                                                                                 "parentId": "define-currency",
                                                                                 "children": [
-                                                                                    {
-                                                                                        "id": "define-virtual-currency",
-                                                                                        "type": "gamification",
-                                                                                        "position": {
-                                                                                            "x": 38000,
-                                                                                            "y": 1650
-                                                                                        },
-                                                                                        "data": {
-                                                                                            "label": "Define_Virtual_Currency",
-                                                                                            "sourceTop": true,
-                                                                                            "top": true,
-                                                                                            "bottom": true,
-                                                                                            "right": true,
-                                                                                            "isHidden": false
-                                                                                        },
-                                                                                        "parentId": "by-money",
-                                                                                        "children": [
-                                                                                            {
-                                                                                                "id": "define-virtual-currency-and",
-                                                                                                "type": "operator",
-                                                                                                "position": {
-                                                                                                    "x": 38100,
-                                                                                                    "y": 1850
-                                                                                                },
-                                                                                                "data": {
-                                                                                                    "label": "AND"
-                                                                                                },
-                                                                                                "parentId": "define-virtual-currency",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "define-exchange-money-currency",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": 37750,
-                                                                                                            "y": 1950
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Define_Exchange_Money_Currency",
-                                                                                                            "sourceTop": true,
-                                                                                                            "top": true,
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "define-virtual-currency-and",
-                                                                                                        "children": null
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "id": "define-exchange-currency-rewards",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": 38250,
-                                                                                                            "y": 1950
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Define_Exchange_Currency_Rewards",
-                                                                                                            "sourceTop": true,
-                                                                                                            "top": true,
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "define-virtual-currency-and",
-                                                                                                        "children": null
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-                                                                                    },
                                                                                     {
                                                                                         "id": "define-exchange-money-rewards",
                                                                                         "type": "gamification",

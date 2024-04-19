@@ -183,7 +183,7 @@ input:checked + .slider:before {
 }
 
 /* ArwesSounds\(Frame2\)-children is compiled into c01880 after building process, this will work only in production */
-.c01949:hover {
+.c01784:hover {
     color: #4BF2F6;
     background-color: #2b7d80;
 }

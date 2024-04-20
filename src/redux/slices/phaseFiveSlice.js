@@ -94,11 +94,8 @@ export const phaseFiveSlice = createSlice({
             let searchNodeData = searchNode(treeMap, action.payload);
             let neededChildren = [];
             let neededParents = [];
-            let ids = getAllChildrenIds(searchNodeData);
-            if (searchNodeData === null) {
-                ids = searchNodeInMultipleRoots(PhaseFiveTreeDS, action.payload).children.map(node => node.id);
-            }
-            const totalIds = [action.payload, ...ids]
+            let ids = searchNodeData === null ? getAllChildrenIds(searchNodeInMultipleRoots(PhaseFiveTreeDS, action.payload)) : getAllChildrenIds(searchNodeData);
+            let totalIds = [action.payload, ...ids]
             let parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
             if (!isHidden) {
@@ -107,13 +104,18 @@ export const phaseFiveSlice = createSlice({
                 if(doubleNeed.length > 0){
                     neededChildren = getAllChildrenIds(searchNode(treeMap, doubleNeed[0])).filter(id => id !== action.payload);
                     neededParents = getAllParentIds(state.edgeState, neededChildren);
+                    ids = [...ids, ...neededChildren, doubleNeed[0]];
+                    totalIds = [action.payload, ...ids];
                 }
-                ids = [...ids, ...neededChildren, doubleNeed[0]];
                 parents = [...parents, ...neededParents];
                 state.hiddenEdges = [...state.hiddenEdges, state.edgeState.filter(edge => parents.includes(edge.source) && totalIds.includes(edge.target))].flat();
                 state.edgeState = state.edgeState.filter(edge => !(parents.includes(edge.source) && totalIds.includes(edge.target)));
-                const parentsWithConnection = state.edgeState.filter(edge => parents.includes(edge.source)).map(e => e.source);
-                const parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent) && parent !== action.payload);
+                let parentsWithConnection = state.edgeState.filter(edge => parents.includes(edge.source)).map(e => e.source);
+                let parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent) && parent !== action.payload);
+                // special case
+                if(parentsToBeHidden.includes("support-achievement") && parentsToBeHidden.includes("improve-perceived-status")){
+                    parentsToBeHidden.push("improve-system-loyalty");
+                }
                 state.hiddenNodes = [
                     ...state.hiddenNodes,
                     {

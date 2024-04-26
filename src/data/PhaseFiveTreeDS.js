@@ -34,6 +34,7 @@ export const PhaseFiveTreeDS = [
                         "data": {
                             "label": "Set_Roles",
                             "right": true,
+                            "sourceRight": true,
                             "isHidden": false
                         },
                         "parentId": "design-gamification-and",
@@ -68,6 +69,21 @@ export const PhaseFiveTreeDS = [
                                     "isHidden": false
                                 },
                                 "children": null
+                            },
+                            {
+                                "id": "link-roles-to-path",
+                                "type": "gamification",
+                                "position": {
+                                    "x": -4200,
+                                    "y": 1000
+                                },
+                                "data": {
+                                    "label": "Link_Roles_to_Path",
+                                    "isHidden": false,
+                                    "right": true
+                                },
+                                "parentId": "set-roles",
+                                "children": null
                             }
                         ]
                     },
@@ -81,6 +97,7 @@ export const PhaseFiveTreeDS = [
                         "data": {
                             "label": "Set_Gamifiable_Actions",
                             "right": true,
+                            "sourceRight": true,
                             "num": "(1)",
                             "isHidden": false
                         },
@@ -158,6 +175,130 @@ export const PhaseFiveTreeDS = [
                                         "children": null
                                     }
                                 ]
+                            },
+                            {
+                                "id": "set-experience-points-system",
+                                "type": "gamification",
+                                "position": {
+                                    "x": -5500,
+                                    "y": 150
+                                },
+                                "data": {
+                                    "label": "Set_Experience_Points_System",
+                                    "right": true,
+                                    "left": true,
+                                    "bottom": true,
+                                    "sourceLeft": true,
+                                    "sourceRight": true,
+                                    "sourceTop": true,
+                                    "num": "(1)",
+                                    "isHidden": false
+                                },
+                                "parentId": "set-gamifiable-actions",
+                                "children": [
+                                    {
+                                        "id": "set-experience-points-system-and",
+                                        "type": "operator",
+                                        "position": {
+                                            "x": -5400,
+                                            "y": 350
+                                        },
+                                        "data": {
+                                            "label": "AND"
+                                        },
+                                        "parentId": "set-experience-points-system",
+                                        "children": [
+                                            {
+                                                "id": "select-gamifiable-actions",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": -5900,
+                                                    "y": 600
+                                                },
+                                                "data": {
+                                                    "label": "Select_Gamifiable_Actions",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "set-experience-points-system-and",
+                                                "children": null
+                                            },
+                                            {
+                                                "id": "assign-points-to-gamifiable-actions",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": -5500,
+                                                    "y": 600
+                                                },
+                                                "data": {
+                                                    "label": "Assign_Points_to_Gamifiable_Actions",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "set-experience-points-system-and",
+                                                "children": [
+                                                    {
+                                                        "id": "set-same-points-to-each-action",
+                                                        "type": "gamification",
+                                                        "position": {
+                                                            "x": -5700,
+                                                            "y": 850
+                                                        },
+                                                        "data": {
+                                                            "label": "Set_Same_Points_To_Each_Action",
+                                                            "sourceRight": true,
+                                                            "isHidden": false
+                                                        },
+                                                        "parentId": "assign-points-to-gamifiable-actions",
+                                                        "children": null
+                                                    },
+                                                    {
+                                                        "id": "define-metric",
+                                                        "type": "gamification",
+                                                        "position": {
+                                                            "x": -5300,
+                                                            "y": 850
+                                                        },
+                                                        "data": {
+                                                            "label": "Define_Metric",
+                                                            "left": true,
+                                                            "isHidden": false
+                                                        },
+                                                        "parentId": "assign-points-to-gamifiable-actions",
+                                                        "children": null
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "set-expiration-time",
+                                                "type": "gamification",
+                                                "position": {
+                                                    "x": -5000,
+                                                    "y": 600
+                                                },
+                                                "data": {
+                                                    "label": "Set_Expiration_Time",
+                                                    "isHidden": false
+                                                },
+                                                "parentId": "set-experience-points-system-and",
+                                                "children": null
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "choose-experience-points",
+                                        "type": "gamification",
+                                        "position": {
+                                            "x": -3450,
+                                            "y": 1850
+                                        },
+                                        "data": {
+                                            "label": "Choose_Experience_Points",
+                                            "sourceLeft": true,
+                                            "isHidden": false
+                                        },
+                                        "parentId": "set-experience-points-system",
+                                        "children": null
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -181,96 +322,6 @@ export const PhaseFiveTreeDS = [
                         },
                         "parentId": "design-gamification-and",
                         "children": [
-                            {
-                                "id": "set-gamifiable-actions",
-                                "type": "gamification",
-                                "position": {
-                                    "x": -6965,
-                                    "y": 150
-                                },
-                                "data": {
-                                    "label": "Set_Gamifiable_Actions",
-                                    "right": true,
-                                    "num": "(1)",
-                                    "isHidden": false
-                                },
-                                "parentId": "set-experience-points-system",
-                                "children": [
-                                    {
-                                        "id": "set-gamifiable-actions-and",
-                                        "type": "operator",
-                                        "position": {
-                                            "x": -6870,
-                                            "y": 300
-                                        },
-                                        "data": {
-                                            "label": "AND"
-                                        },
-                                        "parentId": "set-gamifiable-actions",
-                                        "children": [
-                                            {
-                                                "id": "set-kinds",
-                                                "type": "gamification",
-                                                "position": {
-                                                    "x": -6800,
-                                                    "y": 450
-                                                },
-                                                "data": {
-                                                    "label": "Set_Kinds",
-                                                    "isHidden": false
-                                                },
-                                                "parentId": "set-gamifiable-actions-and",
-                                                "children": [
-                                                    {
-                                                        "id": "set-as-directly-unlocked",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -6900,
-                                                            "y": 650
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_As_Directly_Unlocked",
-                                                            "sourceRight": true,
-                                                            "isHidden": false
-                                                        },
-                                                        "parentId": "set-kinds",
-                                                        "children": null
-                                                    },
-                                                    {
-                                                        "id": "set-as-unlockable",
-                                                        "type": "gamification",
-                                                        "position": {
-                                                            "x": -6500,
-                                                            "y": 650
-                                                        },
-                                                        "data": {
-                                                            "label": "Set_As_Unlockable",
-                                                            "num": "(1)",
-                                                            "isHidden": false
-                                                        },
-                                                        "parentId": "set-kinds",
-                                                        "children": null
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "id": "choose-gamifiable-actions",
-                                                "type": "gamification",
-                                                "position": {
-                                                    "x": -7100,
-                                                    "y": 450
-                                                },
-                                                "data": {
-                                                    "label": "Choose_Gamifiable_Actions",
-                                                    "isHidden": false
-                                                },
-                                                "parentId": "set-gamifiable-actions-and",
-                                                "children": null
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
                             {
                                 "id": "set-experience-points-system-and",
                                 "type": "operator",
@@ -357,6 +408,21 @@ export const PhaseFiveTreeDS = [
                                         "children": null
                                     }
                                 ]
+                            },
+                            {
+                                "id": "choose-experience-points",
+                                "type": "gamification",
+                                "position": {
+                                    "x": -3450,
+                                    "y": 1850
+                                },
+                                "data": {
+                                    "label": "Choose_Experience_Points",
+                                    "sourceLeft": true,
+                                    "isHidden": false
+                                },
+                                "parentId": "set-experience-points-system",
+                                "children": null
                             }
                         ]
                     },
@@ -504,58 +570,11 @@ export const PhaseFiveTreeDS = [
                                                                 },
                                                                 "data": {
                                                                     "label": "Link_Roles_to_Path",
-                                                                    "isHidden": false
+                                                                    "isHidden": false,
+                                                                    "right": true
                                                                 },
                                                                 "parentId": "set-paths-and",
-                                                                "children": [
-                                                                    {
-                                                                        "id": "set-roles",
-                                                                        "type": "gamification",
-                                                                        "position": {
-                                                                            "x": -8500,
-                                                                            "y": 150
-                                                                        },
-                                                                        "data": {
-                                                                            "label": "Set_Roles",
-                                                                            "right": true,
-                                                                            "isHidden": false
-                                                                        },
-                                                                        "parentId": "link-roles-to-path",
-                                                                        "children": [
-                                                                            {
-                                                                                "id": "set-single-roles",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -9000,
-                                                                                    "y": 550
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Single_Roles",
-                                                                                    "num": "(1)",
-                                                                                    "isHidden": false
-                                                                                },
-                                                                                "parentId": "set-roles",
-                                                                                "children": null
-                                                                            },
-                                                                            {
-                                                                                "id": "set-team-roles",
-                                                                                "conditions": "(C2 OR C3 OR C4 OR C23 OR C24 OR C25 OR C30 OR C26) AND (NOT C36)",
-                                                                                "parentId": "set-roles",
-                                                                                "type": "gamification",
-                                                                                "position": {
-                                                                                    "x": -8000,
-                                                                                    "y": 550
-                                                                                },
-                                                                                "data": {
-                                                                                    "label": "Set_Team_Roles",
-                                                                                    "num": "(1)",
-                                                                                    "isHidden": false
-                                                                                },
-                                                                                "children": null
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
+                                                                "children": null
                                                             }
                                                         ]
                                                     },
@@ -712,207 +731,7 @@ export const PhaseFiveTreeDS = [
                                                                                                             "isHidden": false
                                                                                                         },
                                                                                                         "parentId": "choose-point-kinds",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "set-experience-points-system",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -5500,
-                                                                                                                    "y": 150
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Set_Experience_Points_System",
-                                                                                                                    "right": true,
-                                                                                                                    "left": true,
-                                                                                                                    "bottom": true,
-                                                                                                                    "sourceLeft": true,
-                                                                                                                    "sourceRight": true,
-                                                                                                                    "sourceTop": true,
-                                                                                                                    "num": "(1)",
-                                                                                                                    "isHidden": false
-                                                                                                                },
-                                                                                                                "parentId": "choose-experience-points",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "set-gamifiable-actions",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -6965,
-                                                                                                                            "y": 150
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Set_Gamifiable_Actions",
-                                                                                                                            "right": true,
-                                                                                                                            "num": "(1)",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "set-gamifiable-actions-and",
-                                                                                                                                "type": "operator",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -6870,
-                                                                                                                                    "y": 300
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "AND"
-                                                                                                                                },
-                                                                                                                                "parentId": "set-gamifiable-actions",
-                                                                                                                                "children": [
-                                                                                                                                    {
-                                                                                                                                        "id": "set-kinds",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -6800,
-                                                                                                                                            "y": 450
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Set_Kinds",
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "set-gamifiable-actions-and",
-                                                                                                                                        "children": [
-                                                                                                                                            {
-                                                                                                                                                "id": "set-as-directly-unlocked",
-                                                                                                                                                "type": "gamification",
-                                                                                                                                                "position": {
-                                                                                                                                                    "x": -6900,
-                                                                                                                                                    "y": 650
-                                                                                                                                                },
-                                                                                                                                                "data": {
-                                                                                                                                                    "label": "Set_As_Directly_Unlocked",
-                                                                                                                                                    "sourceRight": true,
-                                                                                                                                                    "isHidden": false
-                                                                                                                                                },
-                                                                                                                                                "parentId": "set-kinds",
-                                                                                                                                                "children": null
-                                                                                                                                            },
-                                                                                                                                            {
-                                                                                                                                                "id": "set-as-unlockable",
-                                                                                                                                                "type": "gamification",
-                                                                                                                                                "position": {
-                                                                                                                                                    "x": -6500,
-                                                                                                                                                    "y": 650
-                                                                                                                                                },
-                                                                                                                                                "data": {
-                                                                                                                                                    "label": "Set_As_Unlockable",
-                                                                                                                                                    "num": "(1)",
-                                                                                                                                                    "isHidden": false
-                                                                                                                                                },
-                                                                                                                                                "parentId": "set-kinds",
-                                                                                                                                                "children": null
-                                                                                                                                            }
-                                                                                                                                        ]
-                                                                                                                                    },
-                                                                                                                                    {
-                                                                                                                                        "id": "choose-gamifiable-actions",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -7100,
-                                                                                                                                            "y": 450
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Choose_Gamifiable_Actions",
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "set-gamifiable-actions-and",
-                                                                                                                                        "children": null
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "set-experience-points-system-and",
-                                                                                                                        "type": "operator",
-                                                                                                                        "position": {
-                                                                                                                            "x": -5400,
-                                                                                                                            "y": 350
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "AND"
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "select-gamifiable-actions",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5900,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Select_Gamifiable_Actions",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": null
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "assign-points-to-gamifiable-actions",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5500,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Assign_Points_to_Gamifiable_Actions",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": [
-                                                                                                                                    {
-                                                                                                                                        "id": "set-same-points-to-each-action",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -5700,
-                                                                                                                                            "y": 850
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Set_Same_Points_To_Each_Action",
-                                                                                                                                            "sourceRight": true,
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                        "children": null
-                                                                                                                                    },
-                                                                                                                                    {
-                                                                                                                                        "id": "define-metric",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -5300,
-                                                                                                                                            "y": 850
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Define_Metric",
-                                                                                                                                            "left": true,
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                        "children": null
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "set-expiration-time",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5000,
-                                                                                                                                    "y": 600
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Set_Expiration_Time",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "set-experience-points-system-and",
-                                                                                                                                "children": null
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
+                                                                                                        "children": null
                                                                                                     },
                                                                                                     {
                                                                                                         "id": "choose-other-kinds",
@@ -923,10 +742,28 @@ export const PhaseFiveTreeDS = [
                                                                                                         },
                                                                                                         "data": {
                                                                                                             "label": "Choose_Other_Kinds",
-                                                                                                            "isHidden": false
+                                                                                                            "isHidden": false,
+                                                                                                            "bottom": true
                                                                                                         },
                                                                                                         "parentId": "choose-point-kinds",
-                                                                                                        "children": null
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "id": "set-point-systems-2",
+                                                                                                                "type": "gamification",
+                                                                                                                "position": {
+                                                                                                                    "x": -3350,
+                                                                                                                    "y": 2000
+                                                                                                                },
+                                                                                                                "data": {
+                                                                                                                    "label": "Set_Point_Systems",
+                                                                                                                    "num": "(2)",
+                                                                                                                    "sourceTop": true,
+                                                                                                                    "isHidden": false
+                                                                                                                },
+                                                                                                                "parentId": "choose-other-kinds",
+                                                                                                                "children": null
+                                                                                                            }
+                                                                                                        ]
                                                                                                     }
                                                                                                 ]
                                                                                             }
@@ -1309,207 +1146,7 @@ export const PhaseFiveTreeDS = [
                                                                                                     "isHidden": false
                                                                                                 },
                                                                                                 "parentId": "choose-point-kinds",
-                                                                                                "children": [
-                                                                                                    {
-                                                                                                        "id": "set-experience-points-system",
-                                                                                                        "type": "gamification",
-                                                                                                        "position": {
-                                                                                                            "x": -5500,
-                                                                                                            "y": 150
-                                                                                                        },
-                                                                                                        "data": {
-                                                                                                            "label": "Set_Experience_Points_System",
-                                                                                                            "right": true,
-                                                                                                            "left": true,
-                                                                                                            "bottom": true,
-                                                                                                            "sourceLeft": true,
-                                                                                                            "sourceRight": true,
-                                                                                                            "sourceTop": true,
-                                                                                                            "num": "(1)",
-                                                                                                            "isHidden": false
-                                                                                                        },
-                                                                                                        "parentId": "choose-experience-points",
-                                                                                                        "children": [
-                                                                                                            {
-                                                                                                                "id": "set-gamifiable-actions",
-                                                                                                                "type": "gamification",
-                                                                                                                "position": {
-                                                                                                                    "x": -6965,
-                                                                                                                    "y": 150
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "Set_Gamifiable_Actions",
-                                                                                                                    "right": true,
-                                                                                                                    "num": "(1)",
-                                                                                                                    "isHidden": false
-                                                                                                                },
-                                                                                                                "parentId": "set-experience-points-system",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "set-gamifiable-actions-and",
-                                                                                                                        "type": "operator",
-                                                                                                                        "position": {
-                                                                                                                            "x": -6870,
-                                                                                                                            "y": 300
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "AND"
-                                                                                                                        },
-                                                                                                                        "parentId": "set-gamifiable-actions",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "set-kinds",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -6800,
-                                                                                                                                    "y": 450
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Set_Kinds",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "set-gamifiable-actions-and",
-                                                                                                                                "children": [
-                                                                                                                                    {
-                                                                                                                                        "id": "set-as-directly-unlocked",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -6900,
-                                                                                                                                            "y": 650
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Set_As_Directly_Unlocked",
-                                                                                                                                            "sourceRight": true,
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "set-kinds",
-                                                                                                                                        "children": null
-                                                                                                                                    },
-                                                                                                                                    {
-                                                                                                                                        "id": "set-as-unlockable",
-                                                                                                                                        "type": "gamification",
-                                                                                                                                        "position": {
-                                                                                                                                            "x": -6500,
-                                                                                                                                            "y": 650
-                                                                                                                                        },
-                                                                                                                                        "data": {
-                                                                                                                                            "label": "Set_As_Unlockable",
-                                                                                                                                            "num": "(1)",
-                                                                                                                                            "isHidden": false
-                                                                                                                                        },
-                                                                                                                                        "parentId": "set-kinds",
-                                                                                                                                        "children": null
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "choose-gamifiable-actions",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -7100,
-                                                                                                                                    "y": 450
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Choose_Gamifiable_Actions",
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "set-gamifiable-actions-and",
-                                                                                                                                "children": null
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            },
-                                                                                                            {
-                                                                                                                "id": "set-experience-points-system-and",
-                                                                                                                "type": "operator",
-                                                                                                                "position": {
-                                                                                                                    "x": -5400,
-                                                                                                                    "y": 350
-                                                                                                                },
-                                                                                                                "data": {
-                                                                                                                    "label": "AND"
-                                                                                                                },
-                                                                                                                "parentId": "set-experience-points-system",
-                                                                                                                "children": [
-                                                                                                                    {
-                                                                                                                        "id": "select-gamifiable-actions",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -5900,
-                                                                                                                            "y": 600
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Select_Gamifiable_Actions",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system-and",
-                                                                                                                        "children": null
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "assign-points-to-gamifiable-actions",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -5500,
-                                                                                                                            "y": 600
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Assign_Points_to_Gamifiable_Actions",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system-and",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "id": "set-same-points-to-each-action",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5700,
-                                                                                                                                    "y": 850
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Set_Same_Points_To_Each_Action",
-                                                                                                                                    "sourceRight": true,
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                "children": null
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "id": "define-metric",
-                                                                                                                                "type": "gamification",
-                                                                                                                                "position": {
-                                                                                                                                    "x": -5300,
-                                                                                                                                    "y": 850
-                                                                                                                                },
-                                                                                                                                "data": {
-                                                                                                                                    "label": "Define_Metric",
-                                                                                                                                    "left": true,
-                                                                                                                                    "isHidden": false
-                                                                                                                                },
-                                                                                                                                "parentId": "assign-points-to-gamifiable-actions",
-                                                                                                                                "children": null
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "id": "set-expiration-time",
-                                                                                                                        "type": "gamification",
-                                                                                                                        "position": {
-                                                                                                                            "x": -5000,
-                                                                                                                            "y": 600
-                                                                                                                        },
-                                                                                                                        "data": {
-                                                                                                                            "label": "Set_Expiration_Time",
-                                                                                                                            "isHidden": false
-                                                                                                                        },
-                                                                                                                        "parentId": "set-experience-points-system-and",
-                                                                                                                        "children": null
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ]
+                                                                                                "children": null
                                                                                             },
                                                                                             {
                                                                                                 "id": "choose-other-kinds",
@@ -1520,10 +1157,28 @@ export const PhaseFiveTreeDS = [
                                                                                                 },
                                                                                                 "data": {
                                                                                                     "label": "Choose_Other_Kinds",
-                                                                                                    "isHidden": false
+                                                                                                    "isHidden": false,
+                                                                                                    "bottom": true
                                                                                                 },
                                                                                                 "parentId": "choose-point-kinds",
-                                                                                                "children": null
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "id": "set-point-systems-2",
+                                                                                                        "type": "gamification",
+                                                                                                        "position": {
+                                                                                                            "x": -3350,
+                                                                                                            "y": 2000
+                                                                                                        },
+                                                                                                        "data": {
+                                                                                                            "label": "Set_Point_Systems",
+                                                                                                            "num": "(2)",
+                                                                                                            "sourceTop": true,
+                                                                                                            "isHidden": false
+                                                                                                        },
+                                                                                                        "parentId": "choose-other-kinds",
+                                                                                                        "children": null
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         ]
                                                                                     }
@@ -5877,35 +5532,6 @@ export const PhaseFiveTreeDS = [
                         ]
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "id": "set-point-systems-2",
-        "type": "gamification",
-        "position": {
-            "x": -3350,
-            "y": 2000
-        },
-        "data": {
-            "label": "Set_Point_Systems",
-            "num": "(2)",
-            "isHidden": false
-        },
-        "children": [
-            {
-                "id": "choose-other-kinds",
-                "type": "gamification",
-                "position": {
-                    "x": -3150,
-                    "y": 1850
-                },
-                "data": {
-                    "label": "Choose_Other_Kinds",
-                    "isHidden": false
-                },
-                "parentId": "set-point-systems-2",
-                "children": null
             }
         ]
     },

@@ -196,14 +196,14 @@ export const initialEdges = [
 
     {
         id: "e20",
-        target: "set-gamifiable-actions",
-        source: "set-experience-points-system",
-        sourceHandle: "gamification_source_left",
-        targetHandle: "gamification_target_right",
+        source: "set-gamifiable-actions",
+        target: "set-experience-points-system",
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
         type: "dotted",
         data: {label: "Need"},
         style: arrowEdgeStyle,
-        markerEnd: markerConfig,
+        markerStart: markerConfig,
     },
     {
         id: "e21",
@@ -573,15 +573,14 @@ export const initialEdges = [
     },
     {
         id: "e57_1",
-        source: "choose-experience-points",
-        target: "set-experience-points-system",
+        target: "choose-experience-points",
+        source: "set-experience-points-system",
         type: "dotted",
         data: {label: "Need"},
-
-        sourceHandle: "gamification_source_left",
-        targetHandle: "gamification_target_right",
+        sourceHandle: "gamification_source_right",
+        targetHandle: "gamification_target_left",
         style: arrowEdgeStyle,
-        markerEnd: markerConfig
+        markerStart: markerConfig
     },
     {
         id: "e58",
@@ -594,12 +593,12 @@ export const initialEdges = [
     // choose-other-kinds needs set-point-systems
     {
         id: "e59",
-        target: "choose-other-kinds",
-        source: "set-point-systems-2",
+        source: "choose-other-kinds",
+        target: "set-point-systems-2",
         type: "dotted",
         data: {label: "Need"},
         style: arrowEdgeStyle,
-        markerStart: markerConfig
+        markerEnd: markerConfig
     },
     // set-paths and support-skill-improvement
     {
@@ -636,14 +635,14 @@ export const initialEdges = [
     // link-role-to-path needs set-roles
     {
         id: "e62",
-        source: "link-roles-to-path",
-        target: "set-roles",
+        target: "link-roles-to-path",
+        source: "set-roles",
         type: "dotted",
         data: {label: "Need"},
         targetHandle: "gamification_target_right",
         sourceHandle: "gamification_source_right",
         style: arrowEdgeStyle,
-        markerEnd: markerConfig
+        markerStart: markerConfig
     },
     {
         id: "e63",

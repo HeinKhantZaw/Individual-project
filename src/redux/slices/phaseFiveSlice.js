@@ -20,6 +20,7 @@ const initialState = {
     hiddenNodes: [],
     hiddenTactics: [],
     uploaded: 0,
+    isNeedOn: false,
 }
 const treeMap = buildTree(flattenNodes(PhaseFiveTreeDS));
 
@@ -28,7 +29,7 @@ export const phaseFiveSlice = createSlice({
     initialState,
     reducers: {
         setPhaseFiveNodes: (state, action) => {
-            // console.log(generateJSONTree(initialNodes, initialEdges))
+            console.log(generateJSONTree(initialNodes, initialEdges))
             const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
             let childNodesToRemove = removedNodeIds.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
             state.edgeState = state.edgeState.filter(edge => {
@@ -98,22 +99,55 @@ export const phaseFiveSlice = createSlice({
             let totalIds = [action.payload, ...ids]
             let parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
+            const isAndRelation = state.edgeState.find(edge => edge.target === action.payload && edge.source.endsWith("-and") && edge.source !== "design-gamification-and")?.source;
+            let siblings = "";
             if (!isHidden) {
                 // special case with both dependency
                 const doubleNeed = state.edgeState.filter(edge => edge.source !== action.payload && !ids.includes(edge.source) && parents.includes(edge.source) && (_.has(edge, "markerStart") && _.has(edge, "markerEnd"))).map(e => e.source).flat();
-                if(doubleNeed.length > 0){
+                if (doubleNeed.length > 0) {
                     neededChildren = getAllChildrenIds(searchNode(treeMap, doubleNeed[0])).filter(id => id !== action.payload);
                     neededParents = getAllParentIds(state.edgeState, neededChildren);
                     ids = [...ids, ...neededChildren, doubleNeed[0]];
                     totalIds = [action.payload, ...ids];
                 }
                 parents = [...parents, ...neededParents];
+                // console.log(totalIds)
+                // console.log(isAndRelation, doubleNeed)
+                if (isAndRelation) {
+                    siblings = state.edgeState.filter(edge => edge.source === isAndRelation && edge.target !== action.payload).map(e => e.target);
+                    for (let sibling of siblings) {
+                        console.log(sibling)
+                        const siblingIds = getAllChildrenIds(searchNode(treeMap, sibling));
+                        console.log(siblingIds)
+                        if (doubleNeed.length === 0) {
+                            ids = [...ids, ...siblingIds, sibling];
+                            totalIds = [...ids];
+                            console.log("no double need:", totalIds)
+                        } else {
+                            const doesExist = state.nodeState.find(node => node.id === doubleNeed[0]);
+                            if (!doesExist) {
+                                ids = [...ids, ...siblingIds, sibling];
+                                totalIds = [...ids];
+                            } else {
+                                if (doubleNeed[0] === "assign-badges" || doubleNeed[0] === "use-badge-icons") {
+                                    ids = [...ids, ...siblingIds, sibling];
+                                }
+                                totalIds = [...ids, ...siblingIds, sibling];
+                            }
+                            console.log("With double need: ", totalIds)
+                            console.log("DOUBLE NEED: ", doubleNeed)
+                        }
+                        const newParents = getAllParentIds(state.edgeState, totalIds);
+                        parents = [...parents, ...newParents];
+                    }
+
+                }
                 state.hiddenEdges = [...state.hiddenEdges, state.edgeState.filter(edge => parents.includes(edge.source) && totalIds.includes(edge.target))].flat();
                 state.edgeState = state.edgeState.filter(edge => !(parents.includes(edge.source) && totalIds.includes(edge.target)));
                 let parentsWithConnection = state.edgeState.filter(edge => parents.includes(edge.source)).map(e => e.source);
                 let parentsToBeHidden = parents.filter(parent => !parentsWithConnection.includes(parent) && parent !== action.payload);
                 // special case
-                if(parentsToBeHidden.includes("support-achievement") && parentsToBeHidden.includes("improve-perceived-status")){
+                if (parentsToBeHidden.includes("support-achievement") && parentsToBeHidden.includes("improve-perceived-status")) {
                     parentsToBeHidden.push("improve-system-loyalty");
                 }
                 state.hiddenNodes = [

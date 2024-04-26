@@ -33,6 +33,7 @@ export const initialNodes = [
         "data": {
             "label": "Set_Roles",
             "right": true,
+            "sourceRight": true,
             "isHidden": false
         }
     },
@@ -125,6 +126,7 @@ export const initialNodes = [
         "data": {
             "label": "Set_Gamifiable_Actions",
             "right": true,
+            "sourceRight": true,
             "num": "(1)",
             "isHidden": false
         }
@@ -431,7 +433,8 @@ export const initialNodes = [
         },
         "data": {
             "label": "Link_Roles_to_Path",
-            "isHidden": false
+            "isHidden": false,
+            "right": true
         }
     },
     {
@@ -581,7 +584,8 @@ export const initialNodes = [
         },
         "data": {
             "label": "Choose_Other_Kinds",
-            "isHidden": false
+            "isHidden": false,
+            "bottom": true,
         }
     },
     {
@@ -594,6 +598,7 @@ export const initialNodes = [
         "data": {
             "label": "Set_Point_Systems",
             "num": "(2)",
+            "sourceTop": true,
             "isHidden": false
         }
     },

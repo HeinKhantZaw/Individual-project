@@ -1,5 +1,4 @@
 // Used during development, not included in the production
-import _ from "lodash";
 
 export function generateJSONTree(initialNodes, initialEdges) {
     const tree = {};
@@ -16,12 +15,17 @@ export function generateJSONTree(initialNodes, initialEdges) {
             tree[node.id] = {...node};
         }
     });
+    console.log("NODE:", nodeMap);
 
     // Recursively build the tree starting from the root nodes
     const buildTree = (parentId, parent) => {
         const children = initialEdges
             .filter((edge) => edge.source === parentId && edge?.data?.label !== "!").map((edge) => {
                 const targetNode = nodeMap.get(edge.target);
+                if(!targetNode) {
+                    console.error(`Node with ID ${edge.target} not found`);
+                    return null;
+                }
                 return {
                     ...targetNode,
                     parentId: parentId,

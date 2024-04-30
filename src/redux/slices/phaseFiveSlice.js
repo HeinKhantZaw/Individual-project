@@ -10,7 +10,6 @@ import _ from "lodash";
 import {getAllParentIds} from "../../utils/getAllParentIds.js";
 import {findNodeById} from "../../utils/findNodeById.js";
 import {searchNodeInMultipleRoots} from "../../utils/searchNodeInMultipleRoots.js";
-import {generateJSONTree} from "../../utils/generateJSONTree.js";
 
 const initialState = {
     nodeState: initialNodes,
@@ -29,7 +28,6 @@ export const phaseFiveSlice = createSlice({
     initialState,
     reducers: {
         setPhaseFiveNodes: (state, action) => {
-            console.log(generateJSONTree(initialNodes, initialEdges))
             const removedNodeIds = state.originalNodesIds.filter(id => !action.payload.nodes.map(node => node.id).includes(id));
             let childNodesToRemove = removedNodeIds.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
             state.edgeState = state.edgeState.filter(edge => {
@@ -99,7 +97,10 @@ export const phaseFiveSlice = createSlice({
             let totalIds = [action.payload, ...ids]
             let parents = getAllParentIds(state.edgeState, totalIds);
             let isHidden = state.nodeState.find(node => node.id === action.payload).data.isHidden;
-            const isAndRelation = state.edgeState.find(edge => edge.target === action.payload && edge.source.endsWith("-and") && edge.source !== "design-gamification-and")?.source;
+            let isAndRelation = state.edgeState.find(edge => edge.target === action.payload && edge.source.endsWith("-and") && edge.source !== "design-gamification-and")?.source;
+            if(totalIds.includes("link-roles-to-path")) {
+                isAndRelation = "set-paths-and";
+            }
             let siblings = "";
             if (!isHidden) {
                 // special case with both dependency
@@ -111,18 +112,13 @@ export const phaseFiveSlice = createSlice({
                     totalIds = [action.payload, ...ids];
                 }
                 parents = [...parents, ...neededParents];
-                // console.log(totalIds)
-                // console.log(isAndRelation, doubleNeed)
                 if (isAndRelation) {
                     siblings = state.edgeState.filter(edge => edge.source === isAndRelation && edge.target !== action.payload).map(e => e.target);
                     for (let sibling of siblings) {
-                        console.log(sibling)
                         const siblingIds = getAllChildrenIds(searchNode(treeMap, sibling));
-                        console.log(siblingIds)
                         if (doubleNeed.length === 0) {
                             ids = [...ids, ...siblingIds, sibling];
                             totalIds = [...ids];
-                            console.log("no double need:", totalIds)
                         } else {
                             const doesExist = state.nodeState.find(node => node.id === doubleNeed[0]);
                             if (!doesExist) {
@@ -134,8 +130,6 @@ export const phaseFiveSlice = createSlice({
                                 }
                                 totalIds = [...ids, ...siblingIds, sibling];
                             }
-                            console.log("With double need: ", totalIds)
-                            console.log("DOUBLE NEED: ", doubleNeed)
                         }
                         const newParents = getAllParentIds(state.edgeState, totalIds);
                         parents = [...parents, ...newParents];

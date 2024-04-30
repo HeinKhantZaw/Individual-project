@@ -15,7 +15,6 @@ export function generateJSONTree(initialNodes, initialEdges) {
             tree[node.id] = {...node};
         }
     });
-    console.log("NODE:", nodeMap);
 
     // Recursively build the tree starting from the root nodes
     const buildTree = (parentId, parent) => {

@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import ReactFlow, {Background, Controls, MarkerType, MiniMap, useEdgesState, useNodesState,} from "reactflow";
+import React, {useEffect} from "react";
+import ReactFlow, {Background, Controls, MiniMap, useEdgesState, useNodesState,} from "reactflow";
 import "reactflow/dist/style.css";
 import OperatorNode from "../../components/Shapes/OperatorNode.jsx";
 import {useDispatch, useSelector} from "react-redux";
@@ -49,8 +49,10 @@ export default function PhaseTwo() {
         const invisibleNodes = initialNodes.filter(node => !visibleNodes.includes(node));
         idToBeRemoved = invisibleNodes.map(item => item.id);
         const allHiddenIds = idToBeRemoved.map(id => getAllChildrenIds(searchNode(treeMap, id))).flat();
+        const removedIds = visibleNodes.map(node=>node.id).concat(allHiddenIds);
+        const removedEdges = edgeState.filter(edge => !removedIds.includes(edge.source));
         const hiddenEdges = edgeState.filter(edge => allHiddenIds.includes(edge.source));
-        dispatch(hideEdges(hiddenEdges));
+        dispatch(hideEdges(hiddenEdges.concat(removedEdges)));
         return removeAndFlattenNodes(nodeTree, idToBeRemoved);
     };
 

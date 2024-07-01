@@ -55,9 +55,9 @@ export default function MainLayout() {
                 if (data.phaseOne) {
                     dispatch(setPhaseOneState(data.phaseOne));
                 }
-                if (data.phaseTwo) {
-                    dispatch(setPhaseTwoState(data.phaseTwo));
-                }
+                // if (data.phaseTwo) {
+                //     dispatch(setPhaseTwoState(data.phaseTwo));
+                // }
             };
             reader.readAsText(file);
         };

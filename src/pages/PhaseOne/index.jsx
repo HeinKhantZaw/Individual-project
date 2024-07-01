@@ -38,8 +38,11 @@ export default function PhaseOne() {
     }, [currentPhase]);
 
     useEffect(() => {
-        if (edges.length > 102 && !nextPhaseEnabled) {
-            dispatch(setNextPhaseEnabled(true))
+        if (edges.length >= 105) {
+            !nextPhaseEnabled && dispatch(setNextPhaseEnabled(true));
+        }
+        else {
+            dispatch(setNextPhaseEnabled(false));
         }
         dispatch(connectEdge(edges));
     }, [edges]);

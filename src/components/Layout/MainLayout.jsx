@@ -9,6 +9,7 @@ import {setPhase3Value, setPhaseStatusState, toggleInfo} from "../../redux/slice
 import {setPhaseOneState} from "../../redux/slices/phaseOneSlice.js";
 import {setPhaseTwoState} from "../../redux/slices/phaseTwoSlice.js";
 import SelectOption from "../Select";
+import DownloadButton from "../DownloadButton.jsx";
 
 export default function MainLayout() {
     // const bleeps = useBleeps();
@@ -199,6 +200,8 @@ export default function MainLayout() {
                         }
                         <div className="flex items-center lg:order-2">
                             <div className={"w-10"}/>
+                            {/*<DownloadButton/>*/}
+                            <div className={"w-4"}/>
                             <Button animate className={"font-semibold text-lg custom-button upload"}
                                     layer={"control"}
                                     onClick={uploadJson}>
@@ -233,6 +236,9 @@ export default function MainLayout() {
             <main className="holy-grail__main">
                 <Outlet/>
             </main>
+            <Tooltip anchorSelect=".download-img" place="bottom">
+                Click to download image!
+            </Tooltip>
             <Tooltip anchorSelect=".upload" place="bottom">
                 Click to upload your json file!
             </Tooltip>
